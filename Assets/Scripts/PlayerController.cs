@@ -28,6 +28,8 @@ public class PlayerController : MonoBehaviour
 
     private float miAltura;
 
+    private Vector3 nuevaPosicion;
+
     // -------------------------------- EstadosPlayer -----------------------------------
     public enum EstadosPlayer
     {
@@ -54,11 +56,15 @@ public class PlayerController : MonoBehaviour
             {
                 Debug.Log("Subiendo");
 
-                Vector3 nuevaPosicion = new Vector3(posicionTronco.x, posicionTronco.y + alturaTronco + miAltura/2, posicionTronco.z);
+                float step = velocidad * Time.deltaTime;
+
+                nuevaPosicion = new Vector3(posicionTronco.x, posicionTronco.y + alturaTronco + miAltura/2, posicionTronco.z);
                 Debug.Log("nueva = " + nuevaPosicion);
 
-                posicionPlayer = nuevaPosicion;
-                this.transform.localPosition = nuevaPosicion;
+                //this.transform.localPosition = Vector3.MoveTowards(transform.position, nuevaPosicion,step);
+
+                //this.transform.localPosition = Vector3.Lerp(transform.position, nuevaPosicion, Time.deltaTime);
+
             }
         }
     }
@@ -73,9 +79,7 @@ public class PlayerController : MonoBehaviour
     {
         //_animator = GetComponent<Animator>();
         _characterController = GetComponent<CharacterController>();
-
-        posicionPlayer = transform.localPosition;
-
+        
         // accedemos a la altura del game object (eje y)
         miAltura = GetComponent<Collider>().bounds.size.y;
     }
@@ -85,7 +89,6 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("estado " + Estado);
         if (Estado == EstadosPlayer.Andar)
         {
             // obtenemos los inputs
@@ -121,6 +124,10 @@ public class PlayerController : MonoBehaviour
             _dirMov.y -= gravedad * Time.deltaTime;
 
             _characterController.Move(_dirMov * Time.deltaTime);
+        }
+
+        if (Estado == EstadosPlayer.Subir) {
+            this.transform.localPosition = Vector3.Lerp(transform.position, nuevaPosicion, Time.deltaTime);
         }
     }
 }
