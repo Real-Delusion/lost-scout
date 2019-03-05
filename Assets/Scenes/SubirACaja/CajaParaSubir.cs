@@ -11,7 +11,9 @@ public class CajaParaSubir : MonoBehaviour
     private GameObject player;
 
     // script empujarcaja del player
-    private SubirACaja subirScript;
+    private PlayerController subirScript;
+
+    private float miAltura;
 
     public void OnDrawGizmos()
     {
@@ -26,7 +28,11 @@ public class CajaParaSubir : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
 
         // accedemos a su script de empujarcaja
-        subirScript = player.GetComponent<SubirACaja>();
+        subirScript = player.GetComponent<PlayerController>();
+
+        // accedemos a la altura del game object (eje y)
+        miAltura = GetComponent<Collider>().bounds.size.y;
+
     }
 
     // Update is called once per frame
@@ -35,25 +41,24 @@ public class CajaParaSubir : MonoBehaviour
         // Si el jugador entra en el radio del objeto
         if (Vector3.Distance(player.transform.position, transform.position) < radio)
         {
-            Debug.Log("Pulse E para subirse a la caja");
+            //Debug.Log("Pulse E para subirse a la caja");
             if (Input.GetKeyDown(KeyCode.E))
             {
+                // mandamos la posición y la altura de la caja al otro script
+                subirScript.posicionTronco = transform.position;
+                subirScript.alturaTronco = miAltura;
+
                 // cambiamos el estado del player a empujando
-                subirScript.Estado =SubirACaja.EstadosPlayer.Subir;
+                subirScript.Estado = PlayerController.EstadosPlayer.Subir;
             }
-            else
-            {
-                // mientras no pulse E
-                // mantenemos el estado del player en andando
-                subirScript.Estado = SubirACaja.EstadosPlayer.Andar;
-            }
+
         }
 
         // Si está fuera del radio del objeto
         else
         {
             // cambiamos el estado del player a andando
-            subirScript.Estado = SubirACaja.EstadosPlayer.Andar;
+            subirScript.Estado = PlayerController.EstadosPlayer.Andar;
         }
     }
 }

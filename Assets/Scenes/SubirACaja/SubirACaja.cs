@@ -5,6 +5,10 @@ using UnityEngine;
 public class SubirACaja : MonoBehaviour
 {
     private Rigidbody rb;
+    public Vector3 posicionTronco;
+    public float alturaTronco;
+
+    private Vector3 posicion;
 
     // -------------------------------- EstadosPlayer -----------------------------------
     public enum EstadosPlayer
@@ -31,7 +35,12 @@ public class SubirACaja : MonoBehaviour
             if (_estado == EstadosPlayer.Subir)
             {
                 Debug.Log("Subiendo");
-                // aquí añadiremos animación de subir del personaje
+
+                Vector3 nuevaPosicion = new Vector3(posicionTronco.x, posicionTronco.y + alturaTronco, posicionTronco.z);
+                Debug.Log("nueva = " + nuevaPosicion);
+
+                posicion = nuevaPosicion;
+                this.transform.localPosition = nuevaPosicion;
             }
         }
     }
@@ -41,36 +50,16 @@ public class SubirACaja : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        
+        posicion = transform.localPosition;
     }
 
     // Update is called once per frame
     void Update()
-    { /*
-      // Si el jugador entra en el radio del objeto
-        if (Vector3.Distance(player.transform.position, transform.position) < radio)
-        {
-            Debug.Log("Mantén pulsado E para empujar la caja");
-            if (Input.GetKey(KeyCode.E))
-            {
-                Estado = EstadosCaja.Dinamico;
+    {
+        Debug.Log(transform.localPosition);
+        //transform.localPosition = posicion;
 
-                // cambiamos el estado del player a empujando
-                empujarScript.Estado = EmpujarCaja.EstadosPlayer.Empujar;
-            }
-            else
-            {
-                Estado = EstadosCaja.Estatico;
-            }
-        }
-
-        // Si está fuera del radio del objeto
-        else
-        {
-            Estado = EstadosCaja.Estatico;
-
-            // cambiamos el estado del player a andando
-            empujarScript.Estado = EmpujarCaja.EstadosPlayer.Andar;
-        }
-        */
+        transform.localPosition = new Vector3(4, 4, 4);
     }
 }

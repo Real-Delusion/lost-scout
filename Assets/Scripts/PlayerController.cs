@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -18,6 +18,53 @@ public class PlayerController : MonoBehaviour
 
     private Vector3 _dirMov = Vector3.zero;
 
+    private Rigidbody rb;
+
+    public Vector3 posicionTronco;
+
+    public float alturaTronco;
+
+    private Vector3 posicionPlayer;
+
+    private float miAltura;
+
+    // -------------------------------- EstadosPlayer -----------------------------------
+    public enum EstadosPlayer
+    {
+        Andar,
+        Empujar,
+        Subir
+    }
+
+    private EstadosPlayer _estado = EstadosPlayer.Andar;
+
+    public EstadosPlayer Estado
+    {
+        get => _estado;
+        set
+        {
+            _estado = value;
+            if (_estado == EstadosPlayer.Empujar)
+            {
+                Debug.Log("empujando");
+                // aquí añadiremos animación de empujar del personaje
+            }
+
+            if (_estado == EstadosPlayer.Subir)
+            {
+                Debug.Log("Subiendo");
+
+                Vector3 nuevaPosicion = new Vector3(posicionTronco.x, posicionTronco.y + alturaTronco + miAltura/2, posicionTronco.z);
+                Debug.Log("nueva = " + nuevaPosicion);
+
+                posicionPlayer = nuevaPosicion;
+                this.transform.localPosition = nuevaPosicion;
+            }
+        }
+    }
+    // -------------------------------- EstadosPlayer -----------------------------------
+
+
 
     //-----------------------------------------------
 
@@ -26,6 +73,11 @@ public class PlayerController : MonoBehaviour
     {
         //_animator = GetComponent<Animator>();
         _characterController = GetComponent<CharacterController>();
+
+        posicionPlayer = transform.localPosition;
+
+        // accedemos a la altura del game object (eje y)
+        miAltura = GetComponent<Collider>().bounds.size.y;
     }
 
     //------------------------------------------------
@@ -33,39 +85,42 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // obtenemos los inputs
-
-        float h = Input.GetAxis("Horizontal");
-        float v = Input.GetAxis("Vertical");
-
-        // Cálculamos el vector hacia delante
-        Vector3 camForward_Dir = Vector3.Scale(Camera.main.transform.forward, new Vector3(1, 0, 1)).normalized;
-        Vector3 move = v * camForward_Dir + h * Camera.main.transform.right;
-
-        if (move.magnitude > 1f) move.Normalize();
-
-        // Cálculamos la rotación del jugador
-        move = transform.InverseTransformDirection(move);
-
-        // Obtenemos los angulos de Euler
-        float turnAmount = Mathf.Atan2(move.x, move.z);
-
-        transform.Rotate(0, turnAmount * velocidadRotacion * Time.deltaTime, 0);
-
-        //Si el personaje esta tocando tierra...
-
-        if (_characterController.isGrounded)
+        Debug.Log("estado " + Estado);
+        if (Estado == EstadosPlayer.Andar)
         {
-            // --- _animator.SetBool("run", move.magnitude> 0);
+            // obtenemos los inputs
+            float h = Input.GetAxis("Horizontal");
+            float v = Input.GetAxis("Vertical");
 
-            _dirMov = transform.forward * move.magnitude;
+            // Cálculamos el vector hacia delante
+            Vector3 camForward_Dir = Vector3.Scale(Camera.main.transform.forward, new Vector3(1, 0, 1)).normalized;
+            Vector3 move = v * camForward_Dir + h * Camera.main.transform.right;
 
-            _dirMov *= velocidad;
+            if (move.magnitude > 1f) move.Normalize();
 
+            // Cálculamos la rotación del jugador
+            move = transform.InverseTransformDirection(move);
+
+            // Obtenemos los angulos de Euler
+            float turnAmount = Mathf.Atan2(move.x, move.z);
+
+            transform.Rotate(0, turnAmount * velocidadRotacion * Time.deltaTime, 0);
+
+            //Si el personaje esta tocando tierra...
+
+            if (_characterController.isGrounded)
+            {
+                // --- _animator.SetBool("run", move.magnitude> 0);
+
+                _dirMov = transform.forward * move.magnitude;
+
+                _dirMov *= velocidad;
+
+            }
+
+            _dirMov.y -= gravedad * Time.deltaTime;
+
+            _characterController.Move(_dirMov * Time.deltaTime);
         }
-
-        _dirMov.y -= gravedad * Time.deltaTime;
-
-        _characterController.Move(_dirMov * Time.deltaTime);
     }
 }
