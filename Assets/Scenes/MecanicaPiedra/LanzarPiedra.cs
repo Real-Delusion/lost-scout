@@ -5,7 +5,6 @@ using UnityEngine;
 public class LanzarPiedra : MonoBehaviour
 {
     public GameObject objeto;
-    public float m_jumpX;
     public float m_jumpY;
     public float vel;
 
@@ -23,11 +22,13 @@ public class LanzarPiedra : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             GameObject piedra = Instantiate(objeto) as GameObject;
-            piedra.transform.position = transform.position + transform.forward * 2;
+            piedra.transform.position = transform.position + transform.forward * 1;
             Rigidbody rb = piedra.GetComponent<Rigidbody>();
             rb.velocity = transform.forward * vel;
-            //rb.AddForce(new Vector3 (m_jumpX,m_jumpY,0.0f));
+            rb.AddForce(new Vector3(0,m_jumpY,0));
         }
+
+        Destroy(GameObject.Find("Piedra(Clone)"), 5);
     }
 
 }

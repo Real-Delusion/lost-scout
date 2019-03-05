@@ -318,9 +318,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objeto: {fileID: 7013340002946980141, guid: de0748ecd01f0444383e1f7891293105, type: 3}
-  m_jumpX: 300
   m_jumpY: 300
-  vel: 5
+  vel: 10
 --- !u!65 &1159201442
 BoxCollider:
   m_ObjectHideFlags: 0
