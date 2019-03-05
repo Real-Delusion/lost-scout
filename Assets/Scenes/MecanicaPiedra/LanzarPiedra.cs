@@ -26,7 +26,7 @@ public class LanzarPiedra : MonoBehaviour
             piedra.transform.position = transform.position + transform.forward * 2;
             Rigidbody rb = piedra.GetComponent<Rigidbody>();
             rb.velocity = transform.forward * vel;
-            rb.AddForce(new Vector3 (m_jumpX,m_jumpY,0.0f));
+            //rb.AddForce(new Vector3 (m_jumpX,m_jumpY,0.0f));
         }
     }
 
