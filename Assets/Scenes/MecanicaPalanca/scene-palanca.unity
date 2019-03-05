@@ -598,6 +598,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &4192975000268603536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4192975000268603530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 009258ad3e744df43b58e736425e8221, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5821752318732182166
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -665,6 +677,36 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7754434604011090964, guid: c7abca09485acf7439cbdd5df00e2ff5,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: d25fa364260c886e097f0ba7e96b21da, type: 2}
+    - target: {fileID: 3526427749581683209, guid: c7abca09485acf7439cbdd5df00e2ff5,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3526427749581683209, guid: c7abca09485acf7439cbdd5df00e2ff5,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3526427749581683209, guid: c7abca09485acf7439cbdd5df00e2ff5,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3526427749581683209, guid: c7abca09485acf7439cbdd5df00e2ff5,
+        type: 3}
+      propertyPath: m_Center.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3526427749581683209, guid: c7abca09485acf7439cbdd5df00e2ff5,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1208052119289387043, guid: c7abca09485acf7439cbdd5df00e2ff5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -700,5 +742,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0.8
       objectReference: {fileID: 0}
+    - target: {fileID: 4622745773798729006, guid: c7abca09485acf7439cbdd5df00e2ff5,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1becdaa90049e4ed690601eb54153368, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7abca09485acf7439cbdd5df00e2ff5, type: 3}
