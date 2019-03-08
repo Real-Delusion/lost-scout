@@ -18,8 +18,6 @@ public class PlayerController : MonoBehaviour
 
     private Vector3 _dirMov = Vector3.zero;
 
-    private Rigidbody rb;
-
     public Vector3 posicionTronco;
 
     public float alturaTronco;
@@ -62,6 +60,11 @@ public class PlayerController : MonoBehaviour
                 Debug.Log("nueva = " + nuevaPosicion);
 
             }
+
+            if (_estado == EstadosPlayer.Empujar)
+            {
+
+            }
         }
     }
     // -------------------------------- EstadosPlayer -----------------------------------
@@ -78,14 +81,14 @@ public class PlayerController : MonoBehaviour
         
         // accedemos a la altura del game object (eje y)
         miAltura = GetComponent<Collider>().bounds.size.y;
-    }
+            }
 
     //------------------------------------------------
 
     // Update is called once per frame
     void Update()
     {
-        if (Estado == EstadosPlayer.Andar)
+        if (Estado == EstadosPlayer.Andar || Estado == EstadosPlayer.Empujar)
         {
             // obtenemos los inputs
             float h = Input.GetAxis("Horizontal");
