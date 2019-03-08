@@ -4,7 +4,39 @@ using UnityEngine;
 
 public class mecanicaPalanca : MonoBehaviour
 {
-    private Animator animacionPalanca; //Animacion de la placa de presion
+    private Animator animacionPalanca;
+    public Animator animPared; 
+    public float radio = 8f;
+    public Transform player;
+
+    // Maquinas de estados finitos
+    public enum EstadosPalanca
+    {
+        On,
+        Off,
+    }
+
+    private EstadosPalanca _estadoP = EstadosPalanca.Off;
+
+    public EstadosPalanca Estado
+    {
+        get => _estadoP;
+        set
+        {
+            _estadoP = value;
+            if (_estadoP == EstadosPalanca.On)
+            {
+                animacionPalanca.SetBool("OnOff", true);
+                animPared.SetBool("UpDown", true);
+            }
+            if (_estadoP == EstadosPalanca.Off)
+            {
+                animacionPalanca.SetBool("OnOff", false);
+                animPared.SetBool("UpDown", false);
+            }
+        }
+    }
+
 
     // Start is called before the first frame update
     void Start()
@@ -16,18 +48,29 @@ public class mecanicaPalanca : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.E))
+        switch (Estado)
         {
-            Debug.Log("TRIGGER ENTER");
-            animacionPalanca.SetBool("OnOff", !animacionPalanca.GetBool("OnOff"));
+            case EstadosPalanca.Off:
+                if (Vector3.Distance(transform.position, player.position) < radio)
+                {
+                    if (Input.GetKey(KeyCode.E))
+                    {
+                        Estado = EstadosPalanca.On;
+                    }
+                }
+                break;
 
+            case EstadosPalanca.On:
+                if (Vector3.Distance(transform.position, player.position) < radio)
+                {
+                    if (Input.GetKey(KeyCode.E))
+                    {
+                        Estado = EstadosPalanca.Off;
+                    }
+                }
+                break;
         }
-    }
 
-    //Cuando entre en el collider, animación = true
-    public void OnTriggerStay(Collider other)
-    {
-        
     }
     
 }
