@@ -10,8 +10,8 @@ public class CajaParaSubir : MonoBehaviour
     // player
     private GameObject player;
 
-    // script empujarcaja del player
-    private PlayerController subirScript;
+    // script playercontroller del player
+    private PlayerController playerController;
 
     private float miAltura;
 
@@ -27,8 +27,8 @@ public class CajaParaSubir : MonoBehaviour
         // guardamos el player con el tag
         player = GameObject.FindGameObjectWithTag("Player");
 
-        // accedemos a su script de empujarcaja
-        subirScript = player.GetComponent<PlayerController>();
+        // accedemos a su script de playercontroller
+        playerController = player.GetComponent<PlayerController>();
 
         // accedemos a la altura del game object (eje y)
         miAltura = GetComponent<Collider>().bounds.size.y;
@@ -45,11 +45,11 @@ public class CajaParaSubir : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E))
             {
                 // mandamos la posición y la altura de la caja al otro script
-                subirScript.posicionTronco = transform.position;
-                subirScript.alturaTronco = miAltura;
+                playerController.posicionTronco = transform.position;
+                playerController.alturaTronco = miAltura;
 
                 // cambiamos el estado del player a empujando
-                subirScript.Estado = PlayerController.EstadosPlayer.Subir;
+                playerController.Estado = PlayerController.EstadosPlayer.Subir;
             }
 
         }
@@ -58,7 +58,7 @@ public class CajaParaSubir : MonoBehaviour
         else
         {
             // cambiamos el estado del player a andando
-            subirScript.Estado = PlayerController.EstadosPlayer.Andar;
+            playerController.Estado = PlayerController.EstadosPlayer.Andar;
         }
     }
 }

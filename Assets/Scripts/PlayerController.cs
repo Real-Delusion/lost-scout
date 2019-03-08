@@ -61,10 +61,6 @@ public class PlayerController : MonoBehaviour
                 nuevaPosicion = new Vector3(posicionTronco.x, posicionTronco.y + alturaTronco + miAltura/2, posicionTronco.z);
                 Debug.Log("nueva = " + nuevaPosicion);
 
-                //this.transform.localPosition = Vector3.MoveTowards(transform.position, nuevaPosicion,step);
-
-                //this.transform.localPosition = Vector3.Lerp(transform.position, nuevaPosicion, Time.deltaTime);
-
             }
         }
     }
