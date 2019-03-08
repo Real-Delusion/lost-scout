@@ -14,7 +14,7 @@ public class Caja : MonoBehaviour
     private Rigidbody rb;
 
     // script empujarcaja del player
-    private EmpujarCaja empujarScript;
+    private PlayerController playerController;
 
     // player
     private GameObject player;
@@ -34,7 +34,7 @@ public class Caja : MonoBehaviour
         Dinamico
     }
 
-    private EstadosCaja _estado = EstadosCaja.Estatico;
+    private EstadosCaja _estado = EstadosCaja.Dinamico;
 
     public EstadosCaja Estado
     {
@@ -74,7 +74,7 @@ public class Caja : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
 
         // accedemos a su script de empujarcaja
-        empujarScript = player.GetComponent<EmpujarCaja>();
+        playerController = player.GetComponent<PlayerController>();
     }
 
     // Update is called once per frame
@@ -89,7 +89,7 @@ public class Caja : MonoBehaviour
                 Estado = EstadosCaja.Dinamico;
 
                 // cambiamos el estado del player a empujando
-                empujarScript.Estado = EmpujarCaja.EstadosPlayer.Empujar;
+                playerController.Estado = PlayerController.EstadosPlayer.Empujar;
             }
             else
             {
@@ -103,7 +103,8 @@ public class Caja : MonoBehaviour
             Estado = EstadosCaja.Estatico;
 
             // cambiamos el estado del player a andando
-            empujarScript.Estado = EmpujarCaja.EstadosPlayer.Andar;
+            playerController.Estado = PlayerController.EstadosPlayer.Andar;
         }
+
     }
 }
