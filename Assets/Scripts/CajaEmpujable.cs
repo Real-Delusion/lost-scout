@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// Este script se asigna a un gameobject que el player podrá empujar
+
 public class CajaEmpujable : MonoBehaviour
 {
     // radio desde el cual se podrá interactuar
@@ -13,13 +15,14 @@ public class CajaEmpujable : MonoBehaviour
     // rigidbody
     private Rigidbody rb;
 
-    // script empujarcaja del player
+    // script playercontroller del player
     private PlayerController playerController;
 
     // player
     private GameObject player;
 
 
+    // para ver el radio en la escena
     public void OnDrawGizmos()
     {
         Gizmos.color = Color.green;
@@ -43,14 +46,14 @@ public class CajaEmpujable : MonoBehaviour
         {
             _estado = value;
 
-            // Si es dinámico
+            // Si es dinámico, podemos desplazarlo
             if (_estado == EstadosCaja.Dinamico)
             {
                 // descongelamos los constrains movibles del rigidbody
                 rb.constraints = constraints;
             }
 
-            // Si es estático
+            // Si es estático, no podemos desplazarlo
             else
             {
                 // congelamos los contraints del rigidbody (no se puede mover)
@@ -67,13 +70,13 @@ public class CajaEmpujable : MonoBehaviour
         rb = GetComponent<Rigidbody>();
 
         // guardamos los constrains movibles del rigidbody
-        // es decir, freeze Y y todas las rotaciones
+        // es decir, freeze 'Y' y todas las rotaciones
         constraints = rb.constraints;
 
         // guardamos el player con el tag
         player = GameObject.FindGameObjectWithTag("Player");
 
-        // accedemos a su script de empujarcaja
+        // accedemos a su script de playercontroller
         playerController = player.GetComponent<PlayerController>();
     }
 

@@ -2,36 +2,36 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// Este script se le asigna al player para poder desplazar/empujar objetos
+
 public class Empujar : MonoBehaviour
 {
-    // this script pushes all rigidbodies that the character touches
+    // float de la fuerza de empujar
     public float pushPower = 1.0f;
 
-        void OnControllerColliderHit(ControllerColliderHit hit)
+    // cuando colisione con algo
+    void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        // recogemos el rigidbody de la colisión
+        Rigidbody body = hit.collider.attachedRigidbody;
+
+        // si el rigidbody es nulo no debería poder mover el objeto
+        if (body == null || body.isKinematic)
         {
-            Rigidbody body = hit.collider.attachedRigidbody;
-
-            // no rigidbody
-            if (body == null || body.isKinematic)
-            {
-                return;
-            }
-
-            // We dont want to push objects below us
-            if (hit.moveDirection.y < -0.3)
-            {
-                return;
-            }
-
-            // Calculate push direction from move direction,
-            // we only push objects to the sides never up and down
-            Vector3 pushDir = new Vector3(hit.moveDirection.x, 0, hit.moveDirection.z);
-
-            // If you know how fast your character is trying to move,
-            // then you can also multiply the push velocity by that.
-
-            // Apply the push
-            body.velocity = pushDir * pushPower;
+            return;
+        }
+        // si el rigidbody se encuentra debajo del player no debería empujar el objeto hacia abajo
+        if (hit.moveDirection.y < -0.3)
+        {
+            return;
         }
 
+        // Calculamos la dirección de empujar con la dirección del movimiento
+        // nunca empujaremos en el eje Y
+        Vector3 pushDir = new Vector3(hit.moveDirection.x, 0, hit.moveDirection.z);
+
+        // Empujar
+        body.velocity = pushDir * pushPower;
+
     }
+}
