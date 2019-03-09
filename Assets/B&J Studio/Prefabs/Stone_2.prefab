@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 4270139265362190}
   - component: {fileID: 33527052952123876}
   - component: {fileID: 23030868762505300}
-  - component: {fileID: 127472855231691511}
-  - component: {fileID: 1750377905483089925}
+  - component: {fileID: 5387633209896374312}
+  - component: {fileID: 8038786344312219739}
   m_Layer: 0
   m_Name: Stone_2
   m_TagString: Untagged
@@ -79,7 +79,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!54 &127472855231691511
+--- !u!54 &5387633209896374312
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -95,7 +95,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &1750377905483089925
+--- !u!64 &8038786344312219739
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

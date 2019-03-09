@@ -1,16 +1,14 @@
 fileFormatVersion: 2
-guid: 7f22c97f1ef256942977b04d6f8ef31d
+guid: 9cdd3dd313c88e34ea60494ad5d92787
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
     400000: //RootNode
-    2100000: Leaves_Material
-    2100002: "\u041C\u0430\u0442\u0435\u0440\u0438\u0430\u043B.002"
+    2100000: Stone_Material_0
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Tree_0
-    2186277476908879412: ImportLogs
+    4300000: Stone_2
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -45,7 +43,6 @@ ModelImporter:
     globalScale: 1
     meshCompression: 0
     addColliders: 0
-    useSRGBMaterialColor: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
@@ -70,9 +67,6 @@ ModelImporter:
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
-    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
-    blendShapeNormalImportMode: 1
-    normalSmoothingSource: 0
   importAnimation: 1
   copyAvatar: 0
   humanDescription:
@@ -87,6 +81,7 @@ ModelImporter:
     legStretch: 0.05
     feetSpacing: 0
     rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
