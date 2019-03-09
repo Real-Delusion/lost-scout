@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Caja : MonoBehaviour
+public class CajaEmpujable : MonoBehaviour
 {
     // radio desde el cual se podrá interactuar
     public float radio = 1.5f;
@@ -101,9 +101,6 @@ public class Caja : MonoBehaviour
         else
         {
             Estado = EstadosCaja.Estatico;
-
-            // cambiamos el estado del player a andando
-            playerController.Estado = PlayerController.EstadosPlayer.Andar;
         }
 
     }

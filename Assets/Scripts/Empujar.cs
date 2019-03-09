@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Empujando : MonoBehaviour
+public class Empujar : MonoBehaviour
 {
     // this script pushes all rigidbodies that the character touches
     public float pushPower = 1.0f;

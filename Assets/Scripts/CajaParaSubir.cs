@@ -41,8 +41,8 @@ public class CajaParaSubir : MonoBehaviour
         // Si el jugador entra en el radio del objeto
         if (Vector3.Distance(player.transform.position, transform.position) < radio)
         {
-            //Debug.Log("Pulse E para subirse a la caja");
-            if (Input.GetKeyDown(KeyCode.E))
+            Debug.Log("Pulse espacio para subirse a la caja");
+            if (Input.GetKeyDown(KeyCode.Space))
             {
                 // mandamos la posición y la altura de la caja al otro script
                 playerController.posicionTronco = transform.position;
