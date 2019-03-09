@@ -199,8 +199,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 009258ad3e744df43b58e736425e8221, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animPared: {fileID: 974801147}
-  radio: 8
+  animacionPalanca: {fileID: 936026729}
+  animObjeto: {fileID: 974801147}
+  radio: 2
   player: {fileID: 1032683539}
 --- !u!95 &936026729
 Animator:
@@ -902,8 +903,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 009258ad3e744df43b58e736425e8221, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  animPared: {fileID: 974801147}
-  radio: 8
+  animacionPalanca: {fileID: 4192975000268603531}
+  animObjeto: {fileID: 974801147}
+  radio: 2
   player: {fileID: 1032683539}
 --- !u!1001 &5821752318732182166
 PrefabInstance:
