@@ -87,7 +87,7 @@ public class CajaEmpujable : MonoBehaviour
         if (Vector3.Distance(player.transform.position, transform.position) < radio)
         {
             Debug.Log("Mantén pulsado E para empujar la caja");
-            if (Input.GetKey(KeyCode.E))
+            if (Input.GetKey(KeyCode.E) && Vector3.Distance(player.transform.position, transform.position) < radio)
             {
                 Estado = EstadosCaja.Dinamico;
 
