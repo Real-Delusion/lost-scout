@@ -202,7 +202,7 @@ MonoBehaviour:
   animacionPalanca: {fileID: 825677879}
   animObjeto: {fileID: 974801147}
   radio: 2
-  player: {fileID: 0}
+  player: {fileID: 1032683539}
 --- !u!95 &825677879
 Animator:
   serializedVersion: 3
