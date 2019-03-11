@@ -54,13 +54,18 @@ public class PlacaDePresion : MonoBehaviour
     //Cuando entre en el collider, animación = true
     public void OnTriggerEnter(Collider other)
     {
-        Estado = EstadosPlaca.On;
-
+        if(other.tag == "Player" || other.tag == "TroncoEmpujar")
+        {
+            Estado = EstadosPlaca.On;
+        }
+      
     }
     //Cuando salga del collider,animación = false
     public void OnTriggerExit(Collider other)
     {
+        if (other.tag == "Player" || other.tag == "TroncoEmpujar") {
         Estado = EstadosPlaca.Off;
+        }
 
     }
 }
