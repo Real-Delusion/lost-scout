@@ -4,7 +4,18 @@ ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
+    100002: Box001
+    100004: Box002
     400000: //RootNode
+    400002: Box001
+    400004: Box002
+    2100000: No Name
+    2300000: Box001
+    2300002: Box002
+    3300000: Box001
+    3300002: Box002
+    4300000: Box001
+    4300002: Box002
     2186277476908879412: ImportLogs
   externalObjects: {}
   materials:
