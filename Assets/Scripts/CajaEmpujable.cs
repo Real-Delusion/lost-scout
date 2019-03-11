@@ -97,6 +97,8 @@ public class CajaEmpujable : MonoBehaviour
             else
             {
                 Estado = EstadosCaja.Estatico;
+                // cambiamos el estado del player a andando
+                playerController.Estado = PlayerController.EstadosPlayer.Andar;
             }
         }
 

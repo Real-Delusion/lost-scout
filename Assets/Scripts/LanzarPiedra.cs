@@ -33,9 +33,9 @@ public class LanzarPiedra : MonoBehaviour
                 
         }
         //Destruir piedra a los 5s
-        Destroy(GameObject.Find("Piedra(Clone)"), 5);
+        Destroy(GameObject.Find("Stone_2(Clone)"), 5);
 
-        if (!GameObject.Find("Piedra(Clone)")) //Si no hay ningun objeto que se llame Piedra(Clone), puedes volver a lanzar la piedra
+        if (!GameObject.Find("Stone_2(Clone)")) //Si no hay ningun objeto que se llame Piedra(Clone), puedes volver a lanzar la piedra
         {
             piedra = false; //La piedra no está en el escenario
         }

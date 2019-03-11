@@ -119,6 +119,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(Estado);
         // Si el estado del player es andar o empujar, se mantendrá el movimiento normal del player (con flechas)
         if (Estado == EstadosPlayer.Andar || Estado == EstadosPlayer.Empujar)
         {
