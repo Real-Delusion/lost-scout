@@ -27,12 +27,14 @@ public class PlayerController : MonoBehaviour
     public Vector3 posicionTronco;
 
     public float alturaTronco;
-
-    private Vector3 posicionPlayer;
+    public float alturaEscalera;
 
     private float miAltura;
 
     private Vector3 nuevaPosicion;
+
+    static float t = 0.0f;
+
 
     // -----------------------------------------------------------------------------------
 
@@ -42,7 +44,8 @@ public class PlayerController : MonoBehaviour
     {
         Andar,
         Empujar,
-        Subir
+        Subir,
+        SubirEscalera
     }
 
     private EstadosPlayer _estado = EstadosPlayer.Andar;
@@ -73,6 +76,20 @@ public class PlayerController : MonoBehaviour
                 // en los ejes x, z moverá a la posición del tronco
                 // en el eje y, moverá a la posicón del tronco + su altura + la mitad de la altura del player
                 nuevaPosicion = new Vector3(posicionTronco.x, posicionTronco.y + alturaTronco + miAltura/2, posicionTronco.z);
+                Debug.Log("nueva = " + nuevaPosicion);
+
+            }
+
+            // Si el estado es subir
+            if (_estado == EstadosPlayer.SubirEscalera)
+            {
+                // la velocidad a la que subirá
+                float step = velocidad * Time.deltaTime;
+
+                // calculamos su nueva posición a partir de la posición del tronco, mi posición y las alturas
+                // en los ejes x, z moverá a la posición del tronco
+                // en el eje y, moverá a la posicón del tronco + su altura + la mitad de la altura del player
+                nuevaPosicion = new Vector3(transform.position.x, transform.position.y + alturaEscalera + miAltura/2, transform.position.z);
                 Debug.Log("nueva = " + nuevaPosicion);
 
             }
@@ -143,6 +160,22 @@ public class PlayerController : MonoBehaviour
 
             // Cambiamos de posición de forma smooth
             this.transform.localPosition = Vector3.Lerp(transform.position, nuevaPosicion, Time.deltaTime);
+        }
+
+        // Si el estado del player es subir escaleras
+        if (Estado == EstadosPlayer.SubirEscalera) {
+            // Cambiamos de posición de forma smooth
+
+            
+            t += 0.01f;
+
+            if (t < 1.0f){
+                Debug.Log(t.ToString());
+                this.transform.localPosition = Vector3.Lerp(transform.position, nuevaPosicion, t);
+            }else{
+                this.Estado = EstadosPlayer.Andar;
+                t = 0.0f;       
+            }
         }
     }
 }
