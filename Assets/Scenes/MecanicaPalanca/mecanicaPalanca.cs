@@ -49,7 +49,7 @@ public class mecanicaPalanca : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //animacionPalanca = GetComponent<Animator>();
+        //animacionPalanca = GetComponent<Animator>(); // caso en que animacion de la palanca sea privado
 
     }
 
