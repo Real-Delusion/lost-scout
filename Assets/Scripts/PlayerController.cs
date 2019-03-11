@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
     private float gravedad = 20.0f;
 
     private Vector3 _dirMov = Vector3.zero;
+    private float turnAmount;
 
     // -----------------------------------------------------------------------------------
 
@@ -57,6 +58,8 @@ public class PlayerController : MonoBehaviour
             // Si el estado es empujar
             if (_estado == EstadosPlayer.Empujar)
             {
+                //transform.Rotate(0, 0, 0);
+                transform.localRotation.SetEulerAngles(0, 0, 0);
                 Debug.Log("empujando");
                 // aquí añadiremos animación de empujar del personaje
             }
@@ -117,10 +120,16 @@ public class PlayerController : MonoBehaviour
             move = transform.InverseTransformDirection(move);
 
             // Obtenemos los angulos de Euler
-            float turnAmount = Mathf.Atan2(move.x, move.z);
+            turnAmount = Mathf.Atan2(move.x, move.z);
 
-            transform.Rotate(0, turnAmount * velocidadRotacion * Time.deltaTime, 0);
-
+            if (Estado == EstadosPlayer.Empujar) {
+                // Si está empujando, el player no rota
+                transform.Rotate(0, 0, 0);
+            }
+            else {
+                // Si está andando rota de forma normal
+                transform.Rotate(0, turnAmount * velocidadRotacion * Time.deltaTime, 0);
+            }
             //Si el personaje esta tocando tierra...
 
             if (_characterController.isGrounded)
