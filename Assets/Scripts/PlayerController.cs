@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
 
     private CharacterController _characterController;
 
+    // ------------------------------ Para el movimiento --------------------------------
     public float velocidad = 5.0f;
 
     public float velocidadRotacion = 240.0f;
@@ -17,6 +18,12 @@ public class PlayerController : MonoBehaviour
     private float gravedad = 20.0f;
 
     private Vector3 _dirMov = Vector3.zero;
+    private float turnAmount;
+
+    // -----------------------------------------------------------------------------------
+
+
+    // ------------------------------ Para subir a sitios --------------------------------
 
     public Vector3 posicionTronco;
 
@@ -27,6 +34,9 @@ public class PlayerController : MonoBehaviour
     private float miAltura;
 
     private Vector3 nuevaPosicion;
+
+    // -----------------------------------------------------------------------------------
+
 
     // -------------------------------- EstadosPlayer -----------------------------------
     public enum EstadosPlayer
@@ -44,25 +54,29 @@ public class PlayerController : MonoBehaviour
         set
         {
             _estado = value;
+
+            // Si el estado es empujar
             if (_estado == EstadosPlayer.Empujar)
             {
+                //transform.Rotate(0, 0, 0);
+                transform.localRotation.SetEulerAngles(0, 0, 0);
                 Debug.Log("empujando");
                 // aquí añadiremos animación de empujar del personaje
             }
 
+            // Si el estado es subir
             if (_estado == EstadosPlayer.Subir)
             {
                 Debug.Log("Subiendo");
 
+                // la velocidad a la que subirá
                 float step = velocidad * Time.deltaTime;
 
+                // calculamos su nueva posición a partir de la posición del tronco, mi posición y las alturas
+                // en los ejes x, z moverá a la posición del tronco
+                // en el eje y, moverá a la posicón del tronco + su altura + la mitad de la altura del player
                 nuevaPosicion = new Vector3(posicionTronco.x, posicionTronco.y + alturaTronco + miAltura/2, posicionTronco.z);
                 Debug.Log("nueva = " + nuevaPosicion);
-
-            }
-
-            if (_estado == EstadosPlayer.Empujar)
-            {
 
             }
         }
@@ -81,13 +95,15 @@ public class PlayerController : MonoBehaviour
         
         // accedemos a la altura del game object (eje y)
         miAltura = GetComponent<Collider>().bounds.size.y;
-            }
+
+    }
 
     //------------------------------------------------
 
     // Update is called once per frame
     void Update()
     {
+        // Si el estado del player es andar o empujar, se mantendrá el movimiento normal del player (con flechas)
         if (Estado == EstadosPlayer.Andar || Estado == EstadosPlayer.Empujar)
         {
             // obtenemos los inputs
@@ -104,10 +120,16 @@ public class PlayerController : MonoBehaviour
             move = transform.InverseTransformDirection(move);
 
             // Obtenemos los angulos de Euler
-            float turnAmount = Mathf.Atan2(move.x, move.z);
+            turnAmount = Mathf.Atan2(move.x, move.z);
 
-            transform.Rotate(0, turnAmount * velocidadRotacion * Time.deltaTime, 0);
-
+            if (Estado == EstadosPlayer.Empujar) {
+                // Si está empujando, el player no rota
+                transform.Rotate(0, 0, 0);
+            }
+            else {
+                // Si está andando rota de forma normal
+                transform.Rotate(0, turnAmount * velocidadRotacion * Time.deltaTime, 0);
+            }
             //Si el personaje esta tocando tierra...
 
             if (_characterController.isGrounded)
@@ -125,7 +147,10 @@ public class PlayerController : MonoBehaviour
             _characterController.Move(_dirMov * Time.deltaTime);
         }
 
+        // Si el estado del player es subir, durante el movimiento de subida no podrá usar las flechas para desplazarse
         if (Estado == EstadosPlayer.Subir) {
+
+            // Cambiamos de posición de forma smooth
             this.transform.localPosition = Vector3.Lerp(transform.position, nuevaPosicion, Time.deltaTime);
         }
     }

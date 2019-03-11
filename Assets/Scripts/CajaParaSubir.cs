@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+// Este script se asigna a un gameobject al que el player se podrá subir
+
 public class CajaParaSubir : MonoBehaviour
 {
     // radio desde el cual se podrá interactuar
@@ -13,8 +15,11 @@ public class CajaParaSubir : MonoBehaviour
     // script playercontroller del player
     private PlayerController playerController;
 
+    // altura del game object, para luego asignar la nueva posición al player
     private float miAltura;
 
+
+    // para ver el radio en la escena
     public void OnDrawGizmos()
     {
         Gizmos.color = Color.blue;
@@ -32,7 +37,6 @@ public class CajaParaSubir : MonoBehaviour
 
         // accedemos a la altura del game object (eje y)
         miAltura = GetComponent<Collider>().bounds.size.y;
-
     }
 
     // Update is called once per frame
@@ -41,14 +45,16 @@ public class CajaParaSubir : MonoBehaviour
         // Si el jugador entra en el radio del objeto
         if (Vector3.Distance(player.transform.position, transform.position) < radio)
         {
-            //Debug.Log("Pulse E para subirse a la caja");
-            if (Input.GetKeyDown(KeyCode.E))
+            Debug.Log("Pulse espacio para subirse a la caja");
+            // Si está en el radio y pulsa espacio
+            if (Input.GetKeyDown(KeyCode.Space))
             {
                 // mandamos la posición y la altura de la caja al otro script
+                // el script playercontroller cambiará la posición del player usando estos parámetros
                 playerController.posicionTronco = transform.position;
                 playerController.alturaTronco = miAltura;
 
-                // cambiamos el estado del player a empujando
+                // cambiamos el estado del player a subir
                 playerController.Estado = PlayerController.EstadosPlayer.Subir;
             }
 
@@ -57,7 +63,7 @@ public class CajaParaSubir : MonoBehaviour
         // Si está fuera del radio del objeto
         else
         {
-            // cambiamos el estado del player a andando
+            // mantenemos el estado del player en andando
             playerController.Estado = PlayerController.EstadosPlayer.Andar;
         }
     }

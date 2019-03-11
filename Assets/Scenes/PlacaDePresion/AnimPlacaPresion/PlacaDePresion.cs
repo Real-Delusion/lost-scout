@@ -41,7 +41,7 @@ public class PlacaDePresion : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //Debug.Log("Empieza");
+        //Buscar animación de la placa
         animacionPlaca = GetComponent<Animator>();
     }
 
@@ -54,14 +54,12 @@ public class PlacaDePresion : MonoBehaviour
     //Cuando entre en el collider, animación = true
     public void OnTriggerEnter(Collider other)
     {
-        //Debug.Log("TRIGGER ENTER");
         Estado = EstadosPlaca.On;
 
     }
     //Cuando salga del collider,animación = false
     public void OnTriggerExit(Collider other)
     {
-        //Debug.Log("TRIGGER EXIT");
         Estado = EstadosPlaca.Off;
 
     }

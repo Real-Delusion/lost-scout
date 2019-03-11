@@ -13,9 +13,6 @@ public class LanzarPiedra : MonoBehaviour
 
     private bool piedra = false; //La piedra es false cuando no está en el escenario
 
-    //Rigidbody de la piedra
-    private Rigidbody rbody;
-
     // Update is called once per frame
     void Update()
     {
@@ -25,7 +22,8 @@ public class LanzarPiedra : MonoBehaviour
                 //Creo una nueva piedra
                 GameObject nuevaPiedra = Instantiate(objeto) as GameObject;
                 //Posicion donde empieza la piedra
-                nuevaPiedra.transform.position = transform.position + transform.forward * 1;
+                nuevaPiedra.transform.position = transform.position + transform.forward * 1; //El 1 es la distancia entre la piedra y el personaje al lanzarla
+                //Buscar rigidbody de la piedra
                 Rigidbody rb = nuevaPiedra.GetComponent<Rigidbody>();
                 //Añadir velocidad a la piedra
                 rb.velocity = transform.forward * vel;
