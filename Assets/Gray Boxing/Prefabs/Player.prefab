@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 2293969753719798330}
   - component: {fileID: 7032209224634890087}
   - component: {fileID: 2293969753719798333}
+  - component: {fileID: 7454230572021513067}
   - component: {fileID: 2293969753719798329}
-  - component: {fileID: 2293969753719798279}
   - component: {fileID: 2293969753719798278}
   m_Layer: 0
   m_Name: Player
@@ -110,6 +110,21 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7454230572021513067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2293969753719798332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05f7b54c8dc314385a517806e84e23a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objeto: {fileID: 1527084976354986, guid: a163a788b0576c54da24c537ccf7258a, type: 3}
+  m_jumpY: 100
+  vel: 5
 --- !u!114 &2293969753719798329
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -126,21 +141,7 @@ MonoBehaviour:
   velocidadRotacion: 240
   posicionTronco: {x: 0, y: 0, z: 0}
   alturaTronco: 0
---- !u!114 &2293969753719798279
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2293969753719798332}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05f7b54c8dc314385a517806e84e23a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objeto: {fileID: 7013340002946980141, guid: de0748ecd01f0444383e1f7891293105, type: 3}
-  m_jumpY: 300
-  vel: 7
+  alturaEscalera: 0
 --- !u!143 &2293969753719798278
 CharacterController:
   m_ObjectHideFlags: 0

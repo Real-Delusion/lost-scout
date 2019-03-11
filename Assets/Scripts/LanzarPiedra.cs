@@ -11,7 +11,7 @@ public class LanzarPiedra : MonoBehaviour
     //Velocidad lanzamiento piedra
     public float vel = 2f;
 
-    private bool piedra = false; //La piedra es false cuando no está en el escenario
+    private bool piedra; //La piedra es false cuando no está en el escenario
 
     // Update is called once per frame
     void Update()
