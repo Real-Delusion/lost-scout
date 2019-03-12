@@ -60,11 +60,6 @@ public class CajaParaSubir : MonoBehaviour
 
         }
 
-        // Si está fuera del radio del objeto
-        else
-        {
-            // mantenemos el estado del player en andando
-            playerController.Estado = PlayerController.EstadosPlayer.Andar;
-        }
+        
     }
 }
