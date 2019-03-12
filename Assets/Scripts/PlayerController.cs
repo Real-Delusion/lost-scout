@@ -73,7 +73,7 @@ public class PlayerController : MonoBehaviour
                 // calculamos su nueva posición a partir de la posición del tronco, mi posición y las alturas
                 // en los ejes x, z moverá a la posición del tronco
                 // en el eje y, moverá a la posicón del tronco + su altura + la mitad de la altura del player
-                nuevaPosicion = new Vector3(posicionTronco.x, posicionTronco.y + alturaTronco/2 + miAltura/2, posicionTronco.z);
+                nuevaPosicion = new Vector3(posicionTronco.x, posicionTronco.y + alturaTronco + miAltura/2, posicionTronco.z);
                 Debug.Log("nueva = " + nuevaPosicion);
 
             }
@@ -163,7 +163,7 @@ public class PlayerController : MonoBehaviour
             
             t += 0.01f;
 
-            if (t < 1.0f){
+            if (t < 0.2f){
                 //Debug.Log(t.ToString());
                 // Cambiamos de posición de forma smooth
                 this.transform.localPosition = Vector3.Lerp(transform.position, nuevaPosicion, t);
