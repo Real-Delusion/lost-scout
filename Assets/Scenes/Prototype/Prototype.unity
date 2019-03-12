@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641234, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3242,6 +3242,49 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2027524151}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &678900517
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 678900519}
+  - component: {fileID: 678900518}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &678900518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 678900517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a49db0a184b17ab409e8c4889e436dd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &678900519
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 678900517}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -19.304085, y: 11.894515, z: -15.635655}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &718699381
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4038,7 +4081,7 @@ PrefabInstance:
     - target: {fileID: 1505943985064290811, guid: 4ba974f665a99ba989dfeebc0eabf50c,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.60153055
+      value: 0.6015305
       objectReference: {fileID: 0}
     - target: {fileID: 1505943985064290811, guid: 4ba974f665a99ba989dfeebc0eabf50c,
         type: 3}
@@ -4063,7 +4106,7 @@ PrefabInstance:
     - target: {fileID: 1505943985064290811, guid: 4ba974f665a99ba989dfeebc0eabf50c,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7400618
+      value: 0.74006176
       objectReference: {fileID: 0}
     - target: {fileID: 1505943984338579245, guid: 4ba974f665a99ba989dfeebc0eabf50c,
         type: 3}
