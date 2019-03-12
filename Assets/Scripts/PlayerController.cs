@@ -84,8 +84,8 @@ public class PlayerController : MonoBehaviour
                 // calculamos su nueva posición a partir de la posición del tronco, mi posición y las alturas
                 // en los ejes x, z moverá a la posición del tronco
                 // en el eje y, moverá a la posicón del tronco + su altura + la mitad de la altura del player
-                nuevaPosicion = new Vector3(transform.position.x, transform.position.y + alturaEscalera + miAltura/2, transform.position.z);
-                Debug.Log("nueva = " + nuevaPosicion);
+                nuevaPosicion = new Vector3(transform.position.x, transform.position.y + alturaEscalera + (miAltura+5)/2, transform.position.z);
+                Debug.Log("Estado: Subir escalera");
 
             }
         }
@@ -112,7 +112,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(Estado);
+        //Debug.Log(Estado);
         // Si el estado del player es andar o empujar, se mantendrá el movimiento normal del player (con flechas)
         if (Estado == EstadosPlayer.Andar || Estado == EstadosPlayer.Empujar)
         {
@@ -175,11 +175,12 @@ public class PlayerController : MonoBehaviour
 
         // Si el estado del player es subir escaleras
         if (Estado == EstadosPlayer.SubirEscalera) {
-            
-            t += 0.01f;
+            Debug.Log("yeeah");
+
+            t += 0.03f;
 
             if (t < 1.0f){
-                //Debug.Log(t.ToString());
+                Debug.Log("Subiendo");
                 // Cambiamos de posición de forma smooth
                 this.transform.localPosition = Vector3.Lerp(transform.position, nuevaPosicion, t);
             }else{
