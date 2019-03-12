@@ -60,7 +60,6 @@ public class PlayerController : MonoBehaviour
             // Si el estado es empujar
             if (_estado == EstadosPlayer.Empujar)
             {
-                //transform.localRotation.SetEulerAngles(0, 0, 0);
                 Debug.Log("empujando");
                 // aquí añadiremos animación de empujar del personaje
             }
@@ -132,14 +131,9 @@ public class PlayerController : MonoBehaviour
             // Obtenemos los angulos de Euler
             turnAmount = Mathf.Atan2(move.x, move.z);
 
-            if (Estado == EstadosPlayer.Empujar) {
-                // Si está empujando, el player no rota
-                transform.Rotate(0, 0, 0);
-            }
-            else {
-                // Si está andando rota de forma normal
+
                 transform.Rotate(0, turnAmount * velocidadRotacion * Time.deltaTime, 0);
-            }
+            
 
             //Si el personaje esta tocando tierra...
 
