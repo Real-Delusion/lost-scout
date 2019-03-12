@@ -62,7 +62,7 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GameObject piedra = GameObject.Find("Piedra(Clone)");
+        GameObject piedra = GameObject.Find("Stone_2(Clone)");
         
         //Según en que estado este el patrullero 
         switch (Estado)
