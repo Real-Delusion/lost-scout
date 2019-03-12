@@ -60,8 +60,7 @@ public class PlayerController : MonoBehaviour
             // Si el estado es empujar
             if (_estado == EstadosPlayer.Empujar)
             {
-                //transform.Rotate(0, 0, 0);
-                transform.localRotation.SetEulerAngles(0, 0, 0);
+                //transform.localRotation.SetEulerAngles(0, 0, 0);
                 Debug.Log("empujando");
                 // aquí añadiremos animación de empujar del personaje
             }
@@ -71,13 +70,10 @@ public class PlayerController : MonoBehaviour
             {
                 Debug.Log("Subiendo");
 
-                // la velocidad a la que subirá
-                float step = velocidad * Time.deltaTime;
-
                 // calculamos su nueva posición a partir de la posición del tronco, mi posición y las alturas
                 // en los ejes x, z moverá a la posición del tronco
                 // en el eje y, moverá a la posicón del tronco + su altura + la mitad de la altura del player
-                nuevaPosicion = new Vector3(posicionTronco.x, posicionTronco.y + alturaTronco + miAltura/2, posicionTronco.z);
+                nuevaPosicion = new Vector3(posicionTronco.x, posicionTronco.y + alturaTronco/2 + miAltura/2, posicionTronco.z);
                 Debug.Log("nueva = " + nuevaPosicion);
 
             }
@@ -85,9 +81,6 @@ public class PlayerController : MonoBehaviour
             // Si el estado es subir
             if (_estado == EstadosPlayer.SubirEscalera)
             {
-                // la velocidad a la que subirá
-                float step = velocidad * Time.deltaTime;
-
                 // calculamos su nueva posición a partir de la posición del tronco, mi posición y las alturas
                 // en los ejes x, z moverá a la posición del tronco
                 // en el eje y, moverá a la posicón del tronco + su altura + la mitad de la altura del player
@@ -165,22 +158,29 @@ public class PlayerController : MonoBehaviour
             _characterController.Move(_dirMov * Time.deltaTime);
         }
 
-        // Si el estado del player es subir, durante el movimiento de subida no podrá usar las flechas para desplazarse
+         // Si el estado del player es subir escaleras
         if (Estado == EstadosPlayer.Subir) {
-
-            // Cambiamos de posición de forma smooth
-            this.transform.localPosition = Vector3.Lerp(transform.position, nuevaPosicion, Time.deltaTime);
-        }
-
-        // Si el estado del player es subir escaleras
-        if (Estado == EstadosPlayer.SubirEscalera) {
-            // Cambiamos de posición de forma smooth
-
             
             t += 0.01f;
 
             if (t < 1.0f){
-                Debug.Log(t.ToString());
+                //Debug.Log(t.ToString());
+                // Cambiamos de posición de forma smooth
+                this.transform.localPosition = Vector3.Lerp(transform.position, nuevaPosicion, t);
+            }else{
+                this.Estado = EstadosPlayer.Andar;
+                t = 0.0f;       
+            }
+        }
+
+        // Si el estado del player es subir escaleras
+        if (Estado == EstadosPlayer.SubirEscalera) {
+            
+            t += 0.01f;
+
+            if (t < 1.0f){
+                //Debug.Log(t.ToString());
+                // Cambiamos de posición de forma smooth
                 this.transform.localPosition = Vector3.Lerp(transform.position, nuevaPosicion, t);
             }else{
                 this.Estado = EstadosPlayer.Andar;

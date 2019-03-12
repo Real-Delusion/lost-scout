@@ -86,8 +86,8 @@ public class CajaEmpujable : MonoBehaviour
         // Si el jugador entra en el radio del objeto
         if (Vector3.Distance(player.transform.position, transform.position) < radio)
         {
-            Debug.Log("Mantén pulsado E para empujar la caja");
-            if (Input.GetKey(KeyCode.E) && Vector3.Distance(player.transform.position, transform.position) < radio)
+            Debug.Log("Mantén pulsado clicl derecho para empujar la caja");
+            if (Input.GetKey(KeyCode.Mouse1) && Vector3.Distance(player.transform.position, transform.position) < radio)
             {
                 Estado = EstadosCaja.Dinamico;
 
@@ -97,8 +97,6 @@ public class CajaEmpujable : MonoBehaviour
             else
             {
                 Estado = EstadosCaja.Estatico;
-                // cambiamos el estado del player a andando
-                playerController.Estado = PlayerController.EstadosPlayer.Andar;
             }
         }
 
