@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641234, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.4465785, g: 0.49641252, b: 0.574817, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1322,6 +1322,12 @@ Transform:
 --- !u!1 &275972432 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1919532527514874, guid: f1c8fc589b1f4a948bc0ce99ab2baa36,
+    type: 3}
+  m_PrefabInstance: {fileID: 916840776}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &275972435 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4595934115956124, guid: f1c8fc589b1f4a948bc0ce99ab2baa36,
     type: 3}
   m_PrefabInstance: {fileID: 916840776}
   m_PrefabAsset: {fileID: 0}
@@ -4081,7 +4087,7 @@ PrefabInstance:
     - target: {fileID: 1505943985064290811, guid: 4ba974f665a99ba989dfeebc0eabf50c,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.60153055
+      value: 0.6015305
       objectReference: {fileID: 0}
     - target: {fileID: 1505943985064290811, guid: 4ba974f665a99ba989dfeebc0eabf50c,
         type: 3}
@@ -4091,22 +4097,22 @@ PrefabInstance:
     - target: {fileID: 1505943985064290811, guid: 4ba974f665a99ba989dfeebc0eabf50c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.5380206
+      value: 3.61
       objectReference: {fileID: 0}
     - target: {fileID: 1505943985064290811, guid: 4ba974f665a99ba989dfeebc0eabf50c,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4.4501905
+      value: -6.14
       objectReference: {fileID: 0}
     - target: {fileID: 1505943985064290811, guid: 4ba974f665a99ba989dfeebc0eabf50c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.5741425
+      value: -12.68
       objectReference: {fileID: 0}
     - target: {fileID: 1505943985064290811, guid: 4ba974f665a99ba989dfeebc0eabf50c,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7400618
+      value: 0.74006176
       objectReference: {fileID: 0}
     - target: {fileID: 1505943984338579245, guid: 4ba974f665a99ba989dfeebc0eabf50c,
         type: 3}
@@ -4193,6 +4199,11 @@ PrefabInstance:
       propertyPath: m_LookAt
       value: 
       objectReference: {fileID: 5394752}
+    - target: {fileID: 1505943984487969908, guid: 4ba974f665a99ba989dfeebc0eabf50c,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1505943984487969909, guid: 4ba974f665a99ba989dfeebc0eabf50c,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -4207,6 +4218,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.y
       value: 4.5380206
+      objectReference: {fileID: 0}
+    - target: {fileID: 1505943985064290808, guid: 4ba974f665a99ba989dfeebc0eabf50c,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ba974f665a99ba989dfeebc0eabf50c, type: 3}
@@ -9710,6 +9726,32 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1865640728}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1888808806 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1505943985064290812, guid: 4ba974f665a99ba989dfeebc0eabf50c,
+    type: 3}
+  m_PrefabInstance: {fileID: 835460657}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1888808808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1888808806}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 998e22959dd9ac540bacc9ea723d3f99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerTransform: {fileID: 275972435}
+  SmoothFactor: 0.5
+  LookAtPlayer: 0
+  RotateAroundPlayer: 1
+  RotateMiddleMouseButton: 0
+  RotationsSpeed: 5
+  CameraPitchMin: 1.5
+  CameraPitchMax: 6.5
 --- !u!1 &1897371954
 GameObject:
   m_ObjectHideFlags: 0
