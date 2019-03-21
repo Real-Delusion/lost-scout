@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class Camara : MonoBehaviour
 {
-    public Transform PlayerTransform;
+    public Transform TargetTransform;
 
     private Vector3 _cameraOffset;
 
     [Range(0.01f, 1.0f)]
     public float SmoothFactor = 0.5f;
 
-    public bool LookAtPlayer = false;
+    public bool LookAtTarget = false;
 
-    public bool RotateAroundPlayer = true;
+    public bool RotateAroundTarget = true;
 
     public bool RotateMiddleMouseButton = true;
 
@@ -26,14 +26,14 @@ public class Camara : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        _cameraOffset = transform.position - PlayerTransform.position;
+        _cameraOffset = transform.position - TargetTransform.position;
     }
 
     private bool IsRotateActive
     {
         get
         {
-            if (!RotateAroundPlayer)
+            if (!RotateAroundTarget)
                 return false;
 
             if (!RotateMiddleMouseButton)
@@ -71,11 +71,11 @@ public class Camara : MonoBehaviour
 
         }
 
-        Vector3 newPos = PlayerTransform.position + _cameraOffset;
+        Vector3 newPos = TargetTransform.position + _cameraOffset;
 
         transform.position = Vector3.Slerp(transform.position, newPos, SmoothFactor);
 
-        if (LookAtPlayer || RotateAroundPlayer)
-            transform.LookAt(PlayerTransform);
+        if (LookAtTarget || RotateAroundTarget)
+            transform.LookAt(TargetTransform);
     }
 }
