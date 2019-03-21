@@ -10258,7 +10258,7 @@ Transform:
   - {fileID: 1121904611}
   - {fileID: 1189347331}
   m_Father: {fileID: 2141968186}
-  m_RootOrder: 7
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1145022053
 PrefabInstance:
@@ -20476,13 +20476,13 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1269021911}
+  - {fileID: 1139226116}
   - {fileID: 718699382}
   - {fileID: 725494569}
   - {fileID: 848284026}
   - {fileID: 1440036253}
   - {fileID: 103944172}
   - {fileID: 1449013713}
-  - {fileID: 1139226116}
   m_Father: {fileID: 1497345699}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -20517,10 +20517,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 998e22959dd9ac540bacc9ea723d3f99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerTransform: {fileID: 496241584}
+  TargetTransform: {fileID: 496241584}
   SmoothFactor: 0.5
-  LookAtPlayer: 0
-  RotateAroundPlayer: 1
+  LookAtTarget: 0
+  RotateAroundTarget: 1
   RotateMiddleMouseButton: 0
   RotationsSpeed: 5
   CameraPitchMin: 1.5
