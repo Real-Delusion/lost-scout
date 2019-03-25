@@ -1,0 +1,227 @@
+fileFormatVersion: 2
+guid: 2550cbf98803b2a4da190213f9ced9c6
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: palo horizontal 1
+    100004: palo horizontal 2
+    100006: palo horizontal 3
+    100008: palo horizontal 4
+    100010: palo horizontal 5
+    100012: palo horizontal 6
+    100014: palo horizontal 7
+    100016: palo003
+    100018: palo004
+    100020: palo005
+    100022: palo006
+    100024: palo007
+    100026: palo1
+    100028: palo2
+    100030: palodcho
+    100032: paloizq
+    100034: palos verticales
+    100036: tornillo
+    100038: tornillo001
+    100040: tornillo002
+    100042: tornillo003
+    100044: tornillo004
+    100046: tornillo005
+    100048: tornillo006
+    100050: tornillo007
+    100052: tornillo008
+    100054: tornillo009
+    100056: tornillo010
+    100058: tornillo011
+    100060: tornillo012
+    100062: tornillo013
+    400000: //RootNode
+    400002: palo horizontal 1
+    400004: palo horizontal 2
+    400006: palo horizontal 3
+    400008: palo horizontal 4
+    400010: palo horizontal 5
+    400012: palo horizontal 6
+    400014: palo horizontal 7
+    400016: palo003
+    400018: palo004
+    400020: palo005
+    400022: palo006
+    400024: palo007
+    400026: palo1
+    400028: palo2
+    400030: palodcho
+    400032: paloizq
+    400034: palos verticales
+    400036: tornillo
+    400038: tornillo001
+    400040: tornillo002
+    400042: tornillo003
+    400044: tornillo004
+    400046: tornillo005
+    400048: tornillo006
+    400050: tornillo007
+    400052: tornillo008
+    400054: tornillo009
+    400056: tornillo010
+    400058: tornillo011
+    400060: tornillo012
+    400062: tornillo013
+    2100000: 'Material #13'
+    2100002: 'Material #14'
+    2100004: No Name
+    2300000: palo003
+    2300002: palo004
+    2300004: palo005
+    2300006: palo006
+    2300008: palo007
+    2300010: palo1
+    2300012: palo2
+    2300014: palodcho
+    2300016: paloizq
+    2300018: tornillo
+    2300020: tornillo001
+    2300022: tornillo002
+    2300024: tornillo003
+    2300026: tornillo004
+    2300028: tornillo005
+    2300030: tornillo006
+    2300032: tornillo007
+    2300034: tornillo008
+    2300036: tornillo009
+    2300038: tornillo010
+    2300040: tornillo011
+    2300042: tornillo012
+    2300044: tornillo013
+    3300000: palo003
+    3300002: palo004
+    3300004: palo005
+    3300006: palo006
+    3300008: palo007
+    3300010: palo1
+    3300012: palo2
+    3300014: palodcho
+    3300016: paloizq
+    3300018: tornillo
+    3300020: tornillo001
+    3300022: tornillo002
+    3300024: tornillo003
+    3300026: tornillo004
+    3300028: tornillo005
+    3300030: tornillo006
+    3300032: tornillo007
+    3300034: tornillo008
+    3300036: tornillo009
+    3300038: tornillo010
+    3300040: tornillo011
+    3300042: tornillo012
+    3300044: tornillo013
+    4300000: palodcho
+    4300002: paloizq
+    4300004: palo007
+    4300006: tornillo011
+    4300008: tornillo013
+    4300010: palo006
+    4300012: tornillo010
+    4300014: tornillo012
+    4300016: palo005
+    4300018: tornillo009
+    4300020: tornillo007
+    4300022: palo004
+    4300024: tornillo008
+    4300026: tornillo006
+    4300028: palo003
+    4300030: tornillo004
+    4300032: tornillo005
+    4300034: palo2
+    4300036: tornillo003
+    4300038: tornillo002
+    4300040: palo1
+    4300042: tornillo001
+    4300044: tornillo
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
