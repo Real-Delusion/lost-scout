@@ -5,6 +5,7 @@ using UnityEngine;
 public class Camara : MonoBehaviour
 {
     public Transform TargetTransform;
+    public Transform PlayerTransform;
     private Vector3 _cameraOffset;
 
     [Range(0.01f, 1.0f)]
@@ -48,6 +49,7 @@ public class Camara : MonoBehaviour
     // LateUpdate is called after Update methods
     void LateUpdate()
     {
+        transform.position = new Vector3(transform.position.x, PlayerTransform.position.y,transform.position.z);
         if (IsRotateActive)
         {
 
