@@ -122,7 +122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05f7b54c8dc314385a517806e84e23a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objeto: {fileID: 1527084976354986, guid: a163a788b0576c54da24c537ccf7258a, type: 3}
+  objeto: {fileID: 2831380442485055345, guid: a40be4cd2d2584db3b84d23e17a43bd7, type: 3}
   m_jumpY: 100
   vel: 5
 --- !u!114 &364881718
