@@ -20,11 +20,11 @@ public class LanzarPiedra : MonoBehaviour
        if (Input.GetKeyDown(KeyCode.Mouse0) && !piedra) // Si se pulsa el boton izq. del mouse y la piedra es false
        {
                 //Creo una nueva piedra
-                GameObject nuevaPiedra = Instantiate(objeto) as GameObject;
+                GameObject nuevoSteak = Instantiate(objeto) as GameObject;
                 //Posicion donde empieza la piedra
-                nuevaPiedra.transform.position = transform.position + transform.forward * 1; //El 1 es la distancia entre la piedra y el personaje al lanzarla
+                nuevoSteak.transform.position = transform.position + transform.forward * 1; //El 1 es la distancia entre la piedra y el personaje al lanzarla
                 //Buscar rigidbody de la piedra
-                Rigidbody rb = nuevaPiedra.GetComponent<Rigidbody>();
+                Rigidbody rb = nuevoSteak.GetComponent<Rigidbody>();
                 //Añadir velocidad a la piedra
                 rb.velocity = transform.forward * vel;
                 //Añadir una fuerza en el eje Y
@@ -33,9 +33,9 @@ public class LanzarPiedra : MonoBehaviour
                 
         }
         //Destruir piedra a los 5s
-        Destroy(GameObject.Find("Stone_2(Clone)"), 5);
+        Destroy(GameObject.Find("steak(Clone)"), 5);
 
-        if (!GameObject.Find("Stone_2(Clone)")) //Si no hay ningun objeto que se llame Piedra(Clone), puedes volver a lanzar la piedra
+        if (!GameObject.Find("steak(Clone)")) //Si no hay ningun objeto que se llame Piedra(Clone), puedes volver a lanzar la piedra
         {
             piedra = false; //La piedra no está en el escenario
         }
