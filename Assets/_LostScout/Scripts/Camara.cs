@@ -5,7 +5,6 @@ using UnityEngine;
 public class Camara : MonoBehaviour
 {
     public Transform TargetTransform;
-
     private Vector3 _cameraOffset;
 
     [Range(0.01f, 1.0f)]
@@ -53,13 +52,13 @@ public class Camara : MonoBehaviour
         {
 
             float h = Input.GetAxis("Mouse X") * RotationsSpeed;
-            float v = transform.position.y;
+            //float v = Input.GetAxis("Mouse Y") * RotationsSpeed;
 
             Quaternion camTurnAngle = Quaternion.AngleAxis(h, Vector3.up);
 
-            Quaternion camTurnAngleY = Quaternion.AngleAxis(v, transform.right);
+            //Quaternion camTurnAngleY = Quaternion.AngleAxis(v, transform.right);
 
-            Vector3 newCameraOffset = camTurnAngle * camTurnAngleY * _cameraOffset;
+            Vector3 newCameraOffset = camTurnAngle * _cameraOffset;
 
             // Limit camera pitch
             if (newCameraOffset.y < CameraPitchMin || newCameraOffset.y > CameraPitchMax)
