@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - TroncoEmpujar
+  - checkpoint
   layers:
   - Default
   - TransparentFX

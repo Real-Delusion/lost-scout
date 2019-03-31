@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 7cba0fd43db083ee48e64497e228e78f
+guid: 7f578a26b86ffe0498013514431132f3
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -47,21 +47,11 @@ ModelImporter:
     4300010: clavo002
     4300012: clavo003
     4300014: clavo004
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: 01 - Default
-    second: {fileID: 2100000, guid: 38175c9272b84154c9964a15be9698f8, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: No Name
-    second: {fileID: 2100000, guid: 01b4868f27a8d407f81f5a1df2f288a1, type: 2}
+  externalObjects: {}
   materials:
     importMaterials: 1
-    materialName: 1
-    materialSearch: 0
+    materialName: 0
+    materialSearch: 1
     materialLocation: 1
   animations:
     legacyGenerateAnimations: 4
@@ -114,7 +104,7 @@ ModelImporter:
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
-    tangentImportMode: 2
+    tangentImportMode: 3
     normalCalculationMode: 4
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
