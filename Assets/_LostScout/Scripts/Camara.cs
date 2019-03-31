@@ -11,6 +11,8 @@ public class Camara : MonoBehaviour
     [Range(0.01f, 1.0f)]
     public float SmoothFactor = 0.5f;
 
+    public float cameraPlayerOffset = 5.0f;
+
     public bool LookAtTarget = false;
 
     public bool RotateAroundTarget = true;
@@ -49,7 +51,7 @@ public class Camara : MonoBehaviour
     // LateUpdate is called after Update methods
     void LateUpdate()
     {
-        transform.position = new Vector3(transform.position.x, PlayerTransform.position.y,transform.position.z);
+        transform.position = new Vector3(transform.position.x, (PlayerTransform.position.y)+cameraPlayerOffset,transform.position.z);
         if (IsRotateActive)
         {
 
