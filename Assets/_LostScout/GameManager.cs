@@ -33,7 +33,7 @@ public class GameManager : MonoBehaviour
         if (Vector3.Distance(player.transform.position, checkpoint.transform.position) < radioCheckpoint)
         {
             // aquí incluir animación del player
-            SceneManager.LoadScene("SelectLevel");
+            SceneManager.LoadScene("SeleccionNivel");
         }
     }
 
