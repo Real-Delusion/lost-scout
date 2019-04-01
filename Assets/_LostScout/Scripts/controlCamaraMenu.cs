@@ -6,9 +6,14 @@ public class controlCamaraMenu : MonoBehaviour
 {
     public Transform CamTransform;
     public Transform PointTransform;
+    public GameObject seleccionadorLv;
+    private Vector3 nuevaPosicion;
 
     public void moverCamara() {
 
-        CamTransform.position = PointTransform.position;
+        //Debug.Log(t.ToString());
+        // Cambiamos de posición de forma smooth
+        nuevaPosicion = PointTransform.position;
+        this.transform.localPosition = nuevaPosicion;
     }
 }
