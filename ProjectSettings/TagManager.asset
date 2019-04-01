@@ -6,6 +6,7 @@ TagManager:
   tags:
   - TroncoEmpujar
   - checkpoint
+  - Canvas
   layers:
   - Default
   - TransparentFX

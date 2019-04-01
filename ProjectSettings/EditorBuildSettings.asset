@@ -4,6 +4,7 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
+<<<<<<< HEAD
   m_Scenes:
   - enabled: 1
     path: Assets/_LostScout/Scenes/Niveles/Nivel 1/Nivel 1.unity
@@ -11,4 +12,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_LostScout/Scenes/Menu/MainMenuScreen.unity
     guid: f631aa9bed6b80e44ae710e8c8d103b1
+=======
+  m_Scenes: []
+>>>>>>> Añadida escena nivel 1
   m_configObjects: {}
