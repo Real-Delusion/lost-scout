@@ -748,6 +748,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3124028698019010039, guid: cc9438c7957b9a826aee30027a6d39ec,
+        type: 3}
+      propertyPath: radioCheckpoint
+      value: 1.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cc9438c7957b9a826aee30027a6d39ec, type: 3}
 --- !u!4 &744219253 stripped
@@ -1236,6 +1241,10 @@ PrefabInstance:
     - target: {fileID: 100014, guid: d03ca7cc8353440c1af0434aed840ed9, type: 3}
       propertyPath: m_Name
       value: senyal
+      objectReference: {fileID: 0}
+    - target: {fileID: 100014, guid: d03ca7cc8353440c1af0434aed840ed9, type: 3}
+      propertyPath: m_TagString
+      value: checkpoint
       objectReference: {fileID: 0}
     - target: {fileID: 400014, guid: d03ca7cc8353440c1af0434aed840ed9, type: 3}
       propertyPath: m_LocalPosition.x
