@@ -203,7 +203,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 747902229}
-  - component: {fileID: 747902228}
   - component: {fileID: 747902230}
   m_Layer: 0
   m_Name: LevelSelectManager
@@ -212,18 +211,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &747902228
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 747902227}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee8cbb0ad7a4bac228ddf72cd14fbfcc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &747902229
 Transform:
   m_ObjectHideFlags: 0
@@ -251,10 +238,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lvlBtn: {fileID: 1228550370676037206, guid: 5328e30d9e20a7718a9e23718c077db7, type: 3}
-  niveles:
-  - {fileID: 0}
+  niveles: []
   CanvasTarget: {fileID: 1143104737}
-  miniaturas: []
+  miniaturas:
+  - {fileID: 21300000, guid: 2ba0318233b74da8887b407200f25a21, type: 3}
+  - {fileID: 21300000, guid: 12320f5a6390e1ea6a22e6a522bac3b0, type: 3}
+  - {fileID: 21300000, guid: b00956cebd99daf7f9b90020886f690a, type: 3}
   lockedMarco: {fileID: 21300000, guid: ae662ba8caafea2268d4321d9977742b, type: 3}
 --- !u!1 &833655552
 GameObject:
