@@ -15,5 +15,7 @@ public class controlCamaraMenu : MonoBehaviour
         // Cambiamos de posición de forma smooth
         nuevaPosicion = PointTransform.position;
         this.transform.localPosition = nuevaPosicion;
+        Animator anim = GetComponent<Animator>();
+        anim.SetBool("Zoom", !anim.GetBool("Zoom"));        
     }
 }
