@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class controlCamaraMenu : MonoBehaviour
 {
@@ -22,6 +23,7 @@ public class controlCamaraMenu : MonoBehaviour
 
     public void delay()
     {
-        seleccionadorLv.SetActive(true);
+        SceneManager.LoadScene("SeleccionNivel");
+        //seleccionadorLv.SetActive(true);
     }
 }
