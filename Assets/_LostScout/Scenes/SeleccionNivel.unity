@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4465785, g: 0.49641252, b: 0.574817, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.5748169, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -123,6 +123,7 @@ GameObject:
   - component: {fileID: 650181989}
   - component: {fileID: 650181988}
   - component: {fileID: 650181987}
+  - component: {fileID: 650181990}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -194,71 +195,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &747902227
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 747902229}
-  - component: {fileID: 747902228}
-  - component: {fileID: 747902230}
-  m_Layer: 0
-  m_Name: GameManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &747902228
+--- !u!114 &650181990
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 747902227}
+  m_GameObject: {fileID: 650181986}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a49db0a184b17ab409e8c4889e436dd8, type: 3}
+  m_Script: {fileID: 11500000, guid: bc98444ea3aa72c7fa903ae56db68ff7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  niveles: []
-  radioCheckpoint: 1
---- !u!4 &747902229
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 747902227}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.4577856, y: -0.42411423, z: -5.570717}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &747902230
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 747902227}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa842c8c7371af684bb702d134153b81, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lvlBtn: {fileID: 1228550370676037206, guid: 5328e30d9e20a7718a9e23718c077db7, type: 3}
-  CanvasTarget: {fileID: 1143104737}
-  miniaturas:
-  - {fileID: 21300000, guid: 2ba0318233b74da8887b407200f25a21, type: 3}
-  - {fileID: 21300000, guid: 12320f5a6390e1ea6a22e6a522bac3b0, type: 3}
-  - {fileID: 21300000, guid: b00956cebd99daf7f9b90020886f690a, type: 3}
-  lockedMarco: {fileID: 21300000, guid: ae662ba8caafea2268d4321d9977742b, type: 3}
+  gameManager: {fileID: 3124028698019010036, guid: cc9438c7957b9a826aee30027a6d39ec,
+    type: 3}
 --- !u!1 &833655552
 GameObject:
   m_ObjectHideFlags: 0
@@ -416,7 +366,7 @@ GameObject:
   - component: {fileID: 1143104738}
   m_Layer: 5
   m_Name: Canvas
-  m_TagString: Untagged
+  m_TagString: NivelesCanvas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -494,7 +444,7 @@ RectTransform:
   m_Children:
   - {fileID: 1077006423}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -565,5 +515,5 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
