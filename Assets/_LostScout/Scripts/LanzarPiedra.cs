@@ -17,7 +17,7 @@ public class LanzarPiedra : MonoBehaviour
     void Update()
     {
        
-       if (Input.GetKeyDown(KeyCode.Mouse0) && !piedra) // Si se pulsa el boton izq. del mouse y la piedra es false
+       if ((Input.GetKeyDown(KeyCode.Mouse0) | Input.GetKeyDown("joystick button 5") )&& !piedra) // Si se pulsa el boton izq. del mouse y la piedra es false
        {
                 //Creo una nueva piedra
                 GameObject nuevoSteak = Instantiate(objeto) as GameObject;

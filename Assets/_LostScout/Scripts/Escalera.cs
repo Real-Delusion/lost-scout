@@ -37,7 +37,7 @@ public class Escalera : MonoBehaviour
         if (Vector3.Distance(player.transform.position, transform.position) < radio)
         {
             // Si está en el radio y pulsa espacio
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Space) | Input.GetKeyDown("joystick button 0"))
             {
                 Debug.Log("Se puede subir");
                 // mandamos la posición y la altura de la caja al otro script

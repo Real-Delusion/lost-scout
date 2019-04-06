@@ -47,7 +47,7 @@ public class CajaParaSubir : MonoBehaviour
         {
             Debug.Log("Pulse espacio para subirse a la caja");
             // Si está en el radio y pulsa espacio
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Space) | Input.GetKeyDown("joystick button 0"))
             {
                 // mandamos la posición y la altura de la caja al otro script
                 // el script playercontroller cambiará la posición del player usando estos parámetros
