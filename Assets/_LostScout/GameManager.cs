@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    //Static instance of GameManager which allows it to be accessed by any other script.
     public static GameManager instance = null;
     public List<Nivel> niveles;
     public NivelesManager nivelesManager;
@@ -22,16 +23,20 @@ public class GameManager : MonoBehaviour
         //Gizmos.DrawWireSphere(checkpoint.transform.position, radioCheckpoint);
     }
 
-    // Start is called before the first frame update
+    //Awake is always called before any Start functions
     void Awake()
     {
+        //Check if instance already exists
         if(instance == null){
-            instance = this;
-        }else if (instance != this){
-            Destroy(gameObject);
+            instance = this; //if not, set instance to this
+            InitGame(); //Call the InitGame function to initialize the game
+        }else if (instance != this){ //If instance already exists and it's not this:
+            Destroy(gameObject); //Then destroy this. This enforces our singleton pattern, meaning there can only ever be one instance of a GameManager.
         }
         
+        //Sets this to not be destroyed when reloading scene
         DontDestroyOnLoad(gameObject);
+        
         // Hide cursor
         Cursor.visible = false;
 
@@ -39,17 +44,6 @@ public class GameManager : MonoBehaviour
 
         // Create a temporary reference to the current scene.
         Scene currentScene = SceneManager.GetActiveScene ();
-
-        // Create Levels
-        niveles =  new List<Nivel>();
-
-        var nivel1 = new Nivel(1,"Nivel 1",false,0,false,60,1);
-        var nivel2 = new Nivel(2,"Nivel 2",false,0,false,60,5);
-        var nivel3 = new Nivel(3,"Nivel 3",false,0,true,60,5);
-        
-        niveles.Add(nivel1);
-        niveles.Add(nivel2);
-        niveles.Add(nivel3);
 
         // Enable cursor and print levels if we are in SeleccionNivel scene
         if(currentScene.name == "SeleccionNivel"){
@@ -66,6 +60,19 @@ public class GameManager : MonoBehaviour
         /*player = GameObject.FindGameObjectWithTag("Player");
         checkpoint = GameObject.FindGameObjectWithTag("checkpoint");
         */
+    }
+
+    void InitGame(){
+        // Create Levels
+        niveles =  new List<Nivel>();
+
+        var nivel1 = new Nivel(1,"Nivel 1",false,0,false,60,1);
+        var nivel2 = new Nivel(2,"Nivel 2",false,0,false,60,5);
+        var nivel3 = new Nivel(3,"Nivel 3",false,0,true,60,5);
+        
+        niveles.Add(nivel1);
+        niveles.Add(nivel2);
+        niveles.Add(nivel3);
     }
 
     // Update is called once per frame
