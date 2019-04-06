@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657838, g: 0.49641234, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.4465785, g: 0.49641252, b: 0.574817, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -203,14 +203,29 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 747902229}
+  - component: {fileID: 747902228}
   - component: {fileID: 747902230}
   m_Layer: 0
-  m_Name: LevelSelectManager
+  m_Name: GameManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &747902228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 747902227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a49db0a184b17ab409e8c4889e436dd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  niveles: []
+  radioCheckpoint: 1
 --- !u!4 &747902229
 Transform:
   m_ObjectHideFlags: 0
@@ -238,7 +253,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lvlBtn: {fileID: 1228550370676037206, guid: 5328e30d9e20a7718a9e23718c077db7, type: 3}
-  niveles: []
   CanvasTarget: {fileID: 1143104737}
   miniaturas:
   - {fileID: 21300000, guid: 2ba0318233b74da8887b407200f25a21, type: 3}
