@@ -5,7 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    public static GameManager instance = null;
     public List<Nivel> niveles;
+    public NivelesManager nivelesManager;
     
     GameObject player;
     GameObject checkpoint;
@@ -21,8 +23,20 @@ public class GameManager : MonoBehaviour
     }
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
+        if(instance == null){
+            instance = this;
+        }else if (instance != this){
+            Destroy(gameObject);
+        }
+        
+        DontDestroyOnLoad(gameObject);
+        // Hide cursor
+        Cursor.visible = false;
+
+        nivelesManager = GetComponent<NivelesManager>();
+
         // Create a temporary reference to the current scene.
         Scene currentScene = SceneManager.GetActiveScene ();
 
@@ -37,7 +51,18 @@ public class GameManager : MonoBehaviour
         niveles.Add(nivel2);
         niveles.Add(nivel3);
 
-        Cursor.visible = false;
+        // Enable cursor and print levels if we are in SeleccionNivel scene
+        if(currentScene.name == "SeleccionNivel"){
+            Cursor.visible = true;
+            nivelesManager.printLevels(niveles);
+        }
+
+        // Enable cursor if we are in MainMenuScreen scene
+        if(currentScene.name == "MainMenuScreen"){
+            Cursor.visible = true;
+        }
+
+
         /*player = GameObject.FindGameObjectWithTag("Player");
         checkpoint = GameObject.FindGameObjectWithTag("checkpoint");
         */
