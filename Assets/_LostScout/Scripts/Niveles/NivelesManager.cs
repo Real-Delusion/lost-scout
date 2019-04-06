@@ -6,28 +6,19 @@ using UnityEngine.SceneManagement;
 
 public class NivelesManager : MonoBehaviour
 {
+    private GameManager gameManager;
     public Transform lvlBtn;
-    public List<Nivel> niveles;
     public GameObject CanvasTarget;
     public List<Sprite> miniaturas;
     public Sprite lockedMarco;
 
     void Start()
-    {       
-        niveles =  new List<Nivel>();
-        var nivel1 = new Nivel(1,"Nivel 1",false,0,false);
-        var nivel2 = new Nivel(2,"Nivel 2",false,0,false);
-        var nivel3 = new Nivel(3,"Nivel 3",false,0,true);
-        
-        niveles.Add(nivel1);
-        niveles.Add(nivel2);
-        niveles.Add(nivel3);
-        Debug.Log(niveles[0].LevelName);
-
+    {    
+        gameManager = GetComponent<GameManager>();   
         int pos = 1010;
         
         int i = 0;
-        foreach (var level in niveles) {
+        foreach (var level in gameManager.niveles) {
             var obj = Instantiate(lvlBtn);
             obj.transform.SetParent(CanvasTarget.transform);
 
