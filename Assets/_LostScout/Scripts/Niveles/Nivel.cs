@@ -7,24 +7,28 @@ public class Nivel : MonoBehaviour
     public int ID { get; set; }
     public string LevelName { get; set; }
     public bool Completed { get; set; }
-    public int Stars { get; set; }
+    public int Insignias { get; set; }
     public bool Locked { get; set; }
+    public int MaxTime { get; set; }
+    public int MaxInteractions { get; set; }
 
-    public Nivel (int id, string levelName, bool completed, int stars, bool locked){
+    public Nivel (int id, string levelName, bool completed, int insignias, bool locked, int time, int interactions){
         this.ID = id;
         this.LevelName = levelName;
         this.Completed = completed;
-        this.Stars = stars;
+        this.Insignias = insignias;
         this.Locked = locked;
+        this.MaxTime = time;
+        this.MaxInteractions = interactions;
     }
 
     public void Complete(){
         this.Completed = true;
     }
 
-    public void Complete(int stars){
+    public void Complete(int insignias){
         this.Completed = true;
-        this.Stars = stars;
+        this.Insignias = insignias;
     }
 
     public void Lock (){
