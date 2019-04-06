@@ -6,19 +6,22 @@ using UnityEngine.SceneManagement;
 
 public class NivelesManager : MonoBehaviour
 {
-    private GameManager gameManager;
+    //private GameManager gameManager;
     public Transform lvlBtn;
     public GameObject CanvasTarget;
     public List<Sprite> miniaturas;
     public Sprite lockedMarco;
 
     void Start()
-    {    
-        gameManager = GetComponent<GameManager>();   
+    {
+    }
+
+    public void printLevels(List<Nivel> levels){
+        CanvasTarget = GameObject.FindWithTag("NivelesCanvas");    
+        //gameManager = GetComponent<GameManager>();        
         int pos = 1010;
-        
         int i = 0;
-        foreach (var level in gameManager.niveles) {
+        foreach (var level in levels) {
             var obj = Instantiate(lvlBtn);
             obj.transform.SetParent(CanvasTarget.transform);
 
@@ -45,7 +48,7 @@ public class NivelesManager : MonoBehaviour
 
             pos -= 400;
             i++;
-        }        
+        } 
     }
     
 
