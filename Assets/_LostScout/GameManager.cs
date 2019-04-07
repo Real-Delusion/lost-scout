@@ -60,15 +60,10 @@ public class GameManager : MonoBehaviour
     {
         currentScene = SceneManager.GetActiveScene ();
 
-        // Enable cursor and print levels if we are in SeleccionNivel scene
-        if(currentScene.name == "SeleccionNivel"){
-            Cursor.visible = true;
-            nivelesManager.printLevels(niveles);
-        }
-
-        // Enable cursor if we are in MainMenuScreen scene
+        // Enable cursor and print levels if we are in MainMenuScreen scene
         if(currentScene.name == "MainMenuScreen"){
             Cursor.visible = true;
+            nivelesManager.printLevels(niveles);
         }
 
         if(currentScene.name == "Nivel 1"){
