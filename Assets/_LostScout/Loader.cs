@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Loader : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class Loader : MonoBehaviour
     {
         if(GameManager.instance == null){
             Instantiate(gameManager);
+            SceneManager.LoadScene("SeleccionNivel");
         }
     }
 }
