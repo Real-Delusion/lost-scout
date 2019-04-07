@@ -66,7 +66,7 @@ public class GameManager : MonoBehaviour
             nivelesManager.printLevels(niveles);
         }
 
-        if(currentScene.name == "Nivel 1"){
+        if(currentScene.name.Contains("Nivel ")){
             player = GameObject.FindGameObjectWithTag("Player");
             checkpoint = GameObject.FindGameObjectWithTag("checkpoint");
         }
@@ -96,7 +96,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (currentScene.name == ("Nivel 1")){
+        if (currentScene.name.Contains("Nivel ")){
             //Debug.Log(Vector3.Distance(player.transform.position, checkpoint.transform.position)+"   "+radioCheckpoint);
             if (Vector3.Distance(player.transform.position, checkpoint.transform.position) < radioCheckpoint)
             {
