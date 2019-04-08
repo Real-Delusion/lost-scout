@@ -20,8 +20,8 @@ public class GameManager : MonoBehaviour
     public NivelesManager nivelesManager;
     public UIManager uiManager;
 
-    // Player input state
-    public bool inputState = true;
+
+    public bool gamePaused = false;
 
     // *** GENERIC GAME OBJECTS ***
     GameObject player;
@@ -134,19 +134,34 @@ public class GameManager : MonoBehaviour
             // Check for pause/rsume game
             if (Input.GetKeyDown(KeyCode.Escape) | Input.GetKeyDown("joystick button 7"))
             {
-                uiManager.toggleMenuPausa();
-                toggleInput();
+                if(gamePaused){
+                    ResumeGame();
+                }else
+                {
+                    PauseGame();
+                }
             }
         }
 
     }
 
+    public void ResumeGame(){
+        uiManager.toggleMenuPausa();
+        enableInput(true);
+        gamePaused = !gamePaused;
+    }
+
+    public void PauseGame(){
+        uiManager.toggleMenuPausa();
+        enableInput(false);
+        gamePaused = !gamePaused;
+    }
+
     // Enable/disable player input
-    public void toggleInput()
+    public void enableInput(bool state)
     {
-        inputState = !inputState;
-        player.GetComponent<PlayerController>().enabled = inputState;
-        camera.GetComponent<Camara>().enabled = inputState;
+        player.GetComponent<PlayerController>().enabled = state;
+        camera.GetComponent<Camara>().enabled = state;
     }
 
 }
