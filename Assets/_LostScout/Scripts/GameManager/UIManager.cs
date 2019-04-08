@@ -27,6 +27,6 @@ public class UIManager : MonoBehaviour
     }
 
     public void showMenuPuntuacion (){
-        menuPausa.SetActive(true);
+        menuPuntuacion.SetActive(true);
     }
 }

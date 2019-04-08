@@ -674,6 +674,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuPausa: {fileID: 6997368462152053831}
+  menuPuntuacion: {fileID: 7354264020671584284}
   cursorState: 0
 --- !u!114 &2682596910310308365
 MonoBehaviour:
