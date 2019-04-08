@@ -36,7 +36,7 @@ public class MenuPausa : MonoBehaviour
     }
 
     public void exit(){
-        gameManager.uiManager.toggleMenuPausa();
+        gameManager.ResumeGame();
         SceneManager.LoadScene("MainMenuScreen");
     }
 }
