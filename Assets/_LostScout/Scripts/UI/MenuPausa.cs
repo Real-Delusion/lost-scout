@@ -25,7 +25,7 @@ public class MenuPausa : MonoBehaviour
 
     public void restart(){
         Scene currentScene = SceneManager.GetActiveScene();
-        //gameManager.toggleMenuPausa();
+        gameManager.uiManager.toggleMenuPausa();
         SceneManager.LoadScene(currentScene.name);
     }
 
@@ -33,7 +33,7 @@ public class MenuPausa : MonoBehaviour
     }
 
     public void exit(){
-        //uiManager.toggleMenuPausa();
+        gameManager.uiManager.toggleMenuPausa();
         SceneManager.LoadScene("MainMenuScreen");
     }
 }
