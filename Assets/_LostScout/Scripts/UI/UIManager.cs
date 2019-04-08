@@ -6,12 +6,12 @@ public class UIManager : MonoBehaviour
 {
     public GameObject menuPausa;
     public bool menuPausaState = false;
-    public bool cursorState = Cursor.visible;
+    public bool cursorState;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        cursorState = Cursor.visible;
     }
 
     // Update is called once per frame
