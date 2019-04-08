@@ -7,19 +7,26 @@ public class GameManager : MonoBehaviour
 {
     //Static instance of GameManager which allows it to be accessed by any other script.
     public static GameManager instance = null;
+
+    // Current scene name
     Scene currentScene;
+    // radio desde el cual se podrá cambiar de escena tocando el checkpoint
+    public static float radioCheckpoint = 1.5f;
+
+    // Where levels are stored
     public static List<Nivel> niveles;
+
+    // *** MANAGERS
     public NivelesManager nivelesManager;
     public UIManager uiManager;
 
+    // Player input state
     public bool inputState = true;
-    
+
+    // *** GENERIC GAME OBJECTS ***
     GameObject player;
     GameObject camera;
     GameObject checkpoint;
-
-    // radio desde el cual se podrá cambiar de escena tocando el checkpoint
-    public static float radioCheckpoint = 1.5f;
 
     private void OnDrawGizmos()
     {
@@ -28,50 +35,56 @@ public class GameManager : MonoBehaviour
         //Gizmos.DrawWireSphere(checkpoint.transform.position, radioCheckpoint);
     }
 
-    //Awake is always called before any Start functions
-    // called zero
+    //Awake is always called before any Start functions (called zero)
     void Awake()
     {
         //Check if instance already exists
-        if(instance == null){
-            instance = this; //if not, set instance to this
-            
-        }else if (instance != this){ //If instance already exists and it's not this:
+        if (instance == null)
+        {
+            //if not, set instance to this
+            instance = this;
+        }
+        else if (instance != this) //If instance already exists and it's not this:
+        {
             Destroy(gameObject); //Then destroy this. This enforces our singleton pattern, meaning there can only ever be one instance of a GameManager.
         }
-        
+
         //Sets this to not be destroyed when reloading scene
         DontDestroyOnLoad(gameObject);
-        
-        // Hide cursor
-        Cursor.visible = false;
-        
+
+        // Get different component managers
         nivelesManager = GetComponent<NivelesManager>();
         uiManager = GetComponent<UIManager>();
-        InitGame(); //Call the InitGame function to initialize the game
 
+        //Call the InitGame function to initialize the game
+        InitGame();
 
-        // Create a temporary reference to the current scene.
-        currentScene = SceneManager.GetActiveScene ();
+        // Get actual scene name
+        currentScene = SceneManager.GetActiveScene();
     }
-    // called first
+    // Called first
     void OnEnable()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
-    // called second
+    // Each time a scene is loaded (called second)
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        currentScene = SceneManager.GetActiveScene ();
+        // Get actual scene name
+        currentScene = SceneManager.GetActiveScene();
 
         // Enable cursor and print levels if we are in MainMenuScreen scene
-        if(currentScene.name == "MainMenuScreen"){
+        if (currentScene.name == "MainMenuScreen")
+        {
             Cursor.visible = true;
             nivelesManager.printLevels(niveles);
         }
 
-        if(currentScene.name.Contains("Nivel ")){
+        // Disable cursor and get generic game objects if we are in a playable level
+        if (currentScene.name.Contains("Nivel "))
+        {
+            Cursor.visible = false;
             player = GameObject.FindGameObjectWithTag("Player");
             camera = GameObject.FindGameObjectWithTag("MainCamera");
             checkpoint = GameObject.FindGameObjectWithTag("checkpoint");
@@ -89,36 +102,48 @@ public class GameManager : MonoBehaviour
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
-    void InitGame(){
+    // Function to init the game
+    void InitGame()
+    {
         // Create Levels
-        niveles =  new List<Nivel>()
+        niveles = new List<Nivel>()
         {
             new Nivel(1,"Nivel 1",false,0,false,60,1),
             new Nivel(2,"Nivel 2",false,0,false,60,5),
             new Nivel(3,"Nivel 3",false,0,true,60,5)
         };
+
+        // Load saved data
+        // ...
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (currentScene.name.Contains("Nivel ")){
-            //Debug.Log(Vector3.Distance(player.transform.position, checkpoint.transform.position)+"   "+radioCheckpoint);
+        // For all level scenes
+        if (currentScene.name.Contains("Nivel "))
+        {
+
+            // Check for the checkpoint
             if (Vector3.Distance(player.transform.position, checkpoint.transform.position) < radioCheckpoint)
             {
-            // aquí incluir animación del player
-            SceneManager.LoadScene("MainMenuScreen");
+                // aquí incluir animación del player
+                SceneManager.LoadScene("MainMenuScreen");
             }
 
-            if(Input.GetKeyDown (KeyCode.Escape) | Input.GetKeyDown("joystick button 7")){
+            // Check for pause/rsume game
+            if (Input.GetKeyDown(KeyCode.Escape) | Input.GetKeyDown("joystick button 7"))
+            {
                 uiManager.toggleMenuPausa();
-                toggleInput(); 
+                toggleInput();
             }
         }
-         
+
     }
 
-    public void toggleInput(){
+    // Enable/disable player input
+    public void toggleInput()
+    {
         inputState = !inputState;
         player.GetComponent<PlayerController>().enabled = inputState;
         camera.GetComponent<Camara>().enabled = inputState;
