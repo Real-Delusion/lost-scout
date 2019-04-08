@@ -20,7 +20,6 @@ public class UIManager : MonoBehaviour
     }
 
     public void toggleMenuPausa(){
-        //menuPausa.GetComponent<Canvas> ().enabled = true;
         cursorState = !cursorState;
         menuPausa.SetActive(!menuPausa.activeSelf);
         Cursor.visible = cursorState;
