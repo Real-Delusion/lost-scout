@@ -110,9 +110,9 @@ public class GameManager : MonoBehaviour
             SceneManager.LoadScene("MainMenuScreen");
             }
 
-            if(Input.GetKeyDown (KeyCode.Escape)){
+            if(Input.GetKeyDown (KeyCode.Escape) | Input.GetKeyDown("joystick button 7")){
                 uiManager.toggleMenuPausa();
-                toggleInput();
+                toggleInput(); 
             }
         }
          
