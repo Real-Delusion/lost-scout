@@ -129,7 +129,7 @@ public class GameManager : MonoBehaviour
             if (Vector3.Distance(player.transform.position, checkpoint.transform.position) < radioCheckpoint)
             {
                 // aquí incluir animación del player
-                SceneManager.LoadScene("MainMenuScreen");
+                finishLevel();
             }
 
             // Check for pause/rsume game
@@ -158,6 +158,11 @@ public class GameManager : MonoBehaviour
         uiManager.toggleMenuPausa();
         enableInput(false);
         gamePaused = !gamePaused;
+    }
+
+    public void finishLevel(){
+        uiManager.showMenuPuntuacion();
+        //SceneManager.LoadScene("MainMenuScreen");
     }
 
     // Enable/disable player input
