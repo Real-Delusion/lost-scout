@@ -11,8 +11,11 @@ public class GameManager : MonoBehaviour
     public static List<Nivel> niveles;
     public NivelesManager nivelesManager;
     public UIManager uiManager;
+
+    public bool inputState = true;
     
     GameObject player;
+    GameObject camera;
     GameObject checkpoint;
 
     // radio desde el cual se podrá cambiar de escena tocando el checkpoint
@@ -70,6 +73,7 @@ public class GameManager : MonoBehaviour
 
         if(currentScene.name.Contains("Nivel ")){
             player = GameObject.FindGameObjectWithTag("Player");
+            camera = GameObject.FindGameObjectWithTag("MainCamera");
             checkpoint = GameObject.FindGameObjectWithTag("checkpoint");
         }
     }
@@ -108,9 +112,16 @@ public class GameManager : MonoBehaviour
 
             if(Input.GetKeyDown (KeyCode.Escape)){
                 uiManager.toggleMenuPausa();
+                toggleInput();
             }
         }
          
+    }
+
+    public void toggleInput(){
+        inputState = !inputState;
+        player.GetComponent<PlayerController>().enabled = inputState;
+        camera.GetComponent<Camara>().enabled = inputState;
     }
 
 }
