@@ -110,7 +110,8 @@ public class GameManager : MonoBehaviour
         {
             new Nivel(1,"Nivel 1",false,0,false,60,1),
             new Nivel(2,"Nivel 2",false,0,false,60,5),
-            new Nivel(3,"Nivel 3",false,0,true,60,5)
+            new Nivel(3,"Nivel 3",false,0,false,60,5),
+            new Nivel(3,"Nivel 4",false,0,true,60,5)
         };
 
         // Load saved data

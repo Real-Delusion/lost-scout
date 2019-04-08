@@ -6,7 +6,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: "Monta\xF1a"
+  m_Name: "Montan\u0303a"
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: subirPlataforma
