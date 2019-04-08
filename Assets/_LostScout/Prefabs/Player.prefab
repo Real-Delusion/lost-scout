@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 364881722}
   - component: {fileID: 364881721}
   - component: {fileID: 364881720}
-  - component: {fileID: 364881719}
   - component: {fileID: 364881718}
   - component: {fileID: 364881717}
   m_Layer: 0
@@ -110,21 +109,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &364881719
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 364881716}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05f7b54c8dc314385a517806e84e23a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objeto: {fileID: 2831380442485055345, guid: a40be4cd2d2584db3b84d23e17a43bd7, type: 3}
-  m_jumpY: 100
-  vel: 5
 --- !u!114 &364881718
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -137,6 +121,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 27c37445329e01e71ae946dcdb81b1dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objeto: {fileID: 2831380442485055345, guid: a40be4cd2d2584db3b84d23e17a43bd7, type: 3}
+  m_jumpY: 50
+  vel: 2
   velocidad: 5
   velocidadRotacion: 240
   posicionTronco: {x: 0, y: 0, z: 0}
