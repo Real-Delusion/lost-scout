@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     Scene currentScene;
     public static List<Nivel> niveles;
     public NivelesManager nivelesManager;
+    public UIManager uiManager;
     
     GameObject player;
     GameObject checkpoint;
@@ -43,6 +44,7 @@ public class GameManager : MonoBehaviour
         Cursor.visible = false;
         
         nivelesManager = GetComponent<NivelesManager>();
+        uiManager = GetComponent<UIManager>();
         InitGame(); //Call the InitGame function to initialize the game
 
 
@@ -102,6 +104,10 @@ public class GameManager : MonoBehaviour
             {
             // aquí incluir animación del player
             SceneManager.LoadScene("MainMenuScreen");
+            }
+
+            if(Input.GetKeyDown (KeyCode.Escape)){
+                uiManager.toggleMenuPausa();
             }
         }
          
