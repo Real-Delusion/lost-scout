@@ -6,6 +6,7 @@ public class UIManager : MonoBehaviour
 {
     public GameObject menuPausa;
     public bool menuPausaState = false;
+    public bool cursorState = Cursor.visible;
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +23,8 @@ public class UIManager : MonoBehaviour
     public void toggleMenuPausa(){
         //menuPausa.GetComponent<Canvas> ().enabled = true;
         menuPausaState = !menuPausaState;
+        cursorState = !cursorState;
         menuPausa.SetActive(menuPausaState);
+        Cursor.visible = cursorState;
     }
 }
