@@ -147,12 +147,14 @@ public class GameManager : MonoBehaviour
     }
 
     public void ResumeGame(){
+        Time.timeScale = 1;
         uiManager.toggleMenuPausa();
         enableInput(true);
         gamePaused = !gamePaused;
     }
 
     public void PauseGame(){
+        Time.timeScale = 0;
         uiManager.toggleMenuPausa();
         enableInput(false);
         gamePaused = !gamePaused;
