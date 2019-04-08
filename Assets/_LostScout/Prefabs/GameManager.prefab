@@ -271,7 +271,7 @@ GameObject:
   - component: {fileID: 3855511766558651694}
   - component: {fileID: 7172690704484851056}
   m_Layer: 0
-  m_Name: salir
+  m_Name: continuar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -374,8 +374,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2682596910310308365}
-        m_MethodName: exit
+      - m_Target: {fileID: 8653968285265996372}
+        m_MethodName: continueLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -603,6 +603,7 @@ GameObject:
   - component: {fileID: 7076498817860904067}
   - component: {fileID: 81669947651993717}
   - component: {fileID: 2682596910310308365}
+  - component: {fileID: 8653968285265996372}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -686,6 +687,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 822ed98259dd6727a9bb1d4baecb2922, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameManager: {fileID: 0}
+--- !u!114 &8653968285265996372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3124028698019010036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 038664d2370908398baca1bbcf07543f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   gameManager: {fileID: 0}

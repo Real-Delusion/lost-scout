@@ -29,4 +29,8 @@ public class UIManager : MonoBehaviour
     public void showMenuPuntuacion (){
         menuPuntuacion.SetActive(true);
     }
+
+    public void hideMenuPuntuacion (){
+        menuPuntuacion.SetActive(false);
+    }
 }

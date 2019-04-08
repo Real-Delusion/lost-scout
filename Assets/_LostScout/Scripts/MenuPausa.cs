@@ -21,7 +21,7 @@ public class MenuPausa : MonoBehaviour
     }
 
     public void resume(){
-        gameManager.ResumeGame();
+        gameManager.ResumeGame(true);
     }
 
     public void restart(){
@@ -36,7 +36,7 @@ public class MenuPausa : MonoBehaviour
     }
 
     public void exit(){
-        gameManager.ResumeGame();
+        gameManager.ResumeGame(true);
         SceneManager.LoadScene("MainMenuScreen");
     }
 }

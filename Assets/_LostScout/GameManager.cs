@@ -126,7 +126,7 @@ public class GameManager : MonoBehaviour
         {
 
             // Check for the checkpoint
-            if (Vector3.Distance(player.transform.position, checkpoint.transform.position) < radioCheckpoint)
+            if ((Vector3.Distance(player.transform.position, checkpoint.transform.position) < radioCheckpoint))
             {
                 // aquí incluir animación del player
                 finishLevel();
@@ -136,33 +136,38 @@ public class GameManager : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Escape) | Input.GetKeyDown("joystick button 7"))
             {
                 if(gamePaused){
-                    ResumeGame();
+                    ResumeGame(true);
                 }else
                 {
-                    PauseGame();
+                    PauseGame(true);
                 }
             }
         }
 
     }
 
-    public void ResumeGame(){
+    public void ResumeGame(bool ui){
         Time.timeScale = 1;
-        uiManager.toggleMenuPausa();
+        if(ui){
+            uiManager.toggleMenuPausa();
+        }
         enableInput(true);
         gamePaused = !gamePaused;
     }
 
-    public void PauseGame(){
+    public void PauseGame(bool ui){
         Time.timeScale = 0;
-        uiManager.toggleMenuPausa();
+        if(ui){
+            uiManager.toggleMenuPausa();
+        }
         enableInput(false);
         gamePaused = !gamePaused;
     }
 
     public void finishLevel(){
+        player.transform.position = new Vector3((player.transform.position.x)+1,player.transform.position.y,player.transform.position.z);
+        PauseGame(false);
         uiManager.showMenuPuntuacion();
-        //SceneManager.LoadScene("MainMenuScreen");
     }
 
     // Enable/disable player input
