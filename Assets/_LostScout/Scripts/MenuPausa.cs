@@ -21,6 +21,7 @@ public class MenuPausa : MonoBehaviour
     }
 
     public void resume(){
+        gameManager.ResumeGame();
     }
 
     public void restart(){
