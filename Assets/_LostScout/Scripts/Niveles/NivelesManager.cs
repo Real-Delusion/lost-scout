@@ -19,7 +19,7 @@ public class NivelesManager : MonoBehaviour
     public void printLevels(List<Nivel> levels){
         CanvasTarget = GameObject.FindWithTag("NivelesCanvas");    
         //gameManager = GetComponent<GameManager>();        
-        int pos = 1010;
+        int pos = 250;
         int i = 0;
         foreach (var level in levels) {
             var obj = Instantiate(lvlBtn);
@@ -46,7 +46,7 @@ public class NivelesManager : MonoBehaviour
                 marco.sprite = lockedMarco;
             }
 
-            pos -= 400;
+            pos += 400;
             i++;
         } 
     }
