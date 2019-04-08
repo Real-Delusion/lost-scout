@@ -5,6 +5,7 @@ using UnityEngine;
 public class UIManager : MonoBehaviour
 {
     public GameObject menuPausa;
+    public GameObject menuPuntuacion;
     public bool cursorState;
 
     // Start is called before the first frame update
@@ -23,5 +24,9 @@ public class UIManager : MonoBehaviour
         cursorState = !cursorState;
         menuPausa.SetActive(!menuPausa.activeSelf);
         Cursor.visible = cursorState;
+    }
+
+    public void showMenuPuntuacion (){
+        menuPausa.SetActive(true);
     }
 }
