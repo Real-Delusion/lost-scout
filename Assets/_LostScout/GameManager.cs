@@ -146,6 +146,7 @@ public class GameManager : MonoBehaviour
 
     }
 
+    // Resume game function (with or without menu)
     public void ResumeGame(bool ui){
         Time.timeScale = 1;
         if(ui){
@@ -155,6 +156,7 @@ public class GameManager : MonoBehaviour
         gamePaused = !gamePaused;
     }
 
+    // Pause game function (with or without menu)
     public void PauseGame(bool ui){
         Time.timeScale = 0;
         if(ui){
@@ -164,10 +166,31 @@ public class GameManager : MonoBehaviour
         gamePaused = !gamePaused;
     }
 
+    // Called when player collides on the checkpoint
     public void finishLevel(){
+        // Move player to avoid a loop on checkpoint
         player.transform.position = new Vector3((player.transform.position.x)+1,player.transform.position.y,player.transform.position.z);
+        // Pause the game without graphic interface
         PauseGame(false);
-        uiManager.showMenuPuntuacion();
+
+        // Insignias, by default is one (Obsequio)
+        int insignias = 1;
+
+        // Get time and (optionally) add insignia
+        int time = 10;
+        //insignias++;
+
+        // Get interactions and (optionally) add insignia
+        insignias++;
+
+        // Get level index
+        int index = niveles.FindIndex(x => x.LevelName.Equals(currentScene.name));
+
+        // Set insignias
+        niveles[index].Insignias = insignias;
+
+        // Show menu puntuacion (pass insignias and time)
+        uiManager.showMenuPuntuacion(insignias,time);
     }
 
     // Enable/disable player input

@@ -6,6 +6,8 @@ public class UIManager : MonoBehaviour
 {
     public GameObject menuPausa;
     public GameObject menuPuntuacion;
+    public GameObject insigniaHabilidadGrey;
+    public GameObject insigniaPrestigioGrey;
     public bool cursorState;
 
     // Start is called before the first frame update
@@ -26,8 +28,14 @@ public class UIManager : MonoBehaviour
         Cursor.visible = cursorState;
     }
 
-    public void showMenuPuntuacion (){
+    public void showMenuPuntuacion (int insignias, int time){
         menuPuntuacion.SetActive(true);
+        if(insignias == 2){
+            insigniaHabilidadGrey.SetActive(false);
+        }
+        if(insignias == 3){
+            insigniaPrestigioGrey.SetActive(false);
+        }
     }
 
     public void hideMenuPuntuacion (){
