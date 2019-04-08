@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class UIManager : MonoBehaviour
 {
+    public GameObject menuPausa;
+    public bool menuPausaState = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -14,5 +17,11 @@ public class UIManager : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void toggleMenuPausa(){
+        //menuPausa.GetComponent<Canvas> ().enabled = true;
+        menuPausaState = !menuPausaState;
+        menuPausa.SetActive(menuPausaState);
     }
 }
