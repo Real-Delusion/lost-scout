@@ -8,12 +8,10 @@ public class UIManager : MonoBehaviour
     public GameObject menuPuntuacion;
     public GameObject insigniaHabilidadGrey;
     public GameObject insigniaPrestigioGrey;
-    public bool cursorState;
 
     // Start is called before the first frame update
     void Start()
     {
-        cursorState = Cursor.visible;
     }
 
     // Update is called once per frame
@@ -22,10 +20,9 @@ public class UIManager : MonoBehaviour
         
     }
 
-    public void toggleMenuPausa(){
-        cursorState = !cursorState;
-        menuPausa.SetActive(!menuPausa.activeSelf);
-        Cursor.visible = cursorState;
+    public void toggleMenuPausa(bool state){
+        menuPausa.SetActive(state);
+        Cursor.visible = state;
     }
 
     public void showMenuPuntuacion (int insignias, float time){

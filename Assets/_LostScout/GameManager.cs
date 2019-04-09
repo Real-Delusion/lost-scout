@@ -152,21 +152,23 @@ public class GameManager : MonoBehaviour
     // Resume game function (with or without menu)
     public void ResumeGame(bool ui){
         Time.timeScale = 1;
+        Cursor.visible = false;
         if(ui){
-            uiManager.toggleMenuPausa();
+            uiManager.toggleMenuPausa(false);
         }
         enableInput(true);
-        gamePaused = !gamePaused;
+        gamePaused = false;
     }
 
     // Pause game function (with or without menu)
     public void PauseGame(bool ui){
         Time.timeScale = 0;
+        Cursor.visible = true;
         if(ui){
-            uiManager.toggleMenuPausa();
+            uiManager.toggleMenuPausa(true);
         }
         enableInput(false);
-        gamePaused = !gamePaused;
+        gamePaused = true;
     }
 
     // Called when player collides on the checkpoint
