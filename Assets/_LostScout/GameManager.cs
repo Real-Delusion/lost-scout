@@ -29,6 +29,7 @@ public class GameManager : MonoBehaviour
     GameObject checkpoint;
 
     public float startTime;
+    public int numInteractions = 0;
 
     private void OnDrawGizmos()
     {
@@ -111,9 +112,9 @@ public class GameManager : MonoBehaviour
         // Create Levels
         niveles = new List<Nivel>()
         {
-            new Nivel(1,"Nivel 1",false,0,false,60,1),
-            new Nivel(2,"Nivel 2",false,0,false,60,5),
-            new Nivel(3,"Nivel 3",false,0,false,60,5),
+            new Nivel(1,"Nivel 1",false,0,false,60,0),
+            new Nivel(2,"Nivel 2",false,0,false,60,1),
+            new Nivel(3,"Nivel 3",false,0,false,60,8),
             new Nivel(3,"Nivel 4",false,0,true,60,5)
         };
 
@@ -144,6 +145,11 @@ public class GameManager : MonoBehaviour
                 {
                     PauseGame(true);
                 }
+            }
+
+            if (Input.GetKeyDown(KeyCode.E) | Input.GetKeyDown("joystick button 0"))
+            {
+                numInteractions++;
             }
         }
 
@@ -178,24 +184,27 @@ public class GameManager : MonoBehaviour
         // Pause the game without graphic interface
         PauseGame(false);
 
+        // Get level index
+        int index = niveles.FindIndex(x => x.LevelName.Equals(currentScene.name));
+
         // Insignias, by default is one (Obsequio)
         int insignias = 1;
 
         // Get time and (optionally) add insignia
         float time = (Time.time)-startTime;
-        //insignias++;
-
-        // Get interactions and (optionally) add insignia
         insignias++;
 
-        // Get level index
-        int index = niveles.FindIndex(x => x.LevelName.Equals(currentScene.name));
-
+        // Get interactions and (optionally) add insignia
+        if(numInteractions <= niveles[index].MaxInteractions){
+            insignias++;
+        }
+                
         // Set insignias
         niveles[index].Insignias = insignias;
 
         // Show menu puntuacion (pass insignias and time)
         uiManager.showMenuPuntuacion(insignias,time);
+        numInteractions= 0;
     }
 
     // Enable/disable player input
