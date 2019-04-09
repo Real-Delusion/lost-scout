@@ -40,4 +40,8 @@ public class controlCamaraMenu : MonoBehaviour
         canvasMainMenu.GetComponent<Canvas> ().enabled = false;        
         canvasSeleccionNiveles.GetComponent<Canvas> ().enabled = true;
     }
+
+    public void exit () {
+        Application.Quit();
+    }
 }
