@@ -26,9 +26,7 @@ public class MenuPausa : MonoBehaviour
 
     public void restart(){
         Scene currentScene = SceneManager.GetActiveScene();
-        gameManager.enableInput(true);
-        gameManager.gamePaused = false;
-        gameManager.uiManager.toggleMenuPausa();
+        gameManager.ResumeGame(true);
         SceneManager.LoadScene(currentScene.name);
     }
 
