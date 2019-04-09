@@ -67,7 +67,7 @@ public class mecanicaPalanca : MonoBehaviour
             case EstadosPalanca.Off: 
                 if (Vector3.Distance(transform.position, player.position) < radio) // si el player esta dentro del area de accion 
                 {
-                    if (Input.GetKeyDown(KeyCode.E)) // si se pulsa la tecla "E" destro del radio
+                    if (Input.GetKeyDown(KeyCode.E) | Input.GetKeyDown("joystick button 0")) // si se pulsa la tecla "E" destro del radio
                     {
                         Estado = EstadosPalanca.On; // Se cambia la panca a estado ON / Activo
                     }
