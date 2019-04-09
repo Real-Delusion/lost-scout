@@ -81,7 +81,7 @@ public class PlayerController : MonoBehaviour
                 // calculamos su nueva posición a partir de la posición del tronco, mi posición y las alturas
                 // en los ejes x, z moverá a la posición del tronco
                 // en el eje y, moverá a la posicón del tronco + su altura + la mitad de la altura del player
-                nuevaPosicion = new Vector3(posicionTronco.x, posicionTronco.y + alturaTronco + miAltura+0.11f, posicionTronco.z);
+                nuevaPosicion = new Vector3(posicionTronco.x, posicionTronco.y + alturaTronco + miAltura - _characterController.height + 0.16f - _characterController.radius - _characterController.center.y, posicionTronco.z);
                 Debug.Log("nueva = " + nuevaPosicion);
 
             }

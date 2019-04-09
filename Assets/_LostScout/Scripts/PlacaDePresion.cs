@@ -6,7 +6,7 @@ public class PlacaDePresion : MonoBehaviour
 {
     private Animator animacionPlaca; //Animacion de la placa de presion
     public Animator animacionPlataforma; //Hay que asignarle el animator de la plataforma que queremos que se mueva
-    public GameObject colliderPuente;
+    //public GameObject colliderPuente;
 
     public enum EstadosPlaca
     {
@@ -28,7 +28,7 @@ public class PlacaDePresion : MonoBehaviour
                 //Animación bajar la placa de presión y subir la plataforma
                 animacionPlaca.SetBool("bajarPlaca", !animacionPlaca.GetBool("bajarPlaca"));
                 animacionPlataforma.SetBool("subirPlataforma", !animacionPlataforma.GetBool("subirPlataforma"));
-                colliderPuente.SetActive(false);//Desactivar el collider para que pueda pasar
+                //colliderPuente.SetActive(false);//Desactivar el collider para que pueda pasar
             }
 
             else if(_estado == EstadosPlaca.Off)
@@ -36,7 +36,7 @@ public class PlacaDePresion : MonoBehaviour
                 //Animación subir la placa de presión y bajar la plataforma
                 animacionPlaca.SetBool("bajarPlaca", !animacionPlaca.GetBool("bajarPlaca"));
                 animacionPlataforma.SetBool("subirPlataforma", !animacionPlataforma.GetBool("subirPlataforma"));
-                colliderPuente.SetActive(true); //Activar el collider para que no pueda pasar
+                //colliderPuente.SetActive(true); //Activar el collider para que no pueda pasar
             }
         }
     }
