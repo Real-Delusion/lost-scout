@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.6401588, g: 0.85751784, b: 1.0921847, a: 1}
+  m_IndirectSpecularColor: {r: 0.6403126, g: 0.8575756, b: 1.0921782, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -551,7 +551,7 @@ GameObject:
   - component: {fileID: 393251538}
   - component: {fileID: 393251537}
   m_Layer: 0
-  m_Name: "Monta\xF1a"
+  m_Name: Montanya
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -961,7 +961,7 @@ GameObject:
   m_Component:
   - component: {fileID: 843580880}
   m_Layer: 0
-  m_Name: "Monta\xF1a"
+  m_Name: Montanya
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
