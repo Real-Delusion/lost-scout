@@ -28,6 +28,8 @@ public class GameManager : MonoBehaviour
     GameObject camera;
     GameObject checkpoint;
 
+    public float startTime;
+
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.green;
@@ -85,6 +87,7 @@ public class GameManager : MonoBehaviour
         if (currentScene.name.Contains("Nivel "))
         {
             Cursor.visible = false;
+            startTime = Time.time;
             player = GameObject.FindGameObjectWithTag("Player");
             camera = GameObject.FindGameObjectWithTag("MainCamera");
             checkpoint = GameObject.FindGameObjectWithTag("checkpoint");
@@ -177,7 +180,7 @@ public class GameManager : MonoBehaviour
         int insignias = 1;
 
         // Get time and (optionally) add insignia
-        int time = 10;
+        float time = (Time.time)-startTime;
         //insignias++;
 
         // Get interactions and (optionally) add insignia
