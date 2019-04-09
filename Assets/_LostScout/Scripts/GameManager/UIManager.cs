@@ -28,7 +28,7 @@ public class UIManager : MonoBehaviour
         Cursor.visible = cursorState;
     }
 
-    public void showMenuPuntuacion (int insignias, int time){
+    public void showMenuPuntuacion (int insignias, float time){
         menuPuntuacion.SetActive(true);
         if(insignias == 2){
             insigniaHabilidadGrey.SetActive(false);

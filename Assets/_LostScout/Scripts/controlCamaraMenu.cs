@@ -7,12 +7,15 @@ public class controlCamaraMenu : MonoBehaviour
 {
     public Transform CamTransform;
     public Transform PointTransform;
-    public GameObject seleccionadorLv;
+    public GameObject canvasSeleccionNiveles;
+    public GameObject canvasMainMenu;
 
     void Start(){
         // Hide at start
-        seleccionadorLv.GetComponent<Canvas> ().enabled = false;
+        canvasMainMenu.GetComponent<Canvas> ().enabled = true;        
+        canvasSeleccionNiveles.GetComponent<Canvas> ().enabled = false;
     }
+    /* 
     public void moverCamara() {
 
         
@@ -31,5 +34,10 @@ public class controlCamaraMenu : MonoBehaviour
         //seleccionadorLv.SetActive(true);
         // Show
         seleccionadorLv.GetComponent<Canvas> ().enabled = true;
+    }*/
+
+    public void showSeleccionNiveles(){
+        canvasMainMenu.GetComponent<Canvas> ().enabled = false;        
+        canvasSeleccionNiveles.GetComponent<Canvas> ().enabled = true;
     }
 }
