@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.64020616, g: 0.85753965, b: 1.0921829, a: 1}
+  m_IndirectSpecularColor: {r: 0.6403126, g: 0.8575756, b: 1.0921782, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -235,7 +235,7 @@ Transform:
   m_LocalScale: {x: 3.0275447, y: 6.6858063, z: 13.32366}
   m_Children: []
   m_Father: {fileID: 1294057040}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &117953352
 BoxCollider:
@@ -431,7 +431,7 @@ Transform:
   m_LocalScale: {x: 3.0275466, y: 6.6858063, z: 26.251923}
   m_Children: []
   m_Father: {fileID: 1294057040}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!65 &174030396
 BoxCollider:
@@ -830,14 +830,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: 63fb86c466ee8f449adf0bd5c8badbdc, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 5.62
-      objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 63fb86c466ee8f449adf0bd5c8badbdc, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 9a23622c50fec4024904a660e3f91752, type: 2}
+    - target: {fileID: 400000, guid: 63fb86c466ee8f449adf0bd5c8badbdc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 5.62
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 63fb86c466ee8f449adf0bd5c8badbdc, type: 3}
 --- !u!1 &260306746 stripped
@@ -3380,11 +3380,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD
-  m_Name: pb_Mesh7646
-=======
   m_Name: pb_Mesh16358
->>>>>>> arreglosVarios
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -4030,7 +4026,7 @@ Transform:
   m_LocalScale: {x: 3.0275447, y: 6.6858063, z: 20.535757}
   m_Children: []
   m_Father: {fileID: 1294057040}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1070176753
 BoxCollider:
@@ -4357,7 +4353,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 725494569, guid: d6a6dc272576336beb0e61c6456785c2, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.44
+      value: 0.71
       objectReference: {fileID: 0}
     - target: {fileID: 725494569, guid: d6a6dc272576336beb0e61c6456785c2, type: 3}
       propertyPath: m_LocalRotation.x
@@ -4573,6 +4569,7 @@ Transform:
   - {fileID: 669393855}
   - {fileID: 1028291797}
   - {fileID: 748140861}
+  - {fileID: 1324328805}
   - {fileID: 2012261312}
   - {fileID: 117953351}
   - {fileID: 174030395}
@@ -4662,8 +4659,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba413a8925085448393ebb1382014a31, type: 3}
-<<<<<<< HEAD
-=======
 --- !u!1 &1324328804
 GameObject:
   m_ObjectHideFlags: 0
@@ -4755,7 +4750,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1324328804}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
->>>>>>> arreglosVarios
 --- !u!1001 &1328911347
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5083,11 +5077,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD
-  m_Name: pb_Mesh7672
-=======
   m_Name: pb_Mesh16390
->>>>>>> arreglosVarios
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -5465,7 +5455,7 @@ Transform:
   m_LocalScale: {x: 3.0275466, y: 6.6858063, z: 19.022005}
   m_Children: []
   m_Father: {fileID: 1294057040}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
 --- !u!65 &1543021001
 BoxCollider:
@@ -5918,11 +5908,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD
-  m_Name: pb_Mesh7624
-=======
   m_Name: pb_Mesh16332
->>>>>>> arreglosVarios
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -6404,7 +6390,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: d49bb73d838af7d4d961e242ee3c8a5c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.08
+      value: -0.09
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: d49bb73d838af7d4d961e242ee3c8a5c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6687,7 +6673,7 @@ Transform:
   m_LocalScale: {x: 3.0275447, y: 1.8211, z: 2.6911557}
   m_Children: []
   m_Father: {fileID: 1294057040}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2058753034
 PrefabInstance:
