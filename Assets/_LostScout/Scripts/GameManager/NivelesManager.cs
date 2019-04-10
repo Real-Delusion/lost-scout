@@ -29,6 +29,8 @@ public class NivelesManager : MonoBehaviour
             newpos.x = pos; 
             newpos.y = 327; 
             newpos.z = 0; 
+
+            obj.transform.localScale = new Vector3(obj.localScale.x -0.5f,obj.localScale.y -0.5f,obj.localScale.z -0.5f);
             obj.transform.position = newpos;
 
             Image[] images = obj.GetComponentsInChildren<Image>();
@@ -46,7 +48,7 @@ public class NivelesManager : MonoBehaviour
                 marco.sprite = lockedMarco;
             }
 
-            pos += 400;
+            pos += 175;
             i++;
         } 
     }
