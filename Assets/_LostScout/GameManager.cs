@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Experimental.UIElements;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
@@ -22,6 +23,9 @@ public class GameManager : MonoBehaviour
 
 
     public bool gamePaused = false;
+
+    public bool fromGame = false;
+    controlCamaraMenu controlMenu;
 
     // *** GENERIC GAME OBJECTS ***
     GameObject player;
@@ -82,6 +86,11 @@ public class GameManager : MonoBehaviour
         {
             Cursor.visible = true;
             nivelesManager.printLevels(niveles);
+            if (fromGame) {
+                Camera mainCamera = Camera.main;
+                controlMenu = mainCamera.GetComponent<controlCamaraMenu>();
+                controlMenu.fromGame = true;
+            }
         }
 
         // Disable cursor and get generic game objects if we are in a playable level
@@ -136,7 +145,7 @@ public class GameManager : MonoBehaviour
                 finishLevel();
             }
 
-            // Check for pause/rsume game
+            // Check for pause/resume game
             if (Input.GetKeyDown(KeyCode.Escape) | Input.GetKeyDown("joystick button 7"))
             {
                 if(gamePaused){

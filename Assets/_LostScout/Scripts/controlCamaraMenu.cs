@@ -9,11 +9,17 @@ public class controlCamaraMenu : MonoBehaviour
     public Transform PointTransform;
     public GameObject canvasSeleccionNiveles;
     public GameObject canvasMainMenu;
+    public bool fromGame = false;
 
     void Start(){
         // Hide at start
+        if (!fromGame) {
         canvasMainMenu.GetComponent<Canvas> ().enabled = true;        
         canvasSeleccionNiveles.GetComponent<Canvas> ().enabled = false;
+        }
+        else {
+            showSeleccionNiveles();
+        }
     }
     /* 
     public void moverCamara() {
