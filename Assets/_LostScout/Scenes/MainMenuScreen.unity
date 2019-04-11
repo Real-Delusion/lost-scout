@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.640202, g: 0.8575365, b: 1.0921829, a: 1}
+  m_IndirectSpecularColor: {r: 0.64020616, g: 0.85753965, b: 1.0921829, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -560,6 +560,7 @@ MonoBehaviour:
   PointTransform: {fileID: 0}
   canvasSeleccionNiveles: {fileID: 733090491}
   canvasMainMenu: {fileID: 273117677}
+  fromGame: 0
 --- !u!1 &733090491
 GameObject:
   m_ObjectHideFlags: 0
@@ -1479,6 +1480,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocidad: -5
+--- !u!95 &1503225883
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1503225881}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fcfd436a7a5654ba0a304f00e4d40675, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2121101418
 GameObject:
   m_ObjectHideFlags: 0
