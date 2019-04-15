@@ -2,26 +2,49 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
- using UnityEngine.UI;
+using UnityEngine.UI;
 
 public class NivelesManager : MonoBehaviour
 {
-    //private GameManager gameManager;
+    public GameManager gameManager;
     public Transform lvlBtn;
     public GameObject CanvasTarget;
     public List<Sprite> miniaturas;
     public Sprite lockedMarco;
 
+    public List<Nivel> levels;
+    public static int paginaNivel;
+
     void Start()
     {
+        paginaNivel = 0;
     }
 
-    public void printLevels(List<Nivel> levels){
-        CanvasTarget = GameObject.FindWithTag("NivelesCanvas");    
-        //gameManager = GetComponent<GameManager>();        
-        //int pos = 250;
-        int i = 0;
-        foreach (var level in levels) {
+    public void printLevels()
+    {
+
+        foreach (Transform child in GameObject.FindWithTag("NivelesCanvas").transform)
+        {
+            GameObject.Destroy(child.gameObject);
+        }
+
+        foreach (Transform child in GameObject.FindWithTag("NivelesCanvas2").transform)
+        {
+            GameObject.Destroy(child.gameObject);
+        }
+        Debug.Log((paginaNivel + 2));
+
+        for (int i = paginaNivel; i < (paginaNivel + 6); i++)
+        {
+            if (i <= (paginaNivel + 2))
+            {
+                CanvasTarget = GameObject.FindWithTag("NivelesCanvas");
+            }
+            else
+            {
+                CanvasTarget = GameObject.FindWithTag("NivelesCanvas2");
+            }
+
             var obj = Instantiate(lvlBtn);
             obj.transform.SetParent(CanvasTarget.transform);
 
@@ -30,31 +53,55 @@ public class NivelesManager : MonoBehaviour
             newpos.y = 327; 
             newpos.z = 0; */
 
-            obj.transform.localScale = new Vector3(obj.localScale.x -0.5f,obj.localScale.y -0.5f,obj.localScale.z -0.5f);
+            obj.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
             //obj.transform.position = newpos;
 
             Image[] images = obj.GetComponentsInChildren<Image>();
-            
+
             Image miniatura = images[0];
             miniatura.sprite = miniaturas[i];
 
             Button btn = obj.gameObject.GetComponent<Button>();
-            var t = level.LevelName;
-            if (!level.Locked){
+            var t = GameManager.niveles[i].LevelName;
+            if (!GameManager.niveles[i].Locked)
+            {
                 btn.onClick.AddListener(() => LoadLevel(t));
-            }else
+            }
+            else
             {
                 Image marco = images[1];
                 marco.sprite = lockedMarco;
             }
 
             //pos += 175;
-            i++;
-        } 
+        }
     }
-    
 
-    void LoadLevel (string levelName){
+    public void nextScreen()
+    {
+        paginaNivel += 6;
+        printLevels();
+    }
+
+    public void backScreen()
+    {
+        if (paginaNivel == 0)
+        {
+            gameManager = GetComponent<GameManager>();
+            gameManager.fromGame = false;
+            SceneManager.LoadScene("MainMenuScreen");
+        }
+        else
+        {
+            paginaNivel -= 6;
+            printLevels();
+        }
+
+    }
+
+
+    void LoadLevel(string levelName)
+    {
         SceneManager.LoadScene(levelName);
     }
 }

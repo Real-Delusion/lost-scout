@@ -642,7 +642,9 @@ MonoBehaviour:
   nivelesManager: {fileID: 0}
   uiManager: {fileID: 0}
   gamePaused: 0
+  fromGame: 0
   startTime: 0
+  numInteractions: 0
 --- !u!114 &7076498817860904067
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -662,7 +664,23 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 12320f5a6390e1ea6a22e6a522bac3b0, type: 3}
   - {fileID: 21300000, guid: 710326850f94e8b35a5479393fdd5f21, type: 3}
   - {fileID: 21300000, guid: b00956cebd99daf7f9b90020886f690a, type: 3}
+  - {fileID: 21300000, guid: b00956cebd99daf7f9b90020886f690a, type: 3}
+  - {fileID: 21300000, guid: b00956cebd99daf7f9b90020886f690a, type: 3}
+  - {fileID: 21300000, guid: b00956cebd99daf7f9b90020886f690a, type: 3}
+  - {fileID: 21300000, guid: b00956cebd99daf7f9b90020886f690a, type: 3}
+  - {fileID: 21300000, guid: b00956cebd99daf7f9b90020886f690a, type: 3}
+  - {fileID: 21300000, guid: b00956cebd99daf7f9b90020886f690a, type: 3}
+  - {fileID: 21300000, guid: b00956cebd99daf7f9b90020886f690a, type: 3}
+  - {fileID: 21300000, guid: b00956cebd99daf7f9b90020886f690a, type: 3}
+  - {fileID: 21300000, guid: b00956cebd99daf7f9b90020886f690a, type: 3}
+  - {fileID: 21300000, guid: b00956cebd99daf7f9b90020886f690a, type: 3}
+  - {fileID: 21300000, guid: b00956cebd99daf7f9b90020886f690a, type: 3}
+  - {fileID: 21300000, guid: b00956cebd99daf7f9b90020886f690a, type: 3}
+  - {fileID: 21300000, guid: b00956cebd99daf7f9b90020886f690a, type: 3}
+  - {fileID: 21300000, guid: b00956cebd99daf7f9b90020886f690a, type: 3}
+  - {fileID: 21300000, guid: b00956cebd99daf7f9b90020886f690a, type: 3}
   lockedMarco: {fileID: 21300000, guid: ae662ba8caafea2268d4321d9977742b, type: 3}
+  levels: []
 --- !u!114 &81669947651993717
 MonoBehaviour:
   m_ObjectHideFlags: 0

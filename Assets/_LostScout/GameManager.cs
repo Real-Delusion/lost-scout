@@ -85,7 +85,7 @@ public class GameManager : MonoBehaviour
         if (currentScene.name == "MainMenuScreen")
         {
             Cursor.visible = true;
-            nivelesManager.printLevels(niveles);
+            nivelesManager.printLevels();
             if (fromGame) {
                 Camera mainCamera = Camera.main;
                 controlMenu = mainCamera.GetComponent<controlCamaraMenu>();
@@ -124,7 +124,15 @@ public class GameManager : MonoBehaviour
             new Nivel(1,"Nivel 1",false,0,false,60,0),
             new Nivel(2,"Nivel 2",false,0,false,60,1),
             new Nivel(3,"Nivel 3",false,0,false,60,8),
-            new Nivel(3,"Nivel 4",false,0,true,60,5)
+            new Nivel(4,"Nivel 4",false,0,true,60,8),
+            new Nivel(5,"Nivel 5",false,0,true,60,8),
+            new Nivel(6,"Nivel 6",false,0,true,60,8),
+            new Nivel(7,"Nivel 7",false,0,true,60,8),
+            new Nivel(8,"Nivel 8",false,0,true,60,8),
+            new Nivel(9,"Nivel 9",false,0,true,60,8),
+            new Nivel(10,"Nivel 10",false,0,true,60,8),
+            new Nivel(11,"Nivel 11",false,0,true,60,8),
+            new Nivel(12,"Nivel 12",false,0,true,60,5)
         };
 
         // Load saved data
