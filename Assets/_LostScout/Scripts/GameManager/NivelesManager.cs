@@ -66,6 +66,34 @@ public class NivelesManager : MonoBehaviour
             if (!GameManager.niveles[i].Locked)
             {
                 btn.onClick.AddListener(() => LoadLevel(t));
+
+                int insignias = GameManager.niveles[i].Insignias;
+                Debug.Log(GameManager.niveles[i].LevelName + ": " + GameManager.niveles[i].Insignias);
+
+                if (insignias >= 1)
+                {
+                    obj.transform.Find("obsequio_grey").gameObject.SetActive(false);
+                }
+                else
+                {
+                    obj.transform.Find("obsequio_grey").gameObject.SetActive(true);
+                }
+                if (insignias >= 2)
+                {
+                    obj.transform.Find("habilidad_grey").gameObject.SetActive(false);
+                }
+                else
+                {
+                    obj.transform.Find("habilidad_grey").gameObject.SetActive(true);
+                }
+                if (insignias >= 3)
+                {
+                    obj.transform.Find("prestigio_grey").gameObject.SetActive(false);
+                }
+                else
+                {
+                    obj.transform.Find("prestigio_grey").gameObject.SetActive(true);
+                }
             }
             else
             {
