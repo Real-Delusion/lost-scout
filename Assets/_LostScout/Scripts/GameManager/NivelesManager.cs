@@ -19,19 +19,19 @@ public class NivelesManager : MonoBehaviour
     public void printLevels(List<Nivel> levels){
         CanvasTarget = GameObject.FindWithTag("NivelesCanvas");    
         //gameManager = GetComponent<GameManager>();        
-        int pos = 250;
+        //int pos = 250;
         int i = 0;
         foreach (var level in levels) {
             var obj = Instantiate(lvlBtn);
             obj.transform.SetParent(CanvasTarget.transform);
 
-            Vector3 newpos = obj.transform.position;
+            /*Vector3 newpos = obj.transform.position;
             newpos.x = pos; 
             newpos.y = 327; 
-            newpos.z = 0; 
+            newpos.z = 0; */
 
             obj.transform.localScale = new Vector3(obj.localScale.x -0.5f,obj.localScale.y -0.5f,obj.localScale.z -0.5f);
-            obj.transform.position = newpos;
+            //obj.transform.position = newpos;
 
             Image[] images = obj.GetComponentsInChildren<Image>();
             
@@ -48,7 +48,7 @@ public class NivelesManager : MonoBehaviour
                 marco.sprite = lockedMarco;
             }
 
-            pos += 175;
+            //pos += 175;
             i++;
         } 
     }
