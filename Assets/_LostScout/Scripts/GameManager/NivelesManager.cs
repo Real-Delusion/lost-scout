@@ -135,6 +135,7 @@ public class NivelesManager : MonoBehaviour
 
         GameObject.FindWithTag("CanvasModal").GetComponent<Canvas>().enabled = true;
         GameObject.Find("marcoLocked").GetComponent<Image>().enabled = false;
+        GameObject.Find("botonJugar").GetComponent<Button>().interactable = true;
         GameObject.Find("imageNivel").GetComponent<Image>().sprite = miniaturas[level.ID - 1];
         GameObject.Find("TextObsequio").GetComponent<Text>().text = "Supera el " + level.LevelName;
         GameObject.Find("TextHabilidad").GetComponent<Text>().text = "Obten un tiempo menor a " + level.MaxTime + "s";
@@ -144,6 +145,31 @@ public class NivelesManager : MonoBehaviour
         {
             GameObject.Find("marcoLocked").GetComponent<Image>().enabled = true;
             GameObject.Find("botonJugar").GetComponent<Button>().interactable = false;
+        }
+
+        if (level.Insignias >= 1)
+        {
+            GameObject.Find("imageObsequioDes").GetComponent<Image>().enabled = false; 
+        }
+        else
+        {
+            GameObject.Find("imageObsequioDes").GetComponent<Image>().enabled = true;
+        }
+        if (level.Insignias >= 2)
+        {
+            GameObject.Find("imageHabilidadDes").GetComponent<Image>().enabled = false;
+        }
+        else
+        {
+            GameObject.Find("imageHabilidadDes").GetComponent<Image>().enabled = true;
+        }
+        if (level.Insignias >= 3)
+        {
+            GameObject.Find("imagePrestigioDes").GetComponent<Image>().enabled = false;
+        }
+        else
+        {
+            GameObject.Find("imagePrestigioDes").GetComponent<Image>().enabled = true;
         }
     }
 
