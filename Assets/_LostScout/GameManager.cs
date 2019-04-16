@@ -50,6 +50,8 @@ public class GameManager : MonoBehaviour
         {
             //if not, set instance to this
             instance = this;
+            //Call the InitGame function to initialize the game
+            InitGame();
         }
         else if (instance != this) //If instance already exists and it's not this:
         {
@@ -62,9 +64,6 @@ public class GameManager : MonoBehaviour
         // Get different component managers
         nivelesManager = GetComponent<NivelesManager>();
         uiManager = GetComponent<UIManager>();
-
-        //Call the InitGame function to initialize the game
-        InitGame();
 
         // Get actual scene name
         currentScene = SceneManager.GetActiveScene();
@@ -86,7 +85,8 @@ public class GameManager : MonoBehaviour
         {
             Cursor.visible = true;
             nivelesManager.printLevels();
-            if (fromGame) {
+            if (fromGame)
+            {
                 Camera mainCamera = Camera.main;
                 controlMenu = mainCamera.GetComponent<controlCamaraMenu>();
                 controlMenu.fromGame = true;
@@ -122,8 +122,8 @@ public class GameManager : MonoBehaviour
         niveles = new List<Nivel>()
         {
             new Nivel(1,"Nivel 1",false,0,false,60,0),
-            new Nivel(2,"Nivel 2",false,0,false,60,1),
-            new Nivel(3,"Nivel 3",false,0,false,60,8),
+            new Nivel(2,"Nivel 2",false,0,true,60,1),
+            new Nivel(3,"Nivel 3",false,0,true,60,8),
             new Nivel(4,"Nivel 4",false,0,true,60,8),
             new Nivel(5,"Nivel 5",false,0,true,60,8),
             new Nivel(6,"Nivel 6",false,0,true,60,8),
@@ -156,9 +156,11 @@ public class GameManager : MonoBehaviour
             // Check for pause/resume game
             if (Input.GetKeyDown(KeyCode.Escape) | Input.GetKeyDown("joystick button 7"))
             {
-                if(gamePaused){
+                if (gamePaused)
+                {
                     ResumeGame(true);
-                }else
+                }
+                else
                 {
                     PauseGame(true);
                 }
@@ -173,10 +175,12 @@ public class GameManager : MonoBehaviour
     }
 
     // Resume game function (with or without menu)
-    public void ResumeGame(bool ui){
+    public void ResumeGame(bool ui)
+    {
         Time.timeScale = 1;
         Cursor.visible = false;
-        if(ui){
+        if (ui)
+        {
             uiManager.toggleMenuPausa(false);
         }
         enableInput(true);
@@ -184,10 +188,12 @@ public class GameManager : MonoBehaviour
     }
 
     // Pause game function (with or without menu)
-    public void PauseGame(bool ui){
+    public void PauseGame(bool ui)
+    {
         Time.timeScale = 0;
         Cursor.visible = true;
-        if(ui){
+        if (ui)
+        {
             uiManager.toggleMenuPausa(true);
         }
         enableInput(false);
@@ -195,33 +201,37 @@ public class GameManager : MonoBehaviour
     }
 
     // Called when player collides on the checkpoint
-    public void finishLevel(){
+    public void finishLevel()
+    {
         // Move player to avoid a loop on checkpoint
-        player.transform.position = new Vector3((player.transform.position.x)+1,player.transform.position.y,player.transform.position.z);
+        player.transform.position = new Vector3((player.transform.position.x) + 1, player.transform.position.y, player.transform.position.z);
         // Pause the game without graphic interface
         PauseGame(false);
 
         // Get level index
         int index = niveles.FindIndex(x => x.LevelName.Equals(currentScene.name));
 
+        // Unlock next level
+        niveles[index+1].Locked = false;
         // Insignias, by default is one (Obsequio)
         int insignias = 1;
 
         // Get time and (optionally) add insignia
-        float time = (Time.time)-startTime;
+        float time = (Time.time) - startTime;
         insignias++;
 
         // Get interactions and (optionally) add insignia
-        if(numInteractions <= niveles[index].MaxInteractions){
+        if (numInteractions <= niveles[index].MaxInteractions)
+        {
             insignias++;
         }
-                
+
         // Set insignias
         niveles[index].Insignias = insignias;
 
         // Show menu puntuacion (pass insignias and time)
-        uiManager.showMenuPuntuacion(insignias,time);
-        numInteractions= 0;
+        uiManager.showMenuPuntuacion(insignias, time);
+        numInteractions = 0;
     }
 
     // Enable/disable player input
