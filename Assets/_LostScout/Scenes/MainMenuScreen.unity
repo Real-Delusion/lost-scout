@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.6403126, g: 0.8575756, b: 1.0921782, a: 1}
+  m_IndirectSpecularColor: {r: 0.48463547, g: 0.701911, b: 0.9358779, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -922,6 +922,8 @@ MonoBehaviour:
   canvasSeleccionNiveles: {fileID: 733090491}
   canvasMainMenu: {fileID: 273117677}
   fromGame: 0
+  gameManager: {fileID: 3124028698019010039, guid: cc9438c7957b9a826aee30027a6d39ec,
+    type: 3}
 --- !u!1 &733090491
 GameObject:
   m_ObjectHideFlags: 0
@@ -1646,7 +1648,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1111759940}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
@@ -3390,7 +3392,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1966460187
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3406,11 +3408,11 @@ RectTransform:
   m_Father: {fileID: 733090495}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 9.900024, y: -19.5}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -8.799988, y: -21.199997}
   m_SizeDelta: {x: 100, y: 23}
-  m_Pivot: {x: 0, y: 1}
+  m_Pivot: {x: 1, y: 1}
 --- !u!114 &1966460188
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3452,7 +3454,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 566418156}
-        m_MethodName: exit
+        m_MethodName: volver
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

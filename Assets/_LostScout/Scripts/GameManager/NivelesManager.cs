@@ -109,23 +109,21 @@ public class NivelesManager : MonoBehaviour
 
     public void nextScreen()
     {
-        paginaNivel += 6;
-        printLevels();
+        GameObject.Find("atras").GetComponent<Image>().enabled = true;
+        GameObject.Find("adelante").GetComponent<Image>().enabled = false;
+        if (paginaNivel < 6)
+        {
+            paginaNivel += 6;
+            printLevels();
+        }
     }
 
     public void backScreen()
     {
-        if (paginaNivel == 0)
-        {
-            gameManager = GetComponent<GameManager>();
-            gameManager.fromGame = false;
-            SceneManager.LoadScene("MainMenuScreen");
-        }
-        else
-        {
-            paginaNivel -= 6;
-            printLevels();
-        }
+        GameObject.Find("atras").GetComponent<Image>().enabled = false;
+        GameObject.Find("adelante").GetComponent<Image>().enabled = true;
+        paginaNivel -= 6;
+        printLevels();
 
     }
 
@@ -149,7 +147,7 @@ public class NivelesManager : MonoBehaviour
 
         if (level.Insignias >= 1)
         {
-            GameObject.Find("imageObsequioDes").GetComponent<Image>().enabled = false; 
+            GameObject.Find("imageObsequioDes").GetComponent<Image>().enabled = false;
         }
         else
         {

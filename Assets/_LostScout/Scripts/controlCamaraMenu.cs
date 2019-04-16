@@ -11,13 +11,17 @@ public class controlCamaraMenu : MonoBehaviour
     public GameObject canvasMainMenu;
     public bool fromGame = false;
 
-    void Start(){
+
+    void Start()
+    {
         // Hide at start
-        if (!fromGame) {
-        canvasMainMenu.GetComponent<Canvas> ().enabled = true;        
-        canvasSeleccionNiveles.GetComponent<Canvas> ().enabled = false;
+        if (!fromGame)
+        {
+            canvasMainMenu.GetComponent<Canvas>().enabled = true;
+            canvasSeleccionNiveles.GetComponent<Canvas>().enabled = false;
         }
-        else {
+        else
+        {
             showSeleccionNiveles();
         }
     }
@@ -42,12 +46,20 @@ public class controlCamaraMenu : MonoBehaviour
         seleccionadorLv.GetComponent<Canvas> ().enabled = true;
     }*/
 
-    public void showSeleccionNiveles(){
-        canvasMainMenu.GetComponent<Canvas> ().enabled = false;        
-        canvasSeleccionNiveles.GetComponent<Canvas> ().enabled = true;
+    public void showSeleccionNiveles()
+    {
+        canvasMainMenu.GetComponent<Canvas>().enabled = false;
+        canvasSeleccionNiveles.GetComponent<Canvas>().enabled = true;
     }
 
-    public void exit () {
+    public void volver()
+    {
+        canvasMainMenu.GetComponent<Canvas>().enabled = true;
+        canvasSeleccionNiveles.GetComponent<Canvas>().enabled = false;
+    }
+
+    public void exit()
+    {
         Application.Quit();
     }
 }
