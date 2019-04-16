@@ -100,6 +100,7 @@ public class NivelesManager : MonoBehaviour
             {
                 Image marco = images[1];
                 marco.sprite = lockedMarco;
+                btn.onClick.AddListener(() => LoadModal(t));
             }
 
             //pos += 175;
@@ -131,11 +132,20 @@ public class NivelesManager : MonoBehaviour
     void LoadModal(Nivel level)
     {
         selectedLevel = level.LevelName;
+
         GameObject.FindWithTag("CanvasModal").GetComponent<Canvas>().enabled = true;
+        GameObject.Find("marcoLocked").GetComponent<Image>().enabled = false;
         GameObject.Find("imageNivel").GetComponent<Image>().sprite = miniaturas[level.ID - 1];
         GameObject.Find("TextObsequio").GetComponent<Text>().text = "Supera el " + level.LevelName;
         GameObject.Find("TextHabilidad").GetComponent<Text>().text = "Obten un tiempo menor a " + level.MaxTime + "s";
         GameObject.Find("TextPrestigio").GetComponent<Text>().text = "Realiza menos de " + level.MaxInteractions + " interacciones";
+
+        if (level.Locked)
+        {
+            GameObject.Find("marcoLocked").GetComponent<Image>().enabled = true;
+            GameObject.Find("botonJugar").GetComponent<Button>().interactable = false;
+        }
+
     }
 
     public void closeModal()
