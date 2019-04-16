@@ -11,6 +11,7 @@ public class NivelesManager : MonoBehaviour
     public GameObject CanvasTarget;
     public List<Sprite> miniaturas;
     public Sprite lockedMarco;
+    private static string selectedLevel;
 
     public List<Nivel> levels;
     public static int paginaNivel;
@@ -62,10 +63,10 @@ public class NivelesManager : MonoBehaviour
             miniatura.sprite = miniaturas[i];
 
             Button btn = obj.gameObject.GetComponent<Button>();
-            var t = GameManager.niveles[i].LevelName;
+            Nivel t = GameManager.niveles[i];
             if (!GameManager.niveles[i].Locked)
             {
-                btn.onClick.AddListener(() => LoadLevel(t));
+                btn.onClick.AddListener(() => LoadModal(t));
             }
             else
             {
@@ -99,9 +100,20 @@ public class NivelesManager : MonoBehaviour
 
     }
 
-
-    void LoadLevel(string levelName)
+    void LoadModal(Nivel level)
     {
-        SceneManager.LoadScene(levelName);
+        selectedLevel = level.LevelName;
+        GameObject.FindWithTag("CanvasModal").GetComponent<Canvas>().enabled = true;
+        GameObject.Find("imageNivel").GetComponent<Image>().sprite = miniaturas[level.ID - 1];
+    }
+
+    public void closeModal()
+    {
+        GameObject.FindWithTag("CanvasModal").GetComponent<Canvas>().enabled = false;
+    }
+
+    public void LoadLevel()
+    {
+        SceneManager.LoadScene(selectedLevel);
     }
 }

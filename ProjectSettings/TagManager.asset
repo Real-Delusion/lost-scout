@@ -8,6 +8,7 @@ TagManager:
   - checkpoint
   - NivelesCanvas
   - NivelesCanvas2
+  - CanvasModal
   layers:
   - Default
   - TransparentFX
