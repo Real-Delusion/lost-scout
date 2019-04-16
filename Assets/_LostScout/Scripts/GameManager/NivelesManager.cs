@@ -145,7 +145,6 @@ public class NivelesManager : MonoBehaviour
             GameObject.Find("marcoLocked").GetComponent<Image>().enabled = true;
             GameObject.Find("botonJugar").GetComponent<Button>().interactable = false;
         }
-
     }
 
     public void closeModal()
