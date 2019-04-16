@@ -107,19 +107,17 @@ public class NivelesManager : MonoBehaviour
 
     public void nextScreen()
     {
-        GameObject atrasButton = GameObject.Find("atras");
-        atrasButton.SetActive(true);
         paginaNivel += 6;
         printLevels();
     }
 
     public void backScreen()
     {
-        GameObject atrasButton = GameObject.Find("atras");
-
-        if (paginaNivel == 2)
+        if (paginaNivel == 0)
         {
-            atrasButton.SetActive(false);
+            gameManager = GetComponent<GameManager>();
+            gameManager.fromGame = false;
+            SceneManager.LoadScene("MainMenuScreen");
         }
         else
         {
