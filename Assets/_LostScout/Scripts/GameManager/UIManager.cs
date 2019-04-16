@@ -26,12 +26,10 @@ public class UIManager : MonoBehaviour
 
     public void toggleMenuPausa(bool state){
         menuPausa.SetActive(state);
-        Cursor.visible = state;
     }
 
     public void showMenuPuntuacion (int insignias, float time){
         menuPuntuacion.SetActive(true);
-        Debug.Log(insignias);
         tiempo.text = (Math.Round(time,2).ToString())+" s";
         if(insignias >= 2){
             insigniaHabilidadGrey.SetActive(false);
