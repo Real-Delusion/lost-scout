@@ -4,7 +4,7 @@ using UnityEngine;
 
 // Este script se asigna a un gameobject al que el player se podrá subir
 
-public class CajaParaSubir : MonoBehaviour
+public class troncoInteraccionable : MonoBehaviour
 {
     // radio desde el cual se podrá interactuar
     public float radio = 1.5f;
