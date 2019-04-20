@@ -134,7 +134,7 @@ public class NivelesManager : MonoBehaviour
         GameObject.FindWithTag("CanvasModal").GetComponent<Canvas>().enabled = true;
         GameObject.Find("marcoLocked").GetComponent<Image>().enabled = false;
         GameObject.Find("botonJugar").GetComponent<Button>().interactable = true;
-        GameObject.Find("imageNivel").GetComponent<Image>().sprite = miniaturas[level.ID - 1];
+        GameObject.Find("imageNivel").GetComponent<Image>().sprite = miniaturas[level.ID];
         GameObject.Find("TextObsequio").GetComponent<Text>().text = "Supera el " + level.LevelName;
         GameObject.Find("TextHabilidad").GetComponent<Text>().text = "Obten un tiempo menor a " + level.MaxTime + "s";
         GameObject.Find("TextPrestigio").GetComponent<Text>().text = "Realiza menos de " + level.MaxInteractions + " interacciones";
