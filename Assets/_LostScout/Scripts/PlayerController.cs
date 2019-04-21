@@ -139,10 +139,8 @@ public class PlayerController : MonoBehaviour
 
             // Obtenemos los angulos de Euler
             turnAmount = Mathf.Atan2(move.x, move.z);
-
-
-                transform.Rotate(0, turnAmount * velocidadRotacion * Time.deltaTime, 0);
             
+            transform.Rotate(0, turnAmount * velocidadRotacion * Time.deltaTime, 0);
 
             //Si el personaje esta tocando tierra...
 
@@ -178,9 +176,9 @@ public class PlayerController : MonoBehaviour
 
         // Si el estado del player es subir escaleras
         if (Estado == EstadosPlayer.SubirEscalera) {
-            Debug.Log("yeeah");
+            Debug.Log(Input.GetAxis("Vertical"));
 
-            t += 0.03f;
+           /* t += 0.03f;
 
             if (t < 1.0f){
                 Debug.Log("Subiendo");
@@ -189,7 +187,16 @@ public class PlayerController : MonoBehaviour
             }else{
                 this.Estado = EstadosPlayer.Andar;
                 t = 0.0f;       
-            }
+            } */
+            
+              if (Input.GetAxis("Vertical") > 0)
+             {
+                 transform.Translate(new Vector3(0, 1, 0) * Time.deltaTime * velocidad);
+             }
+             if (Input.GetAxis("Vertical") < 0)
+             {
+                 transform.Translate(new Vector3(0, -1, 0) * Time.deltaTime * velocidad);
+             }
         }
 
         if ((Input.GetKeyDown(KeyCode.Mouse0) | Input.GetKeyDown("joystick button 5") )&& !piedra) // Si se pulsa el boton izq. del mouse y la piedra es false
