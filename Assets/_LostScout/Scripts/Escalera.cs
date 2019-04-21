@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Escalera : MonoBehaviour
 {
-    // radio desde el cual se podrá interactuar
+    /*// radio desde el cual se podrá interactuar
     public float radio = 1.5f;
 
     // player
@@ -56,5 +56,46 @@ public class Escalera : MonoBehaviour
     {
         Gizmos.color = Color.blue;
         Gizmos.DrawWireSphere(transform.position, radio);
+    } */
+
+    GameObject player;
+     bool canClimb = false;
+     public float speed = 1;
+
+     // script playercontroller del player
+    private PlayerController playerController;
+ 
+    void OnTriggerEnter(Collider coll) 
+    {
+         if (coll.gameObject.tag == "Player" && player.transform.position.y < (/*transform.position.y +*/ transform.localScale.y /*) / 2 */))
+         {
+             canClimb = true;
+         }
     }
+ 
+     void OnTriggerExit(Collider coll2)
+     {
+         if (coll2.gameObject.tag == "Player")
+         {
+             canClimb = false;
+         }
+     }
+
+      // Start is called before the first frame update
+    void Start()
+    {
+        // guardamos el player con el tag
+        player = GameObject.FindGameObjectWithTag("Player");
+        playerController = player.GetComponent<PlayerController>();
+    }
+     void Update()
+     {
+         if (canClimb && transform.position.y > 0)
+         {
+             player.GetComponent<PlayerController>().Estado = PlayerController.EstadosPlayer.SubirEscalera;
+         }
+         else {
+             player.GetComponent<PlayerController>().Estado = PlayerController.EstadosPlayer.Andar;
+         }
+     }
 }
