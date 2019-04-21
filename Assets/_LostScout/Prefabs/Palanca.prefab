@@ -153,7 +153,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 3928cc404b8d8c0038d13267a434d472, type: 2}
+  - {fileID: 2100000, guid: 62334b91892f044a8b493eb1554cd733, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -236,6 +236,7 @@ MonoBehaviour:
   animObjeto: {fileID: 0}
   radio: 2
   player: {fileID: 0}
+  colliderPuente: {fileID: 0}
 --- !u!1 &620236169
 GameObject:
   m_ObjectHideFlags: 0
