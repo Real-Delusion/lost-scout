@@ -24,6 +24,9 @@ public class troncoInteraccionable : MonoBehaviour
     // rigidbody
     private Rigidbody rb;
 
+    // efecto mover tronco
+    public GameObject efectoSmoke;
+
     // para ver el radio en la escena
     public void OnDrawGizmos()
     {
@@ -48,6 +51,9 @@ public class troncoInteraccionable : MonoBehaviour
         // guardamos los constrains movibles del rigidbody
         // es decir, freeze 'Y' y todas las rotaciones
         constraints = rb.constraints;
+
+        GameObject.FindWithTag("efectoSmoke");
+        efectoSmoke.SetActive(false);
     }
 
 
@@ -111,10 +117,12 @@ public class troncoInteraccionable : MonoBehaviour
 
                 // cambiamos el estado del player a empujando
                 playerController.Estado = PlayerController.EstadosPlayer.Empujar;
+                efectoSmoke.SetActive(true);
             }
             else
             {
                 Estado = EstadosCaja.Estatico;
+                efectoSmoke.SetActive(false);
             }
 
         }
