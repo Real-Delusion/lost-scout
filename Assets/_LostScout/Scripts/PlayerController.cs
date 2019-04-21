@@ -188,18 +188,14 @@ public class PlayerController : MonoBehaviour
                 this.Estado = EstadosPlayer.Andar;
                 t = 0.0f;       
             } */
-
-
-            if (Input.GetAxis("Vertical") > 0)
+            
+              if (Input.GetAxis("Vertical") > 0)
              {
                  transform.Translate(new Vector3(0, 1, 0) * Time.deltaTime * velocidad);
              }
              if (Input.GetAxis("Vertical") < 0)
              {
                  transform.Translate(new Vector3(0, -1, 0) * Time.deltaTime * velocidad);
-             }
-             if (Input.GetAxis("Horizontal") > 0) {
-                 this.Estado = EstadosPlayer.Andar;
              }
         }
 
