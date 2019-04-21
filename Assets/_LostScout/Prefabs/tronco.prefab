@@ -96,6 +96,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   radio: 1.5
+  efectoSmoke: {fileID: 153256, guid: fe394d041df1a0547990f49cf653249f, type: 3}
 --- !u!54 &8689382603918090951
 Rigidbody:
   m_ObjectHideFlags: 0
