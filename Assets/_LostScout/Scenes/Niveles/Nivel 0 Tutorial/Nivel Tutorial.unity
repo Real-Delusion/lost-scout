@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.64020616, g: 0.85753965, b: 1.0921829, a: 1}
+  m_IndirectSpecularColor: {r: 0.6403126, g: 0.8575756, b: 1.0921782, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -482,6 +482,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.2254004
       objectReference: {fileID: 0}
+    - target: {fileID: 6520172433255867480, guid: 9c890aeb82027460695139e2185d6a40,
+        type: 3}
+      propertyPath: efectoSmoke
+      value: 
+      objectReference: {fileID: 405416592}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9c890aeb82027460695139e2185d6a40, type: 3}
 --- !u!4 &237463065 stripped
@@ -868,6 +873,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400002, guid: 3d5f662ee8f060b4aabc729f0a5962c4,
     type: 3}
   m_PrefabInstance: {fileID: 405042862}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &405416592 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9046715232432066270, guid: 9e329409a44a04ec79a91c9b1ba24be0,
+    type: 3}
+  m_PrefabInstance: {fileID: 1843135849}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &437759814
 PrefabInstance:
@@ -3384,6 +3395,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.2254004
       objectReference: {fileID: 0}
+    - target: {fileID: 6520172433255867480, guid: 9c890aeb82027460695139e2185d6a40,
+        type: 3}
+      propertyPath: efectoSmoke
+      value: 
+      objectReference: {fileID: 405416592}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9c890aeb82027460695139e2185d6a40, type: 3}
 --- !u!4 &1594642005 stripped
