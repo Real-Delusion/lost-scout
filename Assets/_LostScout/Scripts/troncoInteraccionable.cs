@@ -52,7 +52,7 @@ public class troncoInteraccionable : MonoBehaviour
         // es decir, freeze 'Y' y todas las rotaciones
         constraints = rb.constraints;
 
-        GameObject.FindWithTag("efectoSmoke");
+        //efectoSmoke = GameObject.FindWithTag("efectoSmoke");
         efectoSmoke.SetActive(false);
     }
 

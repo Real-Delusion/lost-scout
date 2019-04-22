@@ -9,6 +9,7 @@ TagManager:
   - NivelesCanvas
   - NivelesCanvas2
   - CanvasModal
+  - efectoSmoke
   layers:
   - Default
   - TransparentFX
