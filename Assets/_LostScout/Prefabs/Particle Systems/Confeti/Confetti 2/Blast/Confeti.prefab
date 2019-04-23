@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6768264727240090712}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Confeti
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -10,6 +10,7 @@ public class UIManager : MonoBehaviour
     public GameObject menuPuntuacion;
     public GameObject insigniaHabilidadGrey;
     public GameObject insigniaPrestigioGrey;
+    public GameObject bienHecho;
     public Text tiempo;
     public Text tiempoRecord;
 
@@ -45,5 +46,13 @@ public class UIManager : MonoBehaviour
 
     public void hideMenuPuntuacion (){
         menuPuntuacion.SetActive(false);
+    }
+    public void showBienHecho()
+    {
+        bienHecho.SetActive(true);
+    }
+    public void hideBienHecho()
+    {
+        bienHecho.SetActive(false);
     }
 }

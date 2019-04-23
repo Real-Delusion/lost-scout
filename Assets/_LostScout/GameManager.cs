@@ -233,8 +233,11 @@ public class GameManager : MonoBehaviour
         // Set insignias
         niveles[index].Insignias = insignias;
 
-        // Show menu puntuacion (pass insignias and time)
-        uiManager.showMenuPuntuacion(insignias, time);
+        //Show texto bien hecho
+        uiManager.showBienHecho();
+        //Esperar 5 segundos para mostrar el menuPuntuacion
+        StartCoroutine(Wait(insignias,time));
+
         numInteractions = 0;
     }
 
@@ -243,6 +246,15 @@ public class GameManager : MonoBehaviour
     {
         player.GetComponent<PlayerController>().enabled = state;
         camera.GetComponent<Camara>().enabled = state;
+    }
+
+    IEnumerator Wait(int insignias, float time)
+    {
+        yield return new WaitForSecondsRealtime(4);
+        // Show menu puntuacion (pass insignias and time)
+        uiManager.hideBienHecho();
+        uiManager.showMenuPuntuacion(insignias, time);
+
     }
 
 }
