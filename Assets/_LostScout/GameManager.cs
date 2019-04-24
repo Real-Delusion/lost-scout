@@ -191,11 +191,11 @@ public class GameManager : MonoBehaviour
     // Pause game function (with or without menu)
     public void PauseGame(bool ui)
     {
-        Time.timeScale = 0;
         Cursor.visible = true;
         if (ui)
         {
             uiManager.toggleMenuPausa(true);
+            Time.timeScale = 0;
         }
         enableInput(false);
         gamePaused = true;

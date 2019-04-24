@@ -49,10 +49,19 @@ public class UIManager : MonoBehaviour
     }
     public void showBienHecho()
     {
+        StartCoroutine(Wait());
         bienHecho.SetActive(true);
+
     }
     public void hideBienHecho()
     {
         bienHecho.SetActive(false);
+    }
+    IEnumerator Wait()
+    {
+        yield return new WaitForSecondsRealtime(1f);
+        // Show menu puntuacion (pass insignias and time)
+        Camera.main.transform.GetChild(0).gameObject.SetActive(true);
+        Camera.main.transform.GetChild(1).gameObject.SetActive(true);
     }
 }
