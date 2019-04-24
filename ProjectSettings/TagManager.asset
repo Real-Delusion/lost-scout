@@ -10,6 +10,7 @@ TagManager:
   - NivelesCanvas2
   - CanvasModal
   - efectoSmoke
+  - confeti
   layers:
   - Default
   - TransparentFX
