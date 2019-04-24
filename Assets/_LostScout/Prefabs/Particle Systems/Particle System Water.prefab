@@ -40,8 +40,8 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 409138405411490686}
   serializedVersion: 6
-  lengthInSec: 1
-  simulationSpeed: 0.39
+  lengthInSec: 1.84
+  simulationSpeed: 0.15
   stopAction: 0
   cullingMode: 0
   ringBufferMode: 0
@@ -659,7 +659,7 @@ ParticleSystem:
   ShapeModule:
     serializedVersion: 6
     enabled: 1
-    type: 8
+    type: 10
     angle: 4.6086884
     length: 0.3930562
     boxThickness: {x: 0, y: 0, z: 0}

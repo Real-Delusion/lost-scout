@@ -2889,10 +2889,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 398706138, guid: 5895ae7683e37a739b22ee4749cb7180, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 62334b91892f044a8b493eb1554cd733, type: 2}
     - target: {fileID: 398706134, guid: 5895ae7683e37a739b22ee4749cb7180, type: 3}
       propertyPath: animObjeto
       value: 
@@ -2905,6 +2901,10 @@ PrefabInstance:
       propertyPath: colliderPuente
       value: 
       objectReference: {fileID: 2012261308}
+    - target: {fileID: 398706138, guid: 5895ae7683e37a739b22ee4749cb7180, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 62334b91892f044a8b493eb1554cd733, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5895ae7683e37a739b22ee4749cb7180, type: 3}
 --- !u!4 &899454768 stripped
@@ -3226,7 +3226,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1072574404}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 566007387}
