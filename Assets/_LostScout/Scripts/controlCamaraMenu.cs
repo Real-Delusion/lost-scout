@@ -48,8 +48,9 @@ public class controlCamaraMenu : MonoBehaviour
 
     public void showSeleccionNiveles()
     {
-        if (GameManager.niveles[0].Locked == true) {
+        if (PlayerPrefs.GetInt("nivelTutorial") == 0) {
             SceneManager.LoadScene("Nivel Tutorial");
+            PlayerPrefs.SetInt("nivelTutorial",1);
         }
         else {
             canvasMainMenu.GetComponent<Canvas>().enabled = false;

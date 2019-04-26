@@ -233,6 +233,9 @@ public class GameManager : MonoBehaviour
         // Set insignias
         niveles[index].Insignias = insignias;
 
+        // Set completed
+        niveles[index].Completed = true;
+
         //Show texto bien hecho
         uiManager.showBienHecho();
         //Esperar 5 segundos para mostrar el menuPuntuacion
