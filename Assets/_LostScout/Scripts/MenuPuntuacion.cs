@@ -22,6 +22,6 @@ public class MenuPuntuacion : MonoBehaviour
         gameManager.ResumeGame(false);
         gameManager.uiManager.hideMenuPuntuacion();
         gameManager.fromGame = true;
-        SceneManager.LoadScene("MainMenuScreen");
+        GameManager.sceneTransitions.load("MainMenuScreen");
     }
 }

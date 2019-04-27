@@ -19,6 +19,7 @@ public class NivelesManager : MonoBehaviour
     void Start()
     {
         paginaNivel = 0;
+        gameManager = GetComponent<GameManager>();   
     }
 
     public void printLevels()
@@ -180,6 +181,7 @@ public class NivelesManager : MonoBehaviour
 
     public void LoadLevel()
     {
-        SceneManager.LoadScene(selectedLevel);
+        //SceneManager.LoadScene(selectedLevel);
+        GameManager.sceneTransitions.load(selectedLevel);
     }
 }

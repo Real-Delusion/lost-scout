@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
     // *** MANAGERS
     public NivelesManager nivelesManager;
     public UIManager uiManager;
+    public static SceneTransitions sceneTransitions;
 
 
     public bool gamePaused = false;
@@ -64,6 +65,7 @@ public class GameManager : MonoBehaviour
         // Get different component managers
         nivelesManager = GetComponent<NivelesManager>();
         uiManager = GetComponent<UIManager>();
+        sceneTransitions = GetComponent<SceneTransitions>();
 
         // Get actual scene name
         currentScene = SceneManager.GetActiveScene();
@@ -122,7 +124,7 @@ public class GameManager : MonoBehaviour
         niveles = new List<Nivel>()
         {
             new Nivel(0,"Nivel Tutorial",false,0,false,60,20),
-            new Nivel(1,"Nivel 1",false,0,true,60,1),
+            new Nivel(1,"Nivel 1",false,0,false,60,1),
             new Nivel(2,"Nivel 2",false,0,true,60,1),
             new Nivel(3,"Nivel 3",false,0,true,60,8),
             new Nivel(4,"Nivel 4",false,0,true,60,8),
