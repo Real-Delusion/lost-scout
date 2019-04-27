@@ -26,7 +26,7 @@ public class UIManager : MonoBehaviour
     }
 
     public void toggleMenuPausa(bool state){
-        menuPausa.SetActive(state);
+        menuPausa.transform.Find("ModalContent").gameObject.GetComponent<Animator>().SetBool("open", state);
     }
 
     public void showMenuPuntuacion (int insignias, float time){
