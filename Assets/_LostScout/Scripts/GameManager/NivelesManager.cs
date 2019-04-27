@@ -132,6 +132,7 @@ public class NivelesManager : MonoBehaviour
         selectedLevel = level.LevelName;
 
         GameObject.FindWithTag("CanvasModal").GetComponent<Canvas>().enabled = true;
+        GameObject.FindWithTag("CanvasModal").transform.Find("ModalContent").gameObject.GetComponent<Animator>().SetBool("open", true);
         GameObject.Find("marcoLocked").GetComponent<Image>().enabled = false;
         GameObject.Find("botonJugar").GetComponent<Button>().interactable = true;
         GameObject.Find("imageNivel").GetComponent<Image>().sprite = miniaturas[level.ID];
@@ -173,7 +174,8 @@ public class NivelesManager : MonoBehaviour
 
     public void closeModal()
     {
-        GameObject.FindWithTag("CanvasModal").GetComponent<Canvas>().enabled = false;
+        //GameObject.FindWithTag("CanvasModal").GetComponent<Canvas>().enabled = false;
+        GameObject.FindWithTag("CanvasModal").transform.Find("ModalContent").gameObject.GetComponent<Animator>().SetBool("open", false);
     }
 
     public void LoadLevel()
