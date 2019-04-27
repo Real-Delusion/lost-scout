@@ -55,7 +55,7 @@ public class UIManager : MonoBehaviour
     }
     public void hideBienHecho()
     {
-        bienHecho.SetActive(false);
+        bienHecho.transform.Find("ModalContent").gameObject.GetComponent<Animator>().SetBool("open", false);
     }
     IEnumerator Wait()
     {
