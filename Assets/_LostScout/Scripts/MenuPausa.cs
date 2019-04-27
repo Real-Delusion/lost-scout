@@ -36,6 +36,8 @@ public class MenuPausa : MonoBehaviour
     public void exit(){
         gameManager.ResumeGame(true);
         gameManager.fromGame = true;
-        GameManager.sceneTransitions.load("MainMenuScreen");
+        if(GameManager.sceneTransitions != null){
+            GameManager.sceneTransitions.load("MainMenuScreen");
+        }
     }
 }

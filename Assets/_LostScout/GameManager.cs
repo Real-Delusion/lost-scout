@@ -51,21 +51,21 @@ public class GameManager : MonoBehaviour
         {
             //if not, set instance to this
             instance = this;
+
+            // Get different component managers
+            nivelesManager = GetComponent<NivelesManager>();
+            uiManager = GetComponent<UIManager>();
+            sceneTransitions = GetComponent<SceneTransitions>();
+
+            //Sets this to not be destroyed when reloading scene
+            DontDestroyOnLoad(gameObject);
             //Call the InitGame function to initialize the game
             InitGame();
         }
         else if (instance != this) //If instance already exists and it's not this:
         {
-            Destroy(gameObject); //Then destroy this. This enforces our singleton pattern, meaning there can only ever be one instance of a GameManager.
+            DestroyImmediate(gameObject); //Then destroy this. This enforces our singleton pattern, meaning there can only ever be one instance of a GameManager.
         }
-
-        //Sets this to not be destroyed when reloading scene
-        DontDestroyOnLoad(gameObject);
-
-        // Get different component managers
-        nivelesManager = GetComponent<NivelesManager>();
-        uiManager = GetComponent<UIManager>();
-        sceneTransitions = GetComponent<SceneTransitions>();
 
         // Get actual scene name
         currentScene = SceneManager.GetActiveScene();
@@ -216,9 +216,9 @@ public class GameManager : MonoBehaviour
 
         // Unlock this level (for tutorial)
         niveles[index].Locked = false;
-        
+
         // Unlock next level
-        niveles[index+1].Locked = false;
+        niveles[index + 1].Locked = false;
         // Insignias, by default is one (Obsequio)
         int insignias = 1;
 
@@ -241,7 +241,7 @@ public class GameManager : MonoBehaviour
         //Show texto bien hecho
         uiManager.showBienHecho();
         //Esperar 5 segundos para mostrar el menuPuntuacion
-        StartCoroutine(Wait(insignias,time));
+        StartCoroutine(Wait(insignias, time));
 
         numInteractions = 0;
     }
