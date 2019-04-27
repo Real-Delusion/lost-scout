@@ -30,7 +30,7 @@ public class UIManager : MonoBehaviour
     }
 
     public void showMenuPuntuacion (int insignias, float time){
-        menuPuntuacion.SetActive(true);
+        menuPuntuacion.transform.Find("ModalContent").gameObject.GetComponent<Animator>().SetBool("open", true);
         tiempo.text = (Math.Round(time,2).ToString())+" s";
         if(insignias >= 2){
             insigniaHabilidadGrey.SetActive(false);
@@ -45,7 +45,7 @@ public class UIManager : MonoBehaviour
     }
 
     public void hideMenuPuntuacion (){
-        menuPuntuacion.SetActive(false);
+        menuPuntuacion.transform.Find("ModalContent").gameObject.GetComponent<Animator>().SetBool("open", false);
     }
     public void showBienHecho()
     {
