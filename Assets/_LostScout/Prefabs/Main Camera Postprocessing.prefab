@@ -82,6 +82,11 @@ PrefabInstance:
       propertyPath: m_ForceIntoRT
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7543553651438021109, guid: fe0cc22578faa7e969949f91c11f5477,
+        type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 7543553651438021110, guid: fe0cc22578faa7e969949f91c11f5477,
         type: 3}
       propertyPath: TargetTransform
