@@ -300,6 +300,41 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.66975
       objectReference: {fileID: 0}
+    - target: {fileID: 15559910801204637, guid: 18b6ee7f38586304dac19d5da907c014,
+        type: 3}
+      propertyPath: m_AABB.m_Center.x
+      value: -0.00065717846
+      objectReference: {fileID: 0}
+    - target: {fileID: 15559910801204637, guid: 18b6ee7f38586304dac19d5da907c014,
+        type: 3}
+      propertyPath: m_AABB.m_Center.y
+      value: -0.0061275214
+      objectReference: {fileID: 0}
+    - target: {fileID: 15559910801204637, guid: 18b6ee7f38586304dac19d5da907c014,
+        type: 3}
+      propertyPath: m_AABB.m_Center.z
+      value: 0.12738954
+      objectReference: {fileID: 0}
+    - target: {fileID: 15559910801204637, guid: 18b6ee7f38586304dac19d5da907c014,
+        type: 3}
+      propertyPath: m_AABB.m_Extent.x
+      value: 0.22660246
+      objectReference: {fileID: 0}
+    - target: {fileID: 15559910801204637, guid: 18b6ee7f38586304dac19d5da907c014,
+        type: 3}
+      propertyPath: m_AABB.m_Extent.y
+      value: 0.14295527
+      objectReference: {fileID: 0}
+    - target: {fileID: 15559910801204637, guid: 18b6ee7f38586304dac19d5da907c014,
+        type: 3}
+      propertyPath: m_AABB.m_Extent.z
+      value: 0.14355136
+      objectReference: {fileID: 0}
+    - target: {fileID: 15559910801204637, guid: 18b6ee7f38586304dac19d5da907c014,
+        type: 3}
+      propertyPath: m_DirtyAABB
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18b6ee7f38586304dac19d5da907c014, type: 3}
 --- !u!4 &186303317 stripped
@@ -888,10 +923,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 400000, guid: d0a409b132372084987f40183993e371, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 1.5
-      objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: d0a409b132372084987f40183993e371, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -900,6 +931,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: 9a23622c50fec4024904a660e3f91752, type: 2}
+    - target: {fileID: 400000, guid: d0a409b132372084987f40183993e371, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d0a409b132372084987f40183993e371, type: 3}
 --- !u!4 &682070718 stripped
