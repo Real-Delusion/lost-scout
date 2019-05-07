@@ -11,7 +11,6 @@ public class UIManager : MonoBehaviour
     public GameObject insigniaHabilidad;
     public GameObject insigniaPrestigio;
     public GameObject insigniaObsequio;
-    public Image obe;
     public float _fadeSpeed = 5f;
     public GameObject bienHecho;
     public Text tiempo;
@@ -25,7 +24,6 @@ public class UIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
     }
 
     public void toggleMenuPausa(bool state){
@@ -36,45 +34,31 @@ public class UIManager : MonoBehaviour
         menuPuntuacion.transform.Find("ModalContent").gameObject.GetComponent<Animator>().SetBool("open", true);
         tiempo.text = (Math.Round(time,2).ToString())+" s";
         insigniaObsequio.SetActive(true);
-        menuPuntuacion.transform.Find("ModalContent").Find("obsequio").gameObject.GetComponent<Animator>().SetBool("show", true);
-        //StartCoroutine (Fadein (obe, _fadeSpeed));
+        animarChapa("obsequio");
 
         if(insignias >= 2){
-            //insigniaHabilidadGrey.SetActive(false);
+            StartCoroutine("MyCoroutine");
             insigniaHabilidad.SetActive(true);
-            menuPuntuacion.transform.Find("ModalContent").Find("habilidad").gameObject.GetComponent<Animator>().SetBool("show", true);
-
+            animarChapa("habilidad");        
         }else{
             insigniaHabilidad.SetActive(false); 
         }
         if(insignias >= 3){
-            //insigniaPrestigioGrey.SetActive(false);
+            StartCoroutine("MyCoroutine");
             insigniaPrestigio.SetActive(true);
-            menuPuntuacion.transform.Find("ModalContent").Find("prestigio").gameObject.GetComponent<Animator>().SetBool("show", true);
+            animarChapa("prestigio");
         }else{
             insigniaPrestigio.SetActive(false);
         }
     }
 
-    // You can use it for multiple images, just pass that image.
-    IEnumerator Fadein (Image image, float speed)
-    {
-        // Will run only until image's alpha becomes completely 255, will stop after that.
-        while (image.color.a < 255) {
-                        yield return new WaitForSecondsRealtime (0.5f);
+    public void animarChapa (string chapa) {
+        menuPuntuacion.transform.Find("ModalContent").Find(chapa).gameObject.GetComponent<Animator>().SetBool("show", true);
+    }
 
-        /*    // You can replace WaitForEndOfFrame with WaitForSeconds.
-            Color colorWithNewAlpha = image.color;
-            //colorWithNewAlpha.a += speed;
-            colorWithNewAlpha.a += 20f;
-            Debug.Log(obe.color);
-            image.color = colorWithNewAlpha;
-            //Debug.Log(image.color.a + " " + image); */
-            Color imagecolor = image.color;
-            imagecolor.a = 255;
-            Color colorLerp = Color.Lerp(image.color, imagecolor, Mathf.PingPong(Time.time, 1));
-            image.color = colorLerp;
-        } 
+    IEnumerator MyCoroutine()
+    {
+        yield return new WaitForSecondsRealtime(1);
     }
 
     public void hideMenuPuntuacion (){
