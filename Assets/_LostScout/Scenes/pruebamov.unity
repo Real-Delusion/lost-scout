@@ -575,21 +575,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Main Camera
       objectReference: {fileID: 0}
-    - target: {fileID: 7543553651438021109, guid: fe0cc22578faa7e969949f91c11f5477,
-        type: 3}
-      propertyPath: orthographic
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7543553651438021110, guid: fe0cc22578faa7e969949f91c11f5477,
-        type: 3}
-      propertyPath: TargetTransform
-      value: 
-      objectReference: {fileID: 2071678773}
-    - target: {fileID: 7543553651438021110, guid: fe0cc22578faa7e969949f91c11f5477,
-        type: 3}
-      propertyPath: PlayerTransform
-      value: 
-      objectReference: {fileID: 799276381}
     - target: {fileID: 7543553651438021002, guid: fe0cc22578faa7e969949f91c11f5477,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -645,5 +630,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7543553651438021109, guid: fe0cc22578faa7e969949f91c11f5477,
+        type: 3}
+      propertyPath: orthographic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7543553651438021110, guid: fe0cc22578faa7e969949f91c11f5477,
+        type: 3}
+      propertyPath: TargetTransform
+      value: 
+      objectReference: {fileID: 2071678773}
+    - target: {fileID: 7543553651438021110, guid: fe0cc22578faa7e969949f91c11f5477,
+        type: 3}
+      propertyPath: PlayerTransform
+      value: 
+      objectReference: {fileID: 799276381}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fe0cc22578faa7e969949f91c11f5477, type: 3}

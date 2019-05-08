@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.6400811, g: 0.8574626, b: 1.0921899, a: 1}
+  m_IndirectSpecularColor: {r: 0.64020616, g: 0.85753965, b: 1.0921829, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -672,7 +672,7 @@ PrefabInstance:
         type: 3}
       propertyPath: efectoSmoke
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 405416592}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9c890aeb82027460695139e2185d6a40, type: 3}
 --- !u!4 &237463065 stripped
@@ -1100,6 +1100,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e23f62ecf9b36944b60e3e5631c5c1a, type: 3}
+--- !u!1 &405416592 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9046715232432066270, guid: 9e329409a44a04ec79a91c9b1ba24be0,
+    type: 3}
+  m_PrefabInstance: {fileID: 1843135849}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &428261129 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5284458682152705873, guid: 88a5ae0879d7749ff96011fae25730db,
@@ -1978,7 +1984,7 @@ PrefabInstance:
     - target: {fileID: 398706134, guid: 5895ae7683e37a739b22ee4749cb7180, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1769903000}
     - target: {fileID: 398706134, guid: 5895ae7683e37a739b22ee4749cb7180, type: 3}
       propertyPath: animObjeto
       value: 
@@ -2513,7 +2519,7 @@ PrefabInstance:
     - target: {fileID: 398706134, guid: 5895ae7683e37a739b22ee4749cb7180, type: 3}
       propertyPath: player
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1769903000}
     - target: {fileID: 398706134, guid: 5895ae7683e37a739b22ee4749cb7180, type: 3}
       propertyPath: animObjeto
       value: 
@@ -2804,7 +2810,7 @@ PrefabInstance:
         type: 3}
       propertyPath: PlayerTransform
       value: 
-      objectReference: {fileID: 1843135850}
+      objectReference: {fileID: 1769903000}
     - target: {fileID: 7061758295704351367, guid: b933c817cc7b9441ca78fd7d5297d3f1,
         type: 3}
       propertyPath: TargetTransform
@@ -4792,7 +4798,7 @@ PrefabInstance:
         type: 3}
       propertyPath: efectoSmoke
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 405416592}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9c890aeb82027460695139e2185d6a40, type: 3}
 --- !u!4 &1594642005 stripped
@@ -5104,6 +5110,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1762055604}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1769903000 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 491825874, guid: 9e329409a44a04ec79a91c9b1ba24be0,
+    type: 3}
+  m_PrefabInstance: {fileID: 1843135849}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1786055447 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8150684776022444323, guid: 7c445858099214d9da3c06c42646ca05,
@@ -5220,12 +5232,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e329409a44a04ec79a91c9b1ba24be0, type: 3}
---- !u!4 &1843135850 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3606946775814574563, guid: 9e329409a44a04ec79a91c9b1ba24be0,
-    type: 3}
-  m_PrefabInstance: {fileID: 1843135849}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1859032822
 GameObject:
   m_ObjectHideFlags: 0
@@ -5759,6 +5765,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 352646803}
     m_Modifications:
+    - target: {fileID: 878517637683432651, guid: 1a7c23e01e0054a9eaebfc041b49feb1,
+        type: 3}
+      propertyPath: m_Name
+      value: Point Light
+      objectReference: {fileID: 0}
     - target: {fileID: 878517637683432649, guid: 1a7c23e01e0054a9eaebfc041b49feb1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5813,11 +5824,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 878517637683432651, guid: 1a7c23e01e0054a9eaebfc041b49feb1,
-        type: 3}
-      propertyPath: m_Name
-      value: Point Light
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a7c23e01e0054a9eaebfc041b49feb1, type: 3}
