@@ -15,6 +15,10 @@ public class UIManager : MonoBehaviour
     public GameObject bienHecho;
     public Text tiempo;
     public Text tiempoRecord;
+    public GameObject luzChapa1;
+    public GameObject luzChapa2;
+    public GameObject luzChapa3;
+
 
     // Start is called before the first frame update
     void Start()
@@ -34,31 +38,58 @@ public class UIManager : MonoBehaviour
         menuPuntuacion.transform.Find("ModalContent").gameObject.GetComponent<Animator>().SetBool("open", true);
         tiempo.text = (Math.Round(time,2).ToString())+" s";
         insigniaObsequio.SetActive(true);
-        animarChapa("obsequio");
+        StartCoroutine(MyCoroutine("obsequio"));
 
         if(insignias >= 2){
-            StartCoroutine("MyCoroutine");
+            StartCoroutine(MyCoroutine2("habilidad"));
             insigniaHabilidad.SetActive(true);
-            animarChapa("habilidad");        
+            //animarChapa("habilidad");        
         }else{
             insigniaHabilidad.SetActive(false); 
         }
         if(insignias >= 3){
-            StartCoroutine("MyCoroutine");
+            StartCoroutine(MyCoroutine3("prestigio"));
             insigniaPrestigio.SetActive(true);
-            animarChapa("prestigio");
+            //animarChapa("prestigio");
         }else{
             insigniaPrestigio.SetActive(false);
         }
     }
 
     public void animarChapa (string chapa) {
+        menuPuntuacion.transform.Find("ModalContent").Find(chapa).gameObject.GetComponent<Animator>().SetBool("show", false);
+
+        if (chapa == "obsequio") {
+            luzChapa1.gameObject.SetActive(false);
+            luzChapa1.gameObject.SetActive(true);
+        }
+        else if (chapa == "habilidad") {
+            luzChapa2.gameObject.SetActive(false);
+            luzChapa2.gameObject.SetActive(true);
+        }
+        else if (chapa == "prestigio") {
+            luzChapa3.gameObject.SetActive(false);
+            luzChapa3.gameObject.SetActive(true);
+        }
         menuPuntuacion.transform.Find("ModalContent").Find(chapa).gameObject.GetComponent<Animator>().SetBool("show", true);
     }
 
-    IEnumerator MyCoroutine()
-    {
+    IEnumerator MyCoroutine(string chapa)
+    {   
         yield return new WaitForSecondsRealtime(1);
+        animarChapa(chapa);
+    }
+
+    IEnumerator MyCoroutine2(string chapa)
+    {   
+        yield return new WaitForSecondsRealtime(2);
+        animarChapa(chapa);
+    }
+
+    IEnumerator MyCoroutine3(string chapa)
+    {   
+        yield return new WaitForSecondsRealtime(3);
+        animarChapa(chapa);
     }
 
     public void hideMenuPuntuacion (){
