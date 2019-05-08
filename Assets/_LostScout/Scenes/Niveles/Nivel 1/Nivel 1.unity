@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.64020616, g: 0.85753965, b: 1.0921829, a: 1}
+  m_IndirectSpecularColor: {r: 0.6403126, g: 0.8575756, b: 1.0921782, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -954,6 +954,26 @@ PrefabInstance:
       propertyPath: radioCheckpoint
       value: 1.5
       objectReference: {fileID: 0}
+    - target: {fileID: 4343828155809089208, guid: cc9438c7957b9a826aee30027a6d39ec,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2804746949688725957, guid: cc9438c7957b9a826aee30027a6d39ec,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1624981141599963422, guid: cc9438c7957b9a826aee30027a6d39ec,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5396075621725155490, guid: cc9438c7957b9a826aee30027a6d39ec,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cc9438c7957b9a826aee30027a6d39ec, type: 3}
 --- !u!1001 &731093898
@@ -1243,7 +1263,7 @@ PrefabInstance:
     - target: {fileID: 4248891616533645648, guid: c3d00da546dec41c8b2a0fff94ddd80b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.04
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4248891616533645648, guid: c3d00da546dec41c8b2a0fff94ddd80b,
         type: 3}
@@ -1291,6 +1311,11 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4248891614877128489, guid: c3d00da546dec41c8b2a0fff94ddd80b,
+        type: 3}
+      propertyPath: animacionPlataforma
+      value: 
+      objectReference: {fileID: 393251537}
+    - target: {fileID: 7133862833571763988, guid: c3d00da546dec41c8b2a0fff94ddd80b,
         type: 3}
       propertyPath: animacionPlataforma
       value: 
