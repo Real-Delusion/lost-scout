@@ -71,24 +71,25 @@ public class UIManager : MonoBehaviour
             luzChapa3.gameObject.SetActive(false);
             luzChapa3.gameObject.SetActive(true);
         }
+
         menuPuntuacion.transform.Find("ModalContent").Find(chapa).gameObject.GetComponent<Animator>().SetBool("show", true);
     }
 
     IEnumerator MyCoroutine(string chapa)
     {   
-        yield return new WaitForSecondsRealtime(1);
+        yield return new WaitForSecondsRealtime(0.5f);
         animarChapa(chapa);
     }
 
     IEnumerator MyCoroutine2(string chapa)
     {   
-        yield return new WaitForSecondsRealtime(2);
+        yield return new WaitForSecondsRealtime(1f);
         animarChapa(chapa);
     }
 
     IEnumerator MyCoroutine3(string chapa)
     {   
-        yield return new WaitForSecondsRealtime(3);
+        yield return new WaitForSecondsRealtime(1.5f);
         animarChapa(chapa);
     }
 
