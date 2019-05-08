@@ -1320,6 +1320,11 @@ PrefabInstance:
       propertyPath: animacionPlataforma
       value: 
       objectReference: {fileID: 393251537}
+    - target: {fileID: 3111812072820689278, guid: c3d00da546dec41c8b2a0fff94ddd80b,
+        type: 3}
+      propertyPath: animacionPlataforma
+      value: 
+      objectReference: {fileID: 393251537}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c3d00da546dec41c8b2a0fff94ddd80b, type: 3}
 --- !u!1001 &994200152
