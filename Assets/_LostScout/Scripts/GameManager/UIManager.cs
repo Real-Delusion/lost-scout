@@ -35,6 +35,11 @@ public class UIManager : MonoBehaviour
     }
 
     public void showMenuPuntuacion (int insignias, float time){
+        // Return all insignias to their default state (size 0) 
+        menuPuntuacion.transform.Find("ModalContent").Find("obsequio").gameObject.GetComponent<Animator>().SetBool("show", false);
+        menuPuntuacion.transform.Find("ModalContent").Find("habilidad").gameObject.GetComponent<Animator>().SetBool("show", false);
+        menuPuntuacion.transform.Find("ModalContent").Find("prestigio").gameObject.GetComponent<Animator>().SetBool("show", false);
+
         menuPuntuacion.transform.Find("ModalContent").gameObject.GetComponent<Animator>().SetBool("open", true);
         tiempo.text = (Math.Round(time,2).ToString())+" s";
         insigniaObsequio.SetActive(true);
@@ -43,22 +48,18 @@ public class UIManager : MonoBehaviour
         if(insignias >= 2){
             StartCoroutine(MyCoroutine2("habilidad"));
             insigniaHabilidad.SetActive(true);
-            //animarChapa("habilidad");        
         }else{
             insigniaHabilidad.SetActive(false); 
         }
         if(insignias >= 3){
             StartCoroutine(MyCoroutine3("prestigio"));
             insigniaPrestigio.SetActive(true);
-            //animarChapa("prestigio");
         }else{
             insigniaPrestigio.SetActive(false);
         }
     }
 
     public void animarChapa (string chapa) {
-        menuPuntuacion.transform.Find("ModalContent").Find(chapa).gameObject.GetComponent<Animator>().SetBool("show", false);
-
         if (chapa == "obsequio") {
             luzChapa1.gameObject.SetActive(false);
             luzChapa1.gameObject.SetActive(true);
@@ -71,7 +72,6 @@ public class UIManager : MonoBehaviour
             luzChapa3.gameObject.SetActive(false);
             luzChapa3.gameObject.SetActive(true);
         }
-
         menuPuntuacion.transform.Find("ModalContent").Find(chapa).gameObject.GetComponent<Animator>().SetBool("show", true);
     }
 
