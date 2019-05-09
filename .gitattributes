@@ -46,3 +46,5 @@
 *.tif filter=lfs diff=lfs merge=lfs -text
 *.tiff filter=lfs diff=lfs merge=lfs -text
 *.meta filter=lfs diff=lfs merge=lfs -text
+# Unity
+*.[pP][rR][eE][fF][aA][bB] filter=lfs diff=lfs merge=lfs -text
