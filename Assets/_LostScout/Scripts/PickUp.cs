@@ -19,6 +19,9 @@ public class PickUp : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        item = gameObject;
+        guide = GameObject.Find("guide").transform;
+        tempParent = GameObject.Find("guide");
         item.GetComponent<Rigidbody>().useGravity = true;
     }
     // Update is called once per frame
