@@ -9,6 +9,8 @@ public class PickUp : MonoBehaviour
     // Item (to pickup)
     public GameObject item;
 
+    private RigidbodyConstraints constraints;
+
     // 
     public GameObject tempParent; 
     public Transform guide;
@@ -20,6 +22,9 @@ public class PickUp : MonoBehaviour
     void Start()
     {
         item = gameObject;
+        constraints = item.GetComponent<Rigidbody>().constraints;
+        item.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+
         guide = GameObject.Find("guide").transform;
         tempParent = GameObject.Find("guide");
         item.GetComponent<Rigidbody>().useGravity = true;
@@ -27,30 +32,37 @@ public class PickUp : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-  if (carrying == false)
-  {
-    if (Input.GetKeyDown(KeyCode.E) && (guide.transform.position - transform.position).sqrMagnitude < range * range) 
-    {
-        pickup();
-        carrying = true;
+        if (item.transform.position.y < 0.005)
+        {
+            item.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+        }else{
+            item.GetComponent<Rigidbody>().constraints = constraints;
+        }
+        if (carrying == false){
+            if (Input.GetKeyDown(KeyCode.E) && (guide.transform.position - transform.position).sqrMagnitude < range * range) {
+            pickup();
+            carrying = true;
+            }
+        }
+        else if (carrying == true) {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                drop();
+                carrying = false;
+            }
+        }
     }
-    }
-    else if (carrying == true)
-    {
-    if (Input.GetKeyDown(KeyCode.E))
-    {
-        drop();
-        carrying = false;
-    }
-    }
-    }
+
     void pickup()
     {
+        item.GetComponent<Rigidbody>().constraints = constraints;
         item.GetComponent<Rigidbody>().useGravity = false;
         item.GetComponent<Rigidbody>().isKinematic = true;
         item.transform.position = guide.transform.position;
         item.transform.rotation = guide.transform.rotation;
         item.transform.parent = tempParent.transform;
+
+        item.GetComponent<Rigidbody>().constraints = constraints;
 
         // Activate and and modify player collider
         guide.transform.root.GetComponent<CharacterController>().radius = 0.6f;
