@@ -54,7 +54,9 @@ public class PlayerController : MonoBehaviour
         Andar,
         Empujar,
         Subir,
-        SubirEscalera
+        SubirEscalera,
+        Coger,
+        Soltar
     }
 
     private EstadosPlayer _estado = EstadosPlayer.Andar;
@@ -71,6 +73,20 @@ public class PlayerController : MonoBehaviour
             {
                 Debug.Log("empujando");
                 // aquí añadiremos animación de empujar del personaje
+            }
+
+            // Si el estado es cogiendo
+            if (_estado == EstadosPlayer.Coger)
+            {
+                Debug.Log("cogiendo");
+                // aquí añadiremos animación de coger del personaje
+            }
+
+            // Si el estado es cogiendo
+            if (_estado == EstadosPlayer.Soltar)
+            {
+                Debug.Log("soltando");
+                // aquí añadiremos animación de soltar del personaje
             }
 
             // Si el estado es subir
