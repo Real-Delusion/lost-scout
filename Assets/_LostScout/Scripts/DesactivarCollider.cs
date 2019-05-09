@@ -26,8 +26,11 @@ public class DesactivarCollider : MonoBehaviour
     }
 
     void Update()
-    {   float idk = transform.GetChild(0).position.z;
-        //Debug.Log(idk);
+    {   
+        //float idk = transform.GetChild(0).position.z;
+        //float pos = posicion.z;
+        //Debug.Log("child " + idk);
+        //Debug.Log("pos " + pos);
         if (transform.GetChild(0).position == posicion) {
             colliderObjeto.enabled = false;
         }

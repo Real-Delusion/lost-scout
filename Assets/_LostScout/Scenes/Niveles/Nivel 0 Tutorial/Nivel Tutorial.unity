@@ -2989,6 +2989,11 @@ PrefabInstance:
       propertyPath: animacionPlataforma
       value: 
       objectReference: {fileID: 1233120517}
+    - target: {fileID: 3111812072820689278, guid: c3d00da546dec41c8b2a0fff94ddd80b,
+        type: 3}
+      propertyPath: animacionPlataforma
+      value: 
+      objectReference: {fileID: 1233120517}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c3d00da546dec41c8b2a0fff94ddd80b, type: 3}
 --- !u!4 &1021544009 stripped
@@ -5188,7 +5193,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 491825874, guid: 9e329409a44a04ec79a91c9b1ba24be0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.32
+      value: 5.9
       objectReference: {fileID: 0}
     - target: {fileID: 491825874, guid: 9e329409a44a04ec79a91c9b1ba24be0, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5533,7 +5538,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   xPosicion: 9.860001
-  yPosicion: 0.37
+  yPosicion: 0.21
   zPosicion: 2.7
   colliderObjeto: {fileID: 1432267660}
 --- !u!1001 &1957922396
