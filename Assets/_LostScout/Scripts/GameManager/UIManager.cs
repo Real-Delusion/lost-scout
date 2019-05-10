@@ -98,19 +98,26 @@ public class UIManager : MonoBehaviour
     }
     public void showBienHecho()
     {
-        StartCoroutine(Wait());
+        StartCoroutine(Wait1());
         bienHecho.transform.Find("ModalContent").gameObject.GetComponent<Animator>().SetBool("open", true);
-
+        StartCoroutine(Wait2());
     }
     public void hideBienHecho()
     {
         bienHecho.transform.Find("ModalContent").gameObject.GetComponent<Animator>().SetBool("open", false);
     }
-    IEnumerator Wait()
+    IEnumerator Wait1()
     {
         yield return new WaitForSecondsRealtime(0.5f);
         // Show menu puntuacion (pass insignias and time)
         Camera.main.transform.GetChild(0).gameObject.SetActive(true);
         Camera.main.transform.GetChild(1).gameObject.SetActive(true);
+    }
+    IEnumerator Wait2()
+    {
+        yield return new WaitForSecondsRealtime(0.5f);
+        // Show menu puntuacion (pass insignias and time)
+        Camera.main.transform.GetChild(2).gameObject.SetActive(true);
+        Camera.main.transform.GetChild(3).gameObject.SetActive(true);
     }
 }
