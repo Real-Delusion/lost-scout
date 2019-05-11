@@ -100,7 +100,7 @@ public class UIManager : MonoBehaviour
     {
         StartCoroutine(Wait1());
         bienHecho.transform.Find("ModalContent").gameObject.GetComponent<Animator>().SetBool("open", true);
-
+        Camera.main.depth = -1; 
     }
     public void hideBienHecho()
     {
@@ -110,17 +110,17 @@ public class UIManager : MonoBehaviour
     {
         yield return new WaitForSecondsRealtime(0.5f);
         // Show menu puntuacion (pass insignias and time)
-        Camera.main.transform.GetChild(0).gameObject.SetActive(true);
-        Camera.main.transform.GetChild(1).gameObject.SetActive(true);
+        Camera.current.transform.GetChild(0).gameObject.SetActive(true);
+        Camera.current.transform.GetChild(1).gameObject.SetActive(true);
         yield return new WaitForSecondsRealtime(0.5f);
-        Camera.main.transform.GetChild(2).gameObject.SetActive(true);
-        Camera.main.transform.GetChild(3).gameObject.SetActive(true);
+        Camera.current.transform.GetChild(2).gameObject.SetActive(true);
+        Camera.current.transform.GetChild(3).gameObject.SetActive(true);
         yield return new WaitForSecondsRealtime(2f);
-        Camera.main.transform.GetChild(0).gameObject.SetActive(false);
-        Camera.main.transform.GetChild(1).gameObject.SetActive(false);
+        Camera.current.transform.GetChild(0).gameObject.SetActive(false);
+        Camera.current.transform.GetChild(1).gameObject.SetActive(false);
         yield return new WaitForSecondsRealtime(2);
-        Camera.main.transform.GetChild(2).gameObject.SetActive(false);
-        Camera.main.transform.GetChild(3).gameObject.SetActive(false);
+        Camera.current.transform.GetChild(2).gameObject.SetActive(false);
+        Camera.current.transform.GetChild(3).gameObject.SetActive(false);
     }
 
 }
