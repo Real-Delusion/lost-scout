@@ -68,7 +68,7 @@ public class NivelesManager : MonoBehaviour
             if (!GameManager.niveles[i].Locked)
             {
                 btn.onClick.AddListener(() => LoadModal(t));
-
+                //ok
                 int insignias = GameManager.niveles[i].Insignias;
                 Debug.Log(GameManager.niveles[i].LevelName + ": " + GameManager.niveles[i].Insignias);
 
