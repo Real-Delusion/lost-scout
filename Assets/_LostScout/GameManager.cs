@@ -255,7 +255,7 @@ public class GameManager : MonoBehaviour
 
     IEnumerator Wait(int insignias, float time)
     {
-        yield return new WaitForSecondsRealtime(4);
+        yield return new WaitForSecondsRealtime(3);
         // Show menu puntuacion (pass insignias and time)
         uiManager.hideBienHecho();
         uiManager.showMenuPuntuacion(insignias, time);
