@@ -96,7 +96,7 @@ public class GameManager : MonoBehaviour
         }
 
         // Disable cursor and get generic game objects if we are in a playable level
-        if (currentScene.name.Contains("Nivel "))
+        if (currentScene.name.Contains("Level "))
         {
             Cursor.visible = false;
             startTime = Time.time;
@@ -123,19 +123,19 @@ public class GameManager : MonoBehaviour
         // Create Levels
         niveles = new List<Nivel>()
         {
-            new Nivel(0,"Nivel Tutorial",false,0,false,60,20),
-            new Nivel(1,"Nivel 1",false,0,false,60,1),
-            new Nivel(2,"Nivel 2",false,0,true,60,1),
-            new Nivel(3,"Nivel 3",false,0,true,60,8),
-            new Nivel(4,"Nivel 4",false,0,true,60,8),
-            new Nivel(5,"Nivel 5",false,0,true,60,8),
-            new Nivel(6,"Nivel 6",false,0,true,60,8),
-            new Nivel(7,"Nivel 7",false,0,true,60,8),
-            new Nivel(8,"Nivel 8",false,0,true,60,8),
-            new Nivel(9,"Nivel 9",false,0,true,60,8),
-            new Nivel(10,"Nivel 10",false,0,true,60,8),
-            new Nivel(11,"Nivel 11",false,0,true,60,8),
-            new Nivel(12,"Nivel 12",false,0,true,60,5)
+            new Nivel(0,"Level Tutorial",false,0,false,60,20),
+            new Nivel(1,"Level 1",false,0,false,60,3),
+            new Nivel(2,"Level 2",false,0,true,60,1),
+            new Nivel(3,"Level 3",false,0,true,60,8),
+            new Nivel(4,"Level 4",false,0,true,60,8),
+            new Nivel(5,"Level 5",false,0,true,60,8),
+            new Nivel(6,"Level 6",false,0,true,60,8),
+            new Nivel(7,"Level 7",false,0,true,60,8),
+            new Nivel(8,"Level 8",false,0,true,60,8),
+            new Nivel(9,"Level 9",false,0,true,60,8),
+            new Nivel(10,"Level 10",false,0,true,60,8),
+            new Nivel(11,"Level 11",false,0,true,60,8),
+            new Nivel(12,"Level 12",false,0,true,60,5)
         };
 
         // Load saved data
@@ -146,7 +146,7 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         // For all level scenes
-        if (currentScene.name.Contains("Nivel "))
+        if (currentScene.name.Contains("Level "))
         {
 
             // Check for the checkpoint
