@@ -5,7 +5,10 @@ using UnityEngine;
 public class Camara : MonoBehaviour
 {
     public Transform TargetTransform;
-    public Transform PlayerTransform;
+    // player
+    private GameObject player;
+    private Transform PlayerTransform;
+
     private Vector3 _cameraOffset;
 
     [Range(0.01f, 1.0f)]
@@ -29,6 +32,9 @@ public class Camara : MonoBehaviour
     void Start()
     {
         _cameraOffset = transform.position - TargetTransform.position;
+        // guardamos el player con el tag
+        player = GameObject.FindGameObjectWithTag("Player");
+        PlayerTransform = player.transform;
     }
 
     private bool IsRotateActive
