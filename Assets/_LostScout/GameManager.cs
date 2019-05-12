@@ -207,8 +207,7 @@ public class GameManager : MonoBehaviour
     public void finishLevel()
     {
         // Move player to avoid a loop on checkpoint
-        //player.transform.position = new Vector3((player.transform.position.x) + 1, player.transform.position.y, player.transform.position.z);
-        player.gameObject.SetActive(false);
+        player.transform.position = new Vector3((player.transform.position.x) + 1, player.transform.position.y, player.transform.position.z);
         // Pause the game without graphic interface
         PauseGame(false);
 

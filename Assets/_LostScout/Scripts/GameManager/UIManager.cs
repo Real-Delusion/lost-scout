@@ -98,8 +98,7 @@ public class UIManager : MonoBehaviour
     }
     public void showBienHecho()
     {
-        //StartCoroutine(Wait1());
-        StartCoroutine(Wait2());
+        StartCoroutine(Wait1());
         bienHecho.transform.Find("ModalContent").gameObject.GetComponent<Animator>().SetBool("open", true);
         Camera.main.depth = -1; 
     }
@@ -107,15 +106,7 @@ public class UIManager : MonoBehaviour
     {
         bienHecho.transform.Find("ModalContent").gameObject.GetComponent<Animator>().SetBool("open", false);
     }
-
-    /*
     IEnumerator Wait1()
-    {
-        yield return new WaitForSecondsRealtime(0.5f);
-        GameObject.FindWithTag("isla").transform.GetChild(4).gameObject.SetActive(true);
-    }*/
-
-    IEnumerator Wait2()
     {
         yield return new WaitForSecondsRealtime(0.5f);
         // Show menu puntuacion (pass insignias and time)
