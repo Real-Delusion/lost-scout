@@ -11,6 +11,7 @@ TagManager:
   - CanvasModal
   - efectoSmoke
   - confeti
+  - isla
   layers:
   - Default
   - TransparentFX
