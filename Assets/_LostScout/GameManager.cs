@@ -218,8 +218,11 @@ public class GameManager : MonoBehaviour
         niveles[index].Locked = false;
 
         // Unlock next level
-        niveles[index + 1].Locked = false;
-        nivelesManager.unlockedId = index + 1;
+        if (niveles[index + 1].Locked == true) {
+            Debug.Log(niveles[index + 1].Locked);
+            niveles[index + 1].Locked = false;
+            nivelesManager.unlockedId = index + 1;
+        }
 
         // Insignias, by default is one (Obsequio)
         int insignias = 1;

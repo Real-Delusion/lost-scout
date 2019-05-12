@@ -101,6 +101,7 @@ public class NivelesManager : MonoBehaviour
                 }
 
                 if (i == unlockedId){
+                    unlockedId = -1;
                     Debug.Log("desbloqueado" + i);
                     animateUnlock(obj);
                 } 
