@@ -18,6 +18,7 @@ public class UIManager : MonoBehaviour
     public GameObject luzChapa1;
     public GameObject luzChapa2;
     public GameObject luzChapa3;
+    private GameObject confettiCamera;
 
 
     // Start is called before the first frame update
@@ -98,6 +99,7 @@ public class UIManager : MonoBehaviour
     }
     public void showBienHecho()
     {
+        confettiCamera = GameObject.FindWithTag("confeti");
         StartCoroutine(Wait1());
         bienHecho.transform.Find("ModalContent").gameObject.GetComponent<Animator>().SetBool("open", true);
         Camera.main.depth = -1; 
@@ -110,17 +112,17 @@ public class UIManager : MonoBehaviour
     {
         yield return new WaitForSecondsRealtime(0.5f);
         // Show menu puntuacion (pass insignias and time)
-        Camera.current.transform.GetChild(0).gameObject.SetActive(true);
-        Camera.current.transform.GetChild(1).gameObject.SetActive(true);
+        confettiCamera.transform.GetChild(0).gameObject.SetActive(true);
+        confettiCamera.transform.GetChild(1).gameObject.SetActive(true);
         yield return new WaitForSecondsRealtime(0.5f);
-        Camera.current.transform.GetChild(2).gameObject.SetActive(true);
-        Camera.current.transform.GetChild(3).gameObject.SetActive(true);
+        confettiCamera.transform.GetChild(2).gameObject.SetActive(true);
+        confettiCamera.transform.GetChild(3).gameObject.SetActive(true);
         yield return new WaitForSecondsRealtime(2f);
-        Camera.current.transform.GetChild(0).gameObject.SetActive(false);
-        Camera.current.transform.GetChild(1).gameObject.SetActive(false);
+        confettiCamera.transform.GetChild(0).gameObject.SetActive(false);
+        confettiCamera.transform.GetChild(1).gameObject.SetActive(false);
         yield return new WaitForSecondsRealtime(2);
-        Camera.current.transform.GetChild(2).gameObject.SetActive(false);
-        Camera.current.transform.GetChild(3).gameObject.SetActive(false);
+        confettiCamera.transform.GetChild(2).gameObject.SetActive(false);
+        confettiCamera.transform.GetChild(3).gameObject.SetActive(false);
     }
 
 }

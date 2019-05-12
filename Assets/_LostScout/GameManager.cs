@@ -217,9 +217,8 @@ public class GameManager : MonoBehaviour
         // Unlock this level (for tutorial)
         niveles[index].Locked = false;
 
-        // Unlock next level
+        // Unlock next level if it's locked
         if (niveles[index + 1].Locked == true) {
-            Debug.Log(niveles[index + 1].Locked);
             niveles[index + 1].Locked = false;
             nivelesManager.unlockedId = index + 1;
         }
