@@ -11,8 +11,7 @@ public class mecanicaPalanca : MonoBehaviour
     // radio del area en la que se podrá activar la palanca - estado publico (se puede modificar)
     public float radio = 2f;
     // referencia al player(personaje)
-    private Transform player;
-    private GameObject Player;
+    public Transform player;
     // referencia collider del puente
     public GameObject colliderPuente;
 
@@ -54,8 +53,8 @@ public class mecanicaPalanca : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Player = GameObject.FindGameObjectWithTag("Player");
-        player = Player.transform;
+        //animacionPalanca = GetComponent<Animator>(); // caso en que animacion de la palanca sea privado
+
     }
 
     // Update is called once per frame
