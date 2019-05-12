@@ -141,11 +141,13 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
         {
             _estado = EstadosPlayer.Andar;
+            this.gameObject.transform.GetChild(2).gameObject.SetActive(true);
         }
         else
         {
             _estado = EstadosPlayer.Quieto;
             _animator.SetBool("Andar", false);
+            this.gameObject.transform.GetChild(2).gameObject.SetActive(false);
         }
 
         // Si el estado del player es andar o empujar, se mantendrá el movimiento normal del player (con flechas)
