@@ -164,6 +164,9 @@ public class tronco : MonoBehaviour
         // Activate and and modify player collider
         guide.transform.root.GetComponent<CharacterController>().radius = 0.6f;
         guide.transform.root.GetComponent<CharacterController>().center = new Vector3(0,0.8f,0.2f);
+
+        gameObject.transform.GetChild(0).gameObject.SetActive(false);
+
     }
     void drop()
     {
@@ -176,5 +179,11 @@ public class tronco : MonoBehaviour
         guide.transform.root.GetComponent<CharacterController>().radius = 0.3f;
         guide.transform.root.GetComponent<CharacterController>().center = new Vector3(0,0.8f,0);
         Estado = EstadosCaja.Estatico;
+        if (transform.position.y < 0.2)
+        {
+            gameObject.transform.GetChild(0).gameObject.SetActive(true);
+        }
+
     }
+
 }
