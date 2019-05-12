@@ -131,7 +131,7 @@ public class tronco : MonoBehaviour
 
         // Subir
         // Si el jugador entra en el range del objeto
-        if (Vector3.Distance(player.transform.position, transform.position) < range && carrying == false)
+        if (Vector3.Distance(player.transform.position, transform.position) < range && carrying == false && player.transform.position.y < transform.position.y + miAltura - 0.1f)
         {
             Debug.Log("Pulse espacio para subirse a la caja");
             // Si está en el range y pulsa espacio
