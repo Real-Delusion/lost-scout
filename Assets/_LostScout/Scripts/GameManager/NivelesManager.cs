@@ -12,6 +12,7 @@ public class NivelesManager : MonoBehaviour
     public List<Sprite> miniaturas;
     public Sprite lockedMarco;
     private static string selectedLevel;
+    public int unlockedId;
 
     public List<Nivel> levels;
     public static int paginaNivel;
@@ -47,7 +48,7 @@ public class NivelesManager : MonoBehaviour
                 CanvasTarget = GameObject.FindWithTag("NivelesCanvas2");
             }
 
-            var obj = Instantiate(lvlBtn);
+            Transform obj = Instantiate(lvlBtn);
             obj.transform.SetParent(CanvasTarget.transform);
 
             /*Vector3 newpos = obj.transform.position;
@@ -64,13 +65,15 @@ public class NivelesManager : MonoBehaviour
             miniatura.sprite = miniaturas[i];
 
             Button btn = obj.gameObject.GetComponent<Button>();
+            Image miniaturaAnim = btn.transform.Find("miniaturaAnim").GetChild(1).GetComponent<Image>();
+            miniaturaAnim.sprite = miniaturas[i];
             Nivel t = GameManager.niveles[i];
+
             if (!GameManager.niveles[i].Locked)
             {
                 btn.onClick.AddListener(() => LoadModal(t));
-                //ok
                 int insignias = GameManager.niveles[i].Insignias;
-                Debug.Log(GameManager.niveles[i].LevelName + ": " + GameManager.niveles[i].Insignias);
+                Debug.Log(i + GameManager.niveles[i].LevelName + ": " + GameManager.niveles[i].Insignias);
 
                 if (insignias >= 1)
                 {
@@ -96,6 +99,11 @@ public class NivelesManager : MonoBehaviour
                 {
                     obj.transform.Find("prestigio_grey").gameObject.SetActive(true);
                 }
+
+                if (i == unlockedId){
+                    Debug.Log("desbloqueado" + i);
+                    animateUnlock(obj);
+                } 
             }
             else
             {
@@ -184,5 +192,16 @@ public class NivelesManager : MonoBehaviour
     {
         //SceneManager.LoadScene(selectedLevel);
         GameManager.sceneTransitions.load(selectedLevel);
+    }
+
+    public void animateUnlock(Transform boton) {
+        boton.transform.Find("miniaturaAnim").gameObject.SetActive(true);
+        StartCoroutine(Wait(boton));
+    }
+
+    IEnumerator Wait(Transform boton)
+    {
+        yield return new WaitForSecondsRealtime(4);
+        boton.transform.Find("miniaturaAnim").gameObject.SetActive(false);     
     }
 }

@@ -124,7 +124,7 @@ public class GameManager : MonoBehaviour
         niveles = new List<Nivel>()
         {
             new Nivel(0,"Level Tutorial",false,0,false,60,20),
-            new Nivel(1,"Level 1",false,0,false,60,3),
+            new Nivel(1,"Level 1",false,0,true,60,3),
             new Nivel(2,"Level 2",false,0,true,60,1),
             new Nivel(3,"Level 3",false,0,true,60,8),
             new Nivel(4,"Level 4",false,0,true,60,8),
@@ -219,6 +219,8 @@ public class GameManager : MonoBehaviour
 
         // Unlock next level
         niveles[index + 1].Locked = false;
+        nivelesManager.unlockedId = index + 1;
+
         // Insignias, by default is one (Obsequio)
         int insignias = 1;
 
@@ -259,7 +261,6 @@ public class GameManager : MonoBehaviour
         // Show menu puntuacion (pass insignias and time)
         uiManager.hideBienHecho();
         uiManager.showMenuPuntuacion(insignias, time);
-
     }
 
 }
