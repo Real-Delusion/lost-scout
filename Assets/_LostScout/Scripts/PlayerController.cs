@@ -51,6 +51,7 @@ public class PlayerController : MonoBehaviour
     // -------------------------------- EstadosPlayer -----------------------------------
     public enum EstadosPlayer
     {
+        Quieto,
         Andar,
         Empujar,
         Subir,
@@ -59,7 +60,7 @@ public class PlayerController : MonoBehaviour
         Soltar
     }
 
-    private EstadosPlayer _estado = EstadosPlayer.Andar;
+    private EstadosPlayer _estado = EstadosPlayer.Quieto;
 
     public EstadosPlayer Estado
     {
@@ -68,6 +69,21 @@ public class PlayerController : MonoBehaviour
         {
             _estado = value;
 
+            // Si el estado es andar
+            if (_estado == EstadosPlayer.Andar)
+            {
+                Debug.Log("andando");
+                // aquí añadiremos animación de andar del personaje
+                //gameObject.transform.Find("TheLastMutongo").gameObject.GetComponent<Animator>().SetBool("andar", true);
+            }
+
+            // Si el estado es quieto
+            if (_estado == EstadosPlayer.Quieto)
+            {
+                Debug.Log("quieto");
+                // aquí añadiremos animación de quieto del personaje
+                gameObject.transform.Find("TheLastMutongo").gameObject.GetComponent<Animator>().SetBool("andar", false);
+            }
             // Si el estado es empujar
             if (_estado == EstadosPlayer.Empujar)
             {
@@ -138,8 +154,19 @@ public class PlayerController : MonoBehaviour
     {
         //Debug.Log(Estado);
         // Si el estado del player es andar o empujar, se mantendrá el movimiento normal del player (con flechas)
-        if (Estado == EstadosPlayer.Andar || Estado == EstadosPlayer.Empujar)
+        if (Estado == EstadosPlayer.Andar || Estado == EstadosPlayer.Empujar || Estado == EstadosPlayer.Quieto)
         {
+
+            if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
+            {
+                gameObject.transform.Find("TheLastMutongo").gameObject.GetComponent<Animator>().SetBool("andar", true);
+                this.gameObject.transform.GetChild(1).gameObject.SetActive(true);
+            }else{
+                gameObject.transform.Find("TheLastMutongo").gameObject.GetComponent<Animator>().SetBool("andar", false);
+                this.gameObject.transform.GetChild(1).gameObject.SetActive(false);
+            }
+
+
             // obtenemos los inputs
             float h = Input.GetAxis("Horizontal");
             float v = Input.GetAxis("Vertical");
