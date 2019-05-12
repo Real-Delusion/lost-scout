@@ -147,7 +147,7 @@ public class NivelesManager : MonoBehaviour
         GameObject.Find("imageNivel").GetComponent<Image>().sprite = miniaturas[level.ID];
         if (level.LevelName == "Level Tutorial") GameObject.Find("TextObsequio").GetComponent<Text>().text = "Tutorial completed";
         else GameObject.Find("TextObsequio").GetComponent<Text>().text = level.LevelName + " completed";
-        GameObject.Find("TextHabilidad").GetComponent<Text>().text = "Finished in less than " + level.MaxTime + "s!";
+        GameObject.Find("TextHabilidad").GetComponent<Text>().text = "Finished in less than " + level.MaxTime + "s";
         GameObject.Find("TextPrestigio").GetComponent<Text>().text = "Cleared course in " + level.MaxInteractions + " touches";
 
         if (level.Locked)
@@ -201,7 +201,7 @@ public class NivelesManager : MonoBehaviour
 
     IEnumerator Wait(Transform boton)
     {
-        yield return new WaitForSecondsRealtime(4);
+        yield return new WaitForSecondsRealtime(4.5f);
         boton.transform.Find("miniaturaAnim").gameObject.SetActive(false);     
     }
 }
