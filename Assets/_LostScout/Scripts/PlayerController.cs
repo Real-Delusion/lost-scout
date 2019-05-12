@@ -159,10 +159,10 @@ public class PlayerController : MonoBehaviour
 
             if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
             {
-                gameObject.transform.Find("TheLastMutongo").gameObject.GetComponent<Animator>().SetBool("andar", true);
+                gameObject.transform.Find("Mutongo").gameObject.GetComponent<Animator>().SetBool("andar", true);
                 this.gameObject.transform.GetChild(1).gameObject.SetActive(true);
             }else{
-                gameObject.transform.Find("TheLastMutongo").gameObject.GetComponent<Animator>().SetBool("andar", false);
+                gameObject.transform.Find("Mutongo").gameObject.GetComponent<Animator>().SetBool("andar", false);
                 this.gameObject.transform.GetChild(1).gameObject.SetActive(false);
             }
 
