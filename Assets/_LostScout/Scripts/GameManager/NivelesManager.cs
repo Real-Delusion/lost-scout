@@ -203,6 +203,8 @@ public class NivelesManager : MonoBehaviour
     IEnumerator Wait(Transform boton)
     {
         yield return new WaitForSecondsRealtime(4.5f);
-        boton.transform.Find("miniaturaAnim").gameObject.SetActive(false);     
+        if (SceneManager.GetActiveScene().ToString() == "MainMenuScreen") {
+            boton.transform.Find("miniaturaAnim").gameObject.SetActive(false);     
+        }
     }
 }
