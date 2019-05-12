@@ -20,11 +20,9 @@ public class GameManager : MonoBehaviour
     // *** MANAGERS
     public NivelesManager nivelesManager;
     public UIManager uiManager;
+
     public static SceneTransitions sceneTransitions;
-
-
     public bool gamePaused = false;
-
     public bool fromGame = false;
     controlCamaraMenu controlMenu;
 
@@ -35,6 +33,7 @@ public class GameManager : MonoBehaviour
 
     public float startTime;
     public int numInteractions = 0;
+    public float time;
 
     private void OnDrawGizmos()
     {
@@ -87,6 +86,9 @@ public class GameManager : MonoBehaviour
         {
             Cursor.visible = true;
             nivelesManager.printLevels();
+            // Hide hud
+            uiManager.toggleHUD(false);
+
             if (fromGame)
             {
                 Camera mainCamera = Camera.main;
@@ -103,6 +105,9 @@ public class GameManager : MonoBehaviour
             player = GameObject.FindGameObjectWithTag("Player");
             camera = GameObject.FindGameObjectWithTag("MainCamera");
             checkpoint = GameObject.FindGameObjectWithTag("checkpoint");
+
+            // Show hud
+            uiManager.toggleHUD(true);
         }
     }
 
@@ -148,7 +153,8 @@ public class GameManager : MonoBehaviour
         // For all level scenes
         if (currentScene.name.Contains("Level "))
         {
-
+            time = (Time.time) - startTime;
+            uiManager.printTime(time, gamePaused);
             // Check for the checkpoint
             if ((Vector3.Distance(player.transform.position, checkpoint.transform.position) < radioCheckpoint))
             {
@@ -173,6 +179,7 @@ public class GameManager : MonoBehaviour
             {
                 numInteractions++;
             }
+            
         }
 
     }
@@ -227,7 +234,6 @@ public class GameManager : MonoBehaviour
         int insignias = 1;
 
         // Get time and (optionally) add insignia
-        float time = (Time.time) - startTime;
         insignias++;
 
         // Get interactions and (optionally) add insignia
