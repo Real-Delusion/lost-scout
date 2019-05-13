@@ -59,44 +59,48 @@ public class Escalera : MonoBehaviour
     } */
 
     GameObject player;
-     bool canClimb = false;
-     public float speed = 1;
+    bool canClimb = false;
+    public float speed = 1;
 
-     // script playercontroller del player
+    // script playercontroller del player
     private PlayerController playerController;
- 
-    void OnTriggerEnter(Collider coll) 
-    {
-         if (coll.gameObject.tag == "Player" && player.transform.position.y < (/*transform.position.y +*/ transform.localScale.y /*) / 2 */) 
-                && player.transform.position.y >= 0)
-         {
-             canClimb = true;
-         }
-    }
- 
-     void OnTriggerExit(Collider coll2)
-     {
-         if (coll2.gameObject.tag == "Player")
-         {
-             canClimb = false;
-         }
-     }
 
-      // Start is called before the first frame update
+    void OnTriggerEnter(Collider coll)
+    {
+        if (coll.gameObject.tag == "Player" && player.transform.position.y < (/*transform.position.y +*/ transform.localScale.y /*) / 2 */)
+               && player.transform.position.y >= 0)
+        {
+            Debug.Log("true");
+            canClimb = true;
+        }
+    }
+
+    void OnTriggerExit(Collider coll2)
+    {
+        if (coll2.gameObject.tag == "Player")
+        {
+            Debug.Log("false");
+
+            canClimb = false;
+        }
+    }
+
+    // Start is called before the first frame update
     void Start()
     {
         // guardamos el player con el tag
         player = GameObject.FindGameObjectWithTag("Player");
         playerController = player.GetComponent<PlayerController>();
     }
-     void Update()
-     {
-         if (canClimb)
-         {
-             player.GetComponent<PlayerController>().Estado = PlayerController.EstadosPlayer.SubirEscalera;
-         }
-         else {
+    void Update()
+    {
+        if (canClimb)
+        {
+            player.GetComponent<PlayerController>().Estado = PlayerController.EstadosPlayer.SubirEscalera;
+        }
+        else
+        {
             player.GetComponent<PlayerController>().Estado = PlayerController.EstadosPlayer.Andar;
-         }
-     }
+        }
+    }
 }
