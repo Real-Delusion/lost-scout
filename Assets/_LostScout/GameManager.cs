@@ -187,6 +187,7 @@ public class GameManager : MonoBehaviour
     // Resume game function (with or without menu)
     public void ResumeGame(bool ui)
     {
+        Debug.Log("resume");
         Time.timeScale = 1;
         Cursor.visible = false;
         if (ui)
