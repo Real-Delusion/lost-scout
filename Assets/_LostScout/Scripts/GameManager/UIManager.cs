@@ -8,6 +8,7 @@ public class UIManager : MonoBehaviour
 {
     public GameObject menuPausa;
     public GameObject menuPuntuacion;
+    public GameObject hud;
     public GameObject insigniaHabilidad;
     public GameObject insigniaPrestigio;
     public GameObject insigniaObsequio;
@@ -15,6 +16,7 @@ public class UIManager : MonoBehaviour
     public GameObject bienHecho;
     public Text tiempo;
     public Text tiempoRecord;
+    public Text tiempoHud;
     public GameObject luzChapa1;
     public GameObject luzChapa2;
     public GameObject luzChapa3;
@@ -33,6 +35,13 @@ public class UIManager : MonoBehaviour
 
     public void toggleMenuPausa(bool state){
         menuPausa.transform.Find("ModalContent").gameObject.GetComponent<Animator>().SetBool("open", state);
+    }
+
+    public void toggleHUD (bool state) {
+        hud.SetActive(state);
+    }
+    public void printTime (float time, bool isPaused) {
+        if (!isPaused) tiempoHud.text = (Math.Round(time,0).ToString())+" ''";
     }
 
     public void showMenuPuntuacion (int insignias, float time){
