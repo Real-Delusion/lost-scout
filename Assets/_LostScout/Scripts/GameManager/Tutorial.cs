@@ -10,9 +10,11 @@ public class Tutorial : MonoBehaviour
     public GameObject segundaPalanca;
     public GameObject segundoTronco;
     private float startMousePos;
+    GameObject player;
     // Start is called before the first frame update
     void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
         showMouse();
         startMousePos = Input.mousePosition.x;
     }
@@ -98,7 +100,7 @@ public class Tutorial : MonoBehaviour
 
     IEnumerator Wait(string method)
     {
-        yield return new WaitForSecondsRealtime(1);
+        yield return new WaitForSecondsRealtime(5);
         switch (method) {
           case "move":
               showMovement();
