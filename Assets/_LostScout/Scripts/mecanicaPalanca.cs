@@ -37,7 +37,7 @@ public class mecanicaPalanca : MonoBehaviour
             {
                 animacionPalanca.SetBool("OnOff", true); // Se ejecuta la animación para que se ponga la palanca en posicion activa
                 animObjeto.SetBool("UpDown", true); // Se ejecuta la animación del objeto que activa
-                colliderPuente.SetActive(false);//Desactivar el collider para que pueda pasar
+                //colliderPuente.SetActive(false);//Desactivar el collider para que pueda pasar
             }
 
             // caso en que la palanca este ON/Activa
@@ -45,7 +45,7 @@ public class mecanicaPalanca : MonoBehaviour
             {
                 animacionPalanca.SetBool("OnOff", false); // Se ejecuta la animación para que se ponga la palanca en posicion desactiva
                 animObjeto.SetBool("UpDown", false); // Se ejecuta la animacion del objeto para que vuelva a su lugar inicial
-                colliderPuente.SetActive(true); //Activar el collider para que no pueda pasar
+                //colliderPuente.SetActive(true); //Activar el collider para que no pueda pasar
             }
         }
     }
