@@ -53,15 +53,15 @@ public class controlCamaraMenu : MonoBehaviour
             PlayerPrefs.SetInt("nivelTutorial",1);
         }
         else {
-            canvasMainMenu.GetComponent<Canvas>().enabled = false;
-            canvasSeleccionNiveles.GetComponent<Canvas>().enabled = true;
+            //canvasMainMenu.GetComponent<Canvas>().enabled = false;
+            canvasMainMenu.transform.Find("Content").GetComponent<Animator>().SetBool("close", true);
+            //canvasSeleccionNiveles.GetComponent<Canvas>().enabled = true;
         }
     }
 
     public void volver()
     {
-        canvasMainMenu.GetComponent<Canvas>().enabled = true;
-        canvasSeleccionNiveles.GetComponent<Canvas>().enabled = false;
+        canvasMainMenu.transform.Find("Content").GetComponent<Animator>().SetBool("close", false);
     }
 
     public void exit()
