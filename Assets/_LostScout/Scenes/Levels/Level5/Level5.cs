@@ -20,24 +20,25 @@ public class Level5 : MonoBehaviour
     {
         string estadoPalanca = paloPalanca.GetComponent<mecanicaPalanca>().Estado.ToString();
         string estadoPresion1 = placaPresion1.GetComponent<PlacaDePresion>().Estado.ToString();
-        string estadoPresion2 = placaPresion1.GetComponent<PlacaDePresion>().Estado.ToString();
-        string estadoPresion3 = placaPresion1.GetComponent<PlacaDePresion>().Estado.ToString();
+        string estadoPresion2 = placaPresion2.GetComponent<PlacaDePresion>().Estado.ToString();
+        string estadoPresion3 = placaPresion3.GetComponent<PlacaDePresion>().Estado.ToString();
 
-        print(estadoPresion2);
-
-        if (estadoPresion1.Equals("On"))
+        if (estadoPresion2.Equals("On") || estadoPresion3.Equals("On"))
         {
+            //bajo la nube un nivel
             animatorNube.SetFloat("valor", 1);
 
-            /*if (estadoPresion2.Equals("On"))
+            if (estadoPresion1.Equals("On") && estadoPresion2.Equals("On") && estadoPresion3.Equals("On"))
             {
-                animatorNube.SetFloat("valor", 2);
-            }*/
+                if (estadoPalanca.Equals("On"))
+                {
+                    animatorNube.SetFloat("valor", 2);
+                }
+            }
         }
         else
         {
             animatorNube.SetFloat("valor", 0);
-
         }
     }
 }
