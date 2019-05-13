@@ -102,13 +102,6 @@ public class GameManager : MonoBehaviour
         // Disable cursor and get generic game objects if we are in a playable level
         if (currentScene.name.Contains("Level "))
         {
-            if (currentScene.name.Contains("Tutorial")) {
-                uiManager.showTutorialText(true);
-            }
-            else {
-                uiManager.showTutorialText(false);
-            }
-
             Cursor.visible = false;
             startTime = Time.time;
             player = GameObject.FindGameObjectWithTag("Player");
@@ -224,7 +217,7 @@ public class GameManager : MonoBehaviour
     {
         // Move player to avoid a loop on checkpoint
         player.transform.position = new Vector3((player.transform.position.x) + 1, player.transform.position.y, player.transform.position.z);
-        uiManager.showTutorialText(false);
+
         // Pause the game without graphic interface
         PauseGame(false);
 
