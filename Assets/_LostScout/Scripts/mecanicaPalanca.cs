@@ -14,6 +14,7 @@ public class mecanicaPalanca : MonoBehaviour
     public Transform player;
     // referencia collider del puente
     public GameObject colliderPuente;
+    public bool inRange;
 
     // Maquinas de estados finitos
     public enum EstadosPalanca
@@ -67,10 +68,14 @@ public class mecanicaPalanca : MonoBehaviour
             case EstadosPalanca.Off: 
                 if (Vector3.Distance(transform.position, player.position) < radio) // si el player esta dentro del area de accion 
                 {
+                    inRange = true;
                     if (Input.GetKeyDown(KeyCode.E) | Input.GetKeyDown("joystick button 0")) // si se pulsa la tecla "E" destro del radio
                     {
                         Estado = EstadosPalanca.On; // Se cambia la panca a estado ON / Activo
                     }
+                }
+                else {
+                    inRange = false;
                 }
                 break;
 
@@ -78,10 +83,14 @@ public class mecanicaPalanca : MonoBehaviour
             case EstadosPalanca.On:
                 if (Vector3.Distance(transform.position, player.position) < radio) // si el player esta dentro del area de accion 
                 {
+                    inRange = true;
                     if (Input.GetKeyDown(KeyCode.E) | Input.GetKeyDown("joystick button 0")) // si se pulsa la tecla "E" destro del radio
                     {
                         Estado = EstadosPalanca.Off; // Se cambia la panca a estado OFF / Desactiva
                     }
+                }
+                else {
+                    inRange = false;
                 }
                 break;
         }
