@@ -23,7 +23,7 @@ public class Tutorial : MonoBehaviour
         if (textosTutorial.gameObject.transform.GetChild(0).gameObject.active && startMousePos != Input.mousePosition.x) {
             StartCoroutine(Wait("move"));
         }
-        if (primeraPalanca.GetComponent<mecanicaPalanca>().inRange) {
+        if (primeraPalanca.GetComponent<mecanicaPalanca>().inRange || segundaPalanca.GetComponent<mecanicaPalanca>().inRange) {
             showLever();
         }
         else {
@@ -35,26 +35,11 @@ public class Tutorial : MonoBehaviour
         else {
             hideClimb();
         }
-        if (segundaPalanca.GetComponent<mecanicaPalanca>().inRange) {
-            showLever();
-        }
-        else {
-            hideLever();
-        }  
         if (segundoTronco.GetComponent<tronco>().enRadio) {
-            showClimb();
-        } 
-        else {
-            hideClimb();
-        }
-    }
-
-    public void showTutorialText (bool state) {
-        if (state) {
-            textosTutorial.active = true;
+            showPickUp();
         }
         else {
-            textosTutorial.active = false;
+            hidePickUp();
         }
     }
 
@@ -63,6 +48,7 @@ public class Tutorial : MonoBehaviour
         textosTutorial.gameObject.transform.GetChild(1).gameObject.SetActive(false);
         textosTutorial.gameObject.transform.GetChild(2).gameObject.SetActive(false);
         textosTutorial.gameObject.transform.GetChild(3).gameObject.SetActive(false);
+        textosTutorial.gameObject.transform.GetChild(4).gameObject.SetActive(false);
     }
 
     public void showMovement() {
@@ -70,6 +56,7 @@ public class Tutorial : MonoBehaviour
         textosTutorial.gameObject.transform.GetChild(0).gameObject.SetActive(false);
         textosTutorial.gameObject.transform.GetChild(2).gameObject.SetActive(false);
         textosTutorial.gameObject.transform.GetChild(3).gameObject.SetActive(false);
+        textosTutorial.gameObject.transform.GetChild(4).gameObject.SetActive(false);
     }
 
     public void showLever() {
@@ -77,9 +64,15 @@ public class Tutorial : MonoBehaviour
         textosTutorial.gameObject.transform.GetChild(1).gameObject.SetActive(false);
         textosTutorial.gameObject.transform.GetChild(0).gameObject.SetActive(false);
         textosTutorial.gameObject.transform.GetChild(3).gameObject.SetActive(false);
+        textosTutorial.gameObject.transform.GetChild(4).gameObject.SetActive(false);
     }
 
-    public void hideLever() {
+    
+    public void showPickUp() {
+        textosTutorial.gameObject.transform.GetChild(4).gameObject.SetActive(true);
+        textosTutorial.gameObject.transform.GetChild(1).gameObject.SetActive(false);
+        textosTutorial.gameObject.transform.GetChild(0).gameObject.SetActive(false);
+        textosTutorial.gameObject.transform.GetChild(3).gameObject.SetActive(false);
         textosTutorial.gameObject.transform.GetChild(2).gameObject.SetActive(false);
     }
 
@@ -88,15 +81,24 @@ public class Tutorial : MonoBehaviour
         textosTutorial.gameObject.transform.GetChild(1).gameObject.SetActive(false);
         textosTutorial.gameObject.transform.GetChild(2).gameObject.SetActive(false);
         textosTutorial.gameObject.transform.GetChild(0).gameObject.SetActive(false);
+        textosTutorial.gameObject.transform.GetChild(4).gameObject.SetActive(false);
     }
  
     public void hideClimb() {
         textosTutorial.gameObject.transform.GetChild(3).gameObject.SetActive(false);
     }
+        
+    public void hideLever() {
+        textosTutorial.gameObject.transform.GetChild(2).gameObject.SetActive(false);
+    }
+
+    public void hidePickUp() {
+        textosTutorial.gameObject.transform.GetChild(4).gameObject.SetActive(false);
+    }
 
     IEnumerator Wait(string method)
     {
-        yield return new WaitForSecondsRealtime(5);
+        yield return new WaitForSecondsRealtime(1);
         switch (method) {
           case "move":
               showMovement();
