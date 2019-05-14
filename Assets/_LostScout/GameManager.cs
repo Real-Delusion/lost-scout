@@ -132,7 +132,7 @@ public class GameManager : MonoBehaviour
         {
             new Nivel(0,"Level Tutorial",false,0,false,60,20),
             new Nivel(1,"Level 1",false,0,true,60,3),
-            new Nivel(2,"Level 2",false,0,true,60,1),
+            new Nivel(2,"Level 2",false,0,true,60,4),
             new Nivel(3,"Level 3",false,0,true,60,8),
             new Nivel(4,"Level 4",false,0,true,60,8),
             new Nivel(5,"Level 5",false,0,true,60,8),
@@ -217,6 +217,7 @@ public class GameManager : MonoBehaviour
     {
         // Move player to avoid a loop on checkpoint
         player.transform.position = new Vector3((player.transform.position.x) + 1, player.transform.position.y, player.transform.position.z);
+        player.gameObject.SetActive(false);
 
         // Pause the game without graphic interface
         PauseGame(false);
