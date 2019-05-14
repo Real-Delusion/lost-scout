@@ -15,12 +15,7 @@ public class controlCamaraMenu : MonoBehaviour
     void Start()
     {
         // Hide at start
-        if (!fromGame)
-        {
-            canvasMainMenu.GetComponent<Canvas>().enabled = true;
-            canvasSeleccionNiveles.GetComponent<Canvas>().enabled = false;
-        }
-        else
+        if (fromGame)
         {
             showSeleccionNiveles();
         }
@@ -53,15 +48,19 @@ public class controlCamaraMenu : MonoBehaviour
             PlayerPrefs.SetInt("nivelTutorial",1);
         }
         else {
-            //canvasMainMenu.GetComponent<Canvas>().enabled = false;
-            canvasMainMenu.transform.Find("Content").GetComponent<Animator>().SetBool("close", true);
-            //canvasSeleccionNiveles.GetComponent<Canvas>().enabled = true;
+            if(fromGame){
+                canvasMainMenu.transform.Find("Content").GetComponent<Animator>().SetBool("animated", false);
+            }else{
+                canvasMainMenu.transform.Find("Content").GetComponent<Animator>().SetBool("animated", true);                
+            }
+            canvasMainMenu.transform.Find("Content").GetComponent<Animator>().SetInteger("pos", 1);
         }
     }
 
     public void volver()
     {
-        canvasMainMenu.transform.Find("Content").GetComponent<Animator>().SetBool("close", false);
+        canvasMainMenu.transform.Find("Content").GetComponent<Animator>().SetBool("animated", true);
+        canvasMainMenu.transform.Find("Content").GetComponent<Animator>().SetInteger("pos", 0);
     }
 
     public void exit()
