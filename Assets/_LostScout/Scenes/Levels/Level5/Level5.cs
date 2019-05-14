@@ -32,19 +32,20 @@ public class Level5 : MonoBehaviour
         {
             //bajo la nube un nivel
             animatorNube.SetFloat("valor", 1);
-
-            if (estadoPresion1.Equals("On") && estadoPresion2.Equals("On") && estadoPresion3.Equals("On"))
-            {
-                if (estadoPalanca2.Equals("On"))
-                {
-                    animatorNube.SetFloat("valor", 2);
-                }
-            }
         }
         else
         {
             animatorNube.SetFloat("valor", 0);
         }
+
+        if (estadoPresion1.Equals("On") && estadoPresion2.Equals("On") && estadoPresion3.Equals("On"))
+        {
+            if (estadoPalanca2.Equals("On"))
+            {
+                animatorNube.SetFloat("valor", 2);
+            }
+        }
+       
 
         if (estadoPalanca1.Equals("On"))
         {
