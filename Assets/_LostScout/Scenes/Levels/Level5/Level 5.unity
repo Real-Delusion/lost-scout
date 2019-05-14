@@ -5843,6 +5843,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cloud_Cumulus (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 5677221947363521046, guid: 9a3530a6d52d44e3eaafbaab5475408a,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: af106b6094146479c98404245846bada, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a3530a6d52d44e3eaafbaab5475408a, type: 3}
 --- !u!4 &1949232292 stripped
