@@ -12,6 +12,7 @@ public class UIManager : MonoBehaviour
     public GameObject insigniaHabilidad;
     public GameObject insigniaPrestigio;
     public GameObject insigniaObsequio;
+    public GameObject textosTutorial;
     public float _fadeSpeed = 5f;
     public GameObject bienHecho;
     public Text tiempo;
@@ -42,6 +43,15 @@ public class UIManager : MonoBehaviour
     }
     public void printTime (float time, bool isPaused) {
         if (!isPaused) tiempoHud.text = (Math.Round(time,0).ToString())+" ''";
+    }
+
+    public void showTutorialText (bool state) {
+        if (state) {
+            textosTutorial.active = true;
+        }
+        else {
+            textosTutorial.active = false;
+        }
     }
 
     public void showMenuPuntuacion (int insignias, float time){

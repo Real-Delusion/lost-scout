@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
     // *** MANAGERS
     public NivelesManager nivelesManager;
     public UIManager uiManager;
+    private Tutorial tutorialScript;
 
     public static SceneTransitions sceneTransitions;
     public bool gamePaused = false;
@@ -55,6 +56,7 @@ public class GameManager : MonoBehaviour
             nivelesManager = GetComponent<NivelesManager>();
             uiManager = GetComponent<UIManager>();
             sceneTransitions = GetComponent<SceneTransitions>();
+            tutorialScript = GetComponent<Tutorial>();
 
             //Sets this to not be destroyed when reloading scene
             DontDestroyOnLoad(gameObject);
@@ -187,7 +189,6 @@ public class GameManager : MonoBehaviour
     // Resume game function (with or without menu)
     public void ResumeGame(bool ui)
     {
-        Debug.Log("resume");
         Time.timeScale = 1;
         Cursor.visible = false;
         if (ui)
@@ -216,6 +217,7 @@ public class GameManager : MonoBehaviour
     {
         // Move player to avoid a loop on checkpoint
         player.transform.position = new Vector3((player.transform.position.x) + 1, player.transform.position.y, player.transform.position.z);
+
         // Pause the game without graphic interface
         PauseGame(false);
 

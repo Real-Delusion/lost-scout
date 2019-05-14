@@ -20,6 +20,7 @@ public class tronco : MonoBehaviour
     // 
     public GameObject tempParent; 
     public Transform guide;
+    public bool enRadio;
 
     // Is carrying?? 
     bool carrying;
@@ -133,7 +134,8 @@ public class tronco : MonoBehaviour
         // Si el jugador entra en el range del objeto
         if (Vector3.Distance(player.transform.position, transform.position) < range && carrying == false && player.transform.position.y < transform.position.y + miAltura - 0.1f)
         {
-            Debug.Log("Pulse espacio para subirse a la caja");
+            //Debug.Log("Pulse espacio para subirse a la caja");
+            enRadio = true;
             // Si está en el range y pulsa espacio
             if (Input.GetKeyDown(KeyCode.Space) | Input.GetKeyDown("joystick button 0"))
             {
@@ -146,6 +148,9 @@ public class tronco : MonoBehaviour
                 playerController.Estado = PlayerController.EstadosPlayer.Subir;
             }
 
+        }
+        else {
+            enRadio = false;
         }        
     }
 
