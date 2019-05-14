@@ -53,17 +53,18 @@ public class Level5 : MonoBehaviour
         else
         {
             colliderPuente1.GetComponent<BoxCollider>().enabled = true;
-
         }
 
         if (estadoPalanca2.Equals("On"))
         {
             animatorPuente.SetFloat("valor",0);
+            colliderPuente2.GetComponent<BoxCollider>().enabled = true;
+
         }
-        else
+        if (estadoPalanca2.Equals("Off"))
         {
             animatorPuente.SetFloat("valor", 1);
-
+            colliderPuente2.GetComponent<BoxCollider>().enabled = false;
         }
     }
 }
