@@ -1203,6 +1203,7 @@ GameObject:
   - component: {fileID: 793646362}
   - component: {fileID: 793646361}
   - component: {fileID: 793646364}
+  - component: {fileID: 793646365}
   m_Layer: 5
   m_Name: grid
   m_TagString: NivelesCanvas
@@ -1303,6 +1304,25 @@ MonoBehaviour:
   m_ChildForceExpandHeight: 0
   m_ChildControlWidth: 0
   m_ChildControlHeight: 0
+--- !u!95 &793646365
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 793646359}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: bfbb49546c2fcedd3b6b3d6011b40247, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &897257185
 GameObject:
   m_ObjectHideFlags: 0

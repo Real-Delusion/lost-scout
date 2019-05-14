@@ -112,7 +112,8 @@ public class NivelesManager : MonoBehaviour
                 marco.sprite = lockedMarco;
                 btn.onClick.AddListener(() => LoadModal(t));
             }
-
+            GameObject.FindWithTag("NivelesCanvas").GetComponent<Animator>().SetBool("in", true);
+            //GameObject.FindWithTag("NivelesCanvas2").GetComponent<Animator>().SetBool("in", true);
             //pos += 175;
         }
     }
