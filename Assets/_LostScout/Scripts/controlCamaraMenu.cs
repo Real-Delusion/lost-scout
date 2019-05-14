@@ -49,7 +49,7 @@ public class controlCamaraMenu : MonoBehaviour
     public void showSeleccionNiveles()
     {
         if (PlayerPrefs.GetInt("nivelTutorial") == 0) {
-            SceneManager.LoadScene("Nivel Tutorial");
+            SceneManager.LoadScene("Level Tutorial");
             PlayerPrefs.SetInt("nivelTutorial",1);
         }
         else {
