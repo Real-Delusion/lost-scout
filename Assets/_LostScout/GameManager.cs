@@ -111,8 +111,8 @@ public class GameManager : MonoBehaviour
             // Show hud
             uiManager.toggleHUD(true);
 
+            //Looking for the name of the level
             int index = niveles.FindIndex(x => x.LevelName.Equals(currentScene.name));
-
             string levelName = niveles[index].LevelName;
 
             //Show nombre del nivel
