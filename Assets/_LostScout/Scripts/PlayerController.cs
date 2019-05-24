@@ -48,6 +48,11 @@ public class PlayerController : MonoBehaviour
     // -----------------------------------------------------------------------------------
 
 
+    //------------------------------------ Sonidos ---------------------------------------
+    private AudioSource sonidoAndar;
+
+
+
     // -------------------------------- EstadosPlayer -----------------------------------
     public enum EstadosPlayer
     {
@@ -145,6 +150,9 @@ public class PlayerController : MonoBehaviour
         // accedemos a la altura del game object (eje y)
         miAltura = GetComponent<Collider>().bounds.size.y;
 
+        // audio source sonido andar
+        sonidoAndar = GetComponent<AudioSource>();
+
     }
 
     //------------------------------------------------
@@ -161,9 +169,16 @@ public class PlayerController : MonoBehaviour
             {
                 gameObject.transform.Find("Mutongo").gameObject.GetComponent<Animator>().SetBool("andar", true);
                 this.gameObject.transform.GetChild(1).gameObject.SetActive(true);
-            }else{
+                if (!sonidoAndar.isPlaying) {
+                    sonidoAndar.Play();
+                }
+
+            }
+            else{
                 gameObject.transform.Find("Mutongo").gameObject.GetComponent<Animator>().SetBool("andar", false);
                 this.gameObject.transform.GetChild(1).gameObject.SetActive(false);
+                sonidoAndar.Pause();
+
             }
 
 
