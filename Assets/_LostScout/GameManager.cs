@@ -110,6 +110,14 @@ public class GameManager : MonoBehaviour
 
             // Show hud
             uiManager.toggleHUD(true);
+
+            int index = niveles.FindIndex(x => x.LevelName.Equals(currentScene.name));
+
+            string levelName = niveles[index].LevelName;
+
+            //Show nombre del nivel
+            StartCoroutine(WaitLevelName(levelName));
+
         }
     }
 
@@ -273,6 +281,18 @@ public class GameManager : MonoBehaviour
         // Show menu puntuacion (pass insignias and time)
         uiManager.hideBienHecho();
         uiManager.showMenuPuntuacion(insignias, time);
+    }
+
+
+    IEnumerator WaitLevelName(string levelName)
+    {
+        yield return new WaitForSecondsRealtime(0.8f);
+        //Show nombre del nivel
+        uiManager.showLevelName(levelName);
+        yield return new WaitForSecondsRealtime(3);
+        // Show menu puntuacion (pass insignias and time)
+        uiManager.hideLevelName();
+
     }
 
 }
