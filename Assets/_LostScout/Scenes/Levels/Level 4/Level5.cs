@@ -36,6 +36,7 @@ public class Level5 : MonoBehaviour
         string estadoPresion2 = placaPresion2.GetComponent<PlacaDePresion>().Estado.ToString();
         string estadoPresion3 = placaPresion3.GetComponent<PlacaDePresion>().Estado.ToString();
 
+        //PLACA PRESION 1
         if (estadoPresion1.Equals("On"))
         {
             animatorIsla.SetBool("activar", true);
@@ -45,7 +46,8 @@ public class Level5 : MonoBehaviour
             animatorIsla.SetBool("activar", false);
         }
 
-        if (estadoPresion3.Equals("On"))
+        //PLACA PRESION 3
+        if (estadoPresion3.Equals("On") && estadoPalanca2.Equals("Off"))
         {
             //bajo la nube un nivel
             animatorNube.SetFloat("valor", 1);
@@ -55,28 +57,46 @@ public class Level5 : MonoBehaviour
             animatorNube.SetFloat("valor", 0);
         }
 
+        //PLACA PRESION 1 Y 3
         if (estadoPresion1.Equals("On") && estadoPresion3.Equals("On"))
         {
+            //PALANCA 2
             if (estadoPalanca2.Equals("On"))
             {
                 animatorNube.SetFloat("valor", 2);
             }
         }
-       
 
+        //PLACA PRESION 1 Y PALANCA 2
+        if (estadoPresion1.Equals("On") && estadoPalanca2.Equals("On"))
+        {
+            //PLACA PRESION 3
+            if (estadoPresion3.Equals("On"))
+            {
+                animatorNube.SetFloat("valor", 2);
+            }
+        }
+
+        //PALANCA 1
         if (estadoPalanca1.Equals("On"))
         {
+            Debug.Log("Palanca 1 On");
             animatorPuente1.SetBool("UpDown", true);
             colliderPuente1.GetComponent<BoxCollider>().enabled = false;
         }
-        else
+        if(estadoPalanca1.Equals("Off"))
         {
+            Debug.Log("Palanca 1 Off");
             animatorPuente1.SetBool("UpDown", false);
             colliderPuente1.GetComponent<BoxCollider>().enabled = true;
         }
 
+        //PALANCA 2
         if (estadoPalanca2.Equals("On"))
         {
+            //Animacion nube
+            animatorNube.SetFloat("valor", 1);
+
             //Quitar puente del rio
             animatorPuente2.SetFloat("valor", 0);
             colliderPuente2.GetComponent<BoxCollider>().enabled = true;
@@ -96,6 +116,9 @@ public class Level5 : MonoBehaviour
         {
             animatorPuente2.SetFloat("valor", 1);
             colliderPuente2.GetComponent<BoxCollider>().enabled = false;
+
+            animatorPuente1.SetBool("UpDown", false);
+            colliderPuente1.GetComponent<BoxCollider>().enabled = true;
         }
     }
 }

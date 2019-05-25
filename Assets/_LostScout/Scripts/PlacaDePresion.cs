@@ -7,6 +7,9 @@ public class PlacaDePresion : MonoBehaviour
     private Animator animacionPlaca; //Animacion de la placa de presion
     public Animator animacionPlataforma; //Hay que asignarle el animator de la plataforma que queremos que se mueva
     public GameObject colliderPuente;
+    private Collider entrado;
+    private bool a = false;
+
 
     public enum EstadosPlaca
     {
@@ -52,33 +55,31 @@ public class PlacaDePresion : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
     }
 
     //Cuando entre en el collider, animación = true
     public void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Player" || other.tag == "TroncoEmpujar")
+        Debug.Log("ha entrado algo");
+        if (a == false)
         {
-            if (!Estado.Equals("On"))
+            entrado = other;
+            a = true;
+            if (other.tag == "Player" || other.tag == "TroncoEmpujar")
             {
                 Estado = EstadosPlaca.On;
             }
         }
-      
     }
 
     //Cuando salga del collider,animación = false
     public void OnTriggerExit(Collider other)
     {
-        if (other.tag == "Player" || other.tag == "TroncoEmpujar") {
-
-            if (!Estado.Equals("Off"))
-            {
-                Estado = EstadosPlaca.Off;
-            }
-
+        Debug.Log("ha salido algo");
+        if (a == true && entrado == other)
+        {
+            a = false;
+            Estado = EstadosPlaca.Off;
         }
-
     }
 }

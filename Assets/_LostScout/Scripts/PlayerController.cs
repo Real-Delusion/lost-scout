@@ -77,7 +77,7 @@ public class PlayerController : MonoBehaviour
             // Si el estado es andar
             if (_estado == EstadosPlayer.Andar)
             {
-                Debug.Log("andando");
+                //Debug.Log("andando");
                 // aquí añadiremos animación de andar del personaje
                 //gameObject.transform.Find("TheLastMutongo").gameObject.GetComponent<Animator>().SetBool("andar", true);
             }
@@ -99,14 +99,14 @@ public class PlayerController : MonoBehaviour
             // Si el estado es cogiendo
             if (_estado == EstadosPlayer.Coger)
             {
-                Debug.Log("cogiendo");
+               //Debug.Log("cogiendo");
                 // aquí añadiremos animación de coger del personaje
             }
 
             // Si el estado es cogiendo
             if (_estado == EstadosPlayer.Soltar)
             {
-                Debug.Log("soltando");
+                //Debug.Log("soltando");
                 // aquí añadiremos animación de soltar del personaje
             }
 
