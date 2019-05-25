@@ -30,6 +30,7 @@ public class Tutorial : MonoBehaviour
         pickUpText = textosTutorial.gameObject.transform.GetChild(4).gameObject;
 
         showMouse();
+        leverText.SetActive(true);
         startMousePos = Input.mousePosition.x;
     }
 
