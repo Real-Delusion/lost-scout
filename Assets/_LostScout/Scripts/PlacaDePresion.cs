@@ -60,7 +60,10 @@ public class PlacaDePresion : MonoBehaviour
     {
         if(other.tag == "Player" || other.tag == "TroncoEmpujar")
         {
-            Estado = EstadosPlaca.On;
+            if (!Estado.Equals("On"))
+            {
+                Estado = EstadosPlaca.On;
+            }
         }
       
     }
@@ -69,7 +72,12 @@ public class PlacaDePresion : MonoBehaviour
     public void OnTriggerExit(Collider other)
     {
         if (other.tag == "Player" || other.tag == "TroncoEmpujar") {
-        Estado = EstadosPlaca.Off;
+
+            if (!Estado.Equals("Off"))
+            {
+                Estado = EstadosPlaca.Off;
+            }
+
         }
 
     }
