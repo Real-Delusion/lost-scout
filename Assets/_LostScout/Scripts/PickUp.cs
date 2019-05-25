@@ -16,7 +16,7 @@ public class PickUp : MonoBehaviour
     public Transform guide;
 
     // Is carrying?? 
-    bool carrying;
+    public bool carrying;
 
     // Use this for initialization
     void Start()

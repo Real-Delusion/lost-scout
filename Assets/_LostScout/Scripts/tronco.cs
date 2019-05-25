@@ -23,7 +23,7 @@ public class tronco : MonoBehaviour
     public bool enRadio;
 
     // Is carrying?? 
-    bool carrying;
+    public bool carrying;
 
     // *** SUBIR ***
     // player
