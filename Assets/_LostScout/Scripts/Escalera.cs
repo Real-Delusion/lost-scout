@@ -67,11 +67,11 @@ public class Escalera : MonoBehaviour
 
     void OnTriggerEnter(Collider coll)
     {
-        if (coll.gameObject.tag == "Player" && player.transform.position.y < (/*transform.position.y +*/ transform.localScale.y /*) / 2 */)
-               && player.transform.position.y >= 0)
+        if (coll.gameObject.tag == "Player" && player.transform.position.y < (transform.localScale.y))
         {
             Debug.Log("true");
             canClimb = true;
+            player.GetComponent<PlayerController>().Estado = PlayerController.EstadosPlayer.SubirEscalera;
         }
     }
 
@@ -80,8 +80,8 @@ public class Escalera : MonoBehaviour
         if (coll2.gameObject.tag == "Player")
         {
             Debug.Log("false");
-
             canClimb = false;
+            player.GetComponent<PlayerController>().Estado = PlayerController.EstadosPlayer.Andar;
         }
     }
 
@@ -94,13 +94,5 @@ public class Escalera : MonoBehaviour
     }
     void Update()
     {
-        if (canClimb)
-        {
-            player.GetComponent<PlayerController>().Estado = PlayerController.EstadosPlayer.SubirEscalera;
-        }
-        else
-        {
-            player.GetComponent<PlayerController>().Estado = PlayerController.EstadosPlayer.Andar;
-        }
     }
 }

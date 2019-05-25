@@ -48,6 +48,7 @@ public class UIManager : MonoBehaviour
     }
 
     public void showMenuPuntuacion (int insignias, float time){
+        
         // Return all insignias to their default state (size 0) 
         menuPuntuacion.transform.Find("ModalContent").Find("obsequio").gameObject.GetComponent<Animator>().SetBool("show", false);
         menuPuntuacion.transform.Find("ModalContent").Find("habilidad").gameObject.GetComponent<Animator>().SetBool("show", false);
@@ -127,7 +128,7 @@ public class UIManager : MonoBehaviour
         levelName = GameObject.Find("NombreNivel");
         textLevelName = (Text) levelName.transform.GetChild(0).GetChild(2).GetComponent<Text>();
         textLevelNameSombra = (Text) levelName.transform.GetChild(0).GetChild(1).GetComponent<Text>();
-        
+
         levelName.GetComponent<Canvas>().enabled = true;
 
         textLevelName.GetComponent<Text>().text = level;
