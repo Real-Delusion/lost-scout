@@ -29,9 +29,6 @@ public class UIManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        levelName = GameObject.Find("NombreNivel");
-        textLevelName = (Text) levelName.transform.GetChild(0).GetChild(2).GetComponent<Text>();
-        textLevelNameSombra = (Text) levelName.transform.GetChild(0).GetChild(1).GetComponent<Text>();
     }
 
     // Update is called once per frame
@@ -127,6 +124,10 @@ public class UIManager : MonoBehaviour
 
     public void showLevelName(string level)
     {
+        levelName = GameObject.Find("NombreNivel");
+        textLevelName = (Text) levelName.transform.GetChild(0).GetChild(2).GetComponent<Text>();
+        textLevelNameSombra = (Text) levelName.transform.GetChild(0).GetChild(1).GetComponent<Text>();
+        
         levelName.GetComponent<Canvas>().enabled = true;
 
         textLevelName.GetComponent<Text>().text = level;
