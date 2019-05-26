@@ -48,6 +48,11 @@ public class PlayerController : MonoBehaviour
     // -----------------------------------------------------------------------------------
 
 
+    //------------------------------------ Sonidos ---------------------------------------
+    private AudioSource sonidoAndar;
+
+
+
     // -------------------------------- EstadosPlayer -----------------------------------
     public enum EstadosPlayer
     {
@@ -72,7 +77,7 @@ public class PlayerController : MonoBehaviour
             // Si el estado es andar
             if (_estado == EstadosPlayer.Andar)
             {
-                Debug.Log("andando");
+                //Debug.Log("andando");
                 // aquí añadiremos animación de andar del personaje
                 //gameObject.transform.Find("TheLastMutongo").gameObject.GetComponent<Animator>().SetBool("andar", true);
             }
@@ -118,15 +123,10 @@ public class PlayerController : MonoBehaviour
 
             }
 
-            // Si el estado es subir
+            // Si el estado es subir escalera
             if (_estado == EstadosPlayer.SubirEscalera)
             {
-                // calculamos su nueva posición a partir de la posición del tronco, mi posición y las alturas
-                // en los ejes x, z moverá a la posición del tronco
-                // en el eje y, moverá a la posicón del tronco + su altura + la mitad de la altura del player
-                nuevaPosicion = new Vector3(transform.position.x, transform.position.y + alturaEscalera + (miAltura+5)/2, transform.position.z);
                 Debug.Log("Estado: Subir escalera");
-
             }
         }
     }
@@ -145,6 +145,9 @@ public class PlayerController : MonoBehaviour
         // accedemos a la altura del game object (eje y)
         miAltura = GetComponent<Collider>().bounds.size.y;
 
+        // audio source sonido andar
+        sonidoAndar = GetComponent<AudioSource>();
+
     }
 
     //------------------------------------------------
@@ -161,9 +164,16 @@ public class PlayerController : MonoBehaviour
             {
                 gameObject.transform.Find("Mutongo").gameObject.GetComponent<Animator>().SetBool("andar", true);
                 this.gameObject.transform.GetChild(1).gameObject.SetActive(true);
-            }else{
+                if (!sonidoAndar.isPlaying) {
+                    sonidoAndar.Play();
+                }
+
+            }
+            else{
                 gameObject.transform.Find("Mutongo").gameObject.GetComponent<Animator>().SetBool("andar", false);
                 this.gameObject.transform.GetChild(1).gameObject.SetActive(false);
+                sonidoAndar.Pause();
+
             }
 
 
@@ -220,25 +230,17 @@ public class PlayerController : MonoBehaviour
         // Si el estado del player es subir escaleras
         if (Estado == EstadosPlayer.SubirEscalera) {
             Debug.Log(Input.GetAxis("Vertical"));
-
-           /* t += 0.03f;
-
-            if (t < 1.0f){
-                Debug.Log("Subiendo");
-                // Cambiamos de posición de forma smooth
-                this.transform.localPosition = Vector3.Lerp(transform.position, nuevaPosicion, t);
-            }else{
-                this.Estado = EstadosPlayer.Andar;
-                t = 0.0f;       
-            } */
             
               if (Input.GetAxis("Vertical") > 0)
              {
                  transform.Translate(new Vector3(0, 1, 0) * Time.deltaTime * velocidad);
              }
-             if (Input.GetAxis("Vertical") < 0)
+             else if (Input.GetAxis("Vertical") < 0 && transform.position.y > 0.3f)
              {
                  transform.Translate(new Vector3(0, -1, 0) * Time.deltaTime * velocidad);
+             }
+             else if (Input.GetAxis("Vertical") < 0 && transform.position.y <= 0.3f) {
+                this.Estado = EstadosPlayer.Andar;                
              }
         }
 

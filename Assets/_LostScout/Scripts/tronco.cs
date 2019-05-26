@@ -23,7 +23,7 @@ public class tronco : MonoBehaviour
     public bool enRadio;
 
     // Is carrying?? 
-    bool carrying;
+    public bool carrying;
 
     // *** SUBIR ***
     // player
@@ -34,6 +34,9 @@ public class tronco : MonoBehaviour
 
     // altura del game object, para luego asignar la nueva posición al player
     private float miAltura;
+
+    //Audio source sonido tronco
+    private AudioSource sonidoTronco;
 
 
     // para ver el range en la escena
@@ -64,6 +67,8 @@ public class tronco : MonoBehaviour
 
         // accedemos a la altura del game object (eje y)
         miAltura = GetComponent<Collider>().bounds.size.y;
+
+        sonidoTronco = GetComponent<AudioSource>();
     }
 
 
@@ -192,6 +197,10 @@ public class tronco : MonoBehaviour
     {
         yield return new WaitForSeconds(0.4f);
         gameObject.transform.GetChild(0).gameObject.SetActive(true);
+        if (!sonidoTronco.isPlaying)
+        {
+            sonidoTronco.Play();
+        }
 
     }
 

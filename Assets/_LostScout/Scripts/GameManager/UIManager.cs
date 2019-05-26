@@ -14,6 +14,9 @@ public class UIManager : MonoBehaviour
     public GameObject insigniaObsequio;
     public float _fadeSpeed = 5f;
     public GameObject bienHecho;
+    public GameObject levelName;
+    public Text textLevelName;
+    public Text textLevelNameSombra;
     public Text tiempo;
     public Text tiempoRecord;
     public Text tiempoHud;
@@ -45,6 +48,7 @@ public class UIManager : MonoBehaviour
     }
 
     public void showMenuPuntuacion (int insignias, float time){
+        
         // Return all insignias to their default state (size 0) 
         menuPuntuacion.transform.Find("ModalContent").Find("obsequio").gameObject.GetComponent<Animator>().SetBool("show", false);
         menuPuntuacion.transform.Find("ModalContent").Find("habilidad").gameObject.GetComponent<Animator>().SetBool("show", false);
@@ -118,6 +122,26 @@ public class UIManager : MonoBehaviour
     {
         bienHecho.transform.Find("ModalContent").gameObject.GetComponent<Animator>().SetBool("open", false);
     }
+
+    public void showLevelName(string level)
+    {
+        levelName = GameObject.Find("NombreNivel");
+        textLevelName = (Text) levelName.transform.GetChild(0).GetChild(2).GetComponent<Text>();
+        textLevelNameSombra = (Text) levelName.transform.GetChild(0).GetChild(1).GetComponent<Text>();
+
+        levelName.GetComponent<Canvas>().enabled = true;
+
+        textLevelName.GetComponent<Text>().text = level;
+        textLevelNameSombra.GetComponent<Text>().text = level;
+
+        levelName.transform.Find("ModalContent").gameObject.GetComponent<Animator>().SetBool("open", true);
+        Camera.main.depth = -1;
+    }
+    public void hideLevelName()
+    {
+        levelName.transform.Find("ModalContent").gameObject.GetComponent<Animator>().SetBool("open", false);
+    }
+
     IEnumerator Wait1()
     {
         yield return new WaitForSecondsRealtime(0.5f);
