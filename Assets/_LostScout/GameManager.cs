@@ -103,7 +103,6 @@ public class GameManager : MonoBehaviour
         if (currentScene.name.Contains("Level "))
         {
             Cursor.visible = false;
-            startTime = Time.time;
             player = GameObject.FindGameObjectWithTag("Player");
             camera = GameObject.FindGameObjectWithTag("MainCamera");
             checkpoint = GameObject.FindGameObjectWithTag("checkpoint");
@@ -115,9 +114,9 @@ public class GameManager : MonoBehaviour
             int index = niveles.FindIndex(x => x.LevelName.Equals(currentScene.name));
             string levelName = niveles[index].LevelName;
 
+            PauseGame(false);
             //Show nombre del nivel
             StartCoroutine(WaitLevelName(levelName));
-
         }
     }
 
@@ -199,6 +198,7 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 1;
         Cursor.visible = false;
+        if (currentScene.name == "Level Tutorial") GameObject.Find("Canvas").GetComponent<Canvas>().enabled = true;
         if (ui)
         {
             uiManager.toggleMenuPausa(false);
@@ -211,6 +211,7 @@ public class GameManager : MonoBehaviour
     public void PauseGame(bool ui)
     {
         Cursor.visible = true;
+        if (currentScene.name == "Level Tutorial") GameObject.Find("Canvas").GetComponent<Canvas>().enabled = false;
         if (ui)
         {
             uiManager.toggleMenuPausa(true);
@@ -292,7 +293,8 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSecondsRealtime(3);
         // Show menu puntuacion (pass insignias and time)
         uiManager.hideLevelName();
-
+        ResumeGame(false);
+        startTime = Time.time;
     }
 
 }
