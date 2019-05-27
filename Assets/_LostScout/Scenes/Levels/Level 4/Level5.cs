@@ -119,6 +119,18 @@ public class Level5 : MonoBehaviour
                     animatorNube.SetFloat("valor", 2);
 
             }
+
+            //PALANCA 1
+            if (estadoPalanca1.Equals("Off"))
+            {
+                animatorPuente2.SetBool("UpDown", true);
+                colliderPuente2.GetComponent<BoxCollider>().enabled = false;
+            }
+            if (estadoPalanca1.Equals("On"))
+            {
+                animatorPuente2.SetBool("UpDown", false);
+                colliderPuente2.GetComponent<BoxCollider>().enabled = true;
+            }
         }
         if (estadoPalanca2.Equals("Off"))
         {
