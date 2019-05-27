@@ -124,9 +124,6 @@ public class Level5 : MonoBehaviour
         {
             animatorPuente1.SetFloat("valor", 1);
             colliderPuente1.GetComponent<BoxCollider>().enabled = false;
-            /*
-            animatorPuente2.SetBool("UpDown", false);
-            colliderPuente2.GetComponent<BoxCollider>().enabled = true;*/
         }
     }
 }
