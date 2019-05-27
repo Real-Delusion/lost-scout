@@ -99,14 +99,14 @@ public class PlayerController : MonoBehaviour
             // Si el estado es cogiendo
             if (_estado == EstadosPlayer.Coger)
             {
-                Debug.Log("cogiendo");
+               //Debug.Log("cogiendo");
                 // aquí añadiremos animación de coger del personaje
             }
 
             // Si el estado es cogiendo
             if (_estado == EstadosPlayer.Soltar)
             {
-                Debug.Log("soltando");
+                //Debug.Log("soltando");
                 // aquí añadiremos animación de soltar del personaje
             }
 
