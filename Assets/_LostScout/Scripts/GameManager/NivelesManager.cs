@@ -11,6 +11,7 @@ public class NivelesManager : MonoBehaviour
     public GameObject CanvasTarget;
     public List<Sprite> miniaturas;
     public Sprite lockedMarco;
+    private GameObject numeroNivel;
     private static string selectedLevel;
     public int unlockedId;
 
@@ -69,6 +70,10 @@ public class NivelesManager : MonoBehaviour
             miniaturaAnim.sprite = miniaturas[i];
             Nivel t = GameManager.niveles[i];
 
+            //Asginar número a cada nivel
+            btn.transform.Find("Numero").GetChild(1).GetComponent<Text>().text = (t.ID + 1).ToString();
+            Debug.Log("ESTOOO 10");
+
             if (!GameManager.niveles[i].Locked)
             {
                 btn.onClick.AddListener(() => LoadModal(t));
@@ -115,7 +120,9 @@ public class NivelesManager : MonoBehaviour
             GameObject.FindWithTag("NivelesCanvas").GetComponent<Animator>().SetBool("in", true);
             //GameObject.FindWithTag("NivelesCanvas2").GetComponent<Animator>().SetBool("in", true);
             //pos += 175;
+
         }
+
     }
 
     public void nextScreen()
@@ -197,15 +204,19 @@ public class NivelesManager : MonoBehaviour
     }
 
     public void animateUnlock(Transform boton) {
+
+        boton.Find("Numero").GetComponent<Animator>().SetBool("esconder", true);
         boton.transform.Find("miniaturaAnim").gameObject.SetActive(true);
         StartCoroutine(Wait(boton));
     }
 
     IEnumerator Wait(Transform boton)
     {
-        yield return new WaitForSecondsRealtime(6f);
+        yield return new WaitForSecondsRealtime(4f);
         //if (SceneManager.GetActiveScene().ToString() == "MainMenuScreen") {
-        boton.transform.Find("miniaturaAnim").gameObject.SetActive(false);     
+        boton.transform.Find("miniaturaAnim").gameObject.SetActive(false);
+        boton.Find("Numero").GetComponent<Animator>().SetBool("esconder", false);
+
         //}
     }
 }
