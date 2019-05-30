@@ -112,7 +112,7 @@ public class GameManager : MonoBehaviour
 
             //Looking for the name of the level
             int index = niveles.FindIndex(x => x.LevelName.Equals(currentScene.name));
-            string levelName = niveles[index].LevelName;
+            string levelName = niveles[index].Title;
 
             PauseGame(false);
             //Show nombre del nivel
@@ -137,19 +137,19 @@ public class GameManager : MonoBehaviour
         // Create Levels
         niveles = new List<Nivel>()
         {
-            new Nivel(0,"Level Tutorial",false,0,false,120,50),
-            new Nivel(1,"Level 1",false,0,true,20,2),
-            new Nivel(2,"Level 2",false,0,true,50,4),
-            new Nivel(3,"Level 3",false,0,true,60,7),
-            new Nivel(4,"Level 4",false,0,true,120,8),
-            new Nivel(5,"Level 5",false,0,true,60,8),
-            new Nivel(6,"Level 6",false,0,true,60,8),
-            new Nivel(7,"Level 7",false,0,true,60,8),
-            new Nivel(8,"Level 8",false,0,true,60,8),
-            new Nivel(9,"Level 9",false,0,true,60,8),
-            new Nivel(10,"Level 10",false,0,true,60,8),
-            new Nivel(11,"Level 11",false,0,true,60,8),
-            new Nivel(12,"Level 12",false,0,true,60,5)
+            new Nivel(0,"Level Tutorial","Get started",false,0,false,120,50),
+            new Nivel(1,"Level 1","Mount Everest",false,0,false,20,2),
+            new Nivel(2,"Level 2","Tricky hills",false,0,false,50,4),
+            new Nivel(3,"Level 3","Accross the river",false,0,false,60,7),
+            new Nivel(4,"Level 4","Third time lucky",false,0,false,120,8),
+            new Nivel(5,"Level 5","Level 5",false,0,true,60,8),
+            new Nivel(6,"Level 6","Level 6",false,0,true,60,8),
+            new Nivel(7,"Level 7","Level 7",false,0,true,60,8),
+            new Nivel(8,"Level 8","Level 8",false,0,true,60,8),
+            new Nivel(9,"Level 9","Level 9",false,0,true,60,8),
+            new Nivel(10,"Level 10","Level 10",false,0,true,60,8),
+            new Nivel(11,"Level 11","Level 11",false,0,true,60,8),
+            new Nivel(12,"Level 12","Level 12",false,0,true,60,5)
         };
 
         // Load saved data
