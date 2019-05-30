@@ -14,6 +14,7 @@ public class LevelScript : MonoBehaviour
     //Animators
     public Animator animatorRoca;
     public Animator animatorPuerta;
+    public Animator animatorTronco;
 
     // Start is called before the first frame update
     void Start()
@@ -39,14 +40,24 @@ public class LevelScript : MonoBehaviour
         // PALANCA ROCA
         if (estadoPalancaRoca.Equals("On")) {
             animatorRoca.SetBool("UpDown", true);
+            animatorTronco.SetBool("down", true);
+        }
+        else {
+            animatorRoca.SetBool("UpDown", false);
+            animatorTronco.SetBool("down", false);          
         }
         
         // PLACA IZQUIERDA
-        if (estadoPlacaIzq.Equals("On")) {
-            animatorPuerta.SetFloat("nivelApertura", animatorPuerta.GetFloat("nivelApertura")+1f);
+        if (estadoPlacaIzq.Equals("On") || estadoPlacaDcha.Equals("On")) {
+            animatorPuerta.SetFloat("nivelApertura", 1);
         }
-        if (estadoPlacaIzq.Equals("Off")) {
-            animatorPuerta.SetFloat("nivelApertura", animatorPuerta.GetFloat("nivelApertura")-1f);
+        else {
+            animatorPuerta.SetFloat("nivelApertura", 0);
+        }
+
+                // PLACA IZQUIERDA
+        if (estadoPlacaIzq.Equals("On") && estadoPlacaDcha.Equals("On")) {
+            animatorPuerta.SetFloat("nivelApertura", 2);
         }
     }
 }
