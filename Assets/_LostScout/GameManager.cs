@@ -140,7 +140,7 @@ public class GameManager : MonoBehaviour
             new Nivel(0,"Level Tutorial","Get started",false,0,false,120,50),
             new Nivel(1,"Level 1","Mount Everest",false,0,true,20,2),
             new Nivel(2,"Level 2","Tricky hills",false,0,true,50,4),
-            new Nivel(3,"Level 3","Accross the river",false,0,true,60,7),
+            new Nivel(3,"Level 3","Across the river",false,0,true,60,7),
             new Nivel(4,"Level 4","Third time lucky",false,0,true,120,8),
             new Nivel(5,"Level 5","Level 5",false,0,true,60,8),
             new Nivel(6,"Level 6","Level 6",false,0,true,60,8),

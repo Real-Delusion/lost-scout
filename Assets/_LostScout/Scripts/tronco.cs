@@ -38,6 +38,8 @@ public class tronco : MonoBehaviour
     //Audio source sonido tronco
     private AudioSource sonidoTronco;
 
+    public bool cayendo = false;
+
 
     // para ver el range en la escena
     public void OnDrawGizmos()
@@ -113,8 +115,9 @@ public class tronco : MonoBehaviour
     void Update()
     {
         if (transform.position.y < 0.005f)
-        {
+        {   
             gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
+            cayendo = false;
         }
         // Pickup
         if (carrying == false){
@@ -176,10 +179,10 @@ public class tronco : MonoBehaviour
         guide.transform.root.GetComponent<CharacterController>().center = new Vector3(0,0.8f,0.2f);
 
         gameObject.transform.GetChild(0).gameObject.SetActive(false);
-
     }
     void drop()
     {
+        cayendo = true;
         item.GetComponent<Rigidbody>().useGravity = true;
         item.GetComponent<Rigidbody>().isKinematic = false;
         item.transform.parent = null;
@@ -189,7 +192,6 @@ public class tronco : MonoBehaviour
         guide.transform.root.GetComponent<CharacterController>().radius = 0.3f;
         guide.transform.root.GetComponent<CharacterController>().center = new Vector3(0,0.8f,0);
         Estado = EstadosCaja.Estatico;
-
         StartCoroutine(Wait());
     }
 
@@ -201,7 +203,6 @@ public class tronco : MonoBehaviour
         {
             sonidoTronco.Play();
         }
-
     }
 
 }
