@@ -81,6 +81,7 @@ public class GameManager : MonoBehaviour
     // Each time a scene is loaded (called second)
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        finishedLevel = false;
         // Get actual scene name
         currentScene = SceneManager.GetActiveScene();
 
