@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LevelScript : MonoBehaviour
+public class Level4 : MonoBehaviour
 {
     //Palancas y placas de presion
     public GameObject paloPalancaRoca;
