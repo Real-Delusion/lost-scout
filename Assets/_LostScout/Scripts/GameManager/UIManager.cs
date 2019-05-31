@@ -77,14 +77,17 @@ public class UIManager : MonoBehaviour
         if (chapa == "obsequio") {
             luzChapa1.gameObject.SetActive(false);
             luzChapa1.gameObject.SetActive(true);
+            luzChapa1.GetComponent<AudioSource>().Play();
         }
         else if (chapa == "habilidad") {
             luzChapa2.gameObject.SetActive(false);
             luzChapa2.gameObject.SetActive(true);
+            luzChapa2.GetComponent<AudioSource>().Play();
         }
         else if (chapa == "prestigio") {
             luzChapa3.gameObject.SetActive(false);
             luzChapa3.gameObject.SetActive(true);
+            luzChapa3.GetComponent<AudioSource>().Play();
         }
         menuPuntuacion.transform.Find("ModalContent").Find(chapa).gameObject.GetComponent<Animator>().SetBool("show", true);
     }
