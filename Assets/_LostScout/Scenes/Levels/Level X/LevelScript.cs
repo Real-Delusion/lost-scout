@@ -8,7 +8,6 @@ public class LevelScript : MonoBehaviour
     public GameObject paloPalancaRoca;
     public GameObject paloPalancaCueva;
     public GameObject troncoOculto;
-
     public GameObject placaPresionIzq;
     public GameObject placaPresionDcha;
 
@@ -62,10 +61,19 @@ public class LevelScript : MonoBehaviour
         }
 
         // PLAYER
-        if (troncoOculto.GetComponent<tronco>().Estado == tronco.EstadosCaja.Estatico) {
+        if (troncoOculto.GetComponent<tronco>().cayendo == true) {
             GameObject troncoPadre = GameObject.FindGameObjectWithTag("troncoPadre");
             troncoPadre.transform.position = troncoOculto.transform.position;
             troncoOculto.transform.SetParent(troncoPadre.transform);
-        } 
+            StartCoroutine(Wait());
+            Debug.Log(troncoOculto.transform.position);
+        }
+    }
+
+    IEnumerator Wait()
+    {
+        GameObject troncoPadre = GameObject.FindGameObjectWithTag("troncoPadre");
+        yield return new WaitForSeconds(0.2f);
+        troncoPadre.transform.position = new Vector3(troncoPadre.transform.position.x, 0.0000f, troncoPadre.transform.position.z);
     }
 }
