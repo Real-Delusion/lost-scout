@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour
 
     public static SceneTransitions sceneTransitions;
     public bool gamePaused = false;
+    public bool finishedLevel = false;
     public bool fromGame = false;
     controlCamaraMenu controlMenu;
 
@@ -165,8 +166,9 @@ public class GameManager : MonoBehaviour
             time = (Time.time) - startTime;
             uiManager.printTime(time, gamePaused);
             // Check for the checkpoint
-            if ((Vector3.Distance(player.transform.position, checkpoint.transform.position) < radioCheckpoint))
+            if ((Vector3.Distance(player.transform.position, checkpoint.transform.position) < radioCheckpoint) && finishedLevel == false)
             {
+                finishedLevel = true;
                 // aquí incluir animación del player
                 finishLevel();
             }
@@ -225,8 +227,8 @@ public class GameManager : MonoBehaviour
     public void finishLevel()
     {
         // Move player to avoid a loop on checkpoint
-        player.transform.position = new Vector3((player.transform.position.x) + 1, player.transform.position.y, player.transform.position.z);
-        player.gameObject.SetActive(false);
+        //player.transform.position = new Vector3((player.transform.position.x) + 1, player.transform.position.y, player.transform.position.z);
+        //player.gameObject.SetActive(false);
 
         // Pause the game without graphic interface
         PauseGame(false);
