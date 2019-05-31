@@ -139,12 +139,12 @@ public class GameManager : MonoBehaviour
         niveles = new List<Nivel>()
         {
             /* new Nivel(0,"Level Tutorial","Get started",false,0,false,120,50),*/
-            new Nivel(0,"Level 4","Niagara Falls",false,0,false,120,50),
-            new Nivel(1,"Level 1","Mount Everest",false,0,true,20,2),
-            new Nivel(2,"Level 2","Tricky hills",false,0,true,50,4),
-            new Nivel(3,"Level 3","Across the river",false,0,true,60,7),
-            new Nivel(4,"Level 4","Niagara Falls",false,0,true,120,8),
-            new Nivel(5,"Level 5","Third time lucky",false,0,true,60,8),
+            new Nivel(0,"Level 4","Niagara\nFalls",false,0,false,120,50),
+            new Nivel(1,"Level 1","Mount\nEverest",false,0,true,20,2),
+            new Nivel(2,"Level 2","Tricky\nHills",false,0,true,50,4),
+            new Nivel(3,"Level 3","Across The\nRiver",false,0,true,60,7),
+            new Nivel(4,"Level 4","Niagara\nFalls",false,0,true,120,8),
+            new Nivel(5,"Level 5","Third Time\nLucky",false,0,true,60,8),
             new Nivel(6,"Level 6","Level 6",false,0,true,60,8),
             new Nivel(7,"Level 7","Level 7",false,0,true,60,8),
             new Nivel(8,"Level 8","Level 8",false,0,true,60,8),
@@ -152,6 +152,20 @@ public class GameManager : MonoBehaviour
             new Nivel(10,"Level 10","Level 10",false,0,true,60,8),
             new Nivel(11,"Level 11","Level 11",false,0,true,60,8),
             new Nivel(12,"Level 12","Level 12",false,0,true,60,5)
+
+            /*new Nivel(0,"Level Tutorial","Get started",false,0,false,120,50),
+            new Nivel(1,"Level 1","Mount\nEverest",false,0,true,20,2),
+            new Nivel(2,"Level 2","Tricky\nhills",false,0,true,50,4),
+            new Nivel(3,"Level 3","Across\nthe river",false,0,true,60,7),
+            new Nivel(4,"Level 4","Niagara\nFalls",false,0,true,120,8),
+            new Nivel(5,"Level 5","Third time\nlucky",false,0,true,60,8),
+            new Nivel(6,"Level 6","Level 6",false,0,true,60,8),
+            new Nivel(7,"Level 7","Level 7",false,0,true,60,8),
+            new Nivel(8,"Level 8","Level 8",false,0,true,60,8),
+            new Nivel(9,"Level 9","Level 9",false,0,true,60,8),
+            new Nivel(10,"Level 10","Level 10",false,0,true,60,8),
+            new Nivel(11,"Level 11","Level 11",false,0,true,60,8),
+            new Nivel(12,"Level 12","Level 12",false,0,true,60,5) */
         };
 
         // Load saved data
