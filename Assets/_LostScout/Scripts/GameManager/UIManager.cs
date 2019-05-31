@@ -146,6 +146,7 @@ public class UIManager : MonoBehaviour
     {
         yield return new WaitForSecondsRealtime(0.5f);
         // Show menu puntuacion (pass insignias and time)
+        bienHecho.GetComponent<AudioSource>().Play();
         confettiCamera.transform.GetChild(0).gameObject.SetActive(true);
         confettiCamera.transform.GetChild(1).gameObject.SetActive(true);
         yield return new WaitForSecondsRealtime(0.5f);
