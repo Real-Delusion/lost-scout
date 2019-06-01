@@ -138,7 +138,8 @@ public class GameManager : MonoBehaviour
         // Create Levels
         niveles = new List<Nivel>()
         {
-            new Nivel(0,"Level Tutorial","Get started",false,0,false,120,50),
+            /* new Nivel(0,"Level Tutorial","Get started",false,0,false,120,50),*/
+            new Nivel(0,"Level 4","Niagara\nFalls",false,0,false,120,50),
             new Nivel(1,"Level 1","Mount\nEverest",false,0,true,20,2),
             new Nivel(2,"Level 2","Tricky\nHills",false,0,true,50,4),
             new Nivel(3,"Level 3","Across The\nRiver",false,0,true,60,7),
