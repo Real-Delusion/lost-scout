@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.64020616, g: 0.85753965, b: 1.0921829, a: 1}
+  m_IndirectSpecularColor: {r: 0.6403126, g: 0.8575756, b: 1.0921782, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -122,14 +122,6 @@ PrefabInstance:
     - target: {fileID: 100002, guid: 34ff36f160ef2bc40a6be5516c5c411d, type: 3}
       propertyPath: m_Name
       value: naturePack_092
-      objectReference: {fileID: 0}
-    - target: {fileID: 100002, guid: 34ff36f160ef2bc40a6be5516c5c411d, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 34ff36f160ef2bc40a6be5516c5c411d, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 34ff36f160ef2bc40a6be5516c5c411d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -296,14 +288,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: valla (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 100002, guid: 63fb86c466ee8f449adf0bd5c8badbdc, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 63fb86c466ee8f449adf0bd5c8badbdc, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 63fb86c466ee8f449adf0bd5c8badbdc, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.5
@@ -364,14 +348,6 @@ PrefabInstance:
     - target: {fileID: 100002, guid: 129f0517e7d826844b87c8c15735d4c9, type: 3}
       propertyPath: m_Name
       value: naturePack_062
-      objectReference: {fileID: 0}
-    - target: {fileID: 100002, guid: 129f0517e7d826844b87c8c15735d4c9, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 129f0517e7d826844b87c8c15735d4c9, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 129f0517e7d826844b87c8c15735d4c9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -524,7 +500,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &385850354
 Transform:
@@ -676,7 +652,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &481688079
 Transform:
@@ -707,14 +683,6 @@ PrefabInstance:
     - target: {fileID: 100002, guid: a24d295862bcfe74a9f6c2c818769b4d, type: 3}
       propertyPath: m_Name
       value: tree (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 100002, guid: a24d295862bcfe74a9f6c2c818769b4d, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: a24d295862bcfe74a9f6c2c818769b4d, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: a24d295862bcfe74a9f6c2c818769b4d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -786,14 +754,6 @@ PrefabInstance:
     - target: {fileID: 100002, guid: d0a409b132372084987f40183993e371, type: 3}
       propertyPath: m_Name
       value: tree
-      objectReference: {fileID: 0}
-    - target: {fileID: 100002, guid: d0a409b132372084987f40183993e371, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: d0a409b132372084987f40183993e371, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: d0a409b132372084987f40183993e371, type: 3}
       propertyPath: m_LocalPosition.x
@@ -869,30 +829,6 @@ PrefabInstance:
     - target: {fileID: 100010, guid: a970dd7937949844aa6b2b4d9422e0b7, type: 3}
       propertyPath: m_Name
       value: flower (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 100010, guid: a970dd7937949844aa6b2b4d9422e0b7, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: a970dd7937949844aa6b2b4d9422e0b7, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
-    - target: {fileID: 100002, guid: a970dd7937949844aa6b2b4d9422e0b7, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
-    - target: {fileID: 100004, guid: a970dd7937949844aa6b2b4d9422e0b7, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
-    - target: {fileID: 100006, guid: a970dd7937949844aa6b2b4d9422e0b7, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
-    - target: {fileID: 100008, guid: a970dd7937949844aa6b2b4d9422e0b7, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 400010, guid: a970dd7937949844aa6b2b4d9422e0b7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1019,14 +955,6 @@ PrefabInstance:
     - target: {fileID: 100002, guid: a24d295862bcfe74a9f6c2c818769b4d, type: 3}
       propertyPath: m_Name
       value: tree (3)
-      objectReference: {fileID: 0}
-    - target: {fileID: 100002, guid: a24d295862bcfe74a9f6c2c818769b4d, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: a24d295862bcfe74a9f6c2c818769b4d, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: a24d295862bcfe74a9f6c2c818769b4d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1237,14 +1165,6 @@ PrefabInstance:
     - target: {fileID: 100002, guid: 3b65de07e7e0332469fd446e928febb1, type: 3}
       propertyPath: m_Name
       value: naturePack_flat_001
-      objectReference: {fileID: 0}
-    - target: {fileID: 100002, guid: 3b65de07e7e0332469fd446e928febb1, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 3b65de07e7e0332469fd446e928febb1, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 3b65de07e7e0332469fd446e928febb1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1496,14 +1416,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: naturePack_091
       objectReference: {fileID: 0}
-    - target: {fileID: 100002, guid: 93f046ba317f4e04e83de46bb4fe0199, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 93f046ba317f4e04e83de46bb4fe0199, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 93f046ba317f4e04e83de46bb4fe0199, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.16
@@ -1582,14 +1494,6 @@ PrefabInstance:
     - target: {fileID: 100002, guid: d39ce949c5d60e54ab6d553531a531db, type: 3}
       propertyPath: m_Name
       value: naturePack_141
-      objectReference: {fileID: 0}
-    - target: {fileID: 100002, guid: d39ce949c5d60e54ab6d553531a531db, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: d39ce949c5d60e54ab6d553531a531db, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: d39ce949c5d60e54ab6d553531a531db, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1692,7 +1596,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &1049747424
 Transform:
@@ -1821,11 +1725,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Particle System Water (4)
-      objectReference: {fileID: 0}
-    - target: {fileID: 409138405411490686, guid: ba413a8925085448393ebb1382014a31,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 409138405411490685, guid: ba413a8925085448393ebb1382014a31,
         type: 3}
@@ -2012,14 +1911,6 @@ PrefabInstance:
     - target: {fileID: 100002, guid: 34ff36f160ef2bc40a6be5516c5c411d, type: 3}
       propertyPath: m_Name
       value: naturePack_092 (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 100002, guid: 34ff36f160ef2bc40a6be5516c5c411d, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 34ff36f160ef2bc40a6be5516c5c411d, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 34ff36f160ef2bc40a6be5516c5c411d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2332,7 +2223,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!4 &1288649013
 Transform:
@@ -2415,11 +2306,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Particle System Water (3)
-      objectReference: {fileID: 0}
-    - target: {fileID: 409138405411490686, guid: ba413a8925085448393ebb1382014a31,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 409138405411490685, guid: ba413a8925085448393ebb1382014a31,
         type: 3}
@@ -2504,11 +2390,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Particle System Water (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 409138405411490686, guid: ba413a8925085448393ebb1382014a31,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 409138405411490685, guid: ba413a8925085448393ebb1382014a31,
         type: 3}
@@ -2636,30 +2517,6 @@ PrefabInstance:
     - target: {fileID: 100010, guid: 8cbfa08be247abf409f09a70468aa6dc, type: 3}
       propertyPath: m_Name
       value: flower (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 100010, guid: 8cbfa08be247abf409f09a70468aa6dc, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 8cbfa08be247abf409f09a70468aa6dc, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
-    - target: {fileID: 100002, guid: 8cbfa08be247abf409f09a70468aa6dc, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
-    - target: {fileID: 100004, guid: 8cbfa08be247abf409f09a70468aa6dc, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
-    - target: {fileID: 100006, guid: 8cbfa08be247abf409f09a70468aa6dc, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
-    - target: {fileID: 100008, guid: 8cbfa08be247abf409f09a70468aa6dc, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 400010, guid: 8cbfa08be247abf409f09a70468aa6dc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2806,11 +2663,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Particle System Water
       objectReference: {fileID: 0}
-    - target: {fileID: 409138405411490686, guid: ba413a8925085448393ebb1382014a31,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
     - target: {fileID: 409138405411490685, guid: ba413a8925085448393ebb1382014a31,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2894,10 +2746,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: isla
       objectReference: {fileID: 0}
-    - target: {fileID: 805273124, guid: 70bfe765ac2a0458eb1bf6f1a554cad4, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
     - target: {fileID: 84929048, guid: 70bfe765ac2a0458eb1bf6f1a554cad4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.57
@@ -2942,22 +2790,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 142186105, guid: 70bfe765ac2a0458eb1bf6f1a554cad4, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
-    - target: {fileID: 1097380552, guid: 70bfe765ac2a0458eb1bf6f1a554cad4, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
-    - target: {fileID: 1427883490, guid: 70bfe765ac2a0458eb1bf6f1a554cad4, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
-    - target: {fileID: 1464671682, guid: 70bfe765ac2a0458eb1bf6f1a554cad4, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70bfe765ac2a0458eb1bf6f1a554cad4, type: 3}
 --- !u!1001 &1700929390
@@ -2971,11 +2803,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Particle System Water (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 409138405411490686, guid: ba413a8925085448393ebb1382014a31,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 409138405411490685, guid: ba413a8925085448393ebb1382014a31,
         type: 3}
@@ -3224,14 +3051,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: tree (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 100002, guid: e542a887ad815e144bb260665eb205bd, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: e542a887ad815e144bb260665eb205bd, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: e542a887ad815e144bb260665eb205bd, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.32
@@ -3297,14 +3116,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: valla
       objectReference: {fileID: 0}
-    - target: {fileID: 100002, guid: 63fb86c466ee8f449adf0bd5c8badbdc, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 63fb86c466ee8f449adf0bd5c8badbdc, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 63fb86c466ee8f449adf0bd5c8badbdc, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6.42
@@ -3365,14 +3176,6 @@ PrefabInstance:
     - target: {fileID: 100002, guid: abf139aba1ab1014981b5a8c1e56a642, type: 3}
       propertyPath: m_Name
       value: naturePack_125
-      objectReference: {fileID: 0}
-    - target: {fileID: 100002, guid: abf139aba1ab1014981b5a8c1e56a642, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: abf139aba1ab1014981b5a8c1e56a642, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: abf139aba1ab1014981b5a8c1e56a642, type: 3}
       propertyPath: m_LocalPosition.x
