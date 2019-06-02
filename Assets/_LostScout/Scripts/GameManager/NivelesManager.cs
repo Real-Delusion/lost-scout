@@ -149,6 +149,7 @@ public class NivelesManager : MonoBehaviour
     {
         selectedLevel = level.LevelName;
 
+        GameObject.Find("LevelText").GetComponent<Text>().text = "LEVEL " + (level.ID + 1).ToString();
         GameObject.FindWithTag("CanvasModal").GetComponent<Canvas>().enabled = true;
         GameObject.FindWithTag("CanvasModal").transform.Find("ModalContent").gameObject.GetComponent<Animator>().SetBool("open", true);
         GameObject.Find("marcoLocked").GetComponent<Image>().enabled = false;
