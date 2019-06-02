@@ -39,11 +39,5 @@
     "com.unity.modules.vr": "1.0.0",
     "com.unity.modules.wind": "1.0.0",
     "com.unity.modules.xr": "1.0.0"
-  },
-  "lock": {
-    "com.coffee.ui-particle": {
-      "hash": "888eac4e54c2c2768f62756728607ebaa4a65b77",
-      "revision": "2.2.1"
-    }
   }
 }
