@@ -87,6 +87,7 @@ public class GameManager : MonoBehaviour
         // Enable cursor and print levels if we are in MainMenuScreen scene
         if (currentScene.name == "MainMenuScreen")
         {
+            finishedLevel = false;
             Cursor.visible = true;
             nivelesManager.printLevels();
             // Hide hud
@@ -138,7 +139,7 @@ public class GameManager : MonoBehaviour
         // Create Levels
         niveles = new List<Nivel>()
         {
-            new Nivel(0,"Level Tutorial","Get started",false,0,false,120,50),
+           /* new Nivel(0,"Level Tutorial","Get started",false,0,false,120,50),
             new Nivel(1,"Level 1","Mount\nEverest",false,0,true,20,2),
             new Nivel(2,"Level 2","Tricky\nhills",false,0,true,50,4),
             new Nivel(3,"Level 3","Across\nthe river",false,0,true,60,7),
@@ -150,9 +151,9 @@ public class GameManager : MonoBehaviour
             new Nivel(9,"Level 9","Level 9",false,0,true,60,8),
             new Nivel(10,"Level 10","Level 10",false,0,true,60,8),
             new Nivel(11,"Level 11","Level 11",false,0,true,60,8),
-            new Nivel(12,"Level 12","Level 12",false,0,true,60,5) 
+            new Nivel(12,"Level 12","Level 12",false,0,true,60,5) */
 
-            /*new Nivel(0,"Level Tutorial","Get started",false,0,false,120,50),
+            new Nivel(0,"Level Tutorial","Get started",false,0,false,120,50),
             new Nivel(1,"Level 1","Mount\nEverest",false,0,false,20,2),
             new Nivel(2,"Level 2","Tricky\nhills",false,0,false,50,4),
             new Nivel(3,"Level 3","Across\nthe river",false,0,false,60,7),
@@ -164,7 +165,7 @@ public class GameManager : MonoBehaviour
             new Nivel(9,"Level 9","Level 9",false,0,true,60,8),
             new Nivel(10,"Level 10","Level 10",false,0,true,60,8),
             new Nivel(11,"Level 11","Level 11",false,0,true,60,8),
-            new Nivel(12,"Level 12","Level 12",false,0,true,60,5)  */
+            new Nivel(12,"Level 12","Level 12",false,0,true,60,5)  
         };
 
         // Load saved data
