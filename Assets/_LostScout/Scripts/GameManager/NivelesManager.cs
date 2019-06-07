@@ -155,10 +155,10 @@ public class NivelesManager : MonoBehaviour
         GameObject.Find("marcoLocked").GetComponent<Image>().enabled = false;
         GameObject.Find("botonJugar").GetComponent<Button>().interactable = true;
         GameObject.Find("imageNivel").GetComponent<Image>().sprite = miniaturas[level.ID];
-        if (level.LevelName == "Level Tutorial") GameObject.Find("TextObsequio").GetComponent<Text>().text = "Tutorial completed";
-        else GameObject.Find("TextObsequio").GetComponent<Text>().text = level.LevelName + " completed";
-        GameObject.Find("TextHabilidad").GetComponent<Text>().text = "Finished in less than " + level.MaxTime + "s";
-        GameObject.Find("TextPrestigio").GetComponent<Text>().text = "Cleared course in " + level.MaxInteractions + " touches";
+        if (level.LevelName == "Level Tutorial") GameObject.Find("TextObsequio").GetComponent<Text>().text = "Complete Tutorial";
+        else GameObject.Find("TextObsequio").GetComponent<Text>().text = "Complete level " + (level.ID+1);
+        GameObject.Find("TextHabilidad").GetComponent<Text>().text = "Finish in less than " + level.MaxTime + "s";
+        GameObject.Find("TextPrestigio").GetComponent<Text>().text = "Clear course in " + level.MaxInteractions + " touches";
 
         if (level.Locked)
         {
