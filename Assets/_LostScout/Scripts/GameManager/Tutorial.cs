@@ -51,7 +51,7 @@ public class Tutorial : MonoBehaviour
         }
 
         // SUBIR TRONCO  
-        if (primerTronco.GetComponent<tronco>().enRadio) {
+        if (primerTronco.GetComponent<tronco>().enRadio && player.transform.position.y <= 0.6) {
             StartCoroutine(Wait("climb"));
         } 
         else {
