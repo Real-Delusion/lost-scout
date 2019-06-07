@@ -19,7 +19,6 @@ public class MenuPuntuacion : MonoBehaviour
         
     }
     public void continueLevel(){
-        gameManager.ResumeGame(false);
         gameManager.uiManager.hideMenuPuntuacion();
         gameManager.fromGame = true;
         GameManager.sceneTransitions.load("MainMenuScreen");
