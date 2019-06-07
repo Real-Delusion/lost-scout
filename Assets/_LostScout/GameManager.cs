@@ -108,6 +108,7 @@ public class GameManager : MonoBehaviour
             player = GameObject.FindGameObjectWithTag("Player");
             camera = GameObject.FindGameObjectWithTag("MainCamera");
             checkpoint = GameObject.FindGameObjectWithTag("checkpoint");
+            uiManager.printTime(0, false);
 
             // Show hud
             uiManager.toggleHUD(true);
