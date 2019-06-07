@@ -51,7 +51,7 @@ public class Tutorial : MonoBehaviour
         }
 
         // SUBIR TRONCO  
-        if (primerTronco.GetComponent<tronco>().enRadio && player.transform.position.y <= 0.6) {
+        if (primerTronco.GetComponent<tronco>().enRadio && player.transform.position.y <= 0.05) {
             StartCoroutine(Wait("climb"));
         } 
         else {
@@ -71,6 +71,7 @@ public class Tutorial : MonoBehaviour
 
     public void showMouse() {
         camaraText.SetActive(true);
+        if (camaraText.activeSelf == true)
         camaraText.GetComponent<Animator>().SetBool("show", true);
         moveText.SetActive(false);
         climbtext.SetActive(false);
@@ -80,22 +81,26 @@ public class Tutorial : MonoBehaviour
     public void showMovement() {
         camaraText.SetActive(false);
         moveText.SetActive(true);
+        if (moveText.activeSelf == true)
         moveText.GetComponent<Animator>().SetBool("show", true);
     }
 
     public void showLever() {
         moveText.SetActive(false);
         leverText.SetActive(true);
+        if (leverText.activeSelf == true)
         leverText.GetComponent<Animator>().SetBool("show", true);
     }
 
     public void showClimb() {
         climbtext.SetActive(true);
+        if (climbtext.activeSelf == true &&  climbtext.GetComponent<Animator>().GetBool("show") == false)
         climbtext.GetComponent<Animator>().SetBool("show", true);
     }
 
     public void showPickUp() {
         pickUpText.SetActive(true);
+        if (pickUpText.activeSelf == true)
         pickUpText.GetComponent<Animator>().SetBool("show", true);
     }
 
@@ -109,13 +114,16 @@ public class Tutorial : MonoBehaviour
     }
  
     public void hideLever() {
+        if (leverText.activeSelf == true)
         leverText.GetComponent<Animator>().SetBool("show", false);
     }
     public void hideClimb() {
+        if (climbtext.activeSelf == true)
         climbtext.GetComponent<Animator>().SetBool("show", false);
     }
 
     public void hidePickUp() {
+        if (pickUpText.activeSelf == true)
         pickUpText.GetComponent<Animator>().SetBool("show", false);
     }
 
@@ -123,26 +131,26 @@ public class Tutorial : MonoBehaviour
     {
         switch (method) {
           case "move":
-                yield return new WaitForSecondsRealtime(5);
+                yield return new WaitForSecondsRealtime(3);
                 hideMouse();
-                yield return new WaitForSecondsRealtime(1);
+                yield return new WaitForSecondsRealtime(0.5f);
                 showMovement();
                 break;
           case "lever":
                 hideMovement();
-                yield return new WaitForSecondsRealtime(1);
+                yield return new WaitForSecondsRealtime(0.5f);
                 showLever();
                 break;
           case "hidelever":
                 hideLever();
-                yield return new WaitForSecondsRealtime(1);
+                yield return new WaitForSecondsRealtime(0.5f);
                 break;
           case "climb":
-                yield return new WaitForSecondsRealtime(1);
+                yield return new WaitForSecondsRealtime(0.5f);
                 showClimb();
                 break;
           case "pickup":
-                yield return new WaitForSecondsRealtime(1);
+                yield return new WaitForSecondsRealtime(0.5f);
                 showPickUp();
                 break;
         }
