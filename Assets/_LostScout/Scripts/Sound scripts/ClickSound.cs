@@ -22,7 +22,6 @@ public class ClickSound : MonoBehaviour
         source.clip = sound;
         source.playOnAwake = false;
         mixer = Resources.Load("AudioMixer") as AudioMixer;
-        Debug.Log("mix" + mixer);
         // Any other settings
         source.outputAudioMixerGroup = mixer.FindMatchingGroups("UI")[0];
 

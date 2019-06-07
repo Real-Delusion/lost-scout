@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour
 
     // *** GENERIC GAME OBJECTS ***
     GameObject player;
-    GameObject camera;
+    new GameObject camera;
     GameObject checkpoint;
 
     public float startTime;
