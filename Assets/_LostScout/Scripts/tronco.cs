@@ -40,6 +40,8 @@ public class tronco : MonoBehaviour
 
     public bool cayendo = false;
 
+    Vector3 posicionInicial;
+
 
     // para ver el range en la escena
     public void OnDrawGizmos()
@@ -117,7 +119,6 @@ public class tronco : MonoBehaviour
         if (transform.position.y < 0.005f)
         {   
             gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
-            cayendo = false;
         }
         // Pickup
         if (carrying == false){
@@ -137,6 +138,8 @@ public class tronco : MonoBehaviour
                 //playerController.Estado = PlayerController.EstadosPlayer.Soltar;
             }
         }
+
+        //Debug.Log(item.transform.position);
 
         // Subir
         // Si el jugador entra en el range del objeto
@@ -182,11 +185,13 @@ public class tronco : MonoBehaviour
     }
     void drop()
     {
-        cayendo = true;
         item.GetComponent<Rigidbody>().useGravity = true;
         item.GetComponent<Rigidbody>().isKinematic = false;
         item.transform.parent = null;
         item.transform.position = guide.transform.position;
+        Debug.Log(guide.transform.position);
+        Debug.Log(item.transform.position);
+        cayendo=true;
 
         // Deactivate and restore default player collider
         guide.transform.root.GetComponent<CharacterController>().radius = 0.3f;
@@ -201,8 +206,8 @@ public class tronco : MonoBehaviour
         gameObject.transform.GetChild(0).gameObject.SetActive(true);
         if (!sonidoTronco.isPlaying)
         {
+            cayendo = true;
             sonidoTronco.Play();
         }
     }
-
 }
