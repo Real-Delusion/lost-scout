@@ -42,6 +42,8 @@ public class tronco : MonoBehaviour
 
     Vector3 posicionInicial;
 
+    bool pickedUp = false;
+
 
     // para ver el range en la escena
     public void OnDrawGizmos()
@@ -116,10 +118,24 @@ public class tronco : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (transform.position.y < 0.005f)
+        if (isGrounded())
         {   
             gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
         }
+        
+        // cuando ha caído
+        if (isGrounded() && pickedUp) {
+            // humito
+            gameObject.transform.GetChild(0).gameObject.SetActive(true);
+            if (!sonidoTronco.isPlaying)
+            {
+                cayendo = true;
+                // sonico tronco
+                sonidoTronco.Play();
+            }
+            pickedUp = false;
+        }
+
         // Pickup
         if (carrying == false){
             if (Input.GetKeyDown(KeyCode.E) && (Vector3.Distance(player.transform.position, transform.position) < range) && Math.Abs(player.transform.position.x - transform.position.x) > 0.1f && Math.Abs(player.transform.position.z - transform.position.z) > 0.1f ) {
@@ -138,7 +154,6 @@ public class tronco : MonoBehaviour
                 //playerController.Estado = PlayerController.EstadosPlayer.Soltar;
             }
         }
-
         //Debug.Log(item.transform.position);
 
         // Subir
@@ -181,7 +196,7 @@ public class tronco : MonoBehaviour
         guide.transform.root.GetComponent<CharacterController>().radius = 0.6f;
         guide.transform.root.GetComponent<CharacterController>().center = new Vector3(0,0.8f,0.2f);
 
-        gameObject.transform.GetChild(0).gameObject.SetActive(false);
+        pickedUp = true;
     }
     void drop()
     {
@@ -197,17 +212,11 @@ public class tronco : MonoBehaviour
         guide.transform.root.GetComponent<CharacterController>().radius = 0.3f;
         guide.transform.root.GetComponent<CharacterController>().center = new Vector3(0,0.8f,0);
         Estado = EstadosCaja.Estatico;
-        StartCoroutine(Wait());
+
+        gameObject.transform.GetChild(0).gameObject.SetActive(false);
     }
 
-    IEnumerator Wait()
-    {
-        yield return new WaitForSeconds(0.4f);
-        gameObject.transform.GetChild(0).gameObject.SetActive(true);
-        if (!sonidoTronco.isPlaying)
-        {
-            cayendo = true;
-            sonidoTronco.Play();
-        }
+    bool isGrounded() {
+        return Physics.Raycast(transform.position, -Vector3.up, 0.1f);
     }
 }

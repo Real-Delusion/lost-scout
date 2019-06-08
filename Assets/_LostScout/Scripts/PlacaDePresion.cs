@@ -60,7 +60,7 @@ public class PlacaDePresion : MonoBehaviour
     //Cuando entre en el collider, animación = true
     public void OnTriggerEnter(Collider other)
     {
-        Debug.Log("ha entrado algo");
+        //Debug.Log("ha entrado algo");
         if (a == false)
         {
             entrado = other;
@@ -75,7 +75,7 @@ public class PlacaDePresion : MonoBehaviour
     //Cuando salga del collider,animación = false
     public void OnTriggerExit(Collider other)
     {
-        Debug.Log("ha salido algo");
+        //Debug.Log("ha salido algo");
         if (a == true && entrado == other)
         {
             a = false;
