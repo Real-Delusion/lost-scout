@@ -137,12 +137,14 @@ public class UIManager : MonoBehaviour
         textLevelName.GetComponent<Text>().text = level;
         textLevelNameSombra.GetComponent<Text>().text = level;
 
-        levelName.transform.Find("ModalContent").gameObject.GetComponent<Animator>().enabled = true;
+        levelName.transform.Find("ModalContent").gameObject.GetComponent<Animator>().Play("nombreNivel", -1, 0);
         Camera.main.depth = -1;
     }
     public void hideLevelName()
     {
-        levelName.transform.Find("ModalContent").gameObject.GetComponent<Animator>().SetBool("open", false);
+        //levelName.transform.Find("ModalContent").gameObject.GetComponent<Animator>().SetBool("open", false);
+        //levelName.transform.Find("ModalContent").gameObject.GetComponent<Animator>().enabled = false;
+        levelName.GetComponent<Canvas>().enabled = false;
     }
 
     IEnumerator Wait1()
