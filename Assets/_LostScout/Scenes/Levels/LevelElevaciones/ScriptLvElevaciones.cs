@@ -14,7 +14,7 @@ public class ScriptLvElevaciones : MonoBehaviour
     //Animators
     public Animator v1;
     public Animator v2;
-    public Animator v3; 
+    public Animator v3;
     public Animator v4;
     public Animator v5;
     public Animator v6;
@@ -22,10 +22,137 @@ public class ScriptLvElevaciones : MonoBehaviour
     public Animator v8;
     public Animator v9;
 
+    //Estados
+    float lv0 = 0;
+    float lv1 = 0.3f;
+    float lv2 = 0.6f;
+    float lv3 = 1f;
+    EstadoPlataforma estadoActual;
+
+    // Maquinas de estados finitos
+    public enum EstadoPlataforma
+    {
+        opt0, // estado opt1
+        opt1, // estado opt1
+        opt2, // estado opt1
+        opt3, // estado opt1
+        opt4, // estado opt1
+        opt5, // estado opt1
+        opt6, // estado opt1
+    }
+
+    private EstadoPlataforma _estadoP = EstadoPlataforma.opt0; // estado de la islas
+
+    // especificación de que hara la palanca dependiendo en el estado en el que este ON / OFF
+    public EstadoPlataforma Estado
+    {
+        get => _estadoP;
+        set
+        {
+            _estadoP = value;
+            
+            if (_estadoP == EstadoPlataforma.opt0)
+            {
+                v1.SetFloat("ControlerAnimElev", lv0);
+                v2.SetFloat("ControlerAnimElev", lv0);
+                v3.SetFloat("ControlerAnimElev", lv0);
+                v4.SetFloat("ControlerAnimElev", lv2);
+                v5.SetFloat("ControlerAnimElev", lv1);
+                v6.SetFloat("ControlerAnimElev", lv1);
+                v7.SetFloat("ControlerAnimElev", lv2);
+                v8.SetFloat("ControlerAnimElev", lv1);
+                v9.SetFloat("ControlerAnimElev", lv3);
+            }
+
+            
+            if (_estadoP == EstadoPlataforma.opt1)
+            {
+                v1.SetFloat("ControlerAnimElev", lv0);
+                v2.SetFloat("ControlerAnimElev", lv1);
+                v3.SetFloat("ControlerAnimElev", lv1);
+                v4.SetFloat("ControlerAnimElev", lv2);
+                v5.SetFloat("ControlerAnimElev", lv1);
+                v6.SetFloat("ControlerAnimElev", lv1);
+                v7.SetFloat("ControlerAnimElev", lv2);
+                v8.SetFloat("ControlerAnimElev", lv1);
+                v9.SetFloat("ControlerAnimElev", lv0);
+            }
+
+            
+            if (_estadoP == EstadoPlataforma.opt2)
+            {
+                v1.SetFloat("ControlerAnimElev", lv1);
+                v2.SetFloat("ControlerAnimElev", lv1);
+                v3.SetFloat("ControlerAnimElev", lv0);
+                v4.SetFloat("ControlerAnimElev", lv0);
+                v5.SetFloat("ControlerAnimElev", lv0);
+                v6.SetFloat("ControlerAnimElev", lv0);
+                v7.SetFloat("ControlerAnimElev", lv0);
+                v8.SetFloat("ControlerAnimElev", lv3);
+                v9.SetFloat("ControlerAnimElev", lv3);
+            }
+            
+            if (_estadoP == EstadoPlataforma.opt3)
+            {
+                v1.SetFloat("ControlerAnimElev", lv1);
+                v2.SetFloat("ControlerAnimElev", lv0);
+                v3.SetFloat("ControlerAnimElev", lv1);
+                v4.SetFloat("ControlerAnimElev", lv0);
+                v5.SetFloat("ControlerAnimElev", lv0);
+                v6.SetFloat("ControlerAnimElev", lv0);
+                v7.SetFloat("ControlerAnimElev", lv1);
+                v8.SetFloat("ControlerAnimElev", lv0);
+                v9.SetFloat("ControlerAnimElev", lv1);
+            }
+            
+            if (_estadoP == EstadoPlataforma.opt4)
+            {
+                v1.SetFloat("ControlerAnimElev", lv2);
+                v2.SetFloat("ControlerAnimElev", lv2);
+                v3.SetFloat("ControlerAnimElev", lv0);
+                v4.SetFloat("ControlerAnimElev", lv0);
+                v5.SetFloat("ControlerAnimElev", lv0);
+                v6.SetFloat("ControlerAnimElev", lv2);
+                v7.SetFloat("ControlerAnimElev", lv0);
+                v8.SetFloat("ControlerAnimElev", lv0);
+                v9.SetFloat("ControlerAnimElev", lv2);
+            }
+            
+            if (_estadoP == EstadoPlataforma.opt5)
+            {
+                v1.SetFloat("ControlerAnimElev", lv0);
+                v2.SetFloat("ControlerAnimElev", lv0);
+                v3.SetFloat("ControlerAnimElev", lv0);
+                v4.SetFloat("ControlerAnimElev", lv0);
+                v5.SetFloat("ControlerAnimElev", lv0);
+                v6.SetFloat("ControlerAnimElev", lv0);
+                v7.SetFloat("ControlerAnimElev", lv1);
+                v8.SetFloat("ControlerAnimElev", lv1);
+                v9.SetFloat("ControlerAnimElev", lv1);
+            }
+            
+            if (_estadoP == EstadoPlataforma.opt6)
+            {
+                v1.SetFloat("ControlerAnimElev", lv0);
+                v2.SetFloat("ControlerAnimElev", lv2);
+                v3.SetFloat("ControlerAnimElev", lv2);
+                v4.SetFloat("ControlerAnimElev", lv1);
+                v5.SetFloat("ControlerAnimElev", lv1);
+                v6.SetFloat("ControlerAnimElev", lv0);
+                v7.SetFloat("ControlerAnimElev", lv0);
+                v8.SetFloat("ControlerAnimElev", lv0);
+                v9.SetFloat("ControlerAnimElev", lv0);
+            }
+        }
+    }
+
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        Estado = EstadoPlataforma.opt0;
+        estadoActual = Estado;
+
     }
 
     // Update is called once per frame
@@ -36,5 +163,82 @@ public class ScriptLvElevaciones : MonoBehaviour
         string estadoPalanca2 = palanca2.GetComponent<mecanicaPalanca>().Estado.ToString();
         string estadoPalanca3 = palanca3.GetComponent<mecanicaPalanca>().Estado.ToString();
         string estadoPalanca4 = palanca4.GetComponent<mecanicaPalanca>().Estado.ToString();
+
+        Debug.Log("Palanca 1 "+estadoPalanca1.ToString());
+        Debug.Log("Palanca 2 "+estadoPalanca2.ToString());
+        Debug.Log("Palanca 3 "+estadoPalanca3.ToString());
+        Debug.Log("Palanca 4 "+estadoPalanca4.ToString());
+
+        if (estadoPalanca1.Equals("Off") && estadoPalanca2.Equals("Off") && estadoPalanca3.Equals("Off") && estadoPalanca4.Equals("Off"))
+        {
+            Estado = estadoActual;
+            Estado = EstadoPlataforma.opt0;
+
+        } else if (estadoPalanca1.Equals("On") && estadoPalanca2.Equals("Off") && estadoPalanca3.Equals("Off") && estadoPalanca4.Equals("Off"))
+        {
+
+            estadoActual = Estado;
+            Estado = EstadoPlataforma.opt1;
+            Debug.Log(Estado.ToString());
+
+        } else if (estadoPalanca2.Equals("On") && estadoPalanca1.Equals("Off"))
+        {
+
+            estadoActual = Estado;
+            Estado = EstadoPlataforma.opt2;
+            Debug.Log(Estado.ToString());
+            if (estadoPalanca4.Equals("On"))
+            {
+
+                estadoActual = Estado;
+                Estado = EstadoPlataforma.opt3;
+                Debug.Log(Estado.ToString());
+            }
+            if (estadoPalanca3.Equals("On"))
+            {
+
+                estadoActual = Estado;
+                Estado = EstadoPlataforma.opt4 ;
+                Debug.Log(Estado.ToString());
+
+            }
+        } else if (estadoPalanca3.Equals("On") && estadoPalanca2.Equals("Off")) {
+
+            estadoActual = Estado;
+            Estado = EstadoPlataforma.opt5;
+            Debug.Log(Estado.ToString());
+            if (estadoPalanca4.Equals("On"))
+            {
+
+                estadoActual = Estado;
+                palanca1.GetComponent<Animator>().SetBool("OnOff", false);
+                palanca2.GetComponent<Animator>().SetBool("OnOff", true);
+                palanca1.GetComponent<Animator>().SetBool("OnOff", false);
+                palanca1.GetComponent<Animator>().SetBool("OnOff", false);
+                Estado = EstadoPlataforma.opt2;
+                Debug.Log(Estado.ToString());
+            }
+            if (estadoPalanca1.Equals("On"))
+            {
+
+                estadoActual = Estado;
+                Estado = EstadoPlataforma.opt6;
+                Debug.Log(Estado.ToString());
+                if (estadoPalanca4.Equals("On"))
+                {
+                    estadoActual = Estado;
+                    palanca1.GetComponent<Animator>().SetBool("OnOff", false);
+                    palanca2.GetComponent<Animator>().SetBool("OnOff", true);
+                    palanca1.GetComponent<Animator>().SetBool("OnOff", false);
+                    palanca1.GetComponent<Animator>().SetBool("OnOff", false);
+                    Estado = EstadoPlataforma.opt2;
+                }
+            }
+        }
+        else
+        {
+            Estado = estadoActual;
+            Debug.Log(Estado.ToString());
+        }
     }
 }
