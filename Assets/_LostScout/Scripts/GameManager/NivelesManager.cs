@@ -36,7 +36,7 @@ public class NivelesManager : MonoBehaviour
         {
             GameObject.Destroy(child.gameObject);
         }
-        Debug.Log((paginaNivel + 2));
+//        Debug.Log((paginaNivel + 2));
 
         for (int i = paginaNivel; i < (paginaNivel + 6); i++)
         {
@@ -72,13 +72,12 @@ public class NivelesManager : MonoBehaviour
 
             //Asginar número a cada nivel
             btn.transform.Find("Numero").GetChild(1).GetComponent<Text>().text = (t.ID + 1).ToString();
-            Debug.Log("ESTOOO 10");
 
             if (!GameManager.niveles[i].Locked)
             {
                 btn.onClick.AddListener(() => LoadModal(t));
                 int insignias = GameManager.niveles[i].Insignias;
-                Debug.Log(i + GameManager.niveles[i].LevelName + ": " + GameManager.niveles[i].Insignias);
+                //Debug.Log(i + GameManager.niveles[i].LevelName + ": " + GameManager.niveles[i].Insignias);
 
                 if (insignias >= 1)
                 {
@@ -107,7 +106,7 @@ public class NivelesManager : MonoBehaviour
 
                 if (i == unlockedId){
                     unlockedId = -1;
-                    Debug.Log("desbloqueado" + i);
+//                    Debug.Log("desbloqueado" + i);
                     animateUnlock(obj);
                 } 
             }
