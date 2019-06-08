@@ -40,7 +40,6 @@ public class ScriptLvElevaciones : MonoBehaviour
         opt5, // estado opt5
         opt6, // estado opt6
         opt7, // estado opt7
-        opt8, // estado opt8
     }
 
     private EstadoPlataforma _estadoP = EstadoPlataforma.opt0; // estado de la islas
@@ -145,7 +144,7 @@ public class ScriptLvElevaciones : MonoBehaviour
                 v8.SetFloat("ControlerAnimElev", lv2);
                 v9.SetFloat("ControlerAnimElev", lv0);
             }
-            if (_estadoP == EstadoPlataforma.opt8)
+            if (_estadoP == EstadoPlataforma.opt7)
             {
                 v1.SetFloat("ControlerAnimElev", lv2);
                 v2.SetFloat("ControlerAnimElev", lv1);
@@ -250,7 +249,7 @@ public class ScriptLvElevaciones : MonoBehaviour
         else if (estadoPalanca1.Equals("On") && estadoPalanca2.Equals("On") && estadoPalanca3.Equals("On"))
         {
             estadoActual = Estado;
-            Estado = EstadoPlataforma.opt8;
+            Estado = EstadoPlataforma.opt7;
             Debug.Log(Estado.ToString());
         }
         else
