@@ -215,12 +215,13 @@ public class PlayerController : MonoBehaviour
          // Si el estado del player es subir escaleras
         if (Estado == EstadosPlayer.Subir) {
             
-            t += 0.01f;
+            t += 0.05f;
 
-            if (t < 0.2f){
+            if (t < 0.6f){
                 //Debug.Log(t.ToString());
                 // Cambiamos de posición de forma smooth
                 this.transform.localPosition = Vector3.Lerp(transform.position, nuevaPosicion, t);
+                this.gameObject.transform.GetChild(1).gameObject.SetActive(false);
             }else{
                 this.Estado = EstadosPlayer.Andar;
                 t = 0.0f;       
