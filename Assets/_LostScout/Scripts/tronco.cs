@@ -189,8 +189,8 @@ public class tronco : MonoBehaviour
         item.GetComponent<Rigidbody>().isKinematic = false;
         item.transform.parent = null;
         item.transform.position = guide.transform.position;
-        Debug.Log(guide.transform.position);
-        Debug.Log(item.transform.position);
+//        Debug.Log(guide.transform.position);
+//        Debug.Log(item.transform.position);
         cayendo=true;
 
         // Deactivate and restore default player collider
