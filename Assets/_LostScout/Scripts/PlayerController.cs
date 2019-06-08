@@ -160,7 +160,7 @@ public class PlayerController : MonoBehaviour
         if (Estado == EstadosPlayer.Andar || Estado == EstadosPlayer.Empujar || Estado == EstadosPlayer.Quieto)
         {
 
-            if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
+            if (Input.GetAxis("Horizontal") != 0 || Input.GetAxis("Vertical") != 0)
             {
                 gameObject.transform.Find("Mutongo").gameObject.GetComponent<Animator>().SetBool("andar", true);
                 this.gameObject.transform.GetChild(1).gameObject.SetActive(true);
