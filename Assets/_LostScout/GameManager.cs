@@ -305,7 +305,7 @@ public class GameManager : MonoBehaviour
 
     IEnumerator WaitLevelName(string levelName)
     {
-        yield return new WaitForSecondsRealtime(0.8f);
+        //yield return new WaitForSecondsRealtime(0.8f);
         //Show nombre del nivel
         uiManager.showLevelName(levelName);
         yield return new WaitForSecondsRealtime(3);
