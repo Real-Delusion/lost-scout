@@ -32,13 +32,13 @@ public class ScriptLvElevaciones : MonoBehaviour
     // Maquinas de estados finitos
     public enum EstadoPlataforma
     {
-        opt0, // estado opt1
+        opt0, // estado opt0
         opt1, // estado opt1
-        opt2, // estado opt1
-        opt3, // estado opt1
-        opt4, // estado opt1
-        opt5, // estado opt1
-        opt6, // estado opt1
+        opt2, // estado opt2
+        opt3, // estado opt3
+        opt4, // estado opt4
+        opt5, // estado opt5
+        opt6, // estado opt6
     }
 
     private EstadoPlataforma _estadoP = EstadoPlataforma.opt0; // estado de la islas
@@ -134,13 +134,13 @@ public class ScriptLvElevaciones : MonoBehaviour
             if (_estadoP == EstadoPlataforma.opt6)
             {
                 v1.SetFloat("ControlerAnimElev", lv0);
-                v2.SetFloat("ControlerAnimElev", lv2);
-                v3.SetFloat("ControlerAnimElev", lv2);
-                v4.SetFloat("ControlerAnimElev", lv1);
+                v2.SetFloat("ControlerAnimElev", lv0);
+                v3.SetFloat("ControlerAnimElev", lv0);
+                v4.SetFloat("ControlerAnimElev", lv0);
                 v5.SetFloat("ControlerAnimElev", lv1);
-                v6.SetFloat("ControlerAnimElev", lv0);
-                v7.SetFloat("ControlerAnimElev", lv0);
-                v8.SetFloat("ControlerAnimElev", lv0);
+                v6.SetFloat("ControlerAnimElev", lv1);
+                v7.SetFloat("ControlerAnimElev", lv2);
+                v8.SetFloat("ControlerAnimElev", lv2);
                 v9.SetFloat("ControlerAnimElev", lv0);
             }
         }
@@ -198,8 +198,15 @@ public class ScriptLvElevaciones : MonoBehaviour
             {
 
                 estadoActual = Estado;
-                Estado = EstadoPlataforma.opt4 ;
+                Estado = EstadoPlataforma.opt4;
                 Debug.Log(Estado.ToString());
+                if (estadoPalanca4.Equals("On"))
+                {
+
+                    estadoActual = Estado;
+                    Estado = EstadoPlataforma.opt3;
+                    Debug.Log(Estado.ToString());
+                }
 
             }
         } else if (estadoPalanca3.Equals("On") && estadoPalanca2.Equals("Off")) {
@@ -211,10 +218,7 @@ public class ScriptLvElevaciones : MonoBehaviour
             {
 
                 estadoActual = Estado;
-                palanca1.GetComponent<Animator>().SetBool("OnOff", false);
-                palanca2.GetComponent<Animator>().SetBool("OnOff", true);
-                palanca1.GetComponent<Animator>().SetBool("OnOff", false);
-                palanca1.GetComponent<Animator>().SetBool("OnOff", false);
+                Estado = EstadoPlataforma.opt3;
                 Estado = EstadoPlataforma.opt2;
                 Debug.Log(Estado.ToString());
             }
@@ -224,18 +228,8 @@ public class ScriptLvElevaciones : MonoBehaviour
                 estadoActual = Estado;
                 Estado = EstadoPlataforma.opt6;
                 Debug.Log(Estado.ToString());
-                if (estadoPalanca4.Equals("On"))
-                {
-                    estadoActual = Estado;
-                    palanca1.GetComponent<Animator>().SetBool("OnOff", false);
-                    palanca2.GetComponent<Animator>().SetBool("OnOff", true);
-                    palanca1.GetComponent<Animator>().SetBool("OnOff", false);
-                    palanca1.GetComponent<Animator>().SetBool("OnOff", false);
-                    Estado = EstadoPlataforma.opt2;
-                }
             }
-        }
-        else
+        } else
         {
             Estado = estadoActual;
             Debug.Log(Estado.ToString());
