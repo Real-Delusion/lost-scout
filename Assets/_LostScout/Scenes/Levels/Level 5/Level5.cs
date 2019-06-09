@@ -42,7 +42,7 @@ public class Level5 : MonoBehaviour
         {
             animatorIsla.SetBool("activar", true);
         }
-        if(estadoPresion1.Equals("Off"))
+        if (estadoPresion1.Equals("Off"))
         {
             animatorIsla.SetBool("activar", false);
         }
@@ -84,7 +84,7 @@ public class Level5 : MonoBehaviour
             animatorPuente2.SetBool("UpDown", true);
             colliderPuente2.GetComponent<BoxCollider>().enabled = false;
         }
-        if(estadoPalanca1.Equals("Off"))
+        if (estadoPalanca1.Equals("Off"))
         {
             animatorPuente2.SetBool("UpDown", false);
             colliderPuente2.GetComponent<BoxCollider>().enabled = true;
@@ -116,7 +116,7 @@ public class Level5 : MonoBehaviour
             if (estadoPresion1.Equals("On") && estadoPresion3.Equals("On"))
             {
 
-                    animatorNube.SetFloat("valor", 2);
+                animatorNube.SetFloat("valor", 2);
 
             }
 
