@@ -31,6 +31,7 @@ public class Tutorial : MonoBehaviour
 
         // bloquea el movimiento del player al principio
         player.GetComponent<PlayerController>().enabled = false;
+        
         showMouse();
         leverText.SetActive(true);
         startMousePos = Input.mousePosition.x;
