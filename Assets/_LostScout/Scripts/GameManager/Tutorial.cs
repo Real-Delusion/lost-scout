@@ -29,6 +29,8 @@ public class Tutorial : MonoBehaviour
         climbtext = textosTutorial.gameObject.transform.GetChild(3).gameObject;
         pickUpText = textosTutorial.gameObject.transform.GetChild(4).gameObject;
 
+        // bloquea el movimiento del player al principio
+        player.GetComponent<PlayerController>().enabled = false;
         showMouse();
         leverText.SetActive(true);
         startMousePos = Input.mousePosition.x;
@@ -134,6 +136,7 @@ public class Tutorial : MonoBehaviour
                 yield return new WaitForSecondsRealtime(3);
                 hideMouse();
                 yield return new WaitForSecondsRealtime(0.5f);
+                player.GetComponent<PlayerController>().enabled = true;
                 showMovement();
                 break;
           case "lever":
