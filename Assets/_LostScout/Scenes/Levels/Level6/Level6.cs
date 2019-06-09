@@ -121,6 +121,12 @@ public class Level6 : MonoBehaviour
             {
                 animatorPuertaB2.SetBool("open", false);
             }
+
+            //PLACA PRESION 1
+            if (estadoPresion1.Equals("On"))
+            {
+                animatorPuertaB2.SetBool("open", true);
+            }
         }
 
         //PLACA PRESION 2
@@ -132,6 +138,14 @@ public class Level6 : MonoBehaviour
             }
         }
 
+        if (estadoPresion2.Equals("Off"))
+        {
+            if (estadoPalanca3.Equals("Off"))
+            {
+                animatorPuertaB1.SetBool("open", false);
+                animatorPlacaPresion2.SetBool("show", false);
+            }
+        }
 
 
 
@@ -141,5 +155,5 @@ public class Level6 : MonoBehaviour
 
 
 
-    }
+        }
 }
