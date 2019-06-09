@@ -16,6 +16,7 @@ public class Tutorial : MonoBehaviour
     public GameObject leverText;
     public GameObject climbtext;
     public GameObject pickUpText;
+    public GameObject goalText;
     GameObject player;
     bool pressedE = false;
 
@@ -28,8 +29,13 @@ public class Tutorial : MonoBehaviour
         leverText = textosTutorial.gameObject.transform.GetChild(2).gameObject;
         climbtext = textosTutorial.gameObject.transform.GetChild(3).gameObject;
         pickUpText = textosTutorial.gameObject.transform.GetChild(4).gameObject;
+        goalText = textosTutorial.gameObject.transform.GetChild(5).gameObject;
+        
 
-        showMouse();
+        showGoal();
+        StartCoroutine(Wait("camera"));
+
+        //showMouse();
         leverText.SetActive(true);
         startMousePos = Input.mousePosition.x;
     }
@@ -69,6 +75,12 @@ public class Tutorial : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E)) pressedE = true;
     }
 
+    public void showGoal() {
+        goalText.SetActive(true);
+        if (goalText.activeSelf == true)
+        goalText.GetComponent<Animator>().SetBool("show", true);   
+    }
+
     public void showMouse() {
         camaraText.SetActive(true);
         if (camaraText.activeSelf == true)
@@ -104,6 +116,11 @@ public class Tutorial : MonoBehaviour
         pickUpText.GetComponent<Animator>().SetBool("show", true);
     }
 
+    public void hideGoal() {
+        if (goalText.GetComponent<Animator>().GetBool("show"))
+        goalText.GetComponent<Animator>().SetBool("show", false);
+    }
+
     public void hideMouse() {
         camaraText.GetComponent<Animator>().SetBool("show", false);
     }
@@ -130,6 +147,12 @@ public class Tutorial : MonoBehaviour
     IEnumerator Wait(string method)
     {
         switch (method) {
+          case "camera":
+                yield return new WaitForSecondsRealtime(3);
+                hideGoal();
+                yield return new WaitForSecondsRealtime(0.5f);
+                showMouse();
+                break;
           case "move":
                 yield return new WaitForSecondsRealtime(3);
                 hideMouse();
