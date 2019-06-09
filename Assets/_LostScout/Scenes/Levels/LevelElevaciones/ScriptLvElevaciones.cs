@@ -61,7 +61,7 @@ public class ScriptLvElevaciones : MonoBehaviour
                 v5.SetFloat("ControlerAnimElev", lv1);
                 v6.SetFloat("ControlerAnimElev", lv1);
                 v7.SetFloat("ControlerAnimElev", lv2);
-                v8.SetFloat("ControlerAnimElev", lv1);
+                v8.SetFloat("ControlerAnimElev", lv2);
                 v9.SetFloat("ControlerAnimElev", lv3);
             }
 
@@ -165,6 +165,11 @@ public class ScriptLvElevaciones : MonoBehaviour
     {
         Estado = EstadoPlataforma.opt0;
         estadoActual = Estado;
+
+        palanca1.GetComponent<mecanicaPalanca>().Estado = mecanicaPalanca.EstadosPalanca.Off;
+        palanca2.GetComponent<mecanicaPalanca>().Estado = mecanicaPalanca.EstadosPalanca.Off;
+        palanca3.GetComponent<mecanicaPalanca>().Estado = mecanicaPalanca.EstadosPalanca.Off;
+        palanca4.GetComponent<mecanicaPalanca>().Estado = mecanicaPalanca.EstadosPalanca.Off;
 
     }
 
