@@ -6,7 +6,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: puerta
+  m_Name: puerta 1
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: nivelApertura
@@ -14,11 +14,11 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
-    m_StateMachine: {fileID: 1107377932777874262}
+    m_StateMachine: {fileID: 1107751196412662674}
     m_Mask: {fileID: 0}
     m_Motions: []
     m_Behaviours: []
@@ -28,7 +28,7 @@ AnimatorController:
     m_IKPass: 0
     m_SyncedLayerAffectsTiming: 0
     m_Controller: {fileID: 9100000}
---- !u!1101 &1101287142192707112
+--- !u!1101 &1101229342812540992
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -38,9 +38,9 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 4
     m_ConditionEvent: nivelApertura
-    m_EventTreshold: 2
+    m_EventTreshold: 1
   m_DstStateMachine: {fileID: 0}
-  m_DstState: {fileID: 1102727971832390354}
+  m_DstState: {fileID: 1102183480215999684}
   m_Solo: 0
   m_Mute: 0
   m_IsExit: 0
@@ -53,7 +53,7 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
---- !u!1101 &1101301741843080588
+--- !u!1101 &1101275854408649958
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -65,7 +65,7 @@ AnimatorStateTransition:
     m_ConditionEvent: nivelApertura
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
-  m_DstState: {fileID: 1102727971832390354}
+  m_DstState: {fileID: 1102270649068882152}
   m_Solo: 0
   m_Mute: 0
   m_IsExit: 0
@@ -78,7 +78,7 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
---- !u!1101 &1101376829645975786
+--- !u!1101 &1101339454178296642
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -90,7 +90,7 @@ AnimatorStateTransition:
     m_ConditionEvent: nivelApertura
     m_EventTreshold: 1
   m_DstStateMachine: {fileID: 0}
-  m_DstState: {fileID: 1102266977647395258}
+  m_DstState: {fileID: 1102513598674181294}
   m_Solo: 0
   m_Mute: 0
   m_IsExit: 0
@@ -103,7 +103,7 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
---- !u!1101 &1101558824914279116
+--- !u!1101 &1101428519642268468
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -113,9 +113,9 @@ AnimatorStateTransition:
   m_Conditions:
   - m_ConditionMode: 4
     m_ConditionEvent: nivelApertura
-    m_EventTreshold: 1
+    m_EventTreshold: 2
   m_DstStateMachine: {fileID: 0}
-  m_DstState: {fileID: 1102881097595537830}
+  m_DstState: {fileID: 1102270649068882152}
   m_Solo: 0
   m_Mute: 0
   m_IsExit: 0
@@ -128,18 +128,18 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
---- !u!1102 &1102266977647395258
+--- !u!1102 &1102183480215999684
 AnimatorState:
   serializedVersion: 5
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: puertaAbierta
+  m_Name: puertaCuevaCerrada
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
-  - {fileID: 1101287142192707112}
+  - {fileID: 1101275854408649958}
   m_StateMachineBehaviours: []
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
@@ -149,25 +149,25 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 513dadb83fca24670ad44ee707be1e89, type: 2}
+  m_Motion: {fileID: 7400000, guid: 19902ba53eefaf84c991de6066f72f17, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
---- !u!1102 &1102727971832390354
+--- !u!1102 &1102270649068882152
 AnimatorState:
   serializedVersion: 5
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: puertaMitad
+  m_Name: pueratCuevaMitad
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
-  - {fileID: 1101558824914279116}
-  - {fileID: 1101376829645975786}
+  - {fileID: 1101229342812540992}
+  - {fileID: 1101339454178296642}
   m_StateMachineBehaviours: []
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
@@ -177,24 +177,24 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: fba76c397ad844a358c3d8320b583091, type: 2}
+  m_Motion: {fileID: 7400000, guid: 4636accced0a62544bbcfc0d5b8788d7, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
---- !u!1102 &1102881097595537830
+--- !u!1102 &1102513598674181294
 AnimatorState:
   serializedVersion: 5
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: puertaCerrada
+  m_Name: puertaCuevaAbierta
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
-  - {fileID: 1101301741843080588}
+  - {fileID: 1101428519642268468}
   m_StateMachineBehaviours: []
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
@@ -204,13 +204,13 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 3b7a71500a3a7494c872aa3fd1e4848d, type: 2}
+  m_Motion: {fileID: 7400000, guid: af4279e04ead03949b24f311a40090c1, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
---- !u!1107 &1107377932777874262
+--- !u!1107 &1107751196412662674
 AnimatorStateMachine:
   serializedVersion: 5
   m_ObjectHideFlags: 1
@@ -220,21 +220,21 @@ AnimatorStateMachine:
   m_Name: Base Layer
   m_ChildStates:
   - serializedVersion: 1
-    m_State: {fileID: 1102881097595537830}
-    m_Position: {x: 276, y: 36, z: 0}
+    m_State: {fileID: 1102183480215999684}
+    m_Position: {x: 228, y: -60, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: 1102266977647395258}
-    m_Position: {x: 408, y: 156, z: 0}
+    m_State: {fileID: 1102270649068882152}
+    m_Position: {x: 504, y: 12, z: 0}
   - serializedVersion: 1
-    m_State: {fileID: 1102727971832390354}
-    m_Position: {x: 132, y: 156, z: 0}
+    m_State: {fileID: 1102513598674181294}
+    m_Position: {x: 384, y: 168, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
   m_StateMachineTransitions: {}
   m_StateMachineBehaviours: []
-  m_AnyStatePosition: {x: 120, y: -12, z: 0}
-  m_EntryPosition: {x: 108, y: 36, z: 0}
-  m_ExitPosition: {x: 300, y: 228, z: 0}
+  m_AnyStatePosition: {x: 50, y: 20, z: 0}
+  m_EntryPosition: {x: 50, y: 120, z: 0}
+  m_ExitPosition: {x: 800, y: 120, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
-  m_DefaultState: {fileID: 1102881097595537830}
+  m_DefaultState: {fileID: 1102183480215999684}
