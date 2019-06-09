@@ -9,11 +9,13 @@ public class Level4 : MonoBehaviour
     public GameObject paloPalancaCueva;
     public GameObject placaPresionIzq;
     public GameObject placaPresionDcha;
+    public GameObject placaPresionCueva;
 
     //Animators
     public Animator animatorRoca;
     public Animator animatorPuerta;
     public Animator animatorPlaca;
+    public Animator animatorEscalera;
     private GameObject player;
 
     // Start is called before the first frame update
@@ -29,6 +31,7 @@ public class Level4 : MonoBehaviour
         string estadoPalancaRoca = paloPalancaRoca.GetComponent<mecanicaPalanca>().Estado.ToString();
         string estadoPlacaIzq = placaPresionIzq.GetComponent<PlacaDePresion>().Estado.ToString();
         string estadoPlacaDcha = placaPresionDcha.GetComponent<PlacaDePresion>().Estado.ToString();
+        string estadoPlacaCueva = placaPresionCueva.GetComponent<PlacaDePresion>().Estado.ToString();
 
         // PALANCA CUEVA
         if (estadoPalancaCueva.Equals("On"))
@@ -57,6 +60,14 @@ public class Level4 : MonoBehaviour
         // PLACAS AMBAS
         if (estadoPlacaIzq.Equals("On") && estadoPlacaDcha.Equals("On")) {
             animatorPuerta.SetFloat("nivelApertura", 2);
+        }
+
+        // PLACA CUEVA
+        if (estadoPlacaCueva.Equals("On")) {
+            animatorEscalera.SetBool("UpDown", true);
+        }
+        else {
+            animatorEscalera.SetBool("UpDown", false);
         }
     }
 }

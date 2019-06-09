@@ -230,7 +230,6 @@ public class PlayerController : MonoBehaviour
 
         // Si el estado del player es subir escaleras
         if (Estado == EstadosPlayer.SubirEscalera) {
-            Debug.Log(Input.GetAxis("Vertical"));
             
               if (Input.GetAxis("Vertical") > 0)
              {

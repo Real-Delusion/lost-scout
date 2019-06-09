@@ -42,7 +42,7 @@ public class tronco : MonoBehaviour
 
     Vector3 posicionInicial;
 
-    bool pickedUp = false;
+    bool dropped = false;
 
 
     // para ver el range en la escena
@@ -124,7 +124,7 @@ public class tronco : MonoBehaviour
         }
         
         // cuando ha caído
-        if (isGrounded() && pickedUp) {
+        if (isGrounded() && dropped) {
             // humito
             gameObject.transform.GetChild(0).gameObject.SetActive(true);
             if (!sonidoTronco.isPlaying)
@@ -133,7 +133,7 @@ public class tronco : MonoBehaviour
                 // sonico tronco
                 sonidoTronco.Play();
             }
-            pickedUp = false;
+            dropped = false;
         }
 
         // Pickup
@@ -195,8 +195,6 @@ public class tronco : MonoBehaviour
         // Activate and and modify player collider
         guide.transform.root.GetComponent<CharacterController>().radius = 0.6f;
         guide.transform.root.GetComponent<CharacterController>().center = new Vector3(0,0.8f,0.2f);
-
-        pickedUp = true;
     }
     void drop()
     {
@@ -214,9 +212,10 @@ public class tronco : MonoBehaviour
         Estado = EstadosCaja.Estatico;
 
         gameObject.transform.GetChild(0).gameObject.SetActive(false);
+        dropped = true;
     }
 
     bool isGrounded() {
-        return Physics.Raycast(transform.position, -Vector3.up, 0.05f);
+        return Physics.Raycast(transform.position, -Vector3.up, 0.01f);
     }
 }
