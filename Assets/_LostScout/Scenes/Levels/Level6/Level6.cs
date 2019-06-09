@@ -21,8 +21,6 @@ public class Level6 : MonoBehaviour
     public Animator animatorPlacaPresion1; //Placa presion 1
     public Animator animatorPlacaPresion2; //Placa presion 2
 
-
-
     // Start is called before the first frame update
     void Start()
     {
@@ -41,7 +39,7 @@ public class Level6 : MonoBehaviour
 
         //--------------- PARTE 1 -------------------
 
-        //PALANCA 1
+        //PALANCA 1 ON
         if (estadoPalanca1.Equals("On"))
         {
             animatorPuertaA1.SetBool("open", true);
@@ -60,20 +58,21 @@ public class Level6 : MonoBehaviour
             }
 
         }
-        if(estadoPalanca1.Equals("Off"))
+        //PALANCA 1 OFF
+        if (estadoPalanca1.Equals("Off"))
         {
             animatorPuertaA1.SetBool("open", false);
             animatorPuertaA2.SetBool("open", false);
         }
 
-        //PALANCA 2
+        //PALANCA 2 ON
         if (estadoPalanca2.Equals("On"))
         {
             animatorPuertaA2.SetBool("open", false);
             animatorPuertaB2.SetBool("open", true);
             animatorPlacaPresion1.SetBool("show", true);
 
-            //PALANCA 1
+            //PALANCA 1 OFF
             if (estadoPalanca1.Equals("Off"))
             {
                 animatorPuertaA1.SetBool("open", false);
@@ -81,7 +80,7 @@ public class Level6 : MonoBehaviour
             }
         }
 
-        //PLACA PRESION 1
+        //PLACA PRESION 1 ON
         if (estadoPresion1.Equals("On"))
         {
             animatorPuertaB2.SetBool("open", true);
@@ -101,7 +100,7 @@ public class Level6 : MonoBehaviour
         }
 
         //--------------- PARTE 2 -------------------
-        //PALANCA 3
+        //PALANCA 3 ON
         if (estadoPalanca3.Equals("On"))
         {
             animatorPuertaA1.SetBool("open", false);
@@ -109,37 +108,39 @@ public class Level6 : MonoBehaviour
             animatorPlacaPresion2.SetBool("show", true);
 
 
-            //PALANCA 1
+            //PALANCA 1 OFF
             if (estadoPalanca1.Equals("Off"))
             {
                 animatorPuertaA1.SetBool("open", false);
                 animatorPuertaA2.SetBool("open", false);
             }
 
-            //PALANCA 2
+            //PALANCA 2 OFF
             if (estadoPalanca2.Equals("Off"))
             {
                 animatorPuertaB2.SetBool("open", false);
             }
 
-            //PLACA PRESION 1
+            //PLACA PRESION 1 ON
             if (estadoPresion1.Equals("On"))
             {
                 animatorPuertaB2.SetBool("open", true);
             }
         }
 
-        //PLACA PRESION 2
+        //PLACA PRESION 2 ON
         if (estadoPresion2.Equals("On"))
         {
+            //PALANCA 3 OFF
             if (estadoPalanca3.Equals("Off"))
             {
                 animatorPuertaB1.SetBool("open", true);
             }
         }
-
+        //PLACA PRESION 2 OFF
         if (estadoPresion2.Equals("Off"))
         {
+            //PALANCA 3 OFF
             if (estadoPalanca3.Equals("Off"))
             {
                 animatorPuertaB1.SetBool("open", false);
