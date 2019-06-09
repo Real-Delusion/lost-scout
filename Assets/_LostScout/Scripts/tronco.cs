@@ -217,6 +217,6 @@ public class tronco : MonoBehaviour
     }
 
     bool isGrounded() {
-        return Physics.Raycast(transform.position, -Vector3.up, 0.1f);
+        return Physics.Raycast(transform.position, -Vector3.up, 0.05f);
     }
 }

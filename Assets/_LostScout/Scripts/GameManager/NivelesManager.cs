@@ -147,7 +147,6 @@ public class NivelesManager : MonoBehaviour
     void LoadModal(Nivel level)
     {
         selectedLevel = level.LevelName;
-
         GameObject.Find("LevelText").GetComponent<Text>().text = "LEVEL " + (level.ID + 1).ToString();
         GameObject.FindWithTag("CanvasModal").GetComponent<Canvas>().enabled = true;
         GameObject.FindWithTag("CanvasModal").transform.Find("ModalContent").gameObject.GetComponent<Animator>().SetBool("open", true);
@@ -158,6 +157,8 @@ public class NivelesManager : MonoBehaviour
         else GameObject.Find("TextObsequio").GetComponent<Text>().text = "Complete level " + (level.ID+1);
         GameObject.Find("TextHabilidad").GetComponent<Text>().text = "Finish in less than " + level.MaxTime + "s";
         GameObject.Find("TextPrestigio").GetComponent<Text>().text = "Clear course in " + level.MaxInteractions + " touches";
+        if (level.RecordTime != -1) GameObject.Find("TextTime").GetComponent<Text>().text = System.Math.Round(level.RecordTime,2).ToString() + "s";
+        else GameObject.Find("TextTime").GetComponent<Text>().text = "--";
 
         if (level.Locked)
         {

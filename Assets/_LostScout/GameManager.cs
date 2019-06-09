@@ -140,33 +140,33 @@ public class GameManager : MonoBehaviour
         // Create Levels
         niveles = new List<Nivel>()
         {
-           /* new Nivel(0,"Level Tutorial","Get started",false,0,false,120,50),
-            new Nivel(1,"Level 1","Mount\nEverest",false,0,true,20,2),
-            new Nivel(2,"Level 2","Tricky\nhills",false,0,true,50,4),
-            new Nivel(3,"Level 3","Across\nthe river",false,0,true,60,7),
-            new Nivel(4,"Level 4","Niagara\nFalls",false,0,true,120,8),
-            new Nivel(5,"Level 5","Third time\nlucky",false,0,true,60,8),
-            new Nivel(6,"Level 6","Level 6",false,0,true,60,8),
-            new Nivel(7,"Level 7","Level 7",false,0,true,60,8),
-            new Nivel(8,"Level 8","Level 8",false,0,true,60,8),
-            new Nivel(9,"Level 9","Level 9",false,0,true,60,8),
-            new Nivel(10,"Level 10","Level 10",false,0,true,60,8),
-            new Nivel(11,"Level 11","Level 11",false,0,true,60,8),
-            new Nivel(12,"Level 12","Level 12",false,0,true,60,5) */
+           /* new Nivel(0,"Level Tutorial","Get started",false,0,false,120,50, -1),
+            new Nivel(1,"Level 1","Mount\nEverest",false,0,true,20,2, -1),
+            new Nivel(2,"Level 2","Tricky\nhills",false,0,true,50,4, -1),
+            new Nivel(3,"Level 3","Across\nthe river",false,0,true,60,7, -1),
+            new Nivel(4,"Level 4","Niagara\nFalls",false,0,true,120,8, -1),
+            new Nivel(5,"Level 5","Third time\nlucky",false,0,true,60,8, -1),
+            new Nivel(6,"Level 6","Level 6",false,0,true,60,8, -1),
+            new Nivel(7,"Level 7","Level 7",false,0,true,60,8, -1),
+            new Nivel(8,"Level 8","Level 8",false,0,true,60,8, -1),
+            new Nivel(9,"Level 9","Level 9",false,0,true,60,8, -1),
+            new Nivel(10,"Level 10","Level 10",false,0,true,60,8, -1),
+            new Nivel(11,"Level 11","Level 11",false,0,true,60,8, -1),
+            new Nivel(12,"Level 12","Level 12",false,0,true,60,5, -1) */
 
-            new Nivel(0,"Level Tutorial","Get started",false,0,false,120,50),
-            new Nivel(1,"Level 1","Mount\nEverest",false,0,false,20,2),
-            new Nivel(2,"Level 2","Tricky\nhills",false,0,false,50,4),
-            new Nivel(3,"Level 3","Across\nthe river",false,0,false,60,7),
-            new Nivel(4,"Level 4","Niagara\nFalls",false,0,false,120,8),
-            new Nivel(5,"Level 5","Third time\nlucky",false,0,false,60,8),
-            new Nivel(6,"Level 6","Level 6",false,0,true,60,8),
-            new Nivel(7,"Level 7","Level 7",false,0,true,60,8),
-            new Nivel(8,"Level 8","Level 8",false,0,true,60,8),
-            new Nivel(9,"Level 9","Level 9",false,0,true,60,8),
-            new Nivel(10,"Level 10","Level 10",false,0,true,60,8),
-            new Nivel(11,"Level 11","Level 11",false,0,true,60,8),
-            new Nivel(12,"Level 12","Level 12",false,0,true,60,5)  
+            new Nivel(0,"Level Tutorial","Get started",false,0,false,120,50, -1),
+            new Nivel(1,"Level 1","Mount\nEverest",false,0,false,20,2, -1),
+            new Nivel(2,"Level 2","Tricky\nhills",false,0,false,50,4, -1),
+            new Nivel(3,"Level 3","Across\nthe river",false,0,false,60,7, -1),
+            new Nivel(4,"Level 4","Niagara\nFalls",false,0,false,120,8, -1),
+            new Nivel(5,"Level 5","Third time\nlucky",false,0,false,60,8, -1),
+            new Nivel(6,"Level 6","Level 6",false,0,true,60,8, -1),
+            new Nivel(7,"Level 7","Level 7",false,0,true,60,8, -1),
+            new Nivel(8,"Level 8","Level 8",false,0,true,60,8, -1),
+            new Nivel(9,"Level 9","Level 9",false,0,true,60,8, -1),
+            new Nivel(10,"Level 10","Level 10",false,0,true,60,8, -1),
+            new Nivel(11,"Level 11","Level 11",false,0,true,60,8, -1),
+            new Nivel(12,"Level 12","Level 12",false,0,true,60,5, -1)  
         };
 
         // Load saved data
@@ -279,10 +279,13 @@ public class GameManager : MonoBehaviour
         // Set completed
         niveles[index].Completed = true;
 
+        // Set time
+        if (time < niveles[index].RecordTime || niveles[index].RecordTime == -1) niveles[index].RecordTime = time;
+
         //Show texto bien hecho
         uiManager.showBienHecho();
         //Esperar 5 segundos para mostrar el menuPuntuacion
-        StartCoroutine(Wait(insignias, time));
+        StartCoroutine(Wait(insignias, time, niveles[index].RecordTime));
 
         numInteractions = 0;
     }
@@ -294,12 +297,12 @@ public class GameManager : MonoBehaviour
         camera.GetComponent<Camara>().enabled = state;
     }
 
-    IEnumerator Wait(int insignias, float time)
+    IEnumerator Wait(int insignias, float time, float record)
     {
         yield return new WaitForSecondsRealtime(3);
         // Show menu puntuacion (pass insignias and time)
         uiManager.hideBienHecho();
-        uiManager.showMenuPuntuacion(insignias, time);
+        uiManager.showMenuPuntuacion(insignias, time, record);
     }
 
 

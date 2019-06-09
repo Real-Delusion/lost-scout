@@ -12,8 +12,9 @@ public class Nivel : MonoBehaviour
     public bool Locked { get; set; }
     public int MaxTime { get; set; }
     public int MaxInteractions { get; set; }
+    public float RecordTime { get; set; }
 
-    public Nivel (int id, string levelName, string title, bool completed, int insignias, bool locked, int time, int interactions){
+    public Nivel (int id, string levelName, string title, bool completed, int insignias, bool locked, int time, int interactions, float record){
         this.ID = id;
         this.LevelName = levelName;
         this.Title = title;
@@ -22,6 +23,7 @@ public class Nivel : MonoBehaviour
         this.Locked = locked;
         this.MaxTime = time;
         this.MaxInteractions = interactions;
+        this.RecordTime = record;
     }
 
     public void Complete(){

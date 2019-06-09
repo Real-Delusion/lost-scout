@@ -47,7 +47,7 @@ public class UIManager : MonoBehaviour
         if (!isPaused) tiempoHud.text = (Math.Round(time,0).ToString())+" ''";
     }
 
-    public void showMenuPuntuacion (int insignias, float time){
+    public void showMenuPuntuacion (int insignias, float time, float record){
         
         // Return all insignias to their default state (size 0) 
         menuPuntuacion.transform.Find("ModalContent").Find("obsequio").gameObject.GetComponent<Animator>().SetBool("show", false);
@@ -56,6 +56,7 @@ public class UIManager : MonoBehaviour
 
         menuPuntuacion.transform.Find("ModalContent").gameObject.GetComponent<Animator>().SetBool("open", true);
         tiempo.text = (Math.Round(time,2).ToString())+" s";
+        GameObject.Find("tiempo_record").GetComponent<Text>().text = (Math.Round(record,2).ToString())+" s";
         insigniaObsequio.SetActive(true);
         StartCoroutine(MyCoroutine("obsequio"));
 
