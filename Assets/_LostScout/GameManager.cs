@@ -160,7 +160,7 @@ public class GameManager : MonoBehaviour
             new Nivel(3,"Level 3","Across\nthe river",false,0,false,60,7, -1),
             new Nivel(4,"Level 4","Niagara\nFalls",false,0,false,120,8, -1),
             new Nivel(5,"Level 5","Third time\nlucky",false,0,false,60,8, -1),
-            new Nivel(6,"Level 6","Level 6",false,0,true,60,8, -1),
+            new Nivel(6,"Level 6","Level 6",false,0,false,60,8, -1),
             new Nivel(7,"Level 7","Level 7",false,0,true,60,8, -1),
             new Nivel(8,"Level 8","Level 8",false,0,true,60,8, -1),
             new Nivel(9,"Level 9","Level 9",false,0,true,60,8, -1),

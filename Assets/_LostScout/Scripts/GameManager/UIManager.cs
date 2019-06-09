@@ -117,7 +117,7 @@ public class UIManager : MonoBehaviour
     public void showBienHecho()
     {
         bienHecho.GetComponent<Canvas>().enabled = true;
-        GameObject.Find("Music").active = false;
+        if (GameObject.Find("Music") != null) {GameObject.Find("Music").SetActive(true);}
         confettiCamera = GameObject.FindWithTag("confeti");
         StartCoroutine(Wait1());
         bienHecho.transform.Find("ModalContent").gameObject.GetComponent<Animator>().SetBool("open", true);

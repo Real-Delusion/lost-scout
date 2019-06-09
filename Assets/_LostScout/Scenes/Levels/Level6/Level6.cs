@@ -148,13 +148,5 @@ public class Level6 : MonoBehaviour
             }
         }
 
-
-
-
-
-
-
-
-
-        }
+    }
 }
