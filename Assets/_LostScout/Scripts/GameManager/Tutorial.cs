@@ -56,7 +56,23 @@ public class Tutorial : MonoBehaviour
         }
         else if (!primeraPalanca.GetComponent<mecanicaPalanca>().inRange && !segundaPalanca.GetComponent<mecanicaPalanca>().inRange) {
             StartCoroutine(Wait("hidelever"));
-        } 
+        }
+
+        // PALANCA ABAJO LUZ
+        if (primeraPalanca.GetComponent<mecanicaPalanca>().inRange) {
+            primeraPalanca.transform.parent.transform.GetChild(2).gameObject.SetActive(true);
+        }
+        else {
+            primeraPalanca.transform.parent.transform.GetChild(2).gameObject.SetActive(false);
+        }
+
+        // PALANCA ARRIBA LUZ
+        if (segundaPalanca.GetComponent<mecanicaPalanca>().inRange) {
+            segundaPalanca.transform.parent.transform.GetChild(2).gameObject.SetActive(true);
+        }
+        else {
+            segundaPalanca.transform.parent.transform.GetChild(2).gameObject.SetActive(false);
+        }
 
         // SUBIR TRONCO  
         if (primerTronco.GetComponent<tronco>().enRadio && player.transform.position.y <= 0.05) {
