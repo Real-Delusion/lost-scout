@@ -16,6 +16,8 @@ public class Tutorial : MonoBehaviour
     public GameObject leverText;
     public GameObject climbtext;
     public GameObject pickUpText;
+
+    public GameObject everythingText;
     GameObject player;
     bool pressedE = false;
 
@@ -28,6 +30,9 @@ public class Tutorial : MonoBehaviour
         leverText = textosTutorial.gameObject.transform.GetChild(2).gameObject;
         climbtext = textosTutorial.gameObject.transform.GetChild(3).gameObject;
         pickUpText = textosTutorial.gameObject.transform.GetChild(4).gameObject;
+
+        everythingText = textosTutorial.gameObject.transform.GetChild(5).gameObject;
+
 
         // bloquea el movimiento del player al principio
         player.GetComponent<PlayerController>().enabled = false;
@@ -67,6 +72,10 @@ public class Tutorial : MonoBehaviour
         }
         else {
             hidePickUp();
+        }
+
+        if (GameObject.Find("GameManager(Clone)").GetComponent<GameManager>().time > 100f && !everythingText.GetComponent<Animator>().GetBool("show")) {
+            showEverything();
         }
     }
 
@@ -126,6 +135,10 @@ public class Tutorial : MonoBehaviour
     public void hidePickUp() {
         if (pickUpText.activeSelf == true)
         pickUpText.GetComponent<Animator>().SetBool("show", false);
+    }
+
+    public void showEverything() {
+        everythingText.GetComponent<Animator>().SetBool("show", true);
     }
 
     IEnumerator Wait(string method)
