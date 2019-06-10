@@ -10,6 +10,7 @@ public class controlCamaraMenu : MonoBehaviour
     public GameObject canvasSeleccionNiveles;
     public GameObject canvasMainMenu;
     public bool fromGame = false;
+    public GameObject canvasExit;
 
 
     void Start()
@@ -61,6 +62,17 @@ public class controlCamaraMenu : MonoBehaviour
     {
         canvasMainMenu.transform.Find("Content").GetComponent<Animator>().SetBool("animated", true);
         canvasMainMenu.transform.Find("Content").GetComponent<Animator>().SetInteger("pos", 0);
+    }
+
+    public void openConfirmationWindow()
+    {
+        GameObject.Find("CanvasExit").GetComponent<Canvas>().enabled = true;
+        canvasExit.transform.Find("ModalContent").GetComponent<Animator>().SetBool("open", true);
+    }
+
+    public void closeConfirmationWindow()
+    {
+        canvasExit.transform.Find("ModalContent").GetComponent<Animator>().SetBool("open", false);
     }
 
     public void exit()
