@@ -46,12 +46,12 @@ public class Tutorial : MonoBehaviour
         }
 
         // ACCIONAR PALANCA
-        if (primeraPalanca.GetComponent<mecanicaPalanca>().inRange && pressedE == false) {
+        if (primeraPalanca.GetComponent<mecanicaPalanca>().inRange || segundaPalanca.GetComponent<mecanicaPalanca>().inRange) {
             StartCoroutine(Wait("lever"));
         }
-        else if (!primeraPalanca.GetComponent<mecanicaPalanca>().inRange) {
+        else if (!primeraPalanca.GetComponent<mecanicaPalanca>().inRange && !segundaPalanca.GetComponent<mecanicaPalanca>().inRange) {
             StartCoroutine(Wait("hidelever"));
-        }
+        } 
 
         // SUBIR TRONCO  
         if (primerTronco.GetComponent<tronco>().enRadio && player.transform.position.y <= 0.05) {
@@ -68,8 +68,6 @@ public class Tutorial : MonoBehaviour
         else {
             hidePickUp();
         }
-        
-        if (Input.GetKeyDown(KeyCode.E)) pressedE = true;
     }
 
     public void showMouse() {
