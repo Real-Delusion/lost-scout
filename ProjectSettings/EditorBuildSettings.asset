@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_LostScout/Scenes/Levels/Level6/Level 6.unity
     guid: 6533293944e3441f1bd3bafd68088674
+  - enabled: 1
+    path: Assets/_LostScout/Scenes/Levels/LevelElevaciones/Level 7.unity
+    guid: e33353c494bc0a2499c26ae2503652d0
   m_configObjects: {}
