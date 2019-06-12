@@ -142,9 +142,13 @@ public class Level5 : MonoBehaviour
         }
 
         //PISTA
-        if (GameObject.Find("GameManager(Clone)").GetComponent<GameManager>().time > 10f)
+        if (GameObject.Find("GameManager(Clone)").GetComponent<GameManager>().time > 200f)
         {
             hint.GetComponent<Animator>().SetBool("show", true);
+        }
+        if (GameObject.Find("GameManager(Clone)").GetComponent<GameManager>().time > 250f)
+        {
+            hint.GetComponent<Animator>().SetBool("show", false);
         }
     }
 }

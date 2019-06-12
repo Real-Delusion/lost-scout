@@ -36,6 +36,7 @@ public class GameManager : MonoBehaviour
     public float startTime;
     public int numInteractions = 0;
     public float time;
+    bool levelStarted = false;
 
     private void OnDrawGizmos()
     {
@@ -104,6 +105,7 @@ public class GameManager : MonoBehaviour
         // Disable cursor and get generic game objects if we are in a playable level
         if (currentScene.name.Contains("Level "))
         {
+            levelStarted = false;
             Cursor.visible = false;
             player = GameObject.FindGameObjectWithTag("Player");
             camera = GameObject.FindGameObjectWithTag("MainCamera");
@@ -179,7 +181,8 @@ public class GameManager : MonoBehaviour
         // For all level scenes
         if (currentScene.name.Contains("Level "))
         {
-            time = (Time.time) - startTime;
+            if (levelStarted) time = (Time.time) - startTime;
+            Debug.Log(time);
             uiManager.printTime(time, gamePaused);
             // Check for the checkpoint
             if ((Vector3.Distance(player.transform.position, checkpoint.transform.position) < radioCheckpoint) && finishedLevel == false)
@@ -316,6 +319,8 @@ public class GameManager : MonoBehaviour
         uiManager.hideLevelName();
         ResumeGame(false);
         startTime = Time.time;
+        levelStarted = true;
+        time = 0f;
     }
 
 }
