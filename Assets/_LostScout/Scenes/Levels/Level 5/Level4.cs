@@ -18,6 +18,9 @@ public class Level4 : MonoBehaviour
     public Animator animatorEscalera;
     private GameObject player;
 
+    //Pista
+    public GameObject hint;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -68,6 +71,12 @@ public class Level4 : MonoBehaviour
         }
         else {
             animatorEscalera.SetBool("UpDown", false);
+        }
+
+        //PISTA
+        if (GameObject.Find("GameManager(Clone)").GetComponent<GameManager>().time > 10f)
+        {
+            hint.GetComponent<Animator>().SetBool("show", true);
         }
     }
 }

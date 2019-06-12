@@ -22,6 +22,9 @@ public class Level5 : MonoBehaviour
     public GameObject colliderPuente1;
     public GameObject colliderPuente2;
 
+    //Pista
+    public GameObject hint;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -136,6 +139,12 @@ public class Level5 : MonoBehaviour
         {
             animatorPuente1.SetFloat("valor", 1);
             colliderPuente1.GetComponent<BoxCollider>().enabled = false;
+        }
+
+        //PISTA
+        if (GameObject.Find("GameManager(Clone)").GetComponent<GameManager>().time > 10f)
+        {
+            hint.GetComponent<Animator>().SetBool("show", true);
         }
     }
 }
