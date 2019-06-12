@@ -15,9 +15,10 @@ public class Escalera : MonoBehaviour
     {
         if (coll.gameObject.tag == "Player" && player.transform.position.y < (transform.localScale.y))
         {
-            Debug.Log("true");
+            //Debug.Log("true");
             canClimb = true;
             player.GetComponent<PlayerController>().Estado = PlayerController.EstadosPlayer.SubirEscalera;
+            player.transform.GetChild(1).gameObject.SetActive(false);
         }
     }
 
@@ -25,9 +26,10 @@ public class Escalera : MonoBehaviour
     {
         if (coll2.gameObject.tag == "Player")
         {
-            Debug.Log("false");
+            //Debug.Log("false");
             canClimb = false;
             player.GetComponent<PlayerController>().Estado = PlayerController.EstadosPlayer.Andar;
+            player.transform.GetChild(1).gameObject.SetActive(true);
         }
     }
 
