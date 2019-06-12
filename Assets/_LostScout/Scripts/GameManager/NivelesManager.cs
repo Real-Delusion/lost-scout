@@ -13,7 +13,7 @@ public class NivelesManager : MonoBehaviour
     public Sprite lockedMarco;
     private GameObject numeroNivel;
     private static string selectedLevel;
-    public int unlockedId;
+    public int unlockedId = -1;
 
     public List<Nivel> levels;
     public static int paginaNivel;
@@ -103,10 +103,9 @@ public class NivelesManager : MonoBehaviour
                 {
                     obj.transform.Find("prestigio_grey").gameObject.SetActive(true);
                 }
-
-                if (i == unlockedId){
+                
+                if (i == unlockedId && unlockedId != 0) {
                     unlockedId = -1;
-//                    Debug.Log("desbloqueado" + i);
                     animateUnlock(obj);
                 } 
             }
