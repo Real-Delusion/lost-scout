@@ -140,7 +140,7 @@ public class GameManager : MonoBehaviour
         // Create Levels
         niveles = new List<Nivel>()
         {
-            new Nivel(0,"Level Tutorial","Get Started",false,0,false,120,50, -1),
+            /*new Nivel(0,"Level Tutorial","Get Started",false,0,false,120,50, -1),
             new Nivel(1,"Level 1","Mount\nEverest",false,0,true,20,2, -1),
             new Nivel(2,"Level 2","Tricky\nHills",false,0,true,50,4, -1),
             new Nivel(3,"Level 3","Across\nthe River",false,0,true,60,7, -1),
@@ -152,21 +152,21 @@ public class GameManager : MonoBehaviour
             new Nivel(9,"Level 9","Level 9",false,0,true,60,8, -1),
             new Nivel(10,"Level 10","Level 10",false,0,true,60,8, -1),
             new Nivel(11,"Level 11","Level 11",false,0,true,60,8, -1),
-            new Nivel(12,"Level 12","Level 12",false,0,true,60,5, -1) 
+            new Nivel(12,"Level 12","Level 12",false,0,true,60,5, -1) */
 
-         /*   new Nivel(0,"Level Tutorial","Get started",false,0,false,120,50, -1),
+            new Nivel(0,"Level Tutorial","Get Started",false,0,false,120,50, -1),
             new Nivel(1,"Level 1","Mount\nEverest",false,0,false,20,2, -1),
-            new Nivel(2,"Level 2","Tricky\nhills",false,0,false,50,4, -1),
-            new Nivel(3,"Level 3","Across\nthe river",false,0,false,60,7, -1),
-            new Nivel(4,"Level 4","Niagara\nFalls",false,0,false,120,8, -1),
-            new Nivel(5,"Level 5","Third time\nlucky",false,0,false,60,8, -1),
-            new Nivel(6,"Level 6","After the\nstorm",false,0,false,60,8, -1),
-            new Nivel(7,"Level 7","Level 7",false,0,true,60,8, -1),
+            new Nivel(2,"Level 2","Tricky\nHills",false,0,false,50,4, -1),
+            new Nivel(3,"Level 3","Across\nthe River",false,0,false,60,7, -1),
+            new Nivel(4,"Level 4","Starry\nNight",false,0,false,120,8, -1),
+            new Nivel(5,"Level 5","Niagara\nFalls",false,0,false,60,8, -1),
+            new Nivel(6,"Level 6","Third Time\nLucky",false,0,false,60,8, -1),
+            new Nivel(7,"Level 7","After the\nStorm",false,0,false,60,8, -1),
             new Nivel(8,"Level 8","Level 8",false,0,true,60,8, -1),
             new Nivel(9,"Level 9","Level 9",false,0,true,60,8, -1),
             new Nivel(10,"Level 10","Level 10",false,0,true,60,8, -1),
             new Nivel(11,"Level 11","Level 11",false,0,true,60,8, -1),
-            new Nivel(12,"Level 12","Level 12",false,0,true,60,5, -1)  */
+            new Nivel(12,"Level 12","Level 12",false,0,true,60,5, -1)
         };
 
         // Load saved data
