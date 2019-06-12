@@ -1883,7 +1883,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: DESCRIPTION
+  m_Text: "Remember to \nrotate the camera"
 --- !u!222 &346399527
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -14679,7 +14679,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: DESCRIPTION
+  m_Text: "\nRemember every \nmovement you've \ndone\n"
 --- !u!222 &1923052927
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -2472,7 +2472,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: DESCRIPTION
+  m_Text: "Remember you can \nclimb trunks"
 --- !u!222 &780406312
 CanvasRenderer:
   m_ObjectHideFlags: 0
