@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.03216215, g: 0.04777082, b: 0.118904136, a: 1}
+  m_IndirectSpecularColor: {r: 0.0321589, g: 0.047768816, b: 0.118904136, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -473,11 +473,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 588249994}
     m_Modifications:
-    - target: {fileID: 5284458682218217143, guid: 88a5ae0879d7749ff96011fae25730db,
-        type: 3}
-      propertyPath: m_Name
-      value: endPost
-      objectReference: {fileID: 0}
     - target: {fileID: 5284458682218217142, guid: 88a5ae0879d7749ff96011fae25730db,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -532,6 +527,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5284458682218217143, guid: 88a5ae0879d7749ff96011fae25730db,
+        type: 3}
+      propertyPath: m_Name
+      value: endPost
       objectReference: {fileID: 0}
     - target: {fileID: 5284458681472650431, guid: 88a5ae0879d7749ff96011fae25730db,
         type: 3}
@@ -622,10 +622,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2001179656}
     m_Modifications:
-    - target: {fileID: 100002, guid: 75f74dffd71c8ff4e9c5c71059eb1d13, type: 3}
-      propertyPath: m_Name
-      value: naturePack_077
-      objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 75f74dffd71c8ff4e9c5c71059eb1d13, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.1500001
@@ -681,6 +677,10 @@ PrefabInstance:
     - target: {fileID: 400002, guid: 75f74dffd71c8ff4e9c5c71059eb1d13, type: 3}
       propertyPath: m_LocalScale.z
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 75f74dffd71c8ff4e9c5c71059eb1d13, type: 3}
+      propertyPath: m_Name
+      value: naturePack_077
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 75f74dffd71c8ff4e9c5c71059eb1d13, type: 3}
@@ -1983,10 +1983,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1129688813}
     m_Modifications:
-    - target: {fileID: 100002, guid: 8e8a106383110fa4a9462b3a7302fb31, type: 3}
-      propertyPath: m_Name
-      value: valla
-      objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 8e8a106383110fa4a9462b3a7302fb31, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.1300001
@@ -2030,6 +2026,10 @@ PrefabInstance:
     - target: {fileID: 400002, guid: 8e8a106383110fa4a9462b3a7302fb31, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 8e8a106383110fa4a9462b3a7302fb31, type: 3}
+      propertyPath: m_Name
+      value: valla
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 8e8a106383110fa4a9462b3a7302fb31, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -2628,10 +2628,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1019997665}
     m_Modifications:
-    - target: {fileID: 100002, guid: 8e8a106383110fa4a9462b3a7302fb31, type: 3}
-      propertyPath: m_Name
-      value: valla
-      objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 8e8a106383110fa4a9462b3a7302fb31, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.8299999
@@ -2676,6 +2672,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 8e8a106383110fa4a9462b3a7302fb31, type: 3}
+      propertyPath: m_Name
+      value: valla
+      objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 8e8a106383110fa4a9462b3a7302fb31, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -2689,10 +2689,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1725827912}
     m_Modifications:
-    - target: {fileID: 100002, guid: 8e8a106383110fa4a9462b3a7302fb31, type: 3}
-      propertyPath: m_Name
-      value: valla
-      objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 8e8a106383110fa4a9462b3a7302fb31, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.85
@@ -2736,6 +2732,10 @@ PrefabInstance:
     - target: {fileID: 400002, guid: 8e8a106383110fa4a9462b3a7302fb31, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 8e8a106383110fa4a9462b3a7302fb31, type: 3}
+      propertyPath: m_Name
+      value: valla
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 8e8a106383110fa4a9462b3a7302fb31, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -3022,10 +3022,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 995032559}
     m_Modifications:
-    - target: {fileID: 100002, guid: 8e8a106383110fa4a9462b3a7302fb31, type: 3}
-      propertyPath: m_Name
-      value: valla
-      objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 8e8a106383110fa4a9462b3a7302fb31, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.1803577
@@ -3069,6 +3065,10 @@ PrefabInstance:
     - target: {fileID: 400002, guid: 8e8a106383110fa4a9462b3a7302fb31, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 8e8a106383110fa4a9462b3a7302fb31, type: 3}
+      propertyPath: m_Name
+      value: valla
       objectReference: {fileID: 0}
     - target: {fileID: 2300000, guid: 8e8a106383110fa4a9462b3a7302fb31, type: 3}
       propertyPath: m_Materials.Array.data[0]
