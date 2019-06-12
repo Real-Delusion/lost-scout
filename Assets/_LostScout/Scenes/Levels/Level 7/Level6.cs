@@ -21,6 +21,9 @@ public class Level6 : MonoBehaviour
     public Animator animatorPlacaPresion1; //Placa presion 1
     public Animator animatorPlacaPresion2; //Placa presion 2
 
+    //Pista
+    public GameObject hint;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -148,5 +151,10 @@ public class Level6 : MonoBehaviour
             }
         }
 
+        //PISTA
+        if (GameObject.Find("GameManager(Clone)").GetComponent<GameManager>().time > 10f)
+        {
+            hint.GetComponent<Animator>().SetBool("show", true);
+        }
     }
 }
