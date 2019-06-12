@@ -66,7 +66,7 @@ public class controlCamaraMenu : MonoBehaviour
 
     public void openConfirmationWindow()
     {
-        canvasExit.GetComponent<Canvas>().enabled = true;
+        canvasExit.transform.GetChild(0).gameObject.SetActive(true);
         canvasExit.transform.Find("ModalContent").GetComponent<Animator>().SetBool("open", true);
     }
 
