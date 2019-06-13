@@ -35,10 +35,10 @@ public class controlCamaraMenu : MonoBehaviour
         else {
             // Check which default screen to show
             if(fromGame){
-                Debug.Log("menu princiapal");
+                //Debug.Log("menu princiapal");
                 canvasMainMenu.transform.Find("Content").GetComponent<Animator>().SetInteger("pos", 0);
             }else{
-                Debug.Log("seleccion");
+                //Debug.Log("seleccion");
                 canvasMainMenu.transform.Find("Content").GetComponent<Animator>().SetInteger("pos", 1);
             }
         }
