@@ -12,6 +12,8 @@ TagManager:
   - efectoSmoke
   - confeti
   - troncoPadre
+  - NivelesCanvas3
+  - NivelesCanvas4
   layers:
   - Default
   - TransparentFX

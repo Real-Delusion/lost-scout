@@ -44,6 +44,14 @@ public class controlCamaraMenu : MonoBehaviour
         }
     }
 
+    public void showSeleccion1(){
+        canvasMainMenu.transform.Find("Content").GetComponent<Animator>().SetInteger("pos", 1);
+    }
+
+    public void showSeleccion2(){
+        canvasMainMenu.transform.Find("Content").GetComponent<Animator>().SetInteger("pos", 2);
+    }
+
     // Options button
     public void showOpciones (){
         canvasMainMenu.transform.Find("Content").GetComponent<Animator>().SetInteger("pos", -1);
