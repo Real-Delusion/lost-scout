@@ -10,6 +10,7 @@ public class SettingMenu : MonoBehaviour
     public Text txtMasterVolume;
     public Text txtMusicVolume;
     public Dropdown resolutionDropDown;
+    public Dropdown graphiscsDropDown;
 
     Resolution[] resolutions;
 
@@ -20,32 +21,11 @@ public class SettingMenu : MonoBehaviour
         txtMusicVolume.text = final + "%";
 
         //Graphics
-        QualitySettings.SetQualityLevel(QualitySettings.GetQualityLevel());
+        graphiscsDropDown.value = QualitySettings.GetQualityLevel();
 
         //Resolutions
-
-        resolutions = Screen.resolutions;
-
-        resolutionDropDown.ClearOptions();
-
-        List<string> options = new List<string>();
-
-        int currentResolutionIndex = 0;
-
-        for (int i = 0; i < resolutions.Length; i++)
-        {
-            string option = resolutions[i].width + " x " + resolutions[i].height;
-            options.Add(option);
-
-            if (resolutions[i].width == Screen.currentResolution.width && resolutions[i].height == Screen.currentResolution.height)
-            {
-                currentResolutionIndex = i;
-            }
-        }
-
-        resolutionDropDown.AddOptions(options);
-        resolutionDropDown.value = currentResolutionIndex;
-        resolutionDropDown.RefreshShownValue();
+        initialResolution();
+        
     }
 
     public void SetResolution (int resolutionIndex)
@@ -78,5 +58,33 @@ public class SettingMenu : MonoBehaviour
     public void SetFullScreen (bool isFullScreen)
     {
         Screen.fullScreen = isFullScreen;
+        if(isFullScreen) resolutionDropDown.interactable = true;
+        else resolutionDropDown.interactable = false;
+    }
+
+    public void initialResolution()
+    {
+        resolutions = Screen.resolutions;
+
+        resolutionDropDown.ClearOptions();
+
+        List<string> options = new List<string>();
+
+        int currentResolutionIndex = 0;
+
+        for (int i = 0; i < resolutions.Length; i++)
+        {
+            string option = resolutions[i].width + " x " + resolutions[i].height;
+            options.Add(option);
+
+            if (resolutions[i].width == Screen.currentResolution.width && resolutions[i].height == Screen.currentResolution.height)
+            {
+                currentResolutionIndex = i;
+            }
+        }
+
+        resolutionDropDown.AddOptions(options);
+        resolutionDropDown.value = currentResolutionIndex;
+        resolutionDropDown.RefreshShownValue();
     }
 }
