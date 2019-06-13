@@ -91,7 +91,7 @@ public class Tutorial : MonoBehaviour
             hidePickUp();
         }
 
-        if (GameObject.Find("GameManager(Clone)").GetComponent<GameManager>().time > 5f && !everythingText.GetComponent<Animator>().GetBool("show")) {
+        if (GameObject.Find("GameManager(Clone)").GetComponent<GameManager>().time > 100f && !everythingText.GetComponent<Animator>().GetBool("show")) {
             showEverything();
         }
 
