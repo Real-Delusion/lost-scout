@@ -24,10 +24,12 @@ public class Level5 : MonoBehaviour
 
     //Pista
     public GameObject hint;
+    public GameObject gameManager;
 
     // Start is called before the first frame update
     void Start()
     {
+        gameManager = GameObject.Find("GameManager(Clone)");
     }
 
     // Update is called once per frame
@@ -142,13 +144,22 @@ public class Level5 : MonoBehaviour
         }
 
         //PISTA
-        if (GameObject.Find("GameManager(Clone)").GetComponent<GameManager>().time > 200f)
-        {
-            hint.GetComponent<Animator>().SetBool("show", true);
-        }
-        if (GameObject.Find("GameManager(Clone)").GetComponent<GameManager>().time > 250f)
+        if (gameManager.GetComponent<GameManager>().finishedLevel)
         {
             hint.GetComponent<Animator>().SetBool("show", false);
+        }
+
+        if (!gameManager.GetComponent<GameManager>().finishedLevel)
+        {
+            //PISTA
+            if (GameObject.Find("GameManager(Clone)").GetComponent<GameManager>().time > 200f)
+            {
+                hint.GetComponent<Animator>().SetBool("show", true);
+            }
+            if (GameObject.Find("GameManager(Clone)").GetComponent<GameManager>().time > 230f)
+            {
+                hint.GetComponent<Animator>().SetBool("show", false);
+            }
         }
     }
 }
