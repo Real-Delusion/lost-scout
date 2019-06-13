@@ -16,37 +16,33 @@ public class NivelesManager : MonoBehaviour
     public int unlockedId = -1;
 
     public List<Nivel> levels;
-    public static int paginaNivel;
 
     void Start()
     {
-        paginaNivel = 0;
         gameManager = GetComponent<GameManager>();   
     }
 
     public void printLevels()
     {
-
-        foreach (Transform child in GameObject.FindWithTag("NivelesCanvas").transform)
+        for (int i = 0; i < 12; i++)
         {
-            GameObject.Destroy(child.gameObject);
-        }
-
-        foreach (Transform child in GameObject.FindWithTag("NivelesCanvas2").transform)
-        {
-            GameObject.Destroy(child.gameObject);
-        }
-//        Debug.Log((paginaNivel + 2));
-
-        for (int i = paginaNivel; i < (paginaNivel + 6); i++)
-        {
-            if (i <= (paginaNivel + 2))
+            if (i < 3)
             {
                 CanvasTarget = GameObject.FindWithTag("NivelesCanvas");
             }
-            else
+            if (i >= 3 && i < 6)
             {
                 CanvasTarget = GameObject.FindWithTag("NivelesCanvas2");
+            }
+
+            if (i >= 6 && i < 9)
+            {
+                CanvasTarget = GameObject.FindWithTag("NivelesCanvas3");
+            }
+
+            if (i >= 9)
+            {
+                CanvasTarget = GameObject.FindWithTag("NivelesCanvas4");
             }
 
             Transform obj = Instantiate(lvlBtn);
@@ -120,26 +116,6 @@ public class NivelesManager : MonoBehaviour
             //pos += 175;
 
         }
-
-    }
-
-    public void nextScreen()
-    {
-        GameObject.Find("atras").GetComponent<Image>().enabled = true;
-        GameObject.Find("adelante").GetComponent<Image>().enabled = false;
-        if (paginaNivel < 6)
-        {
-            paginaNivel += 6;
-            printLevels();
-        }
-    }
-
-    public void backScreen()
-    {
-        GameObject.Find("atras").GetComponent<Image>().enabled = false;
-        GameObject.Find("adelante").GetComponent<Image>().enabled = true;
-        paginaNivel -= 6;
-        printLevels();
 
     }
 
