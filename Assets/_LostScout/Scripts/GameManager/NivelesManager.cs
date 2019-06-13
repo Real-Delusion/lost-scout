@@ -48,11 +48,6 @@ public class NivelesManager : MonoBehaviour
             Transform obj = Instantiate(lvlBtn);
             obj.transform.SetParent(CanvasTarget.transform);
 
-            /*Vector3 newpos = obj.transform.position;
-            newpos.x = pos; 
-            newpos.y = 327; 
-            newpos.z = 0; */
-
             obj.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
             //obj.transform.position = newpos;
 
@@ -100,21 +95,20 @@ public class NivelesManager : MonoBehaviour
                     obj.transform.Find("prestigio_grey").gameObject.SetActive(true);
                 }
                 
-                if (i == unlockedId && unlockedId != 0) {
+                if (i == unlockedId && unlockedId != 0 && GameManager.niveles[i].Available) {
                     unlockedId = -1;
                     animateUnlock(obj);
                 } 
             }
-            else
-            {
+            else if (GameManager.niveles[i].Locked && GameManager.niveles[i].Available) {
                 Image marco = images[1];
                 marco.sprite = lockedMarco;
                 btn.onClick.AddListener(() => LoadModal(t));
             }
+            else if (!GameManager.niveles[i].Available) {
+                Image marco = images[1];
+            }
             GameObject.FindWithTag("NivelesCanvas").GetComponent<Animator>().SetBool("in", true);
-            //GameObject.FindWithTag("NivelesCanvas2").GetComponent<Animator>().SetBool("in", true);
-            //pos += 175;
-
         }
 
     }
