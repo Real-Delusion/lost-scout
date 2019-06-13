@@ -10,6 +10,7 @@ public class Level4 : MonoBehaviour
     public GameObject placaPresionIzq;
     public GameObject placaPresionDcha;
     public GameObject placaPresionCueva;
+    public GameObject tronco;
 
     //Animators
     public Animator animatorRoca;
@@ -46,10 +47,11 @@ public class Level4 : MonoBehaviour
         if (estadoPalancaRoca.Equals("On")) {
             animatorRoca.SetBool("UpDown", true);
             animatorPlaca.SetBool("Hide", true);
+            tronco.SetActive(true);
         }
         else {
            animatorRoca.SetBool("UpDown", false);
-           animatorPlaca.SetBool("Hide", false);          
+           animatorPlaca.SetBool("Hide", false);
         }
         
         // PLACA UNA U OTRA
