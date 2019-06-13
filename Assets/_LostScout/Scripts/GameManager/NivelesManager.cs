@@ -133,7 +133,7 @@ public class NivelesManager : MonoBehaviour
         GameObject.Find("TextHabilidad").GetComponent<Text>().text = "Finish in less than " + level.MaxTime + "s";
         GameObject.Find("TextPrestigio").GetComponent<Text>().text = "Clear course in " + level.MaxInteractions + " touches";
         if (level.RecordTime != -1) GameObject.Find("TextTime").GetComponent<Text>().text = System.Math.Round(level.RecordTime,2).ToString() + "s";
-        else GameObject.Find("TextTime").GetComponent<Text>().text = "--";
+        else GameObject.Find("TextTime").GetComponent<Text>().text = "12'00";
 
         if (level.Locked)
         {
