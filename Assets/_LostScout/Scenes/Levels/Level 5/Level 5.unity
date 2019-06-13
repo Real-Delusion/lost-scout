@@ -179,6 +179,7 @@ MonoBehaviour:
   placaPresionIzq: {fileID: 1841747596}
   placaPresionDcha: {fileID: 235457853}
   placaPresionCueva: {fileID: 968656969}
+  tronco: {fileID: 258222750}
   animatorRoca: {fileID: 1847822728}
   animatorPuerta: {fileID: 522389722}
   animatorPlaca: {fileID: 1287149785}
@@ -689,6 +690,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70bfe765ac2a0458eb1bf6f1a554cad4, type: 3}
+--- !u!1 &258222750 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8689382603918090971, guid: 9c890aeb82027460695139e2185d6a40,
+    type: 3}
+  m_PrefabInstance: {fileID: 1059327093}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &270023389
 GameObject:
   m_ObjectHideFlags: 0
@@ -3354,6 +3361,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: tronco
+      objectReference: {fileID: 0}
+    - target: {fileID: 8689382603918090971, guid: 9c890aeb82027460695139e2185d6a40,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9c890aeb82027460695139e2185d6a40, type: 3}
