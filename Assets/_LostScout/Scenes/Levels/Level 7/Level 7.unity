@@ -9451,7 +9451,7 @@ GameObject:
   - component: {fileID: 469008766}
   - component: {fileID: 469008765}
   m_Layer: 0
-  m_Name: ScriptLevel6
+  m_Name: LevelScript
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
