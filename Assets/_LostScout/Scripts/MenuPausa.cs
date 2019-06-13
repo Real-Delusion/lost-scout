@@ -8,6 +8,8 @@ public class MenuPausa : MonoBehaviour
 {
     public GameManager gameManager;
     public GameObject modalExit;
+    public GameObject menuOpts;
+    public GameObject menuPausa;
 
     // Start is called before the first frame update
     void Start()
@@ -42,6 +44,18 @@ public class MenuPausa : MonoBehaviour
     public void closeConfirmationWindow()
     {
         modalExit.GetComponent<Animator>().SetBool("open", false);
+    }
+
+    public void openMenuOpts()
+    {
+        menuPausa.GetComponent<Animator>().SetBool("open", false);
+        menuOpts.GetComponent<Animator>().SetBool("open", true);
+    }
+
+    public void closemenuOpts()
+    {
+        menuPausa.GetComponent<Animator>().SetBool("open", true);
+        menuOpts.GetComponent<Animator>().SetBool("open", false);
     }
 
     public void exit(){
