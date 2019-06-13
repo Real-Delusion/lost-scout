@@ -11,8 +11,8 @@ public class PlayerController : MonoBehaviour
     private CharacterController _characterController;
 
     // ------------------------------ Para la piedra --------------------------------
-    private bool piedra; //La piedra es false cuando no está en el escenario
-    public GameObject objeto;
+    /*private bool piedra; //La piedra es false cuando no está en el escenario
+    public GameObject objeto;*/
 
     public float m_jumpY = 50f;
     //Velocidad lanzamiento piedra
@@ -245,6 +245,7 @@ public class PlayerController : MonoBehaviour
              }
         }
 
+        /*
         if ((Input.GetKeyDown(KeyCode.Mouse0) | Input.GetKeyDown("joystick button 5") )&& !piedra) // Si se pulsa el boton izq. del mouse y la piedra es false
        {
                 //Creo una nueva piedra
@@ -266,6 +267,6 @@ public class PlayerController : MonoBehaviour
         if (!GameObject.Find("steak(Clone)")) //Si no hay ningun objeto que se llame Piedra(Clone), puedes volver a lanzar la piedra
         {
             piedra = false; //La piedra no está en el escenario
-        }
+        }*/
     }
 }

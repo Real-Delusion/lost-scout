@@ -124,10 +124,10 @@ public class NivelesManager : MonoBehaviour
         GameObject.Find("imageNivel").GetComponent<Image>().sprite = miniaturas[level.ID];
         if (level.LevelName == "Level Tutorial") GameObject.Find("TextObsequio").GetComponent<Text>().text = "Complete Tutorial";
         else GameObject.Find("TextObsequio").GetComponent<Text>().text = "Complete level " + (level.ID+1);
-        GameObject.Find("TextHabilidad").GetComponent<Text>().text = "Finish in less than " + level.MaxTime + "s";
+        GameObject.Find("TextHabilidad").GetComponent<Text>().text = "Finish in less than " + level.MaxTime + "''";
         GameObject.Find("TextPrestigio").GetComponent<Text>().text = "Clear course in " + level.MaxInteractions + " touches";
-        if (level.RecordTime != -1) GameObject.Find("TextTime").GetComponent<Text>().text = System.Math.Round(level.RecordTime,2).ToString() + "s";
-        else GameObject.Find("TextTime").GetComponent<Text>().text = "12'00";
+        if (level.RecordTime != -1) GameObject.Find("TextTime").GetComponent<Text>().text = System.Math.Round(level.RecordTime,0).ToString() + "''";
+        else GameObject.Find("TextTime").GetComponent<Text>().text = "--";
 
         if (level.Locked)
         {
