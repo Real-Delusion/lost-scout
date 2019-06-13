@@ -15,12 +15,12 @@ public class Level3 : MonoBehaviour
     void Update()
     {
         //PISTA
-        if (GameObject.Find("GameManager(Clone)").GetComponent<GameManager>().time > 100f)
+        if (GameObject.Find("GameManager(Clone)").GetComponent<GameManager>().time > 150f)
         {
             hint.GetComponent<Animator>().SetBool("show", true);
         }
 
-        if (GameObject.Find("GameManager(Clone)").GetComponent<GameManager>().time > 150f)
+        if (GameObject.Find("GameManager(Clone)").GetComponent<GameManager>().time > 180f)
         {
             hint.GetComponent<Animator>().SetBool("show", false);
         }

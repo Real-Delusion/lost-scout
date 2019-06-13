@@ -156,7 +156,7 @@ public class Level6 : MonoBehaviour
         {
             hint.GetComponent<Animator>().SetBool("show", true);
         }
-        if (GameObject.Find("GameManager(Clone)").GetComponent<GameManager>().time > 250f)
+        if (GameObject.Find("GameManager(Clone)").GetComponent<GameManager>().time > 230f)
         {
             hint.GetComponent<Animator>().SetBool("show", false);
         }

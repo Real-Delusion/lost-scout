@@ -19,7 +19,7 @@ public class Level2 : MonoBehaviour
         {
             hint.GetComponent<Animator>().SetBool("show", true);
         }
-        if (GameObject.Find("GameManager(Clone)").GetComponent<GameManager>().time > 200f)
+        if (GameObject.Find("GameManager(Clone)").GetComponent<GameManager>().time > 180f)
         {
             hint.GetComponent<Animator>().SetBool("show", false);
         }
