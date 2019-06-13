@@ -25,6 +25,7 @@ public class Tutorial : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        GameObject.Find("GameManager(Clone)").GetComponent<GameManager>().time = 0f;
         camaraText =  textosTutorial.gameObject.transform.GetChild(0).gameObject;
         moveText = textosTutorial.gameObject.transform.GetChild(1).gameObject;
         leverText = textosTutorial.gameObject.transform.GetChild(2).gameObject;
@@ -32,7 +33,7 @@ public class Tutorial : MonoBehaviour
         pickUpText = textosTutorial.gameObject.transform.GetChild(4).gameObject;
 
         everythingText = textosTutorial.gameObject.transform.GetChild(5).gameObject;
-
+        hideEverything();
 
         // bloquea el movimiento del player al principio
         player.GetComponent<PlayerController>().enabled = false;
@@ -93,6 +94,7 @@ public class Tutorial : MonoBehaviour
         if (GameObject.Find("GameManager(Clone)").GetComponent<GameManager>().time > 100f && !everythingText.GetComponent<Animator>().GetBool("show")) {
             showEverything();
         }
+
     }
 
     public void showMouse() {
@@ -155,6 +157,10 @@ public class Tutorial : MonoBehaviour
 
     public void showEverything() {
         everythingText.GetComponent<Animator>().SetBool("show", true);
+    }
+
+    public void hideEverything() {
+        everythingText.GetComponent<Animator>().SetBool("show", false);
     }
 
     IEnumerator Wait(string method)
