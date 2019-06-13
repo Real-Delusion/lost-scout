@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlacaDePresion : MonoBehaviour
 {
@@ -60,6 +61,13 @@ public class PlacaDePresion : MonoBehaviour
     //Cuando entre en el collider, animación = true
     public void OnTriggerEnter(Collider other)
     {
+        if(SceneManager.GetActiveScene().name =="Level 7")
+        {
+            if (!this.GetComponents<AudioSource>()[0].isPlaying)
+            {
+                this.GetComponents<AudioSource>()[0].Play();
+            }
+        }
         //Debug.Log("ha entrado algo");
         if (a == false)
         {
@@ -75,6 +83,13 @@ public class PlacaDePresion : MonoBehaviour
     //Cuando salga del collider,animación = false
     public void OnTriggerExit(Collider other)
     {
+        if (SceneManager.GetActiveScene().name == "Level 7")
+        {
+            if (!this.GetComponents<AudioSource>()[1].isPlaying)
+            {
+                this.GetComponents<AudioSource>()[1].Play();
+            }
+        }
         //Debug.Log("ha salido algo");
         if (a == true && entrado == other)
         {

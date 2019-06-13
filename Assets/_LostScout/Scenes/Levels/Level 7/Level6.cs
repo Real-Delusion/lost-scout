@@ -25,6 +25,9 @@ public class Level6 : MonoBehaviour
     public GameObject hint;
     public GameObject gameManager;
 
+    //Sonido
+    public GameObject sonidoPuertaAtascada;
+
     // Start is called before the first frame update
     void Start()
     {
