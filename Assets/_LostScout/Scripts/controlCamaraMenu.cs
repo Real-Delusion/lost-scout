@@ -18,6 +18,7 @@ public class controlCamaraMenu : MonoBehaviour
         // Hide at start
         if (fromGame)
         {
+            fromGame = false;
             showSeleccionNiveles();
         }
     }
@@ -34,8 +35,10 @@ public class controlCamaraMenu : MonoBehaviour
         else {
             // Check which default screen to show
             if(fromGame){
+                Debug.Log("menu princiapal");
                 canvasMainMenu.transform.Find("Content").GetComponent<Animator>().SetInteger("pos", 0);
             }else{
+                Debug.Log("seleccion");
                 canvasMainMenu.transform.Find("Content").GetComponent<Animator>().SetInteger("pos", 1);
             }
         }
