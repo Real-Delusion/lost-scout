@@ -21,26 +21,6 @@ public class controlCamaraMenu : MonoBehaviour
             showSeleccionNiveles();
         }
     }
-    /* 
-    public void moverCamara() {
-
-        
-        Animator anim = GetComponent<Animator>();
-        anim.SetBool("Zoom", !anim.GetBool("Zoom"));
-
-        if (!anim.GetBool("Zoom"))
-        {
-            Invoke("delay", 0.8f);
-        }
-    }
-
-    public void delay()
-    {
-        //SceneManager.LoadScene("SeleccionNivel");
-        //seleccionadorLv.SetActive(true);
-        // Show
-        seleccionadorLv.GetComponent<Canvas> ().enabled = true;
-    }*/
 
     public void showSeleccionNiveles()
     {
@@ -50,17 +30,19 @@ public class controlCamaraMenu : MonoBehaviour
         }
         else {
             if(fromGame){
-                canvasMainMenu.transform.Find("Content").GetComponent<Animator>().SetBool("animated", false);
+                canvasMainMenu.transform.Find("Content").GetComponent<Animator>().SetInteger("pos", 0);
             }else{
-                canvasMainMenu.transform.Find("Content").GetComponent<Animator>().SetBool("animated", true);                
+                canvasMainMenu.transform.Find("Content").GetComponent<Animator>().SetInteger("pos", 1);
             }
-            canvasMainMenu.transform.Find("Content").GetComponent<Animator>().SetInteger("pos", 1);
         }
+    }
+
+    public void showOpciones (){
+        canvasMainMenu.transform.Find("Content").GetComponent<Animator>().SetInteger("pos", -1);
     }
 
     public void volver()
     {
-        canvasMainMenu.transform.Find("Content").GetComponent<Animator>().SetBool("animated", true);
         canvasMainMenu.transform.Find("Content").GetComponent<Animator>().SetInteger("pos", 0);
     }
 
