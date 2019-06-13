@@ -57,6 +57,9 @@ public class tronco : MonoBehaviour
     {
         // Pickup Init
         item = gameObject;
+
+        // Sumamos 0.01 a la altura para que no esté a altura 0
+        if (gameObject.transform.position.y == 0) gameObject.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y + 0.005f, + gameObject.transform.position.z);
         constraints = item.GetComponent<Rigidbody>().constraints;
         item.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
 
@@ -118,6 +121,7 @@ public class tronco : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(isGrounded());
         if (isGrounded())
         {   
             gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
@@ -137,8 +141,8 @@ public class tronco : MonoBehaviour
         }
 
         // Pickup
-        if (carrying == false){
-            if (Input.GetKeyDown(KeyCode.E) && (Vector3.Distance(player.transform.position, transform.position) < range) && Math.Abs(player.transform.position.x - transform.position.x) > 0.1f && Math.Abs(player.transform.position.z - transform.position.z) > 0.1f ) {
+        if (carrying == false && isGrounded() && player.GetComponent<PlayerController>().Estado != PlayerController.EstadosPlayer.Subir){
+            if (Input.GetKeyDown(KeyCode.E) && (Vector3.Distance(player.transform.position, transform.position) < range) && Math.Abs(player.transform.position.x - transform.position.x) > 0.1f && Math.Abs(player.transform.position.z - transform.position.z) > 0.1f && player.transform.position.y < miAltura + transform.position.y ){
             pickup();
             carrying = true;
             // cambiamos el estado del player a coger
@@ -158,7 +162,7 @@ public class tronco : MonoBehaviour
 
         // Subir
         // Si el jugador entra en el range del objeto
-        if (Vector3.Distance(player.transform.position, transform.position) < range && carrying == false && player.transform.position.y < transform.position.y + miAltura - 0.1f)
+        if (Vector3.Distance(player.transform.position, transform.position) < range && carrying == false && player.transform.position.y < transform.position.y + miAltura - 0.1f && isGrounded())
         {
             //Debug.Log("Pulse espacio para subirse a la caja");
             enRadio = true;
