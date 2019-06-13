@@ -85,9 +85,11 @@ public class PlayerController : MonoBehaviour
             // Si el estado es quieto
             if (_estado == EstadosPlayer.Quieto)
             {
-                Debug.Log("quieto");
+                //Debug.Log("quieto");
                 // aquí añadiremos animación de quieto del personaje
-                gameObject.transform.Find("TheLastMutongo").gameObject.GetComponent<Animator>().SetBool("andar", false);
+                gameObject.transform.Find("Mutongo").gameObject.GetComponent<Animator>().SetBool("andar", false);
+                this.gameObject.transform.GetChild(1).gameObject.SetActive(false);
+                sonidoAndar.Pause();
             }
             // Si el estado es empujar
             if (_estado == EstadosPlayer.Empujar)
@@ -173,7 +175,6 @@ public class PlayerController : MonoBehaviour
                 gameObject.transform.Find("Mutongo").gameObject.GetComponent<Animator>().SetBool("andar", false);
                 this.gameObject.transform.GetChild(1).gameObject.SetActive(false);
                 sonidoAndar.Pause();
-
             }
 
 

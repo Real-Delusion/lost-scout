@@ -246,9 +246,8 @@ public class GameManager : MonoBehaviour
     // Called when player collides on the checkpoint
     public void finishLevel()
     {
-        // Move player to avoid a loop on checkpoint
-        //player.transform.position = new Vector3((player.transform.position.x) + 1, player.transform.position.y, player.transform.position.z);
-        //player.gameObject.SetActive(false);
+        player.GetComponent<PlayerController>().Estado = PlayerController.EstadosPlayer.Quieto;
+
         if (currentScene.name == "Level Tutorial") GameObject.Find("Canvas").GetComponent<Canvas>().enabled = false;
         // Pause the game without graphic interface
         PauseGame(false);
