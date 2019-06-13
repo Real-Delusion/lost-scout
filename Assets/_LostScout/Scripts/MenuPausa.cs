@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class MenuPausa : MonoBehaviour
 {
     public GameManager gameManager;
+    public GameObject modalExit;
 
     // Start is called before the first frame update
     void Start()
@@ -33,7 +34,18 @@ public class MenuPausa : MonoBehaviour
     public void settings(){
     }
 
+    public void openConfirmationWindow()
+    {
+        modalExit.GetComponent<Animator>().SetBool("open", true);
+    }
+
+    public void closeConfirmationWindow()
+    {
+        modalExit.GetComponent<Animator>().SetBool("open", false);
+    }
+
     public void exit(){
+        modalExit.GetComponent<Animator>().SetBool("open", false);
         gameManager.ResumeGame(true);
         gameManager.fromGame = true;
         if(GameManager.sceneTransitions != null){
