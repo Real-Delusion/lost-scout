@@ -248,7 +248,9 @@ public class GameManager : MonoBehaviour
     {
         player.GetComponent<PlayerController>().Estado = PlayerController.EstadosPlayer.Quieto;
 
-        if (currentScene.name == "Level Tutorial") GameObject.Find("Canvas").GetComponent<Canvas>().enabled = false;
+        if (currentScene.name == "Level Tutorial") {
+            GameObject.Find("Canvas").GetComponent<Tutorial>().hideEverything();
+        }
         // Pause the game without graphic interface
         PauseGame(false);
 
@@ -314,6 +316,8 @@ public class GameManager : MonoBehaviour
         //yield return new WaitForSecondsRealtime(0.8f);
         //Show nombre del nivel
         uiManager.showLevelName(levelName);
+        if (currentScene.name == "Level Tutorial")
+        GameObject.Find("Canvas").GetComponent<Canvas>().enabled = false;
         yield return new WaitForSecondsRealtime(3);
         // Show menu puntuacion (pass insignias and time)
         uiManager.hideLevelName();
