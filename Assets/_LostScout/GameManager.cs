@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Experimental.UIElements;
 using UnityEngine.SceneManagement;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.IO;
 
 public class GameManager : MonoBehaviour
 {
@@ -140,40 +142,8 @@ public class GameManager : MonoBehaviour
     // Function to init the game
     void InitGame()
     {
-        // Create Levels
-        niveles = new List<Nivel>()
-        {
-         /*   new Nivel(0,"Level Tutorial","Get Started",false,0,false,120,50, -1, true),
-            new Nivel(1,"Level 1","Mount\nEverest",false,0,true,5,2, -1, true),
-            new Nivel(2,"Level 2","Tricky\nHills",false,0,true,20,5, -1, true),
-            new Nivel(3,"Level 3","Across\nthe River",false,0,true,20,3, -1, true),
-            new Nivel(4,"Level 4","Starry\nNight",false,0,true,20,4, -1, true),
-            new Nivel(5,"Level 5","Niagara\nFalls",false,0,true,45,12, -1, true),
-            new Nivel(6,"Level 6","Third Time\nLucky",false,0,true,30,8, -1, true),
-            new Nivel(7,"Level 7","After the\nStorm",false,0,false,45,9, -1, true),
-            new Nivel(8,"Level 8","Level 8",false,0,true,60,8, -1, false),
-            new Nivel(9,"Level 9","Level 9",false,0,true,60,8, -1, false),
-            new Nivel(10,"Level 10","Level 10",false,0,true,60,8, -1, false),
-            new Nivel(11,"Level 11","Level 11",false,0,true,60,8, -1, false),
-            new Nivel(12,"Level 12","Level 12",false,0,true,60,5, -1, false) */
-
-            new Nivel(0,"Level Tutorial","Get Started",false,0,false,120,50, -1, true),
-            new Nivel(1,"Level 1","Mount\nEverest",false,0,false,5,2, -1, true),
-            new Nivel(2,"Level 2","Tricky\nHills",false,0,false,20,5, -1, true),
-            new Nivel(3,"Level 3","Across\nthe River",false,0,false,20,3, -1, true),
-            new Nivel(4,"Level 4","Starry\nNight",false,0,false,20,4, -1, true),
-            new Nivel(5,"Level 5","Niagara\nFalls",false,0,false,45,12, -1, true),
-            new Nivel(6,"Level 6","Third Time\nLucky",false,0,false,30,8, -1, true),
-            new Nivel(7,"Level 7","After the\nStorm",false,0,false,45,9, -1, true),
-            new Nivel(8,"Level 8","Level 8",false,0,false,60,8, -1, false),
-            new Nivel(9,"Level 9","Level 9",false,0,false,60,8, -1, false),
-            new Nivel(10,"Level 10","Level 10",false,0,false,60,8, -1, false),
-            new Nivel(11,"Level 11","Level 11",false,0,false,60,8, -1, false),
-            new Nivel(12,"Level 12","Level 12",false,0,false,60,5, -1, false) 
-        };
-
         // Load saved data
-        // ...
+        load();
     }
 
     // Update is called once per frame
@@ -294,6 +264,8 @@ public class GameManager : MonoBehaviour
         StartCoroutine(Wait(insignias, time, niveles[index].RecordTime));
 
         numInteractions = 0;
+
+        save();
     }
 
     // Enable/disable player input
@@ -326,6 +298,54 @@ public class GameManager : MonoBehaviour
         startTime = Time.time;
         levelStarted = true;
         time = 0f;
+    }
+
+    public void save(){
+        BinaryFormatter bf = new BinaryFormatter();
+        Debug.Log(Application.persistentDataPath);
+        FileStream file = File.Create (Application.persistentDataPath + "/savedGames.gd");
+        bf.Serialize(file, niveles);
+        file.Close();
+    }
+
+    public static void load() {
+        if(File.Exists(Application.persistentDataPath + "/savedGames.gd")) {
+            BinaryFormatter bf = new BinaryFormatter();
+            FileStream file = File.Open(Application.persistentDataPath + "/savedGames.gd", FileMode.Open);
+            niveles = (List<Nivel>)bf.Deserialize(file);
+            file.Close();
+        }else{
+            niveles = new List<Nivel>()
+            {
+            /*   new Nivel(0,"Level Tutorial","Get Started",false,0,false,120,50, -1, true),
+                new Nivel(1,"Level 1","Mount\nEverest",false,0,true,5,2, -1, true),
+                new Nivel(2,"Level 2","Tricky\nHills",false,0,true,20,5, -1, true),
+                new Nivel(3,"Level 3","Across\nthe River",false,0,true,20,3, -1, true),
+                new Nivel(4,"Level 4","Starry\nNight",false,0,true,20,4, -1, true),
+                new Nivel(5,"Level 5","Niagara\nFalls",false,0,true,45,12, -1, true),
+                new Nivel(6,"Level 6","Third Time\nLucky",false,0,true,30,8, -1, true),
+                new Nivel(7,"Level 7","After the\nStorm",false,0,false,45,9, -1, true),
+                new Nivel(8,"Level 8","Level 8",false,0,true,60,8, -1, false),
+                new Nivel(9,"Level 9","Level 9",false,0,true,60,8, -1, false),
+                new Nivel(10,"Level 10","Level 10",false,0,true,60,8, -1, false),
+                new Nivel(11,"Level 11","Level 11",false,0,true,60,8, -1, false),
+                new Nivel(12,"Level 12","Level 12",false,0,true,60,5, -1, false) */
+
+                new Nivel(0,"Level Tutorial","Get Started",false,0,false,120,50, -1, true),
+                new Nivel(1,"Level 1","Mount\nEverest",false,0,false,5,2, -1, true),
+                new Nivel(2,"Level 2","Tricky\nHills",false,0,false,20,5, -1, true),
+                new Nivel(3,"Level 3","Across\nthe River",false,0,false,20,3, -1, true),
+                new Nivel(4,"Level 4","Starry\nNight",false,0,false,20,4, -1, true),
+                new Nivel(5,"Level 5","Niagara\nFalls",false,0,false,45,12, -1, true),
+                new Nivel(6,"Level 6","Third Time\nLucky",false,0,false,30,8, -1, true),
+                new Nivel(7,"Level 7","After the\nStorm",false,0,false,45,9, -1, true),
+                new Nivel(8,"Level 8","Level 8",false,0,false,60,8, -1, false),
+                new Nivel(9,"Level 9","Level 9",false,0,false,60,8, -1, false),
+                new Nivel(10,"Level 10","Level 10",false,0,false,60,8, -1, false),
+                new Nivel(11,"Level 11","Level 11",false,0,false,60,8, -1, false),
+                new Nivel(12,"Level 12","Level 12",false,0,false,60,5, -1, false) 
+            };
+        }
     }
 
 }
