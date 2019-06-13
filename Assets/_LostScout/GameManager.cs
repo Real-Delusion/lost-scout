@@ -178,7 +178,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("gamkemkal"+nivelesManager.unlockedId);
+        //Debug.Log("gamkemkal"+nivelesManager.unlockedId);
         // For all level scenes
         if (currentScene.name.Contains("Level "))
         {
