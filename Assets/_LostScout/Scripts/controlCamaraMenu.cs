@@ -22,13 +22,17 @@ public class controlCamaraMenu : MonoBehaviour
         }
     }
 
+    // Play button
     public void showSeleccionNiveles()
     {
+        // First time playing?
         if (PlayerPrefs.GetInt("nivelTutorial") == 0) {
+            // Then load tutorial level & set first time to false
             SceneManager.LoadScene("Level Tutorial");
             PlayerPrefs.SetInt("nivelTutorial",1);
         }
         else {
+            // Check which default screen to show
             if(fromGame){
                 canvasMainMenu.transform.Find("Content").GetComponent<Animator>().SetInteger("pos", 0);
             }else{
@@ -37,10 +41,12 @@ public class controlCamaraMenu : MonoBehaviour
         }
     }
 
+    // Options button
     public void showOpciones (){
         canvasMainMenu.transform.Find("Content").GetComponent<Animator>().SetInteger("pos", -1);
     }
 
+    // Back to menu button
     public void volver()
     {
         canvasMainMenu.transform.Find("Content").GetComponent<Animator>().SetInteger("pos", 0);
