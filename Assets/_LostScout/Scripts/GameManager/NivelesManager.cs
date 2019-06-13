@@ -168,6 +168,15 @@ public class NivelesManager : MonoBehaviour
         GameObject.FindWithTag("CanvasModal").transform.Find("ModalContent").gameObject.GetComponent<Animator>().SetBool("open", false);
     }
 
+    public void openCredits() {
+        Debug.Log(GameObject.FindWithTag("ModalCreditos"));
+        GameObject.FindWithTag("ModalCreditos").gameObject.GetComponent<Animator>().SetBool("open", true);
+    }
+
+    public void closeCredits() {
+        GameObject.FindWithTag("ModalCreditos").gameObject.GetComponent<Animator>().SetBool("open", false);
+    }
+
     public void LoadLevel()
     {
         //SceneManager.LoadScene(selectedLevel);
