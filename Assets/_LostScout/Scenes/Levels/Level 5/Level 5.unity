@@ -185,6 +185,7 @@ MonoBehaviour:
   animatorPlaca: {fileID: 1287149785}
   animatorEscalera: {fileID: 984225180}
   hint: {fileID: 957345792}
+  gameManager: {fileID: 0}
 --- !u!1001 &39660757
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -701,6 +702,20 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1059327093}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &267491430 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 953253786656433900, guid: 9e329409a44a04ec79a91c9b1ba24be0,
+    type: 3}
+  m_PrefabInstance: {fileID: 1108467576}
+  m_PrefabAsset: {fileID: 0}
+--- !u!81 &267491436
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 267491430}
+  m_Enabled: 1
 --- !u!1 &270023389
 GameObject:
   m_ObjectHideFlags: 0
@@ -3214,6 +3229,11 @@ PrefabInstance:
       propertyPath: orthographic size
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 7061758295704351365, guid: b933c817cc7b9441ca78fd7d5297d3f1,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b933c817cc7b9441ca78fd7d5297d3f1, type: 3}
 --- !u!1001 &1045274901
@@ -5427,6 +5447,109 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b65de07e7e0332469fd446e928febb1, type: 3}
+--- !u!1 &1738886011 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3119977624141563562, guid: 7c445858099214d9da3c06c42646ca05,
+    type: 3}
+  m_PrefabInstance: {fileID: 1436048788}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &1738886012
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1738886011}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 243070620556659080, guid: 79986d483dbe143cf8b63939ae43d9a3,
+    type: 2}
+  m_audioClip: {fileID: 8300000, guid: 8b5eb2428a6004a21bf9d274de6ec47c, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.25
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.769
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!4 &1763311636 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400002, guid: 6f821c245bbd1bb4dbbee8bf10cc656e,
