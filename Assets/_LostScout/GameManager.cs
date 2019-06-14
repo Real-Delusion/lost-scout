@@ -324,7 +324,7 @@ public class GameManager : MonoBehaviour
                 new Nivel(4,"Level 4","Starry\nNight",false,0,true,20,4, -1, true),
                 new Nivel(5,"Level 5","Niagara\nFalls",false,0,true,45,12, -1, true),
                 new Nivel(6,"Level 6","Third Time\nLucky",false,0,true,30,8, -1, true),
-                new Nivel(7,"Level 7","After the\nStorm",false,0,false,45,9, -1, true),
+                new Nivel(7,"Level 7","After the\nStorm",false,0,true,45,9, -1, true),
                 new Nivel(8,"Level 8","Level 8",false,0,true,60,8, -1, false),
                 new Nivel(9,"Level 9","Level 9",false,0,true,60,8, -1, false),
                 new Nivel(10,"Level 10","Level 10",false,0,true,60,8, -1, false),
