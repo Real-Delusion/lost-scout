@@ -28,7 +28,7 @@ EditorBuildSettings:
     guid: e33353c494bc0a2499c26ae2503652d0
   - enabled: 1
     path: Assets/_LostScout/Scenes/Levels/Level 5/Level 5.unity
-    guid: c1daa3ac835ae476fb093ff1c13f0a30
+    guid: f745ec023ab480b46bae25900941bd05
   - enabled: 1
     path: Assets/_LostScout/Scenes/Levels/Level 6/Level 6.unity
     guid: d3c5f4198abc129bfab031d60a5204c9
