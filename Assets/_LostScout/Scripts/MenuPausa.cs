@@ -48,14 +48,12 @@ public class MenuPausa : MonoBehaviour
 
     public void openMenuOpts()
     {
-        menuPausa.GetComponent<Animator>().SetBool("open", false);
-        menuOpts.GetComponent<Animator>().SetBool("open", true);
+        menuOpts.transform.GetChild(0).GetComponent<Animator>().SetBool("open", true);
     }
 
     public void closemenuOpts()
     {
-        menuPausa.GetComponent<Animator>().SetBool("open", true);
-        menuOpts.GetComponent<Animator>().SetBool("open", false);
+        menuOpts.transform.GetChild(0).GetComponent<Animator>().SetBool("open", false);
     }
 
     public void exit(){

@@ -317,7 +317,7 @@ public class GameManager : MonoBehaviour
         }else{
             niveles = new List<Nivel>()
             {
-            /*   new Nivel(0,"Level Tutorial","Get Started",false,0,false,120,50, -1, true),
+               new Nivel(0,"Level Tutorial","Get Started",false,0,false,120,50, -1, true),
                 new Nivel(1,"Level 1","Mount\nEverest",false,0,true,5,2, -1, true),
                 new Nivel(2,"Level 2","Tricky\nHills",false,0,true,20,5, -1, true),
                 new Nivel(3,"Level 3","Across\nthe River",false,0,true,20,3, -1, true),
@@ -329,9 +329,9 @@ public class GameManager : MonoBehaviour
                 new Nivel(9,"Level 9","Level 9",false,0,true,60,8, -1, false),
                 new Nivel(10,"Level 10","Level 10",false,0,true,60,8, -1, false),
                 new Nivel(11,"Level 11","Level 11",false,0,true,60,8, -1, false),
-                new Nivel(12,"Level 12","Level 12",false,0,true,60,5, -1, false) */
+                new Nivel(12,"Level 12","Level 12",false,0,true,60,5, -1, false) 
 
-                new Nivel(0,"Level Tutorial","Get Started",false,0,false,120,50, -1, true),
+             /*   new Nivel(0,"Level Tutorial","Get Started",false,0,false,120,50, -1, true),
                 new Nivel(1,"Level 1","Mount\nEverest",false,0,false,5,2, -1, true),
                 new Nivel(2,"Level 2","Tricky\nHills",false,0,false,20,5, -1, true),
                 new Nivel(3,"Level 3","Across\nthe River",false,0,false,20,3, -1, true),
@@ -343,7 +343,7 @@ public class GameManager : MonoBehaviour
                 new Nivel(9,"Level 9","Level 9",false,0,false,60,8, -1, false),
                 new Nivel(10,"Level 10","Level 10",false,0,false,60,8, -1, false),
                 new Nivel(11,"Level 11","Level 11",false,0,false,60,8, -1, false),
-                new Nivel(12,"Level 12","Level 12",false,0,false,60,5, -1, false) 
+                new Nivel(12,"Level 12","Level 12",false,0,false,60,5, -1, false) */
             };
         }
     }
