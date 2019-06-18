@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.64020264, g: 0.85753894, b: 1.0921856, a: 1}
+  m_IndirectSpecularColor: {r: 0.6402435, g: 0.85753715, b: 1.0921818, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -386,6 +386,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1486146643}
     m_Modifications:
+    - target: {fileID: 4248891616533645649, guid: c3d00da546dec41c8b2a0fff94ddd80b,
+        type: 3}
+      propertyPath: m_Name
+      value: PlacaPresiondhca
+      objectReference: {fileID: 0}
     - target: {fileID: 4248891616533645648, guid: c3d00da546dec41c8b2a0fff94ddd80b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -455,11 +460,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4248891616533645649, guid: c3d00da546dec41c8b2a0fff94ddd80b,
-        type: 3}
-      propertyPath: m_Name
-      value: PlacaPresiondhca
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c3d00da546dec41c8b2a0fff94ddd80b, type: 3}
@@ -638,6 +638,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 189190088}
     m_Modifications:
+    - target: {fileID: 805273124, guid: 70bfe765ac2a0458eb1bf6f1a554cad4, type: 3}
+      propertyPath: m_Name
+      value: isla
+      objectReference: {fileID: 0}
     - target: {fileID: 84929048, guid: 70bfe765ac2a0458eb1bf6f1a554cad4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.57
@@ -689,10 +693,6 @@ PrefabInstance:
     - target: {fileID: 84929048, guid: 70bfe765ac2a0458eb1bf6f1a554cad4, type: 3}
       propertyPath: m_LocalScale.x
       value: 4.9895673
-      objectReference: {fileID: 0}
-    - target: {fileID: 805273124, guid: 70bfe765ac2a0458eb1bf6f1a554cad4, type: 3}
-      propertyPath: m_Name
-      value: isla
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70bfe765ac2a0458eb1bf6f1a554cad4, type: 3}
@@ -806,7 +806,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 348864352}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.53, y: 3.73, z: -0.92}
+  m_LocalPosition: {x: 6.48, y: 3.73, z: -0.92}
   m_LocalScale: {x: 1.0556514, y: 1.0556511, z: 1.0556514}
   m_Children:
   - {fileID: 984225179}
@@ -870,6 +870,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 366885349}
     m_Modifications:
+    - target: {fileID: 4248891616533645649, guid: c3d00da546dec41c8b2a0fff94ddd80b,
+        type: 3}
+      propertyPath: m_Name
+      value: PlacaPresionizq
+      objectReference: {fileID: 0}
     - target: {fileID: 4248891616533645648, guid: c3d00da546dec41c8b2a0fff94ddd80b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -924,11 +929,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4248891616533645649, guid: c3d00da546dec41c8b2a0fff94ddd80b,
-        type: 3}
-      propertyPath: m_Name
-      value: PlacaPresionizq
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c3d00da546dec41c8b2a0fff94ddd80b, type: 3}
@@ -2380,6 +2380,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 366885349}
     m_Modifications:
+    - target: {fileID: 4248891616533645649, guid: c3d00da546dec41c8b2a0fff94ddd80b,
+        type: 3}
+      propertyPath: m_Name
+      value: PlacaCueva
+      objectReference: {fileID: 0}
     - target: {fileID: 4248891616533645648, guid: c3d00da546dec41c8b2a0fff94ddd80b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2434,11 +2439,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4248891616533645649, guid: c3d00da546dec41c8b2a0fff94ddd80b,
-        type: 3}
-      propertyPath: m_Name
-      value: PlacaCueva
       objectReference: {fileID: 0}
     - target: {fileID: 3111812072820689278, guid: c3d00da546dec41c8b2a0fff94ddd80b,
         type: 3}
@@ -3876,6 +3876,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2138950549}
     m_Modifications:
+    - target: {fileID: 100010, guid: 1ffc3ed37bd42d441a4d8205755a4543, type: 3}
+      propertyPath: m_Name
+      value: naturePack_flat_010
+      objectReference: {fileID: 0}
     - target: {fileID: 400010, guid: 1ffc3ed37bd42d441a4d8205755a4543, type: 3}
       propertyPath: m_LocalPosition.x
       value: -9.4
@@ -3919,10 +3923,6 @@ PrefabInstance:
     - target: {fileID: 400010, guid: 1ffc3ed37bd42d441a4d8205755a4543, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 100010, guid: 1ffc3ed37bd42d441a4d8205755a4543, type: 3}
-      propertyPath: m_Name
-      value: naturePack_flat_010
       objectReference: {fileID: 0}
     - target: {fileID: 2300004, guid: 1ffc3ed37bd42d441a4d8205755a4543, type: 3}
       propertyPath: m_Materials.Array.data[1]
@@ -4082,7 +4082,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1328759950, guid: 2ef5a45777bd958438f3f5f7feba7e10, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.04
       objectReference: {fileID: 0}
     - target: {fileID: 1328759950, guid: 2ef5a45777bd958438f3f5f7feba7e10, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4090,23 +4090,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1328759950, guid: 2ef5a45777bd958438f3f5f7feba7e10, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 1328759950, guid: 2ef5a45777bd958438f3f5f7feba7e10, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: -0.0125350775
       objectReference: {fileID: 0}
     - target: {fileID: 1328759950, guid: 2ef5a45777bd958438f3f5f7feba7e10, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.73150134
+      value: 0.7116081
       objectReference: {fileID: 0}
     - target: {fileID: 1328759950, guid: 2ef5a45777bd958438f3f5f7feba7e10, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0.012700314
       objectReference: {fileID: 0}
     - target: {fileID: 1328759950, guid: 2ef5a45777bd958438f3f5f7feba7e10, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.68184006
+      value: 0.70234996
       objectReference: {fileID: 0}
     - target: {fileID: 1328759950, guid: 2ef5a45777bd958438f3f5f7feba7e10, type: 3}
       propertyPath: m_RootOrder
@@ -4114,11 +4114,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1328759950, guid: 2ef5a45777bd958438f3f5f7feba7e10, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: -2.045
       objectReference: {fileID: 0}
     - target: {fileID: 1328759950, guid: 2ef5a45777bd958438f3f5f7feba7e10, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 94.025
+      value: 90.75001
       objectReference: {fileID: 0}
     - target: {fileID: 1328759950, guid: 2ef5a45777bd958438f3f5f7feba7e10, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -4983,6 +4983,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 366885349}
     m_Modifications:
+    - target: {fileID: 5284458682218217143, guid: 88a5ae0879d7749ff96011fae25730db,
+        type: 3}
+      propertyPath: m_Name
+      value: endPost
+      objectReference: {fileID: 0}
     - target: {fileID: 5284458682218217142, guid: 88a5ae0879d7749ff96011fae25730db,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5037,11 +5042,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5284458682218217143, guid: 88a5ae0879d7749ff96011fae25730db,
-        type: 3}
-      propertyPath: m_Name
-      value: endPost
       objectReference: {fileID: 0}
     - target: {fileID: 5284458681472650400, guid: 88a5ae0879d7749ff96011fae25730db,
         type: 3}
