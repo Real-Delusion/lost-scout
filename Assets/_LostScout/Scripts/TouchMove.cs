@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.iOS;
+using UnityEngine.AI;
 
 
 // Attach to an origin based cube.
@@ -18,10 +19,13 @@ public class TouchMove : MonoBehaviour
  public float duration = 50.0f;
  //vertical position of the gameobject
  private float yAxis;
- 
- void Start(){
+ private NavMeshAgent agente;
+
+    void Start(){
   //save the y axis value of gameobject
   yAxis = gameObject.transform.position.y;
+
+        agente = GetComponent<NavMeshAgent>();
  }
   
  // Update is called once per frame
@@ -53,12 +57,14 @@ public class TouchMove : MonoBehaviour
     endPoint.y = yAxis;
     Debug.Log(endPoint);
    }
+
+            
     
   }
   //check if the flag for movement is true and the current gameobject position is not same as the clicked / tapped position
   if(flag && !Mathf.Approximately(gameObject.transform.position.magnitude, endPoint.magnitude)){ //&& !(V3Equal(transform.position, endPoint))){
-   //move the gameobject to the desired position
-   gameObject.transform.position = Vector3.Lerp(gameObject.transform.position, endPoint, 1/(duration*(Vector3.Distance(gameObject.transform.position, endPoint))));
+                                                                                         //move the gameobject to the desired position
+            agente.destination = Vector3.Lerp(gameObject.transform.position, endPoint, 1/(duration*(Vector3.Distance(gameObject.transform.position, endPoint))));
   }
   //set the movement indicator flag to false if the endPoint and current gameobject position are equal
   else if(flag && Mathf.Approximately(gameObject.transform.position.magnitude, endPoint.magnitude)) {
